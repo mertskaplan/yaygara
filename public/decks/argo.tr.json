@@ -1,0 +1,23 @@
+{
+  "id": "argo.tr",
+  "name": "Argo",
+  "language": "tr",
+  "difficulty": "hard",
+  "words": [
+    { "term": "Manita", "hint": "Sevgili", "difficulty": 3 },
+    { "term": "Kafa Ütülemek", "hint": "Çok konuşarak birini bunaltmak", "difficulty": 3 },
+    { "term": "Beleş", "hint": "Bedava, ücretsiz", "difficulty": 3 },
+    { "term": "Keriz", "hint": "Kolay aldatılan, saf kimse", "difficulty": 3 },
+    { "term": "Ekmek", "hint": "Bir işi veya randevuyu iptal etmek, gitmemek", "difficulty": 3 },
+    { "term": "Tırt", "hint": "Kötü, değersiz, işe yaramaz", "difficulty": 3 },
+    { "term": "Ayvayı Yemek", "hint": "Kötü bir duruma düşmek, yakalanmak", "difficulty": 3 },
+    { "term": "Dut Yemiş Bülbül", "hint": "Çok suskunlaşmak, sessiz kalmak", "difficulty": 3 },
+    { "term": "İneklemek", "hint": "Sınav için çok ders çalışmak", "difficulty": 3 },
+    { "term": "Yavşak", "hint": "Sözüne güvenilmeyen, yılışık kimse", "difficulty": 3 },
+    { "term": "Gıcık", "hint": "Sinir bozucu, sevimsiz", "difficulty": 3 },
+    { "term": "Papel", "hint": "Para", "difficulty": 3 },
+    { "term": "Keklemek", "hint": "Kandırmak, aldatmak", "difficulty": 3 },
+    { "term": "Dandik", "hint": "Kalitesiz, kötü", "difficulty": 3 },
+    { "term": "Fıttırmak", "hint": "Delirmek, aklını kaçırmak", "difficulty": 3 }
+  ]
+}

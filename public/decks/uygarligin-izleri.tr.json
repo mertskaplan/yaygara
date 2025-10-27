@@ -1,0 +1,23 @@
+{
+  "id": "uygarligin-izleri.tr",
+  "name": "Uygarlığın İzleri",
+  "language": "tr",
+  "difficulty": "hard",
+  "words": [
+    { "term": "Piramit", "hint": "Mısır'da firavunlar için yapılmış anıt mezar", "difficulty": 3 },
+    { "term": "Demokrasi", "hint": "Halkın kendi kendini yönetmesi", "difficulty": 3 },
+    { "term": "Matbaa", "hint": "Kitapların basılmasını sağlayan icat", "difficulty": 3 },
+    { "term": "Rönesans", "hint": "Avrupa'da bilim ve sanatta yeniden doğuş dönemi", "difficulty": 3 },
+    { "term": "İmparatorluk", "hint": "Birçok milleti yöneten büyük devlet", "difficulty": 3 },
+    { "term": "Parşömen", "hint": "Eski zamanlarda üzerine yazı yazılan hayvan derisi", "difficulty": 3 },
+    { "term": "Giyotin", "hint": "Fransız Devrimi'nde kullanılan idam aracı", "difficulty": 3 },
+    { "term": "Feodalizm", "hint": "Orta çağda toprağa dayalı yönetim sistemi", "difficulty": 3 },
+    { "term": "Sanayi Devrimi", "hint": "Makine gücünün üretime girdiği dönem", "difficulty": 3 },
+    { "term": "Hiyeroglif", "hint": "Eski Mısır'ın resimli yazısı", "difficulty": 3 },
+    { "term": "Kolezyum", "hint": "Roma'da gladyatör dövüşlerinin yapıldığı arena", "difficulty": 3 },
+    { "term": "Barut", "hint": "Ateşli silahların icadını sağlayan patlayıcı madde", "difficulty": 3 },
+    { "term": "Mezopotamya", "hint": "Fırat ve Dicle nehirleri arasındaki medeniyet beşiği", "difficulty": 3 },
+    { "term": "Sümerler", "hint": "Yazıyı icat eden medeniyet", "difficulty": 3 },
+    { "term": "İpek Yolu", "hint": "Çin'den Avrupa'ya uzanan tarihi ticaret rotası", "difficulty": 3 }
+  ]
+}

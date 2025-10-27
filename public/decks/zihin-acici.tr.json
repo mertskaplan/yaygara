@@ -1,0 +1,23 @@
+{
+  "id": "zihin-acici.tr",
+  "name": "Zihin Açıcı",
+  "language": "tr",
+  "difficulty": "medium",
+  "words": [
+    { "term": "Felsefe", "hint": "Düşünce sanatı", "difficulty": 2 },
+    { "term": "Vicdan", "hint": "İçimizdeki doğruyu söyleyen ses", "difficulty": 2 },
+    { "term": "Paradoks", "hint": "Kendi içinde çelişen durum", "difficulty": 2 },
+    { "term": "Empati", "hint": "Kendini başkasının yerine koyma", "difficulty": 2 },
+    { "term": "Sezgi", "hint": "Akıl yürütmeden anlama yetisi", "difficulty": 2 },
+    { "term": "Kaos", "hint": "Tam bir düzensizlik hali", "difficulty": 2 },
+    { "term": "Adalet", "hint": "Herkesin hakkını aldığı durum", "difficulty": 2 },
+    { "term": "Özveri", "hint": "Kendi çıkarından vazgeçme", "difficulty": 2 },
+    { "term": "Melankoli", "hint": "Derin bir hüzün hali", "difficulty": 2 },
+    { "term": "Nostalji", "hint": "Geçmişe duyulan özlem", "difficulty": 2 },
+    { "term": "İroni", "hint": "Söylenenin tersini kastetme", "difficulty": 2 },
+    { "term": "Hayal Gücü", "hint": "Zihinde canlandırma yeteneği", "difficulty": 2 },
+    { "term": "Kader", "hint": "Alın yazısı", "difficulty": 2 },
+    { "term": "Aforizma", "hint": "Özdeyiş, vecize", "difficulty": 2 },
+    { "term": "Metafor", "hint": "Bir şeyi başka bir şeyle anlatma, benzetme", "difficulty": 2 }
+  ]
+}
