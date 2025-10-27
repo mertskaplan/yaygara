@@ -1,0 +1,23 @@
+{
+  "id": "baslangic.tr",
+  "name": "Başlangıç",
+  "language": "tr",
+  "difficulty": "easy",
+  "words": [
+    { "term": "Elma", "hint": "Kırmızı veya yeşil renkli bir meyve", "difficulty": 1 },
+    { "term": "Kedi", "hint": "Miyavlayan evcil bir hayvan", "difficulty": 1 },
+    { "term": "Güneş", "hint": "Gökyüzün�� aydınlatan yıldız", "difficulty": 1 },
+    { "term": "Araba", "hint": "Tekerlekleri olan bir taşıt", "difficulty": 1 },
+    { "term": "Kitap", "hint": "Okumak için sayfaları olan nesne", "difficulty": 1 },
+    { "term": "Masa", "hint": "Üzerine eşya konulan mobilya", "difficulty": 1 },
+    { "term": "Su", "hint": "İçtiğimiz renksiz sıvı", "difficulty": 1 },
+    { "term": "Ev", "hint": "İçinde yaşadığımız yapı", "difficulty": 1 },
+    { "term": "Top", "hint": "Yuvarlak oyun aracı", "difficulty": 1 },
+    { "term": "Ağaç", "hint": "Yaprakları olan bitki", "difficulty": 1 },
+    { "term": "Telefon", "hint": "Konuşmak için kullanılan cihaz", "difficulty": 1 },
+    { "term": "Gözlük", "hint": "Daha iyi görmek için takılır", "difficulty": 1 },
+    { "term": "Saat", "hint": "Zamanı gösteren alet", "difficulty": 1 },
+    { "term": "Ayakkabı", "hint": "Ayağa giyilen giysi", "difficulty": 1 },
+    { "term": "Kapı", "hint": "Bir odaya girmek için açılır", "difficulty": 1 }
+  ]
+}

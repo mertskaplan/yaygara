@@ -1,0 +1,17 @@
+# Git
+.git
+.gitignore
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+# Node / Bun
+node_modules
+npm-debug.log
+bun.lockb
+# Build output & cache
+dist
+.vite
+# IDE/Editor specific
+.vscode
+.idea

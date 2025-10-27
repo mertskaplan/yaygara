@@ -1,0 +1,23 @@
+{
+  "id": "karanlik-seruven.tr",
+  "name": "Karanlık Serüven",
+  "language": "tr",
+  "difficulty": "medium",
+  "words": [
+    { "term": "Zindan", "hint": "Yeraltındaki hapishane", "difficulty": 2 },
+    { "term": "Büyücü", "hint": "Sihir yapan kişi", "difficulty": 2 },
+    { "term": "Ejderha", "hint": "Ateş püskürten efsanevi yaratık", "difficulty": 2 },
+    { "term": "Labirent", "hint": "Çıkışı zor bulunan karmaşık yollar", "difficulty": 2 },
+    { "term": "Hayalet", "hint": "Ölü birinin ruhu", "difficulty": 2 },
+    { "term": "Tılsım", "hint": "Sihirli güçleri olan nesne", "difficulty": 2 },
+    { "term": "Kehanet", "hint": "Gelecek hakkında önceden haber verme", "difficulty": 2 },
+    { "term": "Gölge", "hint": "Işığın engellenmesiyle oluşan karanlık", "difficulty": 2 },
+    { "term": "Lanet", "hint": "Kötü bir dilek, beddua", "difficulty": 2 },
+    { "term": "Şövalye", "hint": "Orta çağda zırhlı atlı asker", "difficulty": 2 },
+    { "term": "Hazine", "hint": "Değerli eşyaların saklandığı yer", "difficulty": 2 },
+    { "term": "Vampir", "hint": "Kan emen ölümsüz varlık", "difficulty": 2 },
+    { "term": "Kurt Adam", "hint": "Dolunayda kurda dönüşen insan", "difficulty": 2 },
+    { "term": "Kale", "hint": "Korunmak için yapılmış büyük yapı", "difficulty": 2 },
+    { "term": "Sır", "hint": "Gizli tutulan bilgi", "difficulty": 2 }
+  ]
+}
