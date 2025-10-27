@@ -22,6 +22,7 @@ interface GameState {
   currentTeamIndex: number;
   words: Word[];
   unseenWords: Word[];
+  guessedWordsThisRound: Word[];
   currentWord: Word | null;
   lastGuessedWord: Word | null;
   lastPassedWord: Word | null;
@@ -59,6 +60,7 @@ export const useGameStore = create<GameState>()(
       currentTeamIndex: 0,
       words: [],
       unseenWords: [],
+      guessedWordsThisRound: [],
       currentWord: null,
       lastGuessedWord: null,
       lastPassedWord: null,
@@ -112,6 +114,7 @@ export const useGameStore = create<GameState>()(
           state.gameStatus = 'get-ready';
           state.words = words;
           state.unseenWords = [...words].sort(() => Math.random() - 0.5);
+          state.guessedWordsThisRound = [];
           state.currentTeamIndex = 0;
           state.round = 1;
           state.bonusTime = null;
@@ -156,6 +159,7 @@ export const useGameStore = create<GameState>()(
               return;
             }
             state.round += 1;
+            state.guessedWordsThisRound = [];
             state.unseenWords = [...words].sort(() => Math.random() - 0.5);
             state.currentTeamIndex = nextTeamIndex;
             state.gameStatus = 'get-ready';
@@ -171,6 +175,7 @@ export const useGameStore = create<GameState>()(
             const team = state.teams[state.currentTeamIndex];
             team.score += state.currentWord.difficulty;
             state.wordsGuessedThisTurn.push(state.currentWord);
+            state.guessedWordsThisRound.push(state.currentWord);
             state.lastGuessedWord = state.currentWord;
             state.lastPassedWord = null;
           }
@@ -181,6 +186,7 @@ export const useGameStore = create<GameState>()(
             if (state.timeLeft > 3 && state.round < 3) {
               state.bonusTime = state.timeLeft;
               state.round += 1;
+              state.guessedWordsThisRound = [];
               state.unseenWords = [...state.words].sort(() => Math.random() - 0.5);
               state.gameStatus = 'get-ready'; // Same team plays again
             } else {
@@ -208,6 +214,9 @@ export const useGameStore = create<GameState>()(
             const team = state.teams[state.currentTeamIndex];
             team.score -= state.lastGuessedWord.difficulty;
             state.wordsGuessedThisTurn.pop();
+            state.guessedWordsThisRound = state.guessedWordsThisRound.filter(
+              (word) => word.term !== state.lastGuessedWord!.term
+            );
             if (state.currentWord) {
               state.unseenWords.push(state.currentWord);
             }
@@ -252,6 +261,7 @@ export const useGameStore = create<GameState>()(
           currentTeamIndex: 0,
           words: [],
           unseenWords: [],
+          guessedWordsThisRound: [],
           currentWord: null,
           lastGuessedWord: null,
           lastPassedWord: null,
