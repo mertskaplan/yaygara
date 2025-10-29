@@ -60,7 +60,7 @@ const TeamCustomization = () => {
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
       <h2 className="text-3xl font-bold text-center text-slate-700 font-display">{t('setup.customizeTitle')}</h2>
-      <div className="space-y-4">
+      <div className="space-y-4 h-setup-content overflow-y-auto p-1">
         {teams.map((team) => {
           const otherTeamsColors = usedColors.filter(c => c !== team.color);
           return (
@@ -184,7 +184,7 @@ const DeckSelection = () => {
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
       <h2 className="text-3xl font-bold text-center text-slate-700 font-display">{t('setup.deckTitle')}</h2>
-      <div className="space-y-3 max-h-80 overflow-y-auto p-1">
+      <div className="space-y-3 h-setup-content overflow-y-auto p-1">
         {isLoadingDecks ? (
           <div className="flex justify-center items-center h-48">
             <Loader2 className="w-8 h-8 animate-spin text-sky-500" />
