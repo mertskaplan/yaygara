@@ -77,7 +77,10 @@ function updateWranglerJsonc() {
 }
 
 function runSetupCommands() {
-    const commands = [];
+    const commands = [
+    "rm -rf public/data/index.json",
+    "rm -rf public/decks/index.json"
+];
     
     if (commands.length === 0) {
         console.log('⊘ No setup commands to run');
