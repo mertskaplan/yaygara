@@ -86,7 +86,7 @@ const TeamCustomization = () => {
                 type="text"
                 value={team.name}
                 onChange={(e) => updateTeam(team.id, e.target.value, team.color)}
-                className="text-lg font-semibold border-2 focus:ring-sky-500"
+                className="h-[60px] text-lg font-semibold border-2 focus:ring-sky-500"
                 style={{ borderLeftColor: team.color, borderLeftWidth: '6px' }}
               />
             </div>
