@@ -2,7 +2,7 @@ version: '3.8'
 services:
   vocabrush:
     build:
-      context: .
+      context: https://github.com/mertskaplan/vocabrush.git
       dockerfile: Dockerfile
     container_name: vocabrush
     ports:
