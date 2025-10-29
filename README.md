@@ -1,5 +1,4 @@
 # VocabRush: The Playful Word Party Game
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/mertskaplan/vocabrush)
 VocabRush is a vibrant, mobile-first, offline-capable Progressive Web App (PWA) designed as a word-guessing party game. Inspired by classics like Taboo and Charades, it's built for fun, fast-paced team play. The entire application runs client-side with no server dependency, ensuring privacy and full offline functionality. The user experience is defined by a 'Kid Playful' art style, featuring bright colors, rounded shapes, and charming animations.
 The game flow guides users through a simple setup process: selecting a language, choosing the number of teams (2-4), customizing team names and colors, and picking a word deck. The core gameplay consists of three distinct rounds, each with unique rules: 1) Free description, 2) One-word clues, and 3) Charades (acting only). Teams score points based on the difficulty of correctly guessed words within a 60-second timer. The game culminates in a final scoreboard celebrating the winning team.
 ## ✨ Key Features
@@ -25,27 +24,36 @@ Follow these instructions to get a local copy up and running for development and
 -   [Node.js](https://nodejs.org/) (v18 or later)
 -   [Bun](https://bun.sh/) package manager
 ### Installation
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/your-username/vocab_rush.git
-    cd vocab_rush
-    ```
-2.  **Install dependencies:**
-    ```sh
-    bun install
-    ```
-3.  **Run the development server:**
-    ```sh
-    bun run dev
-    ```
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/mertskaplan/vocabrush.git
+   cd vocabrush
+   ```
+2. **Install dependencies:**
+   ```sh
+   bun install
+   ```
+3. **Run the development server:**
+   ```sh
+   bun run dev
+   ```
 The application will be available at `http://localhost:3000` (or the next available port).
 ## 🐳 Running with Docker
 If you have Docker and Docker Compose installed, you can easily build and run the application in a containerized environment.
-1.  **Build and start the services:**
-    ```sh
-    docker-compose up --build
-    ```
-The application will be available at `http://localhost:8622`. To stop the container, press `CTRL+C`.
+1. **docker-composer.yml**
+   ```
+   version: '3.8'
+   services:
+     vocabrush:
+       build:
+         context: https://github.com/mertskaplan/vocabrush.git
+         dockerfile: Dockerfile
+       container_name: vocabrush
+       ports:
+         - "8622:80"
+       restart: unless-stopped
+   ```
+The application will be available at `http://localhost:8622`.
 ## 📁 Project Structure
 The project follows a standard Vite + React structure with some key directories:
 -   `public/`: Contains all static assets.
