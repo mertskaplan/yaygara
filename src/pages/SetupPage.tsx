@@ -194,10 +194,10 @@ const DeckSelection = () => {
     const wordCount = deck.words?.length || 0;
     const isSelected = selectedDeck?.id === deck.id;
     const difficultyFactor = {
-      easy: 5,
-      medium: 4,
-      hard: 3,
-    }[deck.difficulty] || 4;
+      easy: 4,
+      medium: 3,
+      hard: 2,
+    }[deck.difficulty] || 3;
     const estimatedTime = Math.round((wordCount * 3) / difficultyFactor);
     return (
       <Button
