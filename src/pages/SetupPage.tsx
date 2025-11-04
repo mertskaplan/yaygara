@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2, BarChart3 } from 'lucide-react';
+import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useGameStore, TEAM_COLORS } from '@/stores/useGameStore';
@@ -59,35 +59,38 @@ const TeamCustomization = () => {
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
       <h2 className="text-3xl font-bold text-center text-slate-700 font-display">{t('setup.customizeTitle')}</h2>
-      <div className="space-y-4 h-setup-content overflow-y-auto p-1">
+      <div className="space-y-6 h-setup-content overflow-y-auto p-1">
         {teams.map((team) => {
           const otherTeamsColors = usedColors.filter(c => c !== team.color);
           return (
-            <div key={team.id} className="flex items-center gap-3 p-3 bg-white rounded-2xl shadow-md">
-              <div className="flex-shrink-0 grid grid-cols-4 gap-1 bg-slate-100 p-2 rounded-lg">
+            <div key={team.id} className="flex flex-col gap-3 p-4 bg-white rounded-2xl shadow-md">
+              <label className="font-bold text-slate-600" style={{ color: team.color }}>
+                {t('setup.teamLabel', { number: team.id + 1 })}
+              </label>
+              <Input
+                type="text"
+                value={team.name}
+                onChange={(e) => updateTeam(team.id, e.target.value, team.color)}
+                className="w-full h-14 text-xl font-bold border-2 focus:ring-2 focus:ring-offset-2 rounded-xl px-4"
+                style={{ color: team.color, borderColor: team.color, ringColor: team.color }}
+              />
+              <div className="flex flex-wrap gap-3 pt-2">
                 {TEAM_COLORS.map(color => {
                   const isTaken = otherTeamsColors.includes(color);
                   return (
                     <button
                       key={color}
                       onClick={() => updateTeam(team.id, team.name, color)}
-                      className={`w-5 h-5 rounded-full transition-transform hover:scale-125 ${isTaken ? 'opacity-50 cursor-not-allowed' : ''}`}
-                      style={{ backgroundColor: color }}
+                      className={`w-8 h-8 rounded-full transition-transform hover:scale-110 ring-offset-2 ${isTaken ? 'opacity-50 cursor-not-allowed' : 'hover:ring-2'} ${team.color === color ? 'ring-2' : ''}`}
+                      style={{ backgroundColor: color, ringColor: color }}
                       disabled={isTaken}
                       aria-label={`Select color ${color}`}
                     >
-                      {team.color === color && <Check className="w-4 h-4 text-white m-auto" />}
+                      {team.color === color && <Check className="w-5 h-5 text-white m-auto" />}
                     </button>
                   );
                 })}
               </div>
-              <Input
-                type="text"
-                value={team.name}
-                onChange={(e) => updateTeam(team.id, e.target.value, team.color)}
-                className="h-[60px] text-lg font-semibold border-2 focus:ring-sky-500"
-                style={{ borderLeftColor: team.color, borderLeftWidth: '6px' }}
-              />
             </div>
           );
         })}
