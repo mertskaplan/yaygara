@@ -14,7 +14,7 @@
     "completeAndPlay": "Kurulumu Tamamla ve Oyna!",
     "uploadDeck": "Özel Deste Yükle",
     "teamDefaultName": "Takım",
-    "deckWords": "({count} kelime)"
+    "deckWords": "{count} kelime"
   },
   "game": {
     "getReadyTitle": "{teamName} Sırası",
@@ -96,7 +96,7 @@
       "Süper",
       "Efsanevi",
       "Usta",
-      "Fırtınalı",
+      "F��rtınalı",
       "Yalnız",
       "Hızlı",
       "Sakin",
@@ -169,5 +169,10 @@
       "Kaptanlar",
       "Saldırganlar"
     ]
+  },
+  "deckDifficulty": {
+    "easy": "Kolay",
+    "medium": "Orta",
+    "hard": "Zor"
   }
 }

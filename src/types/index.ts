@@ -8,7 +8,7 @@ export interface Deck {
   name: string;
   language: string;
   words?: Word[];
-  count?: number;
+  difficulty: 'easy' | 'medium' | 'hard';
 }
 export interface Team {
   id: number;

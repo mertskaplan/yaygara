@@ -14,7 +14,7 @@
     "completeAndPlay": "Complete Setup & Play!",
     "uploadDeck": "Upload Custom Deck",
     "teamDefaultName": "Team",
-    "deckWords": "({count} words)"
+    "deckWords": "{count} words"
   },
   "game": {
     "getReadyTitle": "{teamName}'s Turn",
@@ -169,5 +169,10 @@
       "Riders",
       "Heroes"
     ]
+  },
+  "deckDifficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
   }
 }
