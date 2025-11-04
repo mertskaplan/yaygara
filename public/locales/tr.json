@@ -14,7 +14,8 @@
     "completeAndPlay": "Kurulumu Tamamla ve Oyna!",
     "uploadDeck": "Özel Deste Yükle",
     "teamDefaultName": "Takım",
-    "deckWords": "{count} kelime"
+    "deckWords": "{count} kelime",
+    "teamLabel": "{number}. Takım"
   },
   "game": {
     "getReadyTitle": "{teamName} Sırası",
