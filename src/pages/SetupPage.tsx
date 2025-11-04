@@ -8,6 +8,7 @@ import { useGameStore, TEAM_COLORS } from '@/stores/useGameStore';
 import { useShallow } from 'zustand/react/shallow';
 import type { Deck } from '@/types';
 import { useTranslations } from '@/hooks/useTranslations';
+import { cn } from '@/lib/utils';
 const containerVariants: Variants = {
   hidden: { opacity: 0, x: 100 },
   visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } },
@@ -54,7 +55,7 @@ const TeamCustomization = () => {
         updateTeam(team.id, name, team.color);
       }
     });
-  }, [language, translations, teams, updateTeam]);
+  }, [language, translations]);
   const usedColors = teams.map(t => t.color);
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
@@ -71,8 +72,11 @@ const TeamCustomization = () => {
                 type="text"
                 value={team.name}
                 onChange={(e) => updateTeam(team.id, e.target.value, team.color)}
-                className="w-full h-14 text-xl font-bold border-2 focus:ring-2 focus:ring-offset-2 rounded-xl px-4"
-                style={{ color: team.color, borderColor: team.color, ringColor: team.color }}
+                className={cn(
+                  "w-full h-14 text-xl font-bold border-2 focus:ring-2 focus:ring-offset-2 rounded-xl px-4",
+                  `focus:ring-[${team.color}]`
+                )}
+                style={{ color: team.color, borderColor: team.color }}
               />
               <div className="flex flex-wrap gap-3 pt-2">
                 {TEAM_COLORS.map(color => {
@@ -81,8 +85,14 @@ const TeamCustomization = () => {
                     <button
                       key={color}
                       onClick={() => updateTeam(team.id, team.name, color)}
-                      className={`w-8 h-8 rounded-full transition-transform hover:scale-110 ring-offset-2 ${isTaken ? 'opacity-50 cursor-not-allowed' : 'hover:ring-2'} ${team.color === color ? 'ring-2' : ''}`}
-                      style={{ backgroundColor: color, ringColor: color }}
+                      className={cn(
+                        'w-8 h-8 rounded-full transition-transform hover:scale-110 ring-offset-2',
+                        isTaken ? 'opacity-50 cursor-not-allowed' : 'hover:ring-2',
+                        team.color === color ? 'ring-2' : '',
+                        `hover:ring-[${color}]`,
+                        team.color === color ? `ring-[${color}]` : ''
+                      )}
+                      style={{ backgroundColor: color }}
                       disabled={isTaken}
                       aria-label={`Select color ${color}`}
                     >
