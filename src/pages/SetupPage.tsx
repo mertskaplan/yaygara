@@ -193,6 +193,12 @@ const DeckSelection = () => {
   const DeckButton = ({ deck, icon: Icon }: { deck: Deck, icon: React.ElementType }) => {
     const wordCount = deck.words?.length || 0;
     const isSelected = selectedDeck?.id === deck.id;
+    const difficultyFactor = {
+      easy: 5,
+      medium: 4,
+      hard: 3,
+    }[deck.difficulty] || 4;
+    const estimatedTime = Math.round((wordCount * 3) / difficultyFactor);
     return (
       <Button
         onClick={() => selectDeck(deck)}
@@ -206,6 +212,8 @@ const DeckSelection = () => {
             <span>{t('setup.deckWords', { count: wordCount })}</span>
             <span>&bull;</span>
             <span>{t(`deckDifficulty.${deck.difficulty}`)}</span>
+            <span>&bull;</span>
+            <span>{t('setup.estimatedTime', { time: estimatedTime })}</span>
           </div>
         </div>
       </Button>
