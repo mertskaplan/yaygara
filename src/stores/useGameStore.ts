@@ -7,12 +7,12 @@ export type GameStatus = 'setup' | 'get-ready' | 'playing' | 'turn-summary' | 'g
 export type SetupStep = 'teams' | 'customize' | 'deck';
 export type TurnEndReason = 'time-up' | 'words-exhausted' | null;
 export const TEAM_COLORS = [
-  '#fecaca', // Pastel Red
-  '#bfdbfe', // Pastel Blue
-  '#bbf7d0', // Pastel Green
-  '#e9d5ff', // Pastel Purple
-  '#fed7aa', // Pastel Orange
-  '#d1d5db', // Pastel Slate
+  '#3e73d9', // Blue
+  '#d14756', // Red
+  '#33b864', // Green
+  '#7c5ee0', // Purple
+  '#e47b4f', // Orange
+  '#2f2f2f', // Black
 ];
 const TURN_DURATION = 45;
 interface GameState {
