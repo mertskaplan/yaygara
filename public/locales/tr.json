@@ -14,8 +14,7 @@
     "completeAndPlay": "Kurulumu Tamamla ve Oyna!",
     "uploadDeck": "Özel Deste Yükle",
     "teamDefaultName": "Takım",
-    "deckWords": "{count} kelime",
-    "teamLabel": "{number}. Takım"
+    "deckWords": "{count} kelime"
   },
   "game": {
     "getReadyTitle": "{teamName} Sırası",
@@ -58,7 +57,7 @@
     "goalTitle": "Amaç",
     "goalDescription": "Kazanmak için 3 turda diğer takımlardan daha fazla kelime tahmin edin! Her turda aynı kelimeler kullanılır, ancak kurallar zorlaşır.",
     "round1Title": "1. Tur: Serbest Anlatım",
-    "round1Description": "Kelimeyi istediğiniz kelimeleri, sesleri veya jestleri kullanarak anlatın. Önemli: Karttaki kelimeyi, bir parçasını, onunla kafiyeli kelimeleri veya başka dildeki çevirisini söyleyemezsiniz.",
+    "round1Description": "Kelimeyi istediğiniz kelimeleri, sesleri veya jestleri kullanarak anlatın. ��nemli: Karttaki kelimeyi, bir parçasını, onunla kafiyeli kelimeleri veya başka dildeki çevirisini söyleyemezsiniz.",
     "round2Title": "2. Tur: Sadece Tek Kelime",
     "round2Description": "Bu sefer ipucu olarak sadece tek bir kelime kullanabilirsiniz, jest veya vücut dili kullanamazsınız! Kelimenizi akıllıca seçin. 1. Turdaki tüm kelimeler tekrar kullanılır.",
     "round3Title": "3. Tur: Sessiz Sinema",
