@@ -54,8 +54,7 @@ const TeamCustomization = () => {
         updateTeam(team.id, name, team.color);
       }
     });
-  // eslint-disable--next-line react-hooks/exhaustive-deps
-  }, [language, translations]);
+  }, [language, translations, teams, updateTeam]);
   const usedColors = teams.map(t => t.color);
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
