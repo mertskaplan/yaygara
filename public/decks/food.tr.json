@@ -2,10 +2,10 @@
   "id": "food.tr",
   "name": "Yiyecekler",
   "language": "tr",
-  "count": 8,
+  "difficulty": "easy",
   "words": [
     { "term": "Karpuz", "hint": "Yaz aylarında yenen büyük ve sulu bir meyve", "difficulty": 1 },
-    { "term": "Mantı", "hint": "Kayseri ile meşhur, yoğurtlu bir yemek", "difficulty": 2 },
+    { "term": "Mantı", "hint": "Kayseri ile me��hur, yoğurtlu bir yemek", "difficulty": 2 },
     { "term": "Simit", "hint": "Susamlı, yuvarlak, sokak lezzeti", "difficulty": 1 },
     { "term": "Baklava", "hint": "Şerbetli, fıstıklı veya cevizli bir tatlı", "difficulty": 2 },
     { "term": "Menemen", "hint": "Domates ve biberle yapılan bir kahvaltılık", "difficulty": 1 },

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2 } from 'lucide-react';
+import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useGameStore, TEAM_COLORS } from '@/stores/useGameStore';
@@ -54,7 +54,7 @@ const TeamCustomization = () => {
         updateTeam(team.id, name, team.color);
       }
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable--next-line react-hooks/exhaustive-deps
   }, [language, translations]);
   const usedColors = teams.map(t => t.color);
   return (
@@ -160,7 +160,7 @@ const DeckSelection = () => {
             name: parsedDeck.name || file.name.replace('.json', ''),
             language: language,
             words: parsedDeck.words,
-            count: parsedDeck.words.length,
+            difficulty: parsedDeck.difficulty || 'medium',
           };
           setCustomDeck(newDeck);
         } else {
@@ -181,6 +181,27 @@ const DeckSelection = () => {
     startGame(selectedDeck.words);
     navigate('/play');
   };
+  const DeckButton = ({ deck, icon: Icon }: { deck: Deck, icon: React.ElementType }) => {
+    const wordCount = deck.words?.length || 0;
+    const isSelected = selectedDeck?.id === deck.id;
+    return (
+      <Button
+        onClick={() => selectDeck(deck)}
+        variant={isSelected ? 'default' : 'outline'}
+        className={`w-full h-auto text-left font-semibold rounded-2xl p-4 flex items-center gap-4 ${isSelected ? 'bg-sky-500 text-white' : 'bg-white'}`}
+      >
+        <Icon className="w-8 h-8 flex-shrink-0" />
+        <div className="flex-grow">
+          <p className="text-lg truncate">{deck.name}</p>
+          <div className={`flex items-center gap-2 text-sm ${isSelected ? 'text-white/80' : 'text-muted-foreground'}`}>
+            <span>{t('setup.deckWords', { count: wordCount })}</span>
+            <span>&bull;</span>
+            <span>{t(`deckDifficulty.${deck.difficulty}`)}</span>
+          </div>
+        </div>
+      </Button>
+    );
+  };
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
       <h2 className="text-3xl font-bold text-center text-slate-700 font-display">{t('setup.deckTitle')}</h2>
@@ -191,30 +212,8 @@ const DeckSelection = () => {
           </div>
         ) : (
           <>
-            {decks.map((deck) => (
-              <Button
-                key={deck.id}
-                onClick={() => selectDeck(deck)}
-                variant={selectedDeck?.id === deck.id ? 'default' : 'outline'}
-                className={`w-full h-16 text-lg justify-start font-semibold rounded-2xl ${selectedDeck?.id === deck.id ? 'bg-sky-500 text-white' : 'bg-white'}`}
-              >
-                <BookOpen className="mr-4 flex-shrink-0" />
-                <span className="truncate">{deck.name}</span>
-                <span className={`ml-2 text-sm ${selectedDeck?.id === deck.id ? 'text-white/80' : 'text-muted-foreground'}`}>{t('setup.deckWords', { count: deck.count })}</span>
-              </Button>
-            ))}
-            {customDeck && (
-              <Button
-                key={customDeck.id}
-                onClick={() => selectDeck(customDeck)}
-                variant={selectedDeck?.id === customDeck.id ? 'default' : 'outline'}
-                className={`w-full h-16 text-lg justify-start font-semibold rounded-2xl ${selectedDeck?.id === customDeck.id ? 'bg-sky-500 text-white' : 'bg-white'}`}
-              >
-                <Upload className="mr-4 flex-shrink-0" />
-                <span className="truncate">{customDeck.name}</span>
-                <span className={`ml-2 text-sm ${selectedDeck?.id === customDeck.id ? 'text-white/80' : 'text-muted-foreground'}`}>{t('setup.deckWords', { count: customDeck.count })}</span>
-              </Button>
-            )}
+            {decks.map((deck) => <DeckButton key={deck.id} deck={deck} icon={BookOpen} />)}
+            {customDeck && <DeckButton key={customDeck.id} deck={customDeck} icon={Upload} />}
           </>
         )}
         <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".json" className="hidden" />

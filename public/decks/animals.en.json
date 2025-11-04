@@ -2,7 +2,7 @@
   "id": "animals.en",
   "name": "Animals",
   "language": "en",
-  "count": 9,
+  "difficulty": "easy",
   "words": [
     { "term": "Elephant", "hint": "Large animal with a trunk", "difficulty": 2 },
     { "term": "Lion", "hint": "King of the jungle", "difficulty": 1 },

@@ -2,7 +2,7 @@
   "id": "places.tr",
   "name": "Yerler",
   "language": "tr",
-  "count": 7,
+  "difficulty": "hard",
   "words": [
     { "term": "Kapadokya", "hint": "Peri bacalarıyla ünlü turistik bölge", "difficulty": 2 },
     { "term": "Anıtkabir", "hint": "Atatürk'ün anıt mezarı", "difficulty": 1 },

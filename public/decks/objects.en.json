@@ -2,7 +2,7 @@
   "id": "objects.en",
   "name": "Everyday Objects",
   "language": "en",
-  "count": 9,
+  "difficulty": "medium",
   "words": [
     { "term": "Bicycle", "hint": "Two-wheeled vehicle you pedal", "difficulty": 1 },
     { "term": "Microwave", "hint": "Heats food up quickly", "difficulty": 1 },
