@@ -14,8 +14,7 @@
     "completeAndPlay": "Complete Setup & Play!",
     "uploadDeck": "Upload Custom Deck",
     "teamDefaultName": "Team",
-    "deckWords": "{count} words",
-    "teamLabel": "Team {number}"
+    "deckWords": "{count} words"
   },
   "game": {
     "getReadyTitle": "{teamName}'s Turn",

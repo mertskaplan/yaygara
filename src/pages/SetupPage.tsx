@@ -55,7 +55,7 @@ const TeamCustomization = () => {
         updateTeam(team.id, name, team.color);
       }
     });
-  }, [language, translations]);
+  }, [language, translations, teams, updateTeam]);
   const usedColors = teams.map(t => t.color);
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
@@ -65,9 +65,6 @@ const TeamCustomization = () => {
           const otherTeamsColors = usedColors.filter(c => c !== team.color);
           return (
             <div key={team.id} className="flex flex-col gap-3 p-4 bg-white rounded-2xl shadow-md">
-              <label className="font-bold text-slate-600" style={{ color: team.color }}>
-                {t('setup.teamLabel', { number: team.id + 1 })}
-              </label>
               <Input
                 type="text"
                 value={team.name}
