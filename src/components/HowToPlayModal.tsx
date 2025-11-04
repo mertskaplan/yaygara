@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Gamepad2, Mic, Clapperboard, Quote, SkipForward, Ban, MessageSquareOff, Timer } from 'lucide-react';
+import { Gamepad2, Mic, Clapperboard, Quote, SkipForward, Timer } from 'lucide-react';
 import { useTranslations } from '@/hooks/useTranslations';
 interface HowToPlayModalProps {
   isOpen: boolean;
@@ -65,16 +65,6 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({ isOpen, onClose 
               icon={SkipForward}
               title={t('howToPlay.passingTitle')}
               description={t('howToPlay.passingDescription')}
-            />
-            <RuleStep
-              icon={Ban}
-              title={t('howToPlay.forbiddenTitle')}
-              description={t('howToPlay.forbiddenDescription')}
-            />
-            <RuleStep
-              icon={MessageSquareOff}
-              title={t('howToPlay.round2ExtraTitle')}
-              description={t('howToPlay.round2ExtraDescription')}
             />
             <RuleStep
               icon={Timer}
