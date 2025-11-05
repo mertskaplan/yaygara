@@ -37,6 +37,7 @@ interface GameState {
   setLanguage: (lang: Language) => void;
   setTeamCount: (count: number, nameParts: { adjectives: string[], nouns: string[] }) => void;
   updateTeam: (id: number, name: string, color: string) => void;
+  regenerateTeamName: (teamId: number, nameParts: { adjectives: string[], nouns: string[] }) => void;
   setSetupStep: (step: SetupStep) => void;
   selectDeck: (deck: Deck) => void;
   setCustomDeck: (deck: Deck) => void;
@@ -105,6 +106,24 @@ export const useGameStore = create<GameState>()(
             }
             team.name = name;
             team.color = color;
+          }
+        });
+      },
+      regenerateTeamName: (teamId, nameParts) => {
+        set((state) => {
+          const teamToUpdate = state.teams.find((t) => t.id === teamId);
+          if (teamToUpdate) {
+            const usedNames = new Set(state.teams.filter(t => t.id !== teamId).map((t) => t.name));
+            let newName = '';
+            let attempts = 0;
+            do {
+              const adj = nameParts.adjectives[Math.floor(Math.random() * nameParts.adjectives.length)];
+              const noun = nameParts.nouns[Math.floor(Math.random() * nameParts.nouns.length)];
+              newName = `${adj} ${noun}`;
+              attempts++;
+            } while (usedNames.has(newName) && attempts < 50); // safety break
+            teamToUpdate.name = newName;
+            teamToUpdate.isNameCustomized = true; // Treat regeneration as a user customization
           }
         });
       },
