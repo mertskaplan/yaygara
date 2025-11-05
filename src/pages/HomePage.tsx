@@ -22,14 +22,14 @@ const LanguageSelector = () => {
         className={`transition-transform duration-300 ease-in-out hover:scale-110 ${language !== 'en' ? 'opacity-50 grayscale' : ''}`}
         aria-label="Select English"
       >
-        <FlagIcon lang="en" className="w-24 h-auto rounded-lg shadow-md" />
+        <FlagIcon lang="en" className="w-16 h-auto rounded-lg shadow-md" />
       </button>
       <button
         onClick={() => selectLang('tr')}
         className={`transition-transform duration-300 ease-in-out hover:scale-110 ${language !== 'tr' ? 'opacity-50 grayscale' : ''}`}
         aria-label="Select Turkish"
       >
-        <FlagIcon lang="tr" className="w-24 h-auto rounded-lg shadow-md" />
+        <FlagIcon lang="tr" className="w-16 h-auto rounded-lg shadow-md" />
       </button>
     </div>
   );
