@@ -7,6 +7,7 @@ import { useGameStore, Language } from '@/stores/useGameStore';
 import { useShallow } from 'zustand/react/shallow';
 import { HowToPlayModal } from '@/components/HowToPlayModal';
 import { useTranslations } from '@/hooks/useTranslations';
+import { FlagIcon } from '@/components/FlagIcon';
 const LanguageSelector = () => {
   const { language, setLanguage } = useGameStore(
     useShallow((state) => ({ language: state.language, setLanguage: state.setLanguage }))
@@ -18,17 +19,17 @@ const LanguageSelector = () => {
     <div className="flex items-center justify-center gap-4">
       <button
         onClick={() => selectLang('en')}
-        className={`text-5xl transition-transform duration-300 ease-in-out hover:scale-125 ${language !== 'en' ? 'opacity-50 grayscale' : ''}`}
+        className={`transition-transform duration-300 ease-in-out hover:scale-110 ${language !== 'en' ? 'opacity-50 grayscale' : ''}`}
         aria-label="Select English"
       >
-        🇺🇸
+        <FlagIcon lang="en" className="w-24 h-auto rounded-lg shadow-md" />
       </button>
       <button
         onClick={() => selectLang('tr')}
-        className={`text-5xl transition-transform duration-300 ease-in-out hover:scale-125 ${language !== 'tr' ? 'opacity-50 grayscale' : ''}`}
+        className={`transition-transform duration-300 ease-in-out hover:scale-110 ${language !== 'tr' ? 'opacity-50 grayscale' : ''}`}
         aria-label="Select Turkish"
       >
-        🇹🇷
+        <FlagIcon lang="tr" className="w-24 h-auto rounded-lg shadow-md" />
       </button>
     </div>
   );
