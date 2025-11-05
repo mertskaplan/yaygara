@@ -44,7 +44,7 @@ const TeamCustomization = () => {
     }))
   );
   const { t, language, translations } = useTranslations();
-  const [spinning, setSpinning] = useState<number | null>(null);
+  const [rotations, setRotations] = useState<Record<number, number>>({});
   useEffect(() => {
     const nameParts = translations?.teamNameGeneration;
     if (!nameParts) return;
@@ -66,8 +66,10 @@ const TeamCustomization = () => {
     const nameParts = translations?.teamNameGeneration;
     if (!nameParts) return;
     regenerateTeamName(teamId, nameParts);
-    setSpinning(teamId);
-    setTimeout(() => setSpinning(null), 500);
+    setRotations(prev => ({
+      ...prev,
+      [teamId]: (prev[teamId] || 0) + 360,
+    }));
   };
   const usedColors = teams.map(t => t.color);
   return (
@@ -96,7 +98,7 @@ const TeamCustomization = () => {
                   onClick={() => handleRegenerateName(team.id)}
                   aria-label="Generate new random name"
                 >
-                  <motion.div animate={{ rotate: spinning === team.id ? 360 : 0 }} transition={{ duration: 0.5 }}>
+                  <motion.div animate={{ rotate: rotations[team.id] || 0 }} transition={{ duration: 0.5 }}>
                     <RefreshCw className="w-5 h-5" style={{ color: team.color }} />
                   </motion.div>
                 </Button>
