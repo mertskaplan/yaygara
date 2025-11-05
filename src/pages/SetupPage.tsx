@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2 } from 'lucide-react';
+import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useGameStore, TEAM_COLORS } from '@/stores/useGameStore';
@@ -35,10 +35,16 @@ const TeamCountSelection = () => {
   );
 };
 const TeamCustomization = () => {
-  const { teams, updateTeam, setSetupStep } = useGameStore(
-    useShallow((state) => ({ teams: state.teams, updateTeam: state.updateTeam, setSetupStep: state.setSetupStep }))
+  const { teams, updateTeam, setSetupStep, regenerateTeamName } = useGameStore(
+    useShallow((state) => ({
+      teams: state.teams,
+      updateTeam: state.updateTeam,
+      setSetupStep: state.setSetupStep,
+      regenerateTeamName: state.regenerateTeamName,
+    }))
   );
   const { t, language, translations } = useTranslations();
+  const [spinning, setSpinning] = useState<number | null>(null);
   useEffect(() => {
     const nameParts = translations?.teamNameGeneration;
     if (!nameParts) return;
@@ -56,6 +62,13 @@ const TeamCustomization = () => {
       }
     });
   }, [language, translations, teams, updateTeam]);
+  const handleRegenerateName = (teamId: number) => {
+    const nameParts = translations?.teamNameGeneration;
+    if (!nameParts) return;
+    regenerateTeamName(teamId, nameParts);
+    setSpinning(teamId);
+    setTimeout(() => setSpinning(null), 500);
+  };
   const usedColors = teams.map(t => t.color);
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
@@ -65,16 +78,29 @@ const TeamCustomization = () => {
           const otherTeamsColors = usedColors.filter(c => c !== team.color);
           return (
             <div key={team.id} className="flex flex-col gap-3 p-4 bg-white rounded-2xl shadow-md">
-              <Input
-                type="text"
-                value={team.name}
-                onChange={(e) => updateTeam(team.id, e.target.value, team.color)}
-                className={cn(
-                  "w-full h-14 text-xl font-bold border-2 focus:ring-2 focus:ring-offset-2 rounded-xl px-4",
-                  `focus:ring-[${team.color}]`
-                )}
-                style={{ color: team.color, borderColor: team.color }}
-              />
+              <div className="relative w-full">
+                <Input
+                  type="text"
+                  value={team.name}
+                  onChange={(e) => updateTeam(team.id, e.target.value, team.color)}
+                  className={cn(
+                    "w-full h-14 text-xl font-bold border-2 focus:ring-2 focus:ring-offset-2 rounded-xl px-4 pr-12",
+                    `focus:ring-[${team.color}]`
+                  )}
+                  style={{ color: team.color, borderColor: team.color }}
+                />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 h-11 w-11 rounded-lg"
+                  onClick={() => handleRegenerateName(team.id)}
+                  aria-label="Generate new random name"
+                >
+                  <motion.div animate={{ rotate: spinning === team.id ? 360 : 0 }} transition={{ duration: 0.5 }}>
+                    <RefreshCw className="w-5 h-5" style={{ color: team.color }} />
+                  </motion.div>
+                </Button>
+              </div>
               <div className="flex flex-wrap gap-3 pt-2">
                 {TEAM_COLORS.map(color => {
                   const isTaken = otherTeamsColors.includes(color);
