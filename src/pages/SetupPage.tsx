@@ -269,11 +269,13 @@ const DeckSelection = () => {
   );
 };
 const WordCountSelection = () => {
-  const { selectedDeck, setWordCount, startGame } = useGameStore(
+  const { selectedDeck, setWordCount, startGame, turnDuration, setTurnDuration } = useGameStore(
     useShallow((state) => ({
       selectedDeck: state.selectedDeck,
       setWordCount: state.setWordCount,
       startGame: state.startGame,
+      turnDuration: state.turnDuration,
+      setTurnDuration: state.setTurnDuration,
     }))
   );
   const navigate = useNavigate();
@@ -295,25 +297,45 @@ const WordCountSelection = () => {
     navigate('/play');
   };
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-8">
-      <div className="text-center">
+    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full flex flex-col">
+      <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-slate-700 font-display">{t('setup.wordCountTitle')}</h2>
-        <p className="text-slate-500 mt-2">{t('setup.wordCountDescription')}</p>
       </div>
-      <div className="bg-white p-8 rounded-2xl shadow-md space-y-6">
-        <div className="text-center">
-          <span className="text-6xl font-extrabold text-sky-500 font-display">{count}</span>
-          <p className="text-slate-500">{t('setup.deckWords', { count: '' }).trim()}</p>
+      <div className="h-setup-content overflow-y-auto space-y-8 p-1">
+        <div className="space-y-2">
+          <p className="text-slate-500 text-center">{t('setup.wordCountDescription')}</p>
+          <div className="bg-white p-6 rounded-2xl shadow-md space-y-6">
+            <div className="text-center">
+              <span className="text-6xl font-extrabold text-sky-500 font-display">{count}</span>
+              <p className="text-slate-500">{t('setup.deckWords', { count: '' }).trim()}</p>
+            </div>
+            <Slider
+              value={[count]}
+              onValueChange={(value) => setCount(value[0])}
+              min={minWords}
+              max={maxWords}
+              step={1}
+            />
+          </div>
         </div>
-        <Slider
-          value={[count]}
-          onValueChange={(value) => setCount(value[0])}
-          min={minWords}
-          max={maxWords}
-          step={1}
-        />
+        <div className="space-y-2">
+          <p className="text-slate-500 text-center">{t('setup.turnDurationDescription')}</p>
+          <div className="bg-white p-6 rounded-2xl shadow-md space-y-6">
+            <div className="text-center">
+              <span className="text-6xl font-extrabold text-sky-500 font-display">{turnDuration}</span>
+              <p className="text-slate-500">{t('setup.seconds')}</p>
+            </div>
+            <Slider
+              value={[turnDuration]}
+              onValueChange={(value) => setTurnDuration(value[0])}
+              min={15}
+              max={90}
+              step={5}
+            />
+          </div>
+        </div>
       </div>
-      <Button onClick={handleStartGame} className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-2xl">
+      <Button onClick={handleStartGame} className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-2xl mt-8">
         {t('setup.play')}
       </Button>
     </motion.div>

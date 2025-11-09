@@ -14,13 +14,14 @@ export const TEAM_COLORS = [
   '#e47b4f', // Orange
   '#2f2f2f', // Black
 ];
-const TURN_DURATION = 45;
+const DEFAULT_TURN_DURATION = 45;
 interface GameState {
   language: Language;
   teams: Team[];
   selectedDeck: Deck | null;
   customDeck: Deck | null;
   selectedWordCount: number | null;
+  turnDuration: number;
   gameStatus: GameStatus;
   setupStep: SetupStep;
   round: number;
@@ -43,6 +44,7 @@ interface GameState {
   selectDeck: (deck: Deck) => void;
   setCustomDeck: (deck: Deck) => void;
   setWordCount: (count: number) => void;
+  setTurnDuration: (duration: number) => void;
   startGame: (words: Word[]) => void;
   startTurn: () => void;
   endTurn: () => void;
@@ -62,6 +64,7 @@ export const useGameStore = create<GameState>()(
       selectedDeck: null,
       customDeck: null,
       selectedWordCount: null,
+      turnDuration: DEFAULT_TURN_DURATION,
       gameStatus: 'setup',
       setupStep: 'teams',
       round: 1,
@@ -73,7 +76,7 @@ export const useGameStore = create<GameState>()(
       lastGuessedWord: null,
       lastPassedWord: null,
       wordsGuessedThisTurn: [],
-      timeLeft: TURN_DURATION,
+      timeLeft: DEFAULT_TURN_DURATION,
       turnEndReason: null,
       bonusTime: null,
       setLanguage: (lang) => set({ language: lang, setupStep: 'teams', teams: [], selectedDeck: null, customDeck: null, selectedWordCount: null }),
@@ -136,6 +139,7 @@ export const useGameStore = create<GameState>()(
         set({ customDeck: deck, selectedDeck: deck });
       },
       setWordCount: (count) => set({ selectedWordCount: count }),
+      setTurnDuration: (duration) => set({ turnDuration: duration }),
       startGame: (words) => {
         set((state) => {
           const count = state.selectedWordCount ?? words.length;
@@ -154,7 +158,7 @@ export const useGameStore = create<GameState>()(
       startTurn: () => {
         set((state) => {
           state.gameStatus = 'playing';
-          state.timeLeft = state.bonusTime ?? TURN_DURATION;
+          state.timeLeft = state.bonusTime ?? state.turnDuration;
           state.bonusTime = null;
           state.lastGuessedWord = null;
           state.lastPassedWord = null;
@@ -279,6 +283,7 @@ export const useGameStore = create<GameState>()(
           gameStatus: 'setup',
           setupStep: 'teams',
           selectedWordCount: null,
+          turnDuration: DEFAULT_TURN_DURATION,
         });
       },
       resetGame: () => {
@@ -297,10 +302,11 @@ export const useGameStore = create<GameState>()(
           lastGuessedWord: null,
           lastPassedWord: null,
           wordsGuessedThisTurn: [],
-          timeLeft: TURN_DURATION,
+          timeLeft: DEFAULT_TURN_DURATION,
           turnEndReason: null,
           bonusTime: null,
           selectedWordCount: null,
+          turnDuration: DEFAULT_TURN_DURATION,
         });
       },
     })),
