@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2, RefreshCw } from 'lucide-react';
+import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2, RefreshCw, ListFilter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Slider } from '@/components/ui/slider';
 import { useGameStore, TEAM_COLORS } from '@/stores/useGameStore';
 import { useShallow } from 'zustand/react/shallow';
 import type { Deck } from '@/types';
@@ -138,19 +139,18 @@ const TeamCustomization = () => {
 };
 const deckFilenames = ['animals.en.json', 'objects.en.json', 'food.tr.json', 'places.tr.json'];
 const DeckSelection = () => {
-  const { language, selectDeck, selectedDeck, startGame, customDeck, setCustomDeck } = useGameStore(
+  const { language, selectDeck, selectedDeck, setSetupStep, customDeck, setCustomDeck } = useGameStore(
     useShallow((state) => ({
       language: state.language,
       selectDeck: state.selectDeck,
       selectedDeck: state.selectedDeck,
-      startGame: state.startGame,
+      setSetupStep: state.setSetupStep,
       customDeck: state.customDeck,
       setCustomDeck: state.setCustomDeck,
     }))
   );
   const [decks, setDecks] = useState<Deck[]>([]);
   const [isLoadingDecks, setIsLoadingDecks] = useState(true);
-  const navigate = useNavigate();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { t } = useTranslations();
   useEffect(() => {
@@ -210,13 +210,9 @@ const DeckSelection = () => {
     };
     reader.readAsText(file);
   };
-  const handleStartGame = () => {
-    if (!selectedDeck || !selectedDeck.words) {
-      alert(`Error: Deck "${selectedDeck?.name}" has no words or is invalid.`);
-      return;
-    }
-    startGame(selectedDeck.words);
-    navigate('/play');
+  const handleContinue = () => {
+    if (!selectedDeck) return;
+    setSetupStep('word-count');
   };
   const DeckButton = ({ deck, icon: Icon }: { deck: Deck, icon: React.ElementType }) => {
     const wordCount = deck.words?.length || 0;
@@ -266,8 +262,59 @@ const DeckSelection = () => {
           <Upload className="mr-4" /> {t('setup.uploadDeck')}
         </Button>
       </div>
-      <Button onClick={handleStartGame} disabled={!selectedDeck} className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-2xl disabled:bg-slate-300">
-        {t('setup.completeAndPlay')}
+      <Button onClick={handleContinue} disabled={!selectedDeck} className="w-full h-14 text-lg font-bold bg-sky-500 hover:bg-sky-600 rounded-2xl disabled:bg-slate-300">
+        {t('setup.continue')}
+      </Button>
+    </motion.div>
+  );
+};
+const WordCountSelection = () => {
+  const { selectedDeck, setWordCount, startGame } = useGameStore(
+    useShallow((state) => ({
+      selectedDeck: state.selectedDeck,
+      setWordCount: state.setWordCount,
+      startGame: state.startGame,
+    }))
+  );
+  const navigate = useNavigate();
+  const { t } = useTranslations();
+  const maxWords = selectedDeck?.words?.length || 5;
+  const minWords = Math.min(5, maxWords);
+  const [count, setCount] = useState(maxWords);
+  useEffect(() => {
+    if (selectedDeck) {
+      setCount(selectedDeck.words?.length || 5);
+    }
+  }, [selectedDeck]);
+  if (!selectedDeck || !selectedDeck.words) {
+    return null; // Or a fallback UI
+  }
+  const handleStartGame = () => {
+    setWordCount(count);
+    startGame(selectedDeck.words!);
+    navigate('/play');
+  };
+  return (
+    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-8">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold text-slate-700 font-display">{t('setup.wordCountTitle')}</h2>
+        <p className="text-slate-500 mt-2">{t('setup.wordCountDescription')}</p>
+      </div>
+      <div className="bg-white p-8 rounded-2xl shadow-md space-y-6">
+        <div className="text-center">
+          <span className="text-6xl font-extrabold text-sky-500 font-display">{count}</span>
+          <p className="text-slate-500">{t('setup.deckWords', { count: '' }).trim()}</p>
+        </div>
+        <Slider
+          value={[count]}
+          onValueChange={(value) => setCount(value[0])}
+          min={minWords}
+          max={maxWords}
+          step={1}
+        />
+      </div>
+      <Button onClick={handleStartGame} className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-2xl">
+        {t('setup.play')}
       </Button>
     </motion.div>
   );
@@ -276,6 +323,7 @@ const STEPS: { [key: string]: { component: React.FC, icon: React.FC<any> } } = {
   teams: { component: TeamCountSelection, icon: Users },
   customize: { component: TeamCustomization, icon: Palette },
   deck: { component: DeckSelection, icon: BookOpen },
+  'word-count': { component: WordCountSelection, icon: ListFilter },
 };
 export function SetupPage() {
   const { setupStep, setSetupStep, resetSetup } = useGameStore(
@@ -290,6 +338,8 @@ export function SetupPage() {
       setSetupStep('teams');
     } else if (setupStep === 'deck') {
       setSetupStep('customize');
+    } else if (setupStep === 'word-count') {
+      setSetupStep('deck');
     }
   };
   const CurrentStepComponent = STEPS[setupStep].component;

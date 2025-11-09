@@ -4,7 +4,7 @@ import { immer } from 'zustand/middleware/immer';
 import type { Deck, Team, Word } from '@/types';
 export type Language = 'en' | 'tr';
 export type GameStatus = 'setup' | 'get-ready' | 'playing' | 'turn-summary' | 'game-over';
-export type SetupStep = 'teams' | 'customize' | 'deck';
+export type SetupStep = 'teams' | 'customize' | 'deck' | 'word-count';
 export type TurnEndReason = 'time-up' | 'words-exhausted' | null;
 export const TEAM_COLORS = [
   '#3e73d9', // Blue
@@ -20,6 +20,7 @@ interface GameState {
   teams: Team[];
   selectedDeck: Deck | null;
   customDeck: Deck | null;
+  selectedWordCount: number | null;
   gameStatus: GameStatus;
   setupStep: SetupStep;
   round: number;
@@ -41,6 +42,7 @@ interface GameState {
   setSetupStep: (step: SetupStep) => void;
   selectDeck: (deck: Deck) => void;
   setCustomDeck: (deck: Deck) => void;
+  setWordCount: (count: number) => void;
   startGame: (words: Word[]) => void;
   startTurn: () => void;
   endTurn: () => void;
@@ -59,6 +61,7 @@ export const useGameStore = create<GameState>()(
       teams: [],
       selectedDeck: null,
       customDeck: null,
+      selectedWordCount: null,
       gameStatus: 'setup',
       setupStep: 'teams',
       round: 1,
@@ -73,7 +76,7 @@ export const useGameStore = create<GameState>()(
       timeLeft: TURN_DURATION,
       turnEndReason: null,
       bonusTime: null,
-      setLanguage: (lang) => set({ language: lang, setupStep: 'teams', teams: [], selectedDeck: null, customDeck: null }),
+      setLanguage: (lang) => set({ language: lang, setupStep: 'teams', teams: [], selectedDeck: null, customDeck: null, selectedWordCount: null }),
       setTeamCount: (count, nameParts) => {
         set((state) => {
           const usedNames = new Set<string>();
@@ -132,11 +135,15 @@ export const useGameStore = create<GameState>()(
       setCustomDeck: (deck) => {
         set({ customDeck: deck, selectedDeck: deck });
       },
+      setWordCount: (count) => set({ selectedWordCount: count }),
       startGame: (words) => {
         set((state) => {
+          const count = state.selectedWordCount ?? words.length;
+          const shuffledWords = [...words].sort(() => Math.random() - 0.5);
+          const gameWords = shuffledWords.slice(0, count);
           state.gameStatus = 'get-ready';
-          state.words = words;
-          state.unseenWords = [...words].sort(() => Math.random() - 0.5);
+          state.words = gameWords;
+          state.unseenWords = [...gameWords].sort(() => Math.random() - 0.5);
           state.guessedWordsThisRound = [];
           state.currentTeamIndex = 0;
           state.round = 1;
@@ -271,6 +278,7 @@ export const useGameStore = create<GameState>()(
           customDeck: null,
           gameStatus: 'setup',
           setupStep: 'teams',
+          selectedWordCount: null,
         });
       },
       resetGame: () => {
@@ -292,6 +300,7 @@ export const useGameStore = create<GameState>()(
           timeLeft: TURN_DURATION,
           turnEndReason: null,
           bonusTime: null,
+          selectedWordCount: null,
         });
       },
     })),
