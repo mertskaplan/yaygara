@@ -11,7 +11,6 @@ import { useTranslations } from '@/hooks/useTranslations';
 import { TurnSummaryScreen } from '@/components/TurnSummaryScreen';
 import { EndGameModal } from '@/components/EndGameModal';
 import { hexToHsl } from '@/lib/utils';
-const TURN_DURATION = 45;
 const GetReadyScreen = () => {
   const { teams, currentTeamIndex, round, startTurn, bonusTime } = useGameStore(
     useShallow((state) => ({
@@ -57,7 +56,7 @@ const GetReadyScreen = () => {
   );
 };
 const PlayingScreen = () => {
-  const { currentWord, timeLeft, handleCorrect, handlePass, tick, lastGuessedWord, lastPassedWord, undoLastAction, endTurn, resetGame } = useGameStore(
+  const { currentWord, timeLeft, handleCorrect, handlePass, tick, lastGuessedWord, lastPassedWord, undoLastAction, endTurn, resetGame, turnDuration } = useGameStore(
     useShallow((state) => ({
       currentWord: state.currentWord,
       timeLeft: state.timeLeft,
@@ -69,6 +68,7 @@ const PlayingScreen = () => {
       undoLastAction: state.undoLastAction,
       endTurn: state.endTurn,
       resetGame: state.resetGame,
+      turnDuration: state.turnDuration,
     }))
   );
   const { t } = useTranslations();
@@ -98,7 +98,7 @@ const PlayingScreen = () => {
       >
         <LogOut className="w-6 h-6" />
       </Button>
-      <TimerCircle timeLeft={timeLeft} duration={TURN_DURATION} className="w-32 h-32" />
+      <TimerCircle timeLeft={timeLeft} duration={turnDuration} className="w-32 h-32" />
       <div className="flex-grow flex items-center justify-center w-full my-6">
         <AnimatePresence mode="wait">
           {currentWord ? (
