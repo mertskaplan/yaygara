@@ -313,7 +313,6 @@ const WordCountSelection = () => {
               min={minWords}
               max={maxWords}
               step={1}
-              className="h-3"
             />
           </div>
         </div>
@@ -330,7 +329,6 @@ const WordCountSelection = () => {
               min={15}
               max={90}
               step={5}
-              className="h-3"
             />
           </div>
         </div>
