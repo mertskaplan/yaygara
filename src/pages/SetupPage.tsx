@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
-import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2, RefreshCw, ListFilter } from 'lucide-react';
+import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2, RefreshCw, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
@@ -297,10 +297,8 @@ const WordCountSelection = () => {
     navigate('/play');
   };
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full flex flex-col">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-slate-700 font-display">{t('setup.wordCountTitle')}</h2>
-      </div>
+    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
+      <h2 className="text-3xl font-bold text-center text-slate-700 font-display">{t('setup.wordCountTitle')}</h2>
       <div className="h-setup-content overflow-y-auto space-y-8 p-1">
         <div className="space-y-2">
           <p className="text-slate-500 text-center">{t('setup.wordCountDescription')}</p>
@@ -335,7 +333,7 @@ const WordCountSelection = () => {
           </div>
         </div>
       </div>
-      <Button onClick={handleStartGame} className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-2xl mt-8">
+      <Button onClick={handleStartGame} className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-2xl">
         {t('setup.play')}
       </Button>
     </motion.div>
@@ -345,7 +343,7 @@ const STEPS: { [key: string]: { component: React.FC, icon: React.FC<any> } } = {
   teams: { component: TeamCountSelection, icon: Users },
   customize: { component: TeamCustomization, icon: Palette },
   deck: { component: DeckSelection, icon: BookOpen },
-  'word-count': { component: WordCountSelection, icon: ListFilter },
+  'word-count': { component: WordCountSelection, icon: Clock },
 };
 export function SetupPage() {
   const { setupStep, setSetupStep, resetSetup } = useGameStore(
