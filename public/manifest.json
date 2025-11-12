@@ -1,6 +1,6 @@
 {
-  "name": "VocabRush",
-  "short_name": "VocabRush",
+  "name": "GuessPlosion",
+  "short_name": "GuessPlosion",
   "description": "A vibrant, mobile-first, offline-ready PWA word guessing game for teams.",
   "start_url": "/",
   "display": "fullscreen",

@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "VocabRush",
-    "slogan": "Eğlenceli Kelime Parti Oyunu",
+    "title": "GuessPlosion",
+    "slogan": "Eğlenceli Parti Oyunu",
     "howToPlay": "Nasıl Oynanır?",
     "startGame": "Oyunu Kur",
     "footer": "Mert S. Kaplan tarafından ❤️ ile yapıldı"
@@ -13,7 +13,7 @@
     "wordCountTitle": "Oyun Ayarları",
     "wordCountDescription": "Bu oyun için kelime sayısını seçin. Oyuncu başına ~7 kelime önerilir.",
     "turnDurationTitle": "Tur Süresi",
-    "turnDurationDescription": "Her turun ne kadar süreceğini ayarlayın.",
+    "turnDurationDescription": "Her sıranın kaç saniye süreceğini ayarlayın.",
     "seconds": "saniye",
     "continue": "Devam Et",
     "play": "Oyna!",
@@ -47,7 +47,7 @@
     "endGameConfirmation": {
       "title": "Oyunu Bitir?",
       "description": "Mevcut oyunu bitirmek istediğinizden emin misiniz? Tüm ilerleme kaybolacak.",
-      "cancel": "İptal",
+      "cancel": "��ptal",
       "confirm": "Bitir"
     }
   },
@@ -58,8 +58,8 @@
     "playAgain": "Tekrar Oyna"
   },
   "howToPlay": {
-    "title": "VocabRush Nasıl Oynanır",
-    "description": "Partiyi başlatmak için hızlı bir rehber!",
+    "title": "GuessPlosion Nasıl Oynanır",
+    "description": "Eğlenceyi başlatmak için hızlı bir rehber!",
     "goalTitle": "Amaç",
     "goalDescription": "Kazanmak için 3 turda diğer takımlardan daha fazla kelime tahmin edin! Her turda aynı kelimeler kullanılır, ancak kurallar zorlaşır.",
     "round1Title": "1. Tur: Serbest Anlatım",

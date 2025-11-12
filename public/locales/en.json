@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "VocabRush",
-    "slogan": "The Playful Word Party Game",
+    "title": "GuessPlosion",
+    "slogan": "The Fun Party Game",
     "howToPlay": "How to Play?",
     "startGame": "Start Game Setup",
     "footer": "Built with ❤�� at Cloudflare"
@@ -13,7 +13,7 @@
     "wordCountTitle": "Game Settings",
     "wordCountDescription": "Choose the number of words for this game.",
     "turnDurationTitle": "Turn Duration",
-    "turnDurationDescription": "Set how long each turn will last.",
+    "turnDurationDescription": "Set how many seconds each turn will last.",
     "seconds": "seconds",
     "continue": "Continue",
     "play": "Play!",
@@ -58,8 +58,8 @@
     "playAgain": "Play Again"
   },
   "howToPlay": {
-    "title": "How to Play VocabRush",
-    "description": "A quick guide to get your party started!",
+    "title": "How to Play GuessPlosion",
+    "description": "A quick guide to get the fun started!",
     "goalTitle": "The Goal",
     "goalDescription": "Guess more words than the other teams in 3 rounds to win! Each round uses the same set of words, but the rules get harder.",
     "round1Title": "Round 1: Free Description",

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'vocab-rush-v1';
+const CACHE_NAME = 'guessplosion-v1';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
