@@ -1,10 +1,10 @@
 version: '3.8'
 services:
-  vocabrush:
+  guessplosion:
     build:
-      context: https://github.com/mertskaplan/vocabrush.git
+      context: https://github.com/mertskaplan/guessplosion.git
       dockerfile: Dockerfile
-    container_name: vocabrush
+    container_name: guessplosion
     ports:
       - "8622:80"
     restart: unless-stopped

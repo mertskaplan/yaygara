@@ -4,7 +4,7 @@
  */
  {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "vocab-rush-gb-po-g5ki_0d6oejexw1",
+	"name": "guessplosion",
 	"main": "worker/index.ts",
 	"compatibility_date": "2025-04-24",
 	"assets": {
