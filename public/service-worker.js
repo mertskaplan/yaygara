@@ -3,10 +3,11 @@ const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/decks/animals.en.json',
-  '/decks/objects.en.json',
-  '/decks/food.tr.json',
-  '/decks/places.tr.json',
+  '/decks/baslangic.tr.json',
+  '/decks/zihin-acici.tr.json',
+  '/decks/karanlik-seruven.tr.json',
+  '/decks/uygarligin-izleri.tr.json',
+  '/decks/argo.tr.json',
   '/locales/en.json',
   '/locales/tr.json'
 ];
