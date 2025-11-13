@@ -2,8 +2,10 @@
   "name": "GuessPlosion",
   "short_name": "GuessPlosion",
   "description": "A vibrant, mobile-first, offline-ready PWA word guessing game for teams.",
-  "start_url": "/",
+  "scope": "https://guessplosion.mertskaplan.com/",
+  "start_url": "https://guessplosion.mertskaplan.com/",
   "display": "fullscreen",
+  "orientation": "natural",
   "background_color": "#fffbeb",
   "theme_color": "#38bdf8",
   "icons": [
