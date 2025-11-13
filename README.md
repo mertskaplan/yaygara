@@ -1,4 +1,4 @@
-# GuessPlosion: The Playful Word Party Game
+# GuessPlosion: Fun party game based on narration and guessing
 GuessPlosion is a vibrant, mobile-first, offline-capable Progressive Web App (PWA) designed as a word-guessing party game. Inspired by classics like Taboo and Charades, it's built for fun, fast-paced team play. The entire application runs client-side with no server dependency, ensuring privacy and full offline functionality. The user experience is defined by a 'Kid Playful' art style, featuring bright colors, rounded shapes, and charming animations.
 The game flow guides users through a simple setup process: selecting a language, choosing the number of teams (2-4), customizing team names and colors, and picking a word deck. The core gameplay consists of three distinct rounds, each with unique rules: 1) Free description, 2) One-word clues, and 3) Charades (acting only). Teams score points based on the difficulty of correctly guessed words within a 60-second timer. The game culminates in a final scoreboard celebrating the winning team.
 ## ✨ Key Features
