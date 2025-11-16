@@ -74,6 +74,7 @@ const PlayingScreen = () => {
   const { t } = useTranslations();
   const navigate = useNavigate();
   const [isEndGameModalOpen, setIsEndGameModalOpen] = useState(false);
+  const [isActionLocked, setIsActionLocked] = useState(false);
   useEffect(() => {
     const timer = setInterval(tick, 1000);
     return () => clearInterval(timer);
@@ -86,6 +87,16 @@ const PlayingScreen = () => {
   const handleConfirmEndGame = () => {
     resetGame();
     navigate('/');
+  };
+  const handleActionClick = (action: 'pass' | 'correct') => {
+    if (isActionLocked) return;
+    if (action === 'pass') {
+      handlePass();
+    } else {
+      handleCorrect();
+    }
+    setIsActionLocked(true);
+    setTimeout(() => setIsActionLocked(false), 1000);
   };
   return (
     <div className="relative flex flex-col items-center justify-between h-full-vh w-full max-w-md">
@@ -113,8 +124,8 @@ const PlayingScreen = () => {
       </div>
       <div className="relative grid grid-cols-2 gap-4 w-full">
         <Button
-          onClick={handlePass}
-          disabled={!currentWord}
+          onClick={() => handleActionClick('pass')}
+          disabled={!currentWord || isActionLocked}
           className="h-24 bg-rose-500 hover:bg-rose-600 text-white rounded-3xl shadow-lg text-3xl font-bold"
         >
           <X className="w-12 h-12" />
@@ -131,8 +142,8 @@ const PlayingScreen = () => {
           </Button>
         </div>
         <Button
-          onClick={handleCorrect}
-          disabled={!currentWord}
+          onClick={() => handleActionClick('correct')}
+          disabled={!currentWord || isActionLocked}
           className="h-24 bg-green-500 hover:bg-green-600 text-white rounded-3xl shadow-lg text-3xl font-bold"
         >
           <Check className="w-12 h-12" />
