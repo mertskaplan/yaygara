@@ -8,6 +8,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { HowToPlayModal } from '@/components/HowToPlayModal';
 import { useTranslations } from '@/hooks/useTranslations';
 import { FlagIcon } from '@/components/FlagIcon';
+import { PWAInstallPrompt } from '@/components/PWAInstallPrompt';
 const LanguageSelector = () => {
   const { language, setLanguage } = useGameStore(
     useShallow((state) => ({ language: state.language, setLanguage: state.setLanguage }))
@@ -91,6 +92,7 @@ export function HomePage() {
         <p>{t('home.footer')}</p>
       </footer>
       <HowToPlayModal isOpen={isHowToPlayOpen} onClose={() => setIsHowToPlayOpen(false)} />
+      <PWAInstallPrompt />
     </div>
   );
 }
