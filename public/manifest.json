@@ -1,12 +1,12 @@
 {
   "name": "Yaygara",
   "short_name": "Yaygara",
-  "description": "Fun party game based on narration and guessing",
-  "scope": "https://yaygara.mertskaplan.com/",
-  "start_url": "https://yaygara.mertskaplan.com/",
-  "display": "fullscreen",
-  "orientation": "natural",
-  "background_color": "#fffbeb",
+  "description": "The playful word guessing party game for teams.",
+  "scope": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
   "theme_color": "#38bdf8",
   "icons": [
     {
