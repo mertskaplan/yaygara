@@ -36,14 +36,10 @@ const TeamCountSelection = () => {
   );
 };
 const TeamCustomization = () => {
-  const { teams, updateTeam, setSetupStep, regenerateTeamName } = useGameStore(
-    useShallow((state) => ({
-      teams: state.teams,
-      updateTeam: state.updateTeam,
-      setSetupStep: state.setSetupStep,
-      regenerateTeamName: state.regenerateTeamName,
-    }))
-  );
+  const teams = useGameStore((state) => state.teams);
+  const updateTeam = useGameStore((state) => state.updateTeam);
+  const setSetupStep = useGameStore((state) => state.setSetupStep);
+  const regenerateTeamName = useGameStore((state) => state.regenerateTeamName);
   const { t, language, translations } = useTranslations();
   const [rotations, setRotations] = useState<Record<number, number>>({});
   useEffect(() => {
@@ -62,7 +58,7 @@ const TeamCustomization = () => {
         updateTeam(team.id, name, team.color);
       }
     });
-  }, [language, translations, teams, updateTeam]);
+  }, [language, translations, updateTeam]); // removed teams to avoid loop
   const handleRegenerateName = (teamId: number) => {
     const nameParts = translations?.teamNameGeneration;
     if (!nameParts) return;
@@ -80,22 +76,25 @@ const TeamCustomization = () => {
         {teams.map((team) => {
           const otherTeamsColors = usedColors.filter(c => c !== team.color);
           return (
-            <div key={team.id} className="flex flex-col gap-3 p-4 bg-white rounded-2xl shadow-md">
+            <div key={team.id} className="flex flex-col gap-3 p-4 bg-white rounded-2xl shadow-md border border-slate-100">
               <div className="relative w-full">
                 <Input
                   type="text"
                   value={team.name}
                   onChange={(e) => updateTeam(team.id, e.target.value, team.color)}
-                  className={cn(
-                    "w-full h-14 text-xl font-bold border-2 focus:ring-2 focus:ring-offset-2 rounded-xl px-4 pr-12",
-                    `focus:ring-[${team.color}]`
-                  )}
-                  style={{ color: team.color, borderColor: team.color }}
+                  className="w-full h-14 text-xl font-bold border-2 focus:ring-2 focus:ring-offset-2 rounded-xl px-4 pr-12 transition-all"
+                  style={{ 
+                    color: team.color, 
+                    borderColor: team.color,
+                    boxShadow: `0 0 0 2px transparent` 
+                  }}
+                  onFocus={(e) => (e.currentTarget.style.boxShadow = `0 0 0 2px ${team.color}44`)}
+                  onBlur={(e) => (e.currentTarget.style.boxShadow = 'none')}
                 />
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute right-1 top-1/2 -translate-y-1/2 h-11 w-11 rounded-lg"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 h-11 w-11 rounded-lg hover:bg-slate-50"
                   onClick={() => handleRegenerateName(team.id)}
                   aria-label="Generate new random name"
                 >
@@ -107,22 +106,24 @@ const TeamCustomization = () => {
               <div className="flex flex-wrap gap-3 pt-2">
                 {TEAM_COLORS.map(color => {
                   const isTaken = otherTeamsColors.includes(color);
+                  const isSelected = team.color === color;
                   return (
                     <button
                       key={color}
-                      onClick={() => updateTeam(team.id, team.name, color)}
+                      onClick={() => !isTaken && updateTeam(team.id, team.name, color)}
                       className={cn(
-                        'w-8 h-8 rounded-full transition-transform hover:scale-110 ring-offset-2',
-                        isTaken ? 'opacity-50 cursor-not-allowed' : 'hover:ring-2',
-                        team.color === color ? 'ring-2' : '',
-                        `hover:ring-[${color}]`,
-                        team.color === color ? `ring-[${color}]` : ''
+                        'w-10 h-10 rounded-full transition-all flex items-center justify-center ring-offset-2 relative',
+                        isTaken ? 'opacity-20 cursor-not-allowed scale-90' : 'hover:scale-110 active:scale-95 cursor-pointer'
                       )}
-                      style={{ backgroundColor: color }}
+                      style={{ 
+                        backgroundColor: color,
+                        boxShadow: isSelected ? `0 0 0 3px white, 0 0 0 6px ${color}` : 'none'
+                      }}
                       disabled={isTaken}
                       aria-label={`Select color ${color}`}
                     >
-                      {team.color === color && <Check className="w-5 h-5 text-white m-auto" />}
+                      {isSelected && <Check className="w-6 h-6 text-white drop-shadow-sm" />}
+                      {isTaken && !isSelected && <div className="absolute inset-0 flex items-center justify-center"><div className="w-full h-[2px] bg-white/50 rotate-45" /></div>}
                     </button>
                   );
                 })}
@@ -131,7 +132,7 @@ const TeamCustomization = () => {
           );
         })}
       </div>
-      <Button onClick={() => setSetupStep('deck')} className="w-full h-14 text-lg font-bold bg-sky-500 hover:bg-sky-600 rounded-2xl">
+      <Button onClick={() => setSetupStep('deck')} className="w-full h-14 text-lg font-bold bg-sky-500 hover:bg-sky-600 rounded-2xl shadow-lg transition-transform hover:scale-[1.02]">
         {t('setup.continue')}
       </Button>
     </motion.div>
@@ -139,16 +140,12 @@ const TeamCustomization = () => {
 };
 const deckFilenames = ['baslangic.tr.json', 'zihin-acici.tr.json', 'karanlik-seruven.tr.json', 'uygarligin-izleri.tr.json', 'argo.tr.json'];
 const DeckSelection = () => {
-  const { language, selectDeck, selectedDeck, setSetupStep, customDeck, setCustomDeck } = useGameStore(
-    useShallow((state) => ({
-      language: state.language,
-      selectDeck: state.selectDeck,
-      selectedDeck: state.selectedDeck,
-      setSetupStep: state.setSetupStep,
-      customDeck: state.customDeck,
-      setCustomDeck: state.setCustomDeck,
-    }))
-  );
+  const language = useGameStore((state) => state.language);
+  const selectDeck = useGameStore((state) => state.selectDeck);
+  const selectedDeck = useGameStore((state) => state.selectedDeck);
+  const setSetupStep = useGameStore((state) => state.setSetupStep);
+  const customDeck = useGameStore((state) => state.customDeck);
+  const setCustomDeck = useGameStore((state) => state.setCustomDeck);
   const [decks, setDecks] = useState<Deck[]>([]);
   const [isLoadingDecks, setIsLoadingDecks] = useState(true);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -227,9 +224,11 @@ const DeckSelection = () => {
       <Button
         onClick={() => selectDeck(deck)}
         variant={isSelected ? 'default' : 'outline'}
-        className={`w-full h-auto text-left font-semibold rounded-2xl p-4 flex items-center gap-4 ${isSelected ? 'bg-sky-500 text-white' : 'bg-white'}`}
+        className={`w-full h-auto text-left font-semibold rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 ${isSelected ? 'bg-sky-500 text-white scale-[1.02] shadow-md border-transparent' : 'bg-white border-slate-200 hover:border-sky-300'}`}
       >
-        <Icon className="w-8 h-8 flex-shrink-0" />
+        <div className={cn("p-2 rounded-xl", isSelected ? "bg-white/20" : "bg-sky-50 text-sky-500")}>
+          <Icon className="w-8 h-8 flex-shrink-0" />
+        </div>
         <div className="flex-grow">
           <p className="text-lg truncate">{deck.name}</p>
           <div className={`flex items-center gap-2 text-sm ${isSelected ? 'text-white/80' : 'text-muted-foreground'}`}>
@@ -249,7 +248,7 @@ const DeckSelection = () => {
       <div className="space-y-3 h-setup-content overflow-y-auto p-1">
         {isLoadingDecks ? (
           <div className="flex justify-center items-center h-48">
-            <Loader2 className="w-8 h-8 animate-spin text-sky-500" />
+            <Loader2 className="w-12 h-12 animate-spin text-sky-500" />
           </div>
         ) : (
           <>
@@ -258,26 +257,22 @@ const DeckSelection = () => {
           </>
         )}
         <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".json" className="hidden" />
-        <Button onClick={handleFileUploadClick} variant="outline" className="w-full h-16 text-lg justify-start font-semibold rounded-2xl bg-white/80 border-dashed">
-          <Upload className="mr-4" /> {t('setup.uploadDeck')}
+        <Button onClick={handleFileUploadClick} variant="outline" className="w-full h-16 text-lg justify-start font-semibold rounded-2xl bg-white/80 border-dashed border-2 border-slate-300 hover:border-sky-400 hover:bg-sky-50">
+          <Upload className="mr-4 text-sky-500" /> {t('setup.uploadDeck')}
         </Button>
       </div>
-      <Button onClick={handleContinue} disabled={!selectedDeck} className="w-full h-14 text-lg font-bold bg-sky-500 hover:bg-sky-600 rounded-2xl disabled:bg-slate-300">
+      <Button onClick={handleContinue} disabled={!selectedDeck} className="w-full h-14 text-lg font-bold bg-sky-500 hover:bg-sky-600 rounded-2xl disabled:bg-slate-300 shadow-lg">
         {t('setup.continue')}
       </Button>
     </motion.div>
   );
 };
 const WordCountSelection = () => {
-  const { selectedDeck, setWordCount, startGame, turnDuration, setTurnDuration } = useGameStore(
-    useShallow((state) => ({
-      selectedDeck: state.selectedDeck,
-      setWordCount: state.setWordCount,
-      startGame: state.startGame,
-      turnDuration: state.turnDuration,
-      setTurnDuration: state.setTurnDuration,
-    }))
-  );
+  const selectedDeck = useGameStore((state) => state.selectedDeck);
+  const setWordCount = useGameStore((state) => state.setWordCount);
+  const startGame = useGameStore((state) => state.startGame);
+  const turnDuration = useGameStore((state) => state.turnDuration);
+  const setTurnDuration = useGameStore((state) => state.setTurnDuration);
   const navigate = useNavigate();
   const { t } = useTranslations();
   const maxWords = selectedDeck?.words?.length || 5;
@@ -289,7 +284,7 @@ const WordCountSelection = () => {
     }
   }, [selectedDeck]);
   if (!selectedDeck || !selectedDeck.words) {
-    return null; // Or a fallback UI
+    return null;
   }
   const handleStartGame = () => {
     setWordCount(count);
@@ -300,12 +295,12 @@ const WordCountSelection = () => {
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
       <h2 className="text-3xl font-bold text-center text-slate-700 font-display">{t('setup.wordCountTitle')}</h2>
       <div className="h-setup-content overflow-y-auto space-y-8 p-1">
-        <div className="space-y-2">
-          <p className="text-slate-500 text-center">{t('setup.wordCountDescription')}</p>
-          <div className="bg-white p-6 rounded-2xl shadow-md space-y-6">
+        <div className="space-y-4">
+          <p className="text-slate-500 text-center px-4">{t('setup.wordCountDescription')}</p>
+          <div className="bg-white p-6 rounded-3xl shadow-md space-y-6 border border-slate-100">
             <div className="text-center">
-              <span className="text-6xl font-extrabold text-sky-500 font-display">{count}</span>
-              <p className="text-slate-500">{t('setup.deckWords', { count: '' }).trim()}</p>
+              <span className="text-7xl font-black text-sky-500 font-display drop-shadow-sm">{count}</span>
+              <p className="text-slate-400 font-bold uppercase tracking-widest text-xs mt-1">{t('setup.deckWords', { count: '' }).trim()}</p>
             </div>
             <Slider
               value={[count]}
@@ -316,12 +311,12 @@ const WordCountSelection = () => {
             />
           </div>
         </div>
-        <div className="space-y-2">
-          <p className="text-slate-500 text-center">{t('setup.turnDurationDescription')}</p>
-          <div className="bg-white p-6 rounded-2xl shadow-md space-y-6">
+        <div className="space-y-4">
+          <p className="text-slate-500 text-center px-4">{t('setup.turnDurationDescription')}</p>
+          <div className="bg-white p-6 rounded-3xl shadow-md space-y-6 border border-slate-100">
             <div className="text-center">
-              <span className="text-6xl font-extrabold text-sky-500 font-display">{turnDuration}</span>
-              <p className="text-slate-500">{t('setup.seconds')}</p>
+              <span className="text-7xl font-black text-sky-500 font-display drop-shadow-sm">{turnDuration}</span>
+              <p className="text-slate-400 font-bold uppercase tracking-widest text-xs mt-1">{t('setup.seconds')}</p>
             </div>
             <Slider
               value={[turnDuration]}
@@ -333,7 +328,7 @@ const WordCountSelection = () => {
           </div>
         </div>
       </div>
-      <Button onClick={handleStartGame} className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-2xl">
+      <Button onClick={handleStartGame} className="w-full h-16 text-xl font-bold bg-green-500 hover:bg-green-600 rounded-2xl shadow-lg transition-transform hover:scale-[1.02]">
         {t('setup.play')}
       </Button>
     </motion.div>
@@ -346,9 +341,9 @@ const STEPS: { [key: string]: { component: React.FC, icon: React.FC<any> } } = {
   'word-count': { component: WordCountSelection, icon: Clock },
 };
 export function SetupPage() {
-  const { setupStep, setSetupStep, resetSetup } = useGameStore(
-    useShallow((state) => ({ setupStep: state.setupStep, setSetupStep: state.setSetupStep, resetSetup: state.resetSetup }))
-  );
+  const setupStep = useGameStore((state) => state.setupStep);
+  const setSetupStep = useGameStore((state) => state.setSetupStep);
+  const resetSetup = useGameStore((state) => state.resetSetup);
   const navigate = useNavigate();
   const handleBack = () => {
     if (setupStep === 'teams') {
@@ -369,7 +364,7 @@ export function SetupPage() {
     <div className="flex flex-col items-center min-h-screen bg-background p-6 overflow-hidden">
       <div className="w-full max-w-md">
         <header className="relative flex items-center justify-center mb-8">
-          <Button onClick={handleBack} variant="ghost" size="icon" className="absolute left-0 rounded-full h-12 w-12">
+          <Button onClick={handleBack} variant="ghost" size="icon" className="absolute left-0 rounded-full h-12 w-12 hover:bg-slate-100">
             <ArrowLeft className="h-6 w-6" />
           </Button>
           <div className="flex items-center justify-center gap-3">
@@ -378,8 +373,8 @@ export function SetupPage() {
               const isActive = index === currentStepIndex;
               const isCompleted = index < currentStepIndex;
               return (
-                <div key={key} className={`p-3 rounded-full transition-colors ${isActive ? 'bg-sky-500 text-white' : isCompleted ? 'bg-green-400 text-white' : 'bg-slate-200 text-slate-400'}`}>
-                  <Icon className="h-6 w-6" />
+                <div key={key} className={`p-3 rounded-full transition-all duration-300 ${isActive ? 'bg-sky-500 text-white scale-110 shadow-lg' : isCompleted ? 'bg-green-400 text-white' : 'bg-slate-200 text-slate-400'}`}>
+                  <Icon className="h-5 w-5" />
                 </div>
               );
             })}
