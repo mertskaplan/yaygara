@@ -1,10 +1,10 @@
 version: '3.8'
 services:
-  guessplosion:
+  yaygara:
     build:
-      context: https://github.com/mertskaplan/guessplosion.git
+      context: https://github.com/mertskaplan/yaygara.git
       dockerfile: Dockerfile
-    container_name: guessplosion
+    container_name: yaygara
     ports:
       - "8622:80"
     restart: unless-stopped
