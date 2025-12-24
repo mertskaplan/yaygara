@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "GuessPlosion",
-    "slogan": "The Fun Party Game",
+    "title": "Yaygara",
+    "slogan": "Fun party game based on narration and guessing",
     "howToPlay": "How to Play?",
     "startGame": "Start Game Setup",
     "footer": "Built with ❤️ at Cloudflare"
@@ -58,7 +58,7 @@
     "playAgain": "Play Again"
   },
   "howToPlay": {
-    "title": "How to Play GuessPlosion",
+    "title": "How to Play Yaygara",
     "description": "A quick guide to get the fun started!",
     "goalTitle": "The Goal",
     "goalDescription": "Guess more words than the other teams in 3 rounds to win! Each round uses the same set of words, but the rules get harder.",

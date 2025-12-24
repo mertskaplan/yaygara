@@ -311,7 +311,7 @@ export const useGameStore = create<GameState>()(
       },
     })),
     {
-      name: 'vocab-rush-storage',
+      name: 'yaygara-storage',
       storage: createJSONStorage(() => localStorage),
     }
   )

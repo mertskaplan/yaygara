@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "GuessPlosion",
-    "slogan": "Eğlenceli Parti Oyunu",
+    "title": "Yaygara",
+    "slogan": "Anlatma ve tahmin etmeye dayalı eğlenceli parti oyunu",
     "howToPlay": "Nasıl Oynanır?",
     "startGame": "Oyunu Kur",
     "footer": "Mert S. Kaplan tarafından ❤️ ile yapıldı"
@@ -58,7 +58,7 @@
     "playAgain": "Tekrar Oyna"
   },
   "howToPlay": {
-    "title": "GuessPlosion Nasıl Oynanır",
+    "title": "Yaygara Nasıl Oynanır",
     "description": "Eğlenceyi başlatmak için hızlı bir rehber!",
     "goalTitle": "Amaç",
     "goalDescription": "Kazanmak için 3 turda diğer takımlardan daha fazla kelime tahmin edin! Her turda aynı kelimeler kullanılır, ancak kurallar zorlaşır.",
