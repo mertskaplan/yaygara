@@ -42,11 +42,19 @@ const TeamCustomization = () => {
   const regenerateTeamName = useGameStore((state) => state.regenerateTeamName);
   const { t, language, translations } = useTranslations();
   const [rotations, setRotations] = useState<Record<number, number>>({});
+  // Ref to track the language names were last generated for to avoid loops
+  const lastProcessedLanguageRef = useRef<string | null>(null);
   useEffect(() => {
     const nameParts = translations?.teamNameGeneration;
-    if (!nameParts) return;
-    const usedNames = new Set(teams.filter(t => t.isNameCustomized).map(t => t.name));
-    teams.forEach(team => {
+    if (!nameParts || !language) return;
+    // Only run the initialization logic if the language has actually changed
+    if (lastProcessedLanguageRef.current === language) return;
+    
+    // Get current teams snapshot to avoid dependency
+    const currentTeams = useGameStore.getState().teams;
+    const usedNames = new Set(currentTeams.filter(t => t.isNameCustomized).map(t => t.name));
+    
+    currentTeams.forEach(team => {
       if (!team.isNameCustomized) {
         let name = '';
         do {
@@ -58,7 +66,8 @@ const TeamCustomization = () => {
         updateTeam(team.id, name, team.color);
       }
     });
-  }, [language, translations, updateTeam]); // removed teams to avoid loop
+    lastProcessedLanguageRef.current = language;
+  }, [language, translations?.teamNameGeneration, updateTeam]);
   const handleRegenerateName = (teamId: number) => {
     const nameParts = translations?.teamNameGeneration;
     if (!nameParts) return;
