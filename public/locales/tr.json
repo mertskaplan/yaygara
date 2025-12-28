@@ -55,7 +55,8 @@
     "scoresTitle": "Puanlar",
     "winnerTitle": "{teamName} Kazandı!",
     "nextTurn": "Sıradaki Tur",
-    "playAgain": "Tekrar Oyna"
+    "playAgain": "Tekrar Oyna",
+    "backToHome": "Ana Sayfaya Dön"
   },
   "howToPlay": {
     "title": "Yaygara Nasıl Oynanır",

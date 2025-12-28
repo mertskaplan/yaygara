@@ -55,7 +55,8 @@
     "scoresTitle": "Scores",
     "winnerTitle": "{teamName} Wins!",
     "nextTurn": "Next Turn",
-    "playAgain": "Play Again"
+    "playAgain": "Play Again",
+    "backToHome": "Back to Home"
   },
   "howToPlay": {
     "title": "How to Play Yaygara",

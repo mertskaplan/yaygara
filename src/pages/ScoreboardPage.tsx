@@ -7,9 +7,9 @@ import { useShallow } from 'zustand/react/shallow';
 import { Button } from '@/components/ui/button';
 import { useTranslations } from '@/hooks/useTranslations';
 export function ScoreboardPage() {
-  const teams = useGameStore((state) => state.teams);
-  const gameStatus = useGameStore((state) => state.gameStatus);
-  const resetGame = useGameStore((state) => state.resetGame);
+  const teams = useGameStore(useShallow((state) => state.teams));
+  const gameStatus = useGameStore(useShallow((state) => state.gameStatus));
+  const resetGame = useGameStore(useShallow((state) => state.resetGame));
   const navigate = useNavigate();
   const { t } = useTranslations();
   const sortedTeams = [...teams].sort((a, b) => b.score - a.score);
@@ -89,11 +89,10 @@ export function ScoreboardPage() {
             onClick={handleNext}
             className="text-slate-400 hover:text-slate-600 font-bold"
           >
-            <Home className="mr-2 h-4 w-4" /> Back to Home
+            <Home className="mr-2 h-4 w-4" /> {t('scoreboard.backToHome')}
           </Button>
         </div>
       </main>
-      {/* Background decoration elements */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden opacity-10">
         <div className="absolute top-10 left-[10%] w-24 h-24 bg-sky-400 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-[15%] w-32 h-32 bg-amber-400 rounded-full blur-3xl animate-pulse" />
