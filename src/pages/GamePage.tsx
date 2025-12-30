@@ -12,15 +12,11 @@ import { TurnSummaryScreen } from '@/components/TurnSummaryScreen';
 import { EndGameModal } from '@/components/EndGameModal';
 import { hexToHsl } from '@/lib/utils';
 const GetReadyScreen = () => {
-  const { teams, currentTeamIndex, round, startTurn, bonusTime } = useGameStore(
-    useShallow((state) => ({
-      teams: state.teams,
-      currentTeamIndex: state.currentTeamIndex,
-      round: state.round,
-      startTurn: state.startTurn,
-      bonusTime: state.bonusTime,
-    }))
-  );
+  const teams = useGameStore(useShallow((state) => state.teams));
+  const currentTeamIndex = useGameStore(useShallow((state) => state.currentTeamIndex));
+  const round = useGameStore(useShallow((state) => state.round));
+  const startTurn = useGameStore(useShallow((state) => state.startTurn));
+  const bonusTime = useGameStore(useShallow((state) => state.bonusTime));
   const { t } = useTranslations();
   const currentTeam = teams[currentTeamIndex];
   const roundTitles = [t('game.round1'), t('game.round2'), t('game.round3')];
@@ -56,34 +52,38 @@ const GetReadyScreen = () => {
   );
 };
 const PlayingScreen = () => {
-  const { currentWord, timeLeft, handleCorrect, handlePass, tick, lastGuessedWord, lastPassedWord, undoLastAction, endTurn, resetGame, turnDuration } = useGameStore(
-    useShallow((state) => ({
-      currentWord: state.currentWord,
-      timeLeft: state.timeLeft,
-      handleCorrect: state.handleCorrect,
-      handlePass: state.handlePass,
-      tick: state.tick,
-      lastGuessedWord: state.lastGuessedWord,
-      lastPassedWord: state.lastPassedWord,
-      undoLastAction: state.undoLastAction,
-      endTurn: state.endTurn,
-      resetGame: state.resetGame,
-      turnDuration: state.turnDuration,
-    }))
-  );
+  const currentWord = useGameStore(useShallow((state) => state.currentWord));
+  const timeLeft = useGameStore(useShallow((state) => state.timeLeft));
+  const handleCorrect = useGameStore(useShallow((state) => state.handleCorrect));
+  const handlePass = useGameStore(useShallow((state) => state.handlePass));
+  const tick = useGameStore(useShallow((state) => state.tick));
+  const lastGuessedWord = useGameStore(useShallow((state) => state.lastGuessedWord));
+  const lastPassedWord = useGameStore(useShallow((state) => state.lastPassedWord));
+  const undoLastAction = useGameStore(useShallow((state) => state.undoLastAction));
+  const endTurn = useGameStore(useShallow((state) => state.endTurn));
+  const resetGame = useGameStore(useShallow((state) => state.resetGame));
+  const turnDuration = useGameStore(useShallow((state) => state.turnDuration));
+  const gameStatus = useGameStore(useShallow((state) => state.gameStatus));
   const { t } = useTranslations();
   const navigate = useNavigate();
   const [isEndGameModalOpen, setIsEndGameModalOpen] = useState(false);
   const [isActionLocked, setIsActionLocked] = useState(false);
   useEffect(() => {
-    const timer = setInterval(tick, 1000);
-    return () => clearInterval(timer);
-  }, [tick]);
+    let timer: ReturnType<typeof setInterval>;
+    if (gameStatus === 'playing') {
+      timer = setInterval(() => {
+        tick();
+      }, 1000);
+    }
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+  }, [tick, gameStatus]);
   useEffect(() => {
-    if (timeLeft <= 0) {
+    if (timeLeft <= 0 && gameStatus === 'playing') {
       endTurn();
     }
-  }, [timeLeft, endTurn]);
+  }, [timeLeft, endTurn, gameStatus]);
   const handleConfirmEndGame = () => {
     resetGame();
     navigate('/');
@@ -158,13 +158,9 @@ const PlayingScreen = () => {
   );
 };
 export function GamePage() {
-  const { gameStatus, teams, currentTeamIndex } = useGameStore(
-    useShallow((state) => ({
-      gameStatus: state.gameStatus,
-      teams: state.teams,
-      currentTeamIndex: state.currentTeamIndex,
-    }))
-  );
+  const gameStatus = useGameStore(useShallow((state) => state.gameStatus));
+  const teams = useGameStore(useShallow((state) => state.teams));
+  const currentTeamIndex = useGameStore(useShallow((state) => state.currentTeamIndex));
   const navigate = useNavigate();
   useEffect(() => {
     if (gameStatus === 'game-over') {

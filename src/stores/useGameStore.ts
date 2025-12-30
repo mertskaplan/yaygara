@@ -85,7 +85,6 @@ export const useGameStore = create<GameState>()(
           const usedNames = new Set<string>();
           state.teams = Array.from({ length: count }, (_, i) => {
             let name = '';
-            // Ensure unique random names
             do {
               const adj = nameParts.adjectives[Math.floor(Math.random() * nameParts.adjectives.length)];
               const noun = nameParts.nouns[Math.floor(Math.random() * nameParts.nouns.length)];
@@ -127,9 +126,9 @@ export const useGameStore = create<GameState>()(
               const noun = nameParts.nouns[Math.floor(Math.random() * nameParts.nouns.length)];
               newName = `${adj} ${noun}`;
               attempts++;
-            } while (usedNames.has(newName) && attempts < 50); // safety break
+            } while (usedNames.has(newName) && attempts < 50);
             teamToUpdate.name = newName;
-            teamToUpdate.isNameCustomized = true; // Treat regeneration as a user customization
+            teamToUpdate.isNameCustomized = true;
           }
         });
       },
@@ -153,6 +152,8 @@ export const useGameStore = create<GameState>()(
           state.round = 1;
           state.bonusTime = null;
           state.teams.forEach(t => t.score = 0);
+          state.lastGuessedWord = null;
+          state.lastPassedWord = null;
         });
       },
       startTurn: () => {
@@ -181,12 +182,16 @@ export const useGameStore = create<GameState>()(
           }
           state.gameStatus = 'turn-summary';
           state.turnEndReason = 'time-up';
+          state.lastGuessedWord = null;
+          state.lastPassedWord = null;
         });
       },
       proceedToNextTurn: () => {
         set((state) => {
           const { teams, round, unseenWords, words, currentTeamIndex } = state;
           const nextTeamIndex = (currentTeamIndex + 1) % teams.length;
+          state.lastGuessedWord = null;
+          state.lastPassedWord = null;
           if (unseenWords.length === 0) {
             if (round === 3) {
               state.gameStatus = 'game-over';
@@ -217,12 +222,14 @@ export const useGameStore = create<GameState>()(
             state.currentWord = state.unseenWords.pop()!;
           } else {
             state.currentWord = null;
+            state.lastGuessedWord = null;
+            state.lastPassedWord = null;
             if (state.timeLeft > 3 && state.round < 3) {
               state.bonusTime = state.timeLeft;
               state.round += 1;
               state.guessedWordsThisRound = [];
               state.unseenWords = [...state.words].sort(() => Math.random() - 0.5);
-              state.gameStatus = 'get-ready'; // Same team plays again
+              state.gameStatus = 'get-ready';
             } else {
               state.gameStatus = 'turn-summary';
               state.turnEndReason = 'words-exhausted';
@@ -272,7 +279,9 @@ export const useGameStore = create<GameState>()(
       },
       tick: () => {
         set((state) => {
-          state.timeLeft -= 1;
+          if (state.gameStatus === 'playing') {
+            state.timeLeft -= 1;
+          }
         });
       },
       resetSetup: () => {
