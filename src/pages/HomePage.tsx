@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { PartyPopper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useGameStore, Language } from '@/stores/useGameStore';
 import { useShallow } from 'zustand/react/shallow';
@@ -9,10 +8,10 @@ import { HowToPlayModal } from '@/components/HowToPlayModal';
 import { useTranslations } from '@/hooks/useTranslations';
 import { FlagIcon } from '@/components/FlagIcon';
 import { PWAInstallPrompt } from '@/components/PWAInstallPrompt';
+import { Logo } from '@/components/Logo';
 const LanguageSelector = () => {
-  const { language, setLanguage } = useGameStore(
-    useShallow((state) => ({ language: state.language, setLanguage: state.setLanguage }))
-  );
+  const language = useGameStore(useShallow((state) => state.language));
+  const setLanguage = useGameStore(useShallow((state) => state.setLanguage));
   const selectLang = (lang: Language) => {
     setLanguage(lang);
   };
@@ -46,28 +45,32 @@ export function HomePage() {
   };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-6 text-center overflow-hidden">
-      <main className="flex flex-col items-center justify-center space-y-8 z-10 w-full max-w-md">
-        <motion.div
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.2 }}
-          className="p-5 bg-sky-400 rounded-3xl shadow-lg"
-        >
-          <PartyPopper className="h-16 w-16 text-white" />
-        </motion.div>
+      <main className="flex flex-col items-center justify-center space-y-10 z-10 w-full max-w-md">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ 
+            type: 'spring', 
+            stiffness: 100, 
+            damping: 15, 
+            delay: 0.2 
+          }}
+          className="w-full px-4"
+        >
+          <Logo className="w-full h-auto text-sky-500 drop-shadow-sm" />
+        </motion.div>
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="space-y-4"
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold text-slate-800 font-display tracking-tighter">
-            {t('home.title')}
-          </h1>
-          <p className="text-lg text-slate-600">{t('home.slogan')}</p>
+          <p className="text-xl font-medium text-slate-600 tracking-tight italic">
+            {t('home.slogan')}
+          </p>
         </motion.div>
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
+          initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
           className="w-full space-y-6"
@@ -81,14 +84,14 @@ export function HomePage() {
           </Button>
           <Button
             variant="link"
-            className="text-slate-500"
+            className="text-slate-500 text-base font-semibold"
             onClick={() => setIsHowToPlayOpen(true)}
           >
             {t('home.howToPlay')}
           </Button>
         </motion.div>
       </main>
-      <footer className="absolute bottom-4 text-center text-slate-500/80 text-sm">
+      <footer className="absolute bottom-6 text-center text-slate-500/80 text-sm">
         <p>{t('home.footer')}</p>
       </footer>
       <HowToPlayModal isOpen={isHowToPlayOpen} onClose={() => setIsHowToPlayOpen(false)} />
