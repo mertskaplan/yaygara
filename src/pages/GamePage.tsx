@@ -28,7 +28,7 @@ const GetReadyScreen = () => {
       exit={{ opacity: 0, scale: 0.8 }}
       className="flex flex-col items-center justify-center text-center p-8 bg-card rounded-3xl shadow-xl w-full max-w-md"
     >
-      <h1 className="text-5xl font-extrabold font-display drop-shadow-lg" style={{ color: currentTeam.color }}>
+      <h1 className="text-4xl font-extrabold font-display drop-shadow-lg" style={{ color: currentTeam.color }}>
         {bonusTime ? t('game.bonusTurnTitle') : t('game.getReadyTitle', { teamName: currentTeam.name })}
       </h1>
       {bonusTime ? (
@@ -115,7 +115,7 @@ const PlayingScreen = () => {
           {currentWord ? (
             <WordCard key={currentWord.term} word={currentWord} />
           ) : (
-            <motion.div initial={{opacity: 0}} animate={{opacity: 1}} className="text-center">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
               <h2 className="text-3xl font-bold text-slate-700">{t('game.noMoreWords')}</h2>
               <p className="text-slate-500">{t('game.noMoreWordsDesc')}</p>
             </motion.div>

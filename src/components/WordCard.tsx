@@ -19,7 +19,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word }) => {
       exit="hidden"
       className="w-full max-w-md bg-white rounded-3xl shadow-lg p-8 text-center"
     >
-      <h2 className="text-5xl font-extrabold text-slate-800 font-display tracking-tight">
+      <h2 className="text-4xl font-extrabold text-slate-800 font-display tracking-tight">
         {word.term}
       </h2>
       <p className="text-slate-500 mt-4 text-lg">{word.hint}</p>

@@ -49,11 +49,11 @@ const TeamCustomization = () => {
     if (!nameParts || !language) return;
     // Only run the initialization logic if the language has actually changed
     if (lastProcessedLanguageRef.current === language) return;
-    
+
     // Get current teams snapshot to avoid dependency
     const currentTeams = useGameStore.getState().teams;
     const usedNames = new Set(currentTeams.filter(t => t.isNameCustomized).map(t => t.name));
-    
+
     currentTeams.forEach(team => {
       if (!team.isNameCustomized) {
         let name = '';
@@ -92,10 +92,10 @@ const TeamCustomization = () => {
                   value={team.name}
                   onChange={(e) => updateTeam(team.id, e.target.value, team.color)}
                   className="w-full h-14 text-xl font-bold border-2 focus:ring-2 focus:ring-offset-2 rounded-xl px-4 pr-12 transition-all"
-                  style={{ 
-                    color: team.color, 
+                  style={{
+                    color: team.color,
                     borderColor: team.color,
-                    boxShadow: `0 0 0 2px transparent` 
+                    boxShadow: `0 0 0 2px transparent`
                   }}
                   onFocus={(e) => (e.currentTarget.style.boxShadow = `0 0 0 2px ${team.color}44`)}
                   onBlur={(e) => (e.currentTarget.style.boxShadow = 'none')}
@@ -112,7 +112,7 @@ const TeamCustomization = () => {
                   </motion.div>
                 </Button>
               </div>
-              <div className="flex flex-wrap gap-3 pt-2">
+              <div className="flex flex-wrap justify-center gap-3 pt-2">
                 {TEAM_COLORS.map(color => {
                   const isTaken = otherTeamsColors.includes(color);
                   const isSelected = team.color === color;
@@ -121,10 +121,10 @@ const TeamCustomization = () => {
                       key={color}
                       onClick={() => !isTaken && updateTeam(team.id, team.name, color)}
                       className={cn(
-                        'w-10 h-10 rounded-full transition-all flex items-center justify-center ring-offset-2 relative',
+                        'w-9 h-9 rounded-full transition-all flex items-center justify-center ring-offset-2 relative',
                         isTaken ? 'opacity-20 cursor-not-allowed scale-90' : 'hover:scale-110 active:scale-95 cursor-pointer'
                       )}
-                      style={{ 
+                      style={{
                         backgroundColor: color,
                         boxShadow: isSelected ? `0 0 0 3px white, 0 0 0 6px ${color}` : 'none'
                       }}
@@ -306,10 +306,10 @@ const WordCountSelection = () => {
       <div className="h-setup-content overflow-y-auto space-y-8 p-1">
         <div className="space-y-4">
           <p className="text-slate-500 text-center px-4">{t('setup.wordCountDescription')}</p>
-          <div className="bg-white p-6 rounded-3xl shadow-md space-y-6 border border-slate-100">
+          <div className="bg-white p-4 rounded-3xl shadow-md space-y-3 border border-slate-100">
             <div className="text-center">
-              <span className="text-7xl font-black text-sky-500 font-display drop-shadow-sm">{count}</span>
-              <p className="text-slate-400 font-bold uppercase tracking-widest text-xs mt-1">{t('setup.deckWords', { count: '' }).trim()}</p>
+              <span className="text-5xl font-black text-sky-500 font-display drop-shadow-sm">{count}</span>
+              <p className="text-slate-400 tracking-widest text-xs">{t('setup.deckWords', { count: '' }).trim()}</p>
             </div>
             <Slider
               value={[count]}
@@ -320,12 +320,12 @@ const WordCountSelection = () => {
             />
           </div>
         </div>
-        <div className="space-y-4">
+        <div className="space-y-3">
           <p className="text-slate-500 text-center px-4">{t('setup.turnDurationDescription')}</p>
-          <div className="bg-white p-6 rounded-3xl shadow-md space-y-6 border border-slate-100">
+          <div className="bg-white p-4 rounded-3xl shadow-md space-y-3 border border-slate-100">
             <div className="text-center">
-              <span className="text-7xl font-black text-sky-500 font-display drop-shadow-sm">{turnDuration}</span>
-              <p className="text-slate-400 font-bold uppercase tracking-widest text-xs mt-1">{t('setup.seconds')}</p>
+              <span className="text-5xl font-black text-sky-500 font-display drop-shadow-sm">{turnDuration}</span>
+              <p className="text-slate-400 tracking-widest text-xs">{t('setup.seconds')}</p>
             </div>
             <Slider
               value={[turnDuration]}
