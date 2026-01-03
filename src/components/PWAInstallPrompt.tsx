@@ -15,7 +15,7 @@ export const PWAInstallPrompt: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-md z-50"
+          className="fixed bottom-4 -translate-x-1/2 w-[calc(100%-2rem)] max-w-md z-50"
         >
           <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg p-4 flex items-center gap-4 border">
             <div className="p-3 bg-sky-100 rounded-full">
