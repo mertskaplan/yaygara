@@ -22,14 +22,14 @@ const LanguageSelector = () => {
         className={`transition-transform duration-300 ease-in-out hover:scale-110 ${language !== 'en' ? 'opacity-50 grayscale' : ''}`}
         aria-label="Select English"
       >
-        <FlagIcon lang="en" className="w-16 h-auto rounded-lg shadow-md" />
+        <FlagIcon lang="en" className="w-12 h-auto rounded-lg shadow-md" />
       </button>
       <button
         onClick={() => selectLang('tr')}
         className={`transition-transform duration-300 ease-in-out hover:scale-110 ${language !== 'tr' ? 'opacity-50 grayscale' : ''}`}
         aria-label="Select Turkish"
       >
-        <FlagIcon lang="tr" className="w-16 h-auto rounded-lg shadow-md" />
+        <FlagIcon lang="tr" className="w-12 h-auto rounded-lg shadow-md" />
       </button>
     </div>
   );
@@ -49,13 +49,13 @@ export function HomePage() {
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ 
-            type: 'spring', 
-            stiffness: 100, 
-            damping: 15, 
-            delay: 0.2 
+          transition={{
+            type: 'spring',
+            stiffness: 100,
+            damping: 15,
+            delay: 0.2
           }}
-          className="w-full px-4"
+          className="w-full"
         >
           <Logo className="w-full h-auto text-sky-500 drop-shadow-sm" />
         </motion.div>
@@ -65,7 +65,7 @@ export function HomePage() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="space-y-4"
         >
-          <p className="text-xl font-medium text-slate-600 tracking-tight italic">
+          <p className="text-xl font-medium text-slate-600 tracking-tight">
             {t('home.slogan')}
           </p>
         </motion.div>

@@ -6,5 +6,5 @@ services:
       dockerfile: Dockerfile
     container_name: yaygara
     ports:
-      - "8622:80"
+      - "8727:80"
     restart: unless-stopped
