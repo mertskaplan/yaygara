@@ -1,24 +1,62 @@
-import { Moon, Sun } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import { useTheme } from "@/hooks/use-theme";
+import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Sun, Moon } from 'lucide-react';
+import { useGameStore } from '@/stores/useGameStore';
+import { useShallow } from 'zustand/react/shallow';
+import { cn } from '@/lib/utils';
 
 interface ThemeToggleProps {
   className?: string;
 }
 
-export function ThemeToggle({ className = "absolute top-4 right-4" }: ThemeToggleProps) {
-  const { isDark, toggleTheme } = useTheme();
+export const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
+  const { theme, setTheme } = useGameStore(
+    useShallow((state) => ({
+      theme: state.theme,
+      setTheme: state.setTheme,
+    }))
+  );
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   return (
-    <Button
+    <button
       onClick={toggleTheme}
-      variant="ghost"
-      size="icon"
-      className={`${className} hover:scale-110 hover:rotate-12 transition-all duration-200 active:scale-90 z-50`}
-      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      className={cn(
+        "p-3 rounded-2xl bg-white shadow-md transition-all duration-300 hover:scale-110 active:scale-95 dark:bg-slate-800",
+        className
+      )}
+      aria-label="Toggle Theme"
     >
-      {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-    </Button>
+      <div className="relative w-6 h-6 flex items-center justify-center overflow-hidden">
+        <AnimatePresence mode="wait" initial={false}>
+          {theme === 'light' ? (
+            <motion.div
+              key="sun"
+              initial={{ y: -30, opacity: 0, rotate: -90 }}
+              animate={{ y: 0, opacity: 1, rotate: 0 }}
+              exit={{ y: 30, opacity: 0, rotate: 90 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="absolute"
+            >
+              <Sun className="w-6 h-6 text-amber-500 fill-amber-500/20" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="moon"
+              initial={{ y: -30, opacity: 0, rotate: -90 }}
+              animate={{ y: 0, opacity: 1, rotate: 0 }}
+              exit={{ y: 30, opacity: 0, rotate: 90 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="absolute"
+            >
+              <Moon className="w-6 h-6 text-sky-300 fill-sky-300/20" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </button>
   );
-}
+};

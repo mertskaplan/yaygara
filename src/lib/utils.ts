@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-export function hexToHsl(hex: string): string {
+export function hexToHsl(hex: string, lightness: number = 95): string {
   // Remove the hash at the start if it's there
   hex = hex.replace(/^#/, '');
   // Parse the r, g, b values
@@ -29,7 +29,6 @@ export function hexToHsl(hex: string): string {
   }
   h = Math.round(h * 360);
   s = Math.round(s * 100);
-  l = Math.round(l * 100);
-  // Return HSL string for the light background tint
-  return `${h} ${s}% 95%`; // Fixed lightness for a consistent light tint
+  // Return HSL string for the dynamic background tint
+  return `${h} ${s}% ${lightness}%`;
 }

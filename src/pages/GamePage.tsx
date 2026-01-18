@@ -32,8 +32,8 @@ const GetReadyScreen = () => {
       <h1 className="text-4xl font-extrabold font-display drop-shadow-lg" style={{ color: initialTeam.color }}>
         {t('game.getReadyTitle', { teamName: initialTeam.name })}
       </h1>
-      <p className="text-2xl font-bold text-slate-700 mt-4 drop-shadow-md">{roundTitles[initialRound - 1]}</p>
-      <p className="text-lg text-slate-500 mt-2 max-w-xs">{roundDescriptions[initialRound - 1]}</p>
+      <p className="text-2xl font-bold text-slate-700 dark:text-slate-100 mt-4 drop-shadow-md">{roundTitles[initialRound - 1]}</p>
+      <p className="text-lg text-slate-500 dark:text-slate-400 mt-2 max-w-xs">{roundDescriptions[initialRound - 1]}</p>
       <Button
         onClick={startTurn}
         className="mt-12 h-20 w-full text-3xl font-bold text-white rounded-2xl shadow-xl transition-transform hover:scale-105 active:scale-95"
@@ -91,26 +91,30 @@ const PlayingScreen = () => {
     setIsActionLocked(true);
     setTimeout(() => setIsActionLocked(false), 1000);
   };
+  const teams = useGameStore(useShallow((state) => state.teams));
+  const currentTeamIndex = useGameStore(useShallow((state) => state.currentTeamIndex));
+  const currentTeam = teams[currentTeamIndex];
+
   return (
     <div className="relative flex flex-col items-center justify-between h-full w-full max-w-md">
       <Button
         variant="ghost"
         size="icon"
         onClick={() => setIsEndGameModalOpen(true)}
-        className="absolute top-0 right-0 h-12 w-12 rounded-full text-slate-500 hover:bg-red-100 hover:text-red-600"
+        className="absolute top-0 right-0 h-12 w-12 rounded-full text-slate-800 dark:text-white/80 hover:bg-black/10 dark:hover:bg-white/10"
         aria-label="End Game"
       >
         <LogOut className="w-6 h-6" />
       </Button>
-      <TimerCircle timeLeft={timeLeft} duration={turnDuration} className="w-32 h-32" />
+      <TimerCircle timeLeft={timeLeft} duration={turnDuration} color={currentTeam.color} className="w-32 h-32" />
       <div className="flex-grow flex items-center justify-center w-full my-6">
         <AnimatePresence mode="wait">
           {currentWord ? (
             <WordCard key={currentWord.term} word={currentWord} />
           ) : (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
-              <h2 className="text-3xl font-bold text-slate-700">{t('game.noMoreWords')}</h2>
-              <p className="text-slate-500">{t('game.noMoreWordsDesc')}</p>
+              <h2 className="text-3xl font-bold text-slate-700 dark:text-slate-200">{t('game.noMoreWords')}</h2>
+              <p className="text-slate-500 dark:text-slate-400">{t('game.noMoreWordsDesc')}</p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -128,7 +132,7 @@ const PlayingScreen = () => {
             onClick={undoLastAction}
             disabled={!lastGuessedWord && !lastPassedWord}
             variant="outline"
-            className="h-14 w-14 rounded-full bg-white border-0 disabled:hidden z-20 pointer-events-auto"
+            className="h-14 w-14 rounded-full bg-white dark:bg-slate-700 border-0 disabled:hidden z-20 pointer-events-auto shadow-md"
             aria-label="Undo last action"
           >
             <Undo2 className="w-6 h-6" />
@@ -163,13 +167,15 @@ export function GamePage() {
       navigate('/setup');
     }
   }, [gameStatus, navigate]);
+  const theme = useGameStore((state) => state.theme);
   const dynamicBgStyle = useMemo(() => {
     if ((gameStatus === 'get-ready' || gameStatus === 'playing') && teams.length > 0) {
       const currentTeamColor = teams[currentTeamIndex].color;
-      return { backgroundColor: `hsl(${hexToHsl(currentTeamColor)})` };
+      const lightness = theme === 'dark' ? 15 : 95;
+      return { backgroundColor: `hsl(${hexToHsl(currentTeamColor, lightness)})` };
     }
     return {};
-  }, [gameStatus, teams, currentTeamIndex]);
+  }, [gameStatus, teams, currentTeamIndex, theme]);
   return (
     <div
       className="flex flex-col items-center justify-center h-screen-dvh bg-background p-6 transition-colors duration-500 overflow-hidden"

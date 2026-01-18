@@ -36,7 +36,9 @@ interface GameState {
   timeLeft: number;
   turnEndReason: TurnEndReason;
   bonusTime: number | null;
+  theme: 'light' | 'dark';
   setLanguage: (lang: Language) => void;
+  setTheme: (theme: 'light' | 'dark') => void;
   setTeamCount: (count: number, nameParts: { adjectives: string[], nouns: string[] }) => void;
   updateTeam: (id: number, name: string, color: string) => void;
   regenerateTeamName: (teamId: number, nameParts: { adjectives: string[], nouns: string[] }) => void;
@@ -79,7 +81,9 @@ export const useGameStore = create<GameState>()(
       timeLeft: DEFAULT_TURN_DURATION,
       turnEndReason: null,
       bonusTime: null,
+      theme: 'light',
       setLanguage: (lang) => set({ language: lang, setupStep: 'teams', teams: [], selectedDeck: null, customDeck: null, selectedWordCount: null }),
+      setTheme: (theme) => set({ theme }),
       setTeamCount: (count, nameParts) => {
         set((state) => {
           const usedNames = new Set<string>();

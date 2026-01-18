@@ -13,6 +13,7 @@ import { HomePage } from '@/pages/HomePage'
 import { SetupPage } from '@/pages/SetupPage'
 import { GamePage } from '@/pages/GamePage'
 import { ScoreboardPage } from '@/pages/ScoreboardPage'
+import { ThemeManager } from '@/components/ThemeManager'
 import { preloadTranslations } from '@/lib/i18n';
 // Preload all language files on app startup for instant language switching
 preloadTranslations();
@@ -42,7 +43,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary>
-      <RouterProvider router={router} />
+      <ThemeManager>
+        <RouterProvider router={router} />
+      </ThemeManager>
     </ErrorBoundary>
   </StrictMode>,
 )

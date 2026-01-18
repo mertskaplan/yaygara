@@ -17,12 +17,12 @@ export const WordCard: React.FC<WordCardProps> = ({ word }) => {
       initial="hidden"
       animate="visible"
       exit="hidden"
-      className="w-full max-w-md bg-white rounded-3xl shadow-lg p-8 text-center"
+      className="w-full max-w-md bg-white dark:bg-slate-800 rounded-3xl shadow-lg p-8 text-center"
     >
-      <h2 className="text-4xl font-extrabold text-slate-800 font-display tracking-tight">
+      <h2 className="text-4xl font-extrabold text-slate-800 dark:text-slate-100 font-display tracking-tight">
         {word.term}
       </h2>
-      <p className="text-slate-500 mt-4 text-lg">{word.hint}</p>
+      <p className="text-slate-500 dark:text-slate-400 mt-4 text-lg">{word.hint}</p>
       <div className="flex justify-center items-center mt-6">
         <div className="flex items-center space-x-1">
           {[...Array(3)].map((_, i) => (

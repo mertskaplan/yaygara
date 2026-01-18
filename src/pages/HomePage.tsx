@@ -9,6 +9,7 @@ import { useTranslations } from '@/hooks/useTranslations';
 import { FlagIcon } from '@/components/FlagIcon';
 import { PWAInstallPrompt } from '@/components/PWAInstallPrompt';
 import { Logo } from '@/components/Logo';
+import { ThemeToggle } from '@/components/ThemeToggle';
 const LanguageSelector = () => {
   const language = useGameStore(useShallow((state) => state.language));
   const setLanguage = useGameStore(useShallow((state) => state.setLanguage));
@@ -45,6 +46,7 @@ export function HomePage() {
   };
   return (
     <div className="flex flex-col items-center justify-center h-screen-dvh bg-background p-6 text-center overflow-hidden relative">
+      <ThemeToggle className="!fixed !top-4 !right-4 z-50 shadow-lg" />
       <main className="flex flex-col items-center justify-center space-y-10 z-10 w-full max-w-md">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -65,7 +67,7 @@ export function HomePage() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="space-y-4"
         >
-          <p className="text-xl font-medium text-slate-600 tracking-tight">
+          <p className="text-xl font-medium text-slate-600 dark:text-slate-400 tracking-tight">
             {t('home.slogan')}
           </p>
         </motion.div>
@@ -84,14 +86,14 @@ export function HomePage() {
           </Button>
           <Button
             variant="link"
-            className="text-slate-500 text-base font-semibold"
+            className="text-slate-500 dark:text-slate-400 text-base font-semibold"
             onClick={() => setIsHowToPlayOpen(true)}
           >
             {t('home.howToPlay')}
           </Button>
         </motion.div>
       </main>
-      <footer className="absolute bottom-6 text-center text-slate-500/80 text-sm">
+      <footer className="absolute bottom-6 text-center text-slate-500/80 dark:text-slate-400/80 text-sm">
         <p>{t('home.footer')}</p>
       </footer>
       <HowToPlayModal isOpen={isHowToPlayOpen} onClose={() => setIsHowToPlayOpen(false)} />
