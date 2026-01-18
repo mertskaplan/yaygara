@@ -197,10 +197,13 @@ export const useGameStore = create<GameState>()(
               state.gameStatus = 'game-over';
               return;
             }
+            // If it's a bonus turn, we stay with the same team
+            if (state.bonusTime === null) {
+              state.currentTeamIndex = nextTeamIndex;
+            }
             state.round += 1;
             state.guessedWordsThisRound = [];
             state.unseenWords = [...words].sort(() => Math.random() - 0.5);
-            state.currentTeamIndex = nextTeamIndex;
             state.gameStatus = 'get-ready';
           } else {
             state.currentTeamIndex = nextTeamIndex;
@@ -226,10 +229,8 @@ export const useGameStore = create<GameState>()(
             state.lastPassedWord = null;
             if (state.timeLeft > 3 && state.round < 3) {
               state.bonusTime = state.timeLeft;
-              state.round += 1;
-              state.guessedWordsThisRound = [];
-              state.unseenWords = [...state.words].sort(() => Math.random() - 0.5);
-              state.gameStatus = 'get-ready';
+              state.gameStatus = 'turn-summary';
+              state.turnEndReason = 'words-exhausted';
             } else {
               state.gameStatus = 'turn-summary';
               state.turnEndReason = 'words-exhausted';

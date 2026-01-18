@@ -44,7 +44,7 @@ export function HomePage() {
     navigate('/setup');
   };
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background p-6 text-center overflow-hidden">
+    <div className="flex flex-col items-center justify-center h-screen-dvh bg-background p-6 text-center overflow-hidden relative">
       <main className="flex flex-col items-center justify-center space-y-10 z-10 w-full max-w-md">
         <motion.div
           initial={{ y: 50, opacity: 0 }}

@@ -16,9 +16,10 @@ const GetReadyScreen = () => {
   const currentTeamIndex = useGameStore(useShallow((state) => state.currentTeamIndex));
   const round = useGameStore(useShallow((state) => state.round));
   const startTurn = useGameStore(useShallow((state) => state.startTurn));
-  const bonusTime = useGameStore(useShallow((state) => state.bonusTime));
+  const [initialRound] = useState(round);
+  const [initialTeam] = useState(teams[currentTeamIndex]);
+
   const { t } = useTranslations();
-  const currentTeam = teams[currentTeamIndex];
   const roundTitles = [t('game.round1'), t('game.round2'), t('game.round3')];
   const roundDescriptions = [t('game.round1Description'), t('game.round2Description'), t('game.round3Description')];
   return (
@@ -28,23 +29,15 @@ const GetReadyScreen = () => {
       exit={{ opacity: 0, scale: 0.8 }}
       className="flex flex-col items-center justify-center text-center p-8 bg-card rounded-3xl shadow-xl w-full max-w-md"
     >
-      <h1 className="text-4xl font-extrabold font-display drop-shadow-lg" style={{ color: currentTeam.color }}>
-        {bonusTime ? t('game.bonusTurnTitle') : t('game.getReadyTitle', { teamName: currentTeam.name })}
+      <h1 className="text-4xl font-extrabold font-display drop-shadow-lg" style={{ color: initialTeam.color }}>
+        {t('game.getReadyTitle', { teamName: initialTeam.name })}
       </h1>
-      {bonusTime ? (
-        <p className="text-lg text-slate-500 mt-2 max-w-xs">
-          {t('game.bonusTurnDescription', { round, time: bonusTime })}
-        </p>
-      ) : (
-        <>
-          <p className="text-2xl font-bold text-slate-700 mt-4 drop-shadow-md">{roundTitles[round - 1]}</p>
-          <p className="text-lg text-slate-500 mt-2 max-w-xs">{roundDescriptions[round - 1]}</p>
-        </>
-      )}
+      <p className="text-2xl font-bold text-slate-700 mt-4 drop-shadow-md">{roundTitles[initialRound - 1]}</p>
+      <p className="text-lg text-slate-500 mt-2 max-w-xs">{roundDescriptions[initialRound - 1]}</p>
       <Button
         onClick={startTurn}
         className="mt-12 h-20 w-full text-3xl font-bold text-white rounded-2xl shadow-xl transition-transform hover:scale-105 active:scale-95"
-        style={{ backgroundColor: currentTeam.color }}
+        style={{ backgroundColor: initialTeam.color }}
       >
         {t('game.start')}
       </Button>
@@ -99,7 +92,7 @@ const PlayingScreen = () => {
     setTimeout(() => setIsActionLocked(false), 1000);
   };
   return (
-    <div className="relative flex flex-col items-center justify-between h-full-vh w-full max-w-md">
+    <div className="relative flex flex-col items-center justify-between h-full w-full max-w-md">
       <Button
         variant="ghost"
         size="icon"
@@ -135,7 +128,7 @@ const PlayingScreen = () => {
             onClick={undoLastAction}
             disabled={!lastGuessedWord && !lastPassedWord}
             variant="outline"
-            className="h-14 w-14 rounded-full bg-white/80 backdrop-blur-sm border-2 disabled:opacity-50 pointer-events-auto"
+            className="h-14 w-14 rounded-full bg-white border-0 disabled:hidden z-20 pointer-events-auto"
             aria-label="Undo last action"
           >
             <Undo2 className="w-6 h-6" />
@@ -179,7 +172,7 @@ export function GamePage() {
   }, [gameStatus, teams, currentTeamIndex]);
   return (
     <div
-      className="flex flex-col items-center justify-center min-h-screen bg-background p-6 transition-colors duration-500"
+      className="flex flex-col items-center justify-center h-screen-dvh bg-background p-6 transition-colors duration-500 overflow-hidden"
       style={dynamicBgStyle}
     >
       <AnimatePresence mode="wait">

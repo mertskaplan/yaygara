@@ -37,7 +37,7 @@
     "bonusTurnTitle": "Bonus Turn!",
     "bonusTurnDescription": "You cleared the round early! Start Round {round} with your remaining {time} seconds.",
     "turnSummary": {
-      "title": "{teamName}'s Turn Over!",
+      "title": "{teamName}'s turn over!",
       "subtitle": "Time's up!",
       "wordsExhaustedTitle": "All words finished!",
       "guessedThisTurn": "Guessed this turn",
@@ -52,8 +52,9 @@
     }
   },
   "scoreboard": {
+    "score": "score",
     "scoresTitle": "Scores",
-    "winnerTitle": "{teamName} Wins!",
+    "winnerTitle": "{teamName} wins!",
     "nextTurn": "Next Turn",
     "playAgain": "Play Again",
     "backToHome": "Back to Home"
