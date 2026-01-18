@@ -24,10 +24,10 @@ const TeamCountSelection = () => {
   };
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
-      <h2 className="text-3xl font-bold text-center text-slate-700 font-display mb-6">{t('setup.teamsTitle')}</h2>
+      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6">{t('setup.teamsTitle')}</h2>
       <div className="flex-1 flex flex-col justify-center gap-4">
         {[2, 3, 4].map((count) => (
-          <Button key={count} onClick={() => handleTeamSelect(count)} className="h-24 text-4xl font-extrabold bg-white text-sky-500 border-4 border-sky-500 hover:bg-sky-100 rounded-2xl shadow-lg">
+          <Button key={count} onClick={() => handleTeamSelect(count)} className="h-24 text-4xl font-extrabold bg-white dark:bg-sky-500 text-sky-500 dark:text-white border-4 border-sky-500 hover:bg-sky-100 dark:hover:bg-sky-600 rounded-2xl shadow-lg">
             {count}
           </Button>
         ))}
@@ -80,12 +80,12 @@ const TeamCustomization = () => {
   const usedColors = teams.map(t => t.color);
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
-      <h2 className="text-3xl font-bold text-center text-slate-700 font-display mb-6">{t('setup.customizeTitle')}</h2>
+      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6">{t('setup.customizeTitle')}</h2>
       <div className="h-setup-content space-y-6 p-1">
         {teams.map((team) => {
           const otherTeamsColors = usedColors.filter(c => c !== team.color);
           return (
-            <div key={team.id} className="flex flex-col gap-3 p-4 bg-white rounded-2xl shadow-md border border-slate-100">
+            <div key={team.id} className="flex flex-col gap-3 p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700">
               <div className="relative w-full">
                 <Input
                   type="text"
@@ -235,9 +235,9 @@ const DeckSelection = () => {
       <Button
         onClick={() => selectDeck(deck)}
         variant={isSelected ? 'default' : 'outline'}
-        className={`w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 transition-all duration-300 ${isSelected ? 'bg-sky-500 text-white scale-[1.02] shadow-md border-transparent' : 'bg-white border-slate-200 hover:border-sky-300'}`}
+        className={`w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 transition-all duration-300 ${isSelected ? 'bg-sky-500 text-white scale-[1.02] shadow-md border-transparent' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 dark:hover:border-sky-700'}`}
       >
-        <div className={cn("p-2 rounded-xl", isSelected ? "bg-white/20" : "bg-sky-50 text-sky-500")}>
+        <div className={cn("p-2 rounded-xl", isSelected ? "bg-white/20" : "bg-sky-50 dark:bg-sky-900/40 text-sky-500 dark:text-sky-400")}>
           <Icon className="w-8 h-8 flex-shrink-0" />
         </div>
         <div className="flex-grow">
@@ -255,7 +255,7 @@ const DeckSelection = () => {
   };
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
-      <h2 className="text-3xl font-bold text-center text-slate-700 font-display mb-6">{t('setup.deckTitle')}</h2>
+      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6">{t('setup.deckTitle')}</h2>
       <div className="h-setup-content space-y-3 p-1">
         {isLoadingDecks ? (
           <div className="flex justify-center items-center h-48">
@@ -268,7 +268,7 @@ const DeckSelection = () => {
           </>
         )}
         <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".json" className="hidden" />
-        <Button onClick={handleFileUploadClick} variant="outline" className="w-full h-16 text-lg justify-start font-semibold rounded-2xl bg-white/80 border-dashed border-2 border-slate-300 hover:border-sky-400 hover:bg-sky-50">
+        <Button onClick={handleFileUploadClick} variant="outline" className="w-full h-16 text-lg justify-start font-semibold rounded-2xl bg-white/80 dark:bg-slate-800/80 border-dashed border-2 border-slate-300 dark:border-slate-600 hover:border-sky-400 hover:bg-sky-50 dark:hover:bg-sky-900/20">
           <Upload className="mr-4 text-sky-500" /> {t('setup.uploadDeck')}
         </Button>
       </div>
@@ -306,14 +306,14 @@ const WordCountSelection = () => {
   };
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
-      <h2 className="text-3xl font-bold text-center text-slate-700 font-display mb-6">{t('setup.wordCountTitle')}</h2>
+      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6">{t('setup.wordCountTitle')}</h2>
       <div className="h-setup-content space-y-4 p-1">
         <div className="space-y-4">
-          <p className="text-slate-500 text-center px-4">{t('setup.wordCountDescription')}</p>
-          <div className="bg-white p-4 rounded-3xl shadow-md space-y-3 border border-slate-100">
+          <p className="text-slate-500 dark:text-slate-400 text-center px-4">{t('setup.wordCountDescription')}</p>
+          <div className="bg-white dark:bg-slate-800 p-4 rounded-3xl shadow-md space-y-3 border border-slate-100 dark:border-slate-700">
             <div className="text-center">
-              <span className="text-5xl font-black text-sky-500 font-display drop-shadow-sm">{count}</span>
-              <p className="text-slate-400 tracking-widest text-xs">{t('setup.deckWords', { count: '' }).trim()}</p>
+              <span className="text-5xl font-black text-sky-500 dark:text-sky-400 font-display drop-shadow-sm">{count}</span>
+              <p className="text-slate-400 dark:text-slate-500 tracking-widest text-xs">{t('setup.deckWords', { count: '' }).trim()}</p>
             </div>
             <Slider
               value={[count]}
@@ -325,11 +325,11 @@ const WordCountSelection = () => {
           </div>
         </div>
         <div className="space-y-3">
-          <p className="text-slate-500 text-center px-4">{t('setup.turnDurationDescription')}</p>
-          <div className="bg-white p-4 rounded-3xl shadow-md space-y-3 border border-slate-100">
+          <p className="text-slate-500 dark:text-slate-400 text-center px-4">{t('setup.turnDurationDescription')}</p>
+          <div className="bg-white dark:bg-slate-800 p-4 rounded-3xl shadow-md space-y-3 border border-slate-100 dark:border-slate-700">
             <div className="text-center">
-              <span className="text-5xl font-black text-sky-500 font-display drop-shadow-sm">{turnDuration}</span>
-              <p className="text-slate-400 tracking-widest text-xs">{t('setup.seconds')}</p>
+              <span className="text-5xl font-black text-sky-500 dark:text-sky-400 font-display drop-shadow-sm">{turnDuration}</span>
+              <p className="text-slate-400 dark:text-slate-500 tracking-widest text-xs">{t('setup.seconds')}</p>
             </div>
             <Slider
               value={[turnDuration]}
@@ -379,7 +379,7 @@ export function SetupPage() {
     <div className="flex flex-col items-center h-[100dvh] bg-background p-6 overflow-hidden">
       <div className="w-full max-w-md h-full flex flex-col">
         <header className="relative flex-shrink-0 flex items-center justify-center mb-8">
-          <Button onClick={handleBack} variant="ghost" size="icon" className="absolute left-0 rounded-full h-12 w-12 hover:bg-slate-100">
+          <Button onClick={handleBack} variant="ghost" size="icon" className="absolute left-0 rounded-full h-12 w-12 hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-400">
             <ArrowLeft className="h-6 w-6" />
           </Button>
           <div className="flex items-center justify-center gap-3">
@@ -388,7 +388,7 @@ export function SetupPage() {
               const isActive = index === currentStepIndex;
               const isCompleted = index < currentStepIndex;
               return (
-                <div key={key} className={`p-3 rounded-full transition-all duration-300 ${isActive ? 'bg-sky-500 text-white scale-110 shadow-lg' : isCompleted ? 'bg-green-400 text-white' : 'bg-slate-200 text-slate-400'}`}>
+                <div key={key} className={`p-3 rounded-full transition-all duration-300 ${isActive ? 'bg-sky-500 text-white scale-110 shadow-lg' : isCompleted ? 'bg-green-400 text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600'}`}>
                   <Icon className="h-5 w-5" />
                 </div>
               );

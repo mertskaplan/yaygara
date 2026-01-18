@@ -17,12 +17,12 @@ interface HowToPlayModalProps {
 }
 const RuleStep = ({ icon: Icon, title, description }: { icon: React.ElementType, title: string, description: string }) => (
   <div className="flex items-start gap-4">
-    <div className="flex-shrink-0 p-3 bg-sky-100 rounded-full">
-      <Icon className="w-6 h-6 text-sky-600" />
+    <div className="flex-shrink-0 p-3 bg-sky-100 dark:bg-sky-900/40 rounded-full">
+      <Icon className="w-6 h-6 text-sky-600 dark:text-sky-400" />
     </div>
     <div>
-      <h4 className="text-lg font-bold text-slate-800">{title}</h4>
-      <p className="text-slate-600">{description}</p>
+      <h4 className="text-lg font-bold text-slate-800 dark:text-slate-200">{title}</h4>
+      <p className="text-slate-600 dark:text-slate-400">{description}</p>
     </div>
   </div>
 );
@@ -30,12 +30,12 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({ isOpen, onClose 
   const { t } = useTranslations();
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-amber-50 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden">
+      <DialogContent className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-amber-50 dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl">
         <DialogHeader className="flex-shrink-0">
-          <DialogTitle className="text-3xl font-extrabold text-slate-800 font-display text-center">
+          <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center">
             {t('howToPlay.title')}
           </DialogTitle>
-          <DialogDescription className="text-center text-slate-600 text-base pt-2">
+          <DialogDescription className="text-center text-slate-600 dark:text-slate-400 text-base pt-2">
             {t('howToPlay.description')}
           </DialogDescription>
         </DialogHeader>
