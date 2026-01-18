@@ -81,7 +81,7 @@ export const useGameStore = create<GameState>()(
       timeLeft: DEFAULT_TURN_DURATION,
       turnEndReason: null,
       bonusTime: null,
-      theme: 'light',
+      theme: typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
       setLanguage: (lang) => set({ language: lang, setupStep: 'teams', teams: [], selectedDeck: null, customDeck: null, selectedWordCount: null }),
       setTheme: (theme) => set({ theme }),
       setTeamCount: (count, nameParts) => {
