@@ -32,8 +32,8 @@ const GetReadyScreen = () => {
       <h1 className="text-4xl font-extrabold font-display drop-shadow-lg" style={{ color: initialTeam.color }}>
         {t('game.getReadyTitle', { teamName: initialTeam.name })}
       </h1>
-      <p className="text-2xl font-bold text-slate-700 dark:text-slate-100 mt-4 drop-shadow-md">{roundTitles[initialRound - 1]}</p>
-      <p className="text-lg text-slate-500 dark:text-slate-400 mt-2 max-w-xs">{roundDescriptions[initialRound - 1]}</p>
+      <p className="text-2xl font-bold text-slate-700 mt-4 drop-shadow-md">{roundTitles[initialRound - 1]}</p>
+      <p className="text-lg text-slate-500 mt-2 max-w-xs">{roundDescriptions[initialRound - 1]}</p>
       <Button
         onClick={startTurn}
         className="mt-12 h-20 w-full text-3xl font-bold text-white rounded-2xl shadow-xl transition-transform hover:scale-105 active:scale-95"
@@ -132,7 +132,7 @@ const PlayingScreen = () => {
             onClick={undoLastAction}
             disabled={!lastGuessedWord && !lastPassedWord}
             variant="outline"
-            className="h-14 w-14 rounded-full bg-white dark:bg-slate-700 border-0 disabled:hidden z-20 pointer-events-auto shadow-md"
+            className="h-14 w-14 rounded-full bg-white border-0 disabled:hidden z-20 pointer-events-auto"
             aria-label="Undo last action"
           >
             <Undo2 className="w-6 h-6" />

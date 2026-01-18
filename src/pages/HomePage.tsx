@@ -46,7 +46,6 @@ export function HomePage() {
   };
   return (
     <div className="flex flex-col items-center justify-center h-screen-dvh bg-background p-6 text-center overflow-hidden relative">
-      <ThemeToggle className="!fixed !top-4 !right-4 z-50 shadow-lg" />
       <main className="flex flex-col items-center justify-center space-y-10 z-10 w-full max-w-md">
         <motion.div
           initial={{ y: 50, opacity: 0 }}

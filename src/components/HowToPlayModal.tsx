@@ -25,14 +25,14 @@ const RuleStep = ({ icon: Icon, title, description }: { icon: React.ElementType,
       <p className="text-slate-600 dark:text-slate-400">{description}</p>
     </div>
   </div>
-);
+);Feature/branding 
 export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({ isOpen, onClose }) => {
   const { t } = useTranslations();
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-amber-50 dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl">
+      <DialogContent className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-amber-50 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden">
         <DialogHeader className="flex-shrink-0">
-          <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center">
+          <DialogTitle className="text-3xl font-extrabold text-slate-800 font-display text-center">
             {t('howToPlay.title')}
           </DialogTitle>
           <DialogDescription className="text-center text-slate-600 dark:text-slate-400 text-base pt-2">

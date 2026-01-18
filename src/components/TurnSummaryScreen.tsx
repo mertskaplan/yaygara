@@ -39,33 +39,33 @@ export const TurnSummaryScreen: React.FC = () => {
       exit={{ opacity: 0, y: -50 }}
       className="flex flex-col items-center justify-center text-center p-6 bg-white dark:bg-slate-800 rounded-3xl shadow-xl w-full max-w-md"
     >
-      <h1 className="text-4xl font-extrabold text-slate-800 dark:text-slate-100 font-display">
+      <h1 className="text-4xl font-extrabold text-slate-800 font-display">
         {initialBonusTime ? t('game.bonusTurnTitle') : (
           turnEndReason === 'words-exhausted'
             ? t('game.turnSummary.wordsExhaustedTitle')
             : t('game.turnSummary.subtitle')
         )}
       </h1>
-      <p className="text-xl text-slate-500 dark:text-slate-400 mt-1">
+      <p className="text-xl text-slate-500 mt-1">
         {initialBonusTime
           ? t('game.bonusTurnDescription', { round: initialRound + 1, time: initialBonusTime })
           : t('game.turnSummary.title', { teamName: initialTeam.name })}
       </p>
       <div className="grid grid-cols-2 gap-4 w-full my-3">
-        <div className="flex flex-col items-center p-4 bg-green-100 dark:bg-green-900/40 rounded-2xl">
-          <span className="text-sm font-semibold text-green-800 dark:text-green-300 mb-1">{t('game.turnSummary.guessedThisTurn')}</span>
+        <div className="flex flex-col items-center p-4 bg-green-100 rounded-2xl">
+          <span className="text-sm font-semibold text-green-800 mb-1">{t('game.turnSummary.guessedThisTurn')}</span>
           <div className="flex items-center gap-3">
-            <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400" />
-            <span className="text-4xl font-extrabold text-green-700 dark:text-green-200">
+            <CheckCircle className="w-8 h-8 text-green-600" />
+            <span className="text-4xl font-extrabold text-green-700">
               {wordsGuessedThisTurn.length}
             </span>
           </div>
         </div>
-        <div className="flex flex-col items-center p-4 bg-sky-100 dark:bg-sky-900/40 rounded-2xl">
-          <span className="text-sm font-semibold text-sky-800 dark:text-sky-300 mb-1">{t('game.turnSummary.wordsLeft')}</span>
+        <div className="flex flex-col items-center p-4 bg-sky-100 rounded-2xl">
+          <span className="text-sm font-semibold text-sky-800 mb-1">{t('game.turnSummary.wordsLeft')}</span>
           <div className="flex items-center gap-3">
-            <Hourglass className="w-8 h-8 text-sky-600 dark:text-sky-400" />
-            <span className="text-4xl font-extrabold text-sky-700 dark:text-sky-200">
+            <Hourglass className="w-8 h-8 text-sky-600" />
+            <span className="text-4xl font-extrabold text-sky-700">
               {unseenWords.length}
             </span>
           </div>
