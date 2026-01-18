@@ -29,12 +29,12 @@ export function ScoreboardPage() {
             className="flex flex-col items-center space-y-4"
           >
             <Trophy className="w-20 h-20 text-amber-400" />
-            <h2 className="text-3xl font-extrabold text-slate-800 font-display">
+            <h2 className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display">
               {t('scoreboard.winnerTitle', { teamName: winner.name })}
             </h2>
           </motion.div>
         ) : (
-          <h1 className="text-2xl font-extrabold text-slate-800 font-display">{t('scoreboard.scoresTitle')}</h1>
+          <h1 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 font-display">{t('scoreboard.scoresTitle')}</h1>
         )}
         <motion.div
           className="space-y-3"
