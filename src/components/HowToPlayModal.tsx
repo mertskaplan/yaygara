@@ -30,8 +30,8 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({ isOpen, onClose 
   const { t } = useTranslations();
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-lg bg-amber-50 rounded-3xl p-8">
-        <DialogHeader>
+      <DialogContent className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-amber-50 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden">
+        <DialogHeader className="flex-shrink-0">
           <DialogTitle className="text-3xl font-extrabold text-slate-800 font-display text-center">
             {t('howToPlay.title')}
           </DialogTitle>
@@ -39,7 +39,7 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({ isOpen, onClose 
             {t('howToPlay.description')}
           </DialogDescription>
         </DialogHeader>
-        <ScrollArea className="h-80 w-full pr-4">
+        <ScrollArea className="flex-1 w-full pr-4 overflow-y-auto">
           <div className="space-y-6 py-4">
             <RuleStep
               icon={Gamepad2}
@@ -73,7 +73,7 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({ isOpen, onClose 
             />
           </div>
         </ScrollArea>
-        <DialogFooter>
+        <DialogFooter className="flex-shrink-0 pt-4">
           <Button
             onClick={onClose}
             className="w-full text-lg font-bold h-14 bg-sky-500 hover:bg-sky-600 text-white rounded-2xl shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95"

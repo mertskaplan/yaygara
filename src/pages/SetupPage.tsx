@@ -23,9 +23,9 @@ const TeamCountSelection = () => {
     setTeamCount(count, nameParts);
   };
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
-      <h2 className="text-3xl font-bold text-center text-slate-700 font-display">{t('setup.teamsTitle')}</h2>
-      <div className="grid grid-cols-1 gap-4">
+    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
+      <h2 className="text-3xl font-bold text-center text-slate-700 font-display mb-6">{t('setup.teamsTitle')}</h2>
+      <div className="flex-1 flex flex-col justify-center gap-4">
         {[2, 3, 4].map((count) => (
           <Button key={count} onClick={() => handleTeamSelect(count)} className="h-24 text-4xl font-extrabold bg-white text-sky-500 border-4 border-sky-500 hover:bg-sky-100 rounded-2xl shadow-lg">
             {count}
@@ -79,9 +79,9 @@ const TeamCustomization = () => {
   };
   const usedColors = teams.map(t => t.color);
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
-      <h2 className="text-3xl font-bold text-center text-slate-700 font-display">{t('setup.customizeTitle')}</h2>
-      <div className="space-y-6 h-setup-content overflow-y-auto p-1">
+    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
+      <h2 className="text-3xl font-bold text-center text-slate-700 font-display mb-6">{t('setup.customizeTitle')}</h2>
+      <div className="h-setup-content space-y-6 p-1">
         {teams.map((team) => {
           const otherTeamsColors = usedColors.filter(c => c !== team.color);
           return (
@@ -112,7 +112,7 @@ const TeamCustomization = () => {
                   </motion.div>
                 </Button>
               </div>
-              <div className="flex flex-wrap justify-center gap-3 pt-2">
+              <div className="flex flex-wrap justify-center gap-3 pt-1">
                 {TEAM_COLORS.map(color => {
                   const isTaken = otherTeamsColors.includes(color);
                   const isSelected = team.color === color;
@@ -141,9 +141,11 @@ const TeamCustomization = () => {
           );
         })}
       </div>
-      <Button onClick={() => setSetupStep('deck')} className="w-full h-14 text-lg font-bold bg-sky-500 hover:bg-sky-600 rounded-2xl shadow-lg transition-transform hover:scale-[1.02]">
-        {t('setup.continue')}
-      </Button>
+      <div className="mt-6">
+        <Button onClick={() => setSetupStep('deck')} className="w-full h-14 text-lg font-bold bg-sky-500 hover:bg-sky-600 rounded-2xl shadow-lg transition-transform hover:scale-[1.02]">
+          {t('setup.continue')}
+        </Button>
+      </div>
     </motion.div>
   );
 };
@@ -233,7 +235,7 @@ const DeckSelection = () => {
       <Button
         onClick={() => selectDeck(deck)}
         variant={isSelected ? 'default' : 'outline'}
-        className={`w-full h-auto text-left font-semibold rounded-2xl p-4 flex items-center gap-4 transition-all duration-300 ${isSelected ? 'bg-sky-500 text-white scale-[1.02] shadow-md border-transparent' : 'bg-white border-slate-200 hover:border-sky-300'}`}
+        className={`w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 transition-all duration-300 ${isSelected ? 'bg-sky-500 text-white scale-[1.02] shadow-md border-transparent' : 'bg-white border-slate-200 hover:border-sky-300'}`}
       >
         <div className={cn("p-2 rounded-xl", isSelected ? "bg-white/20" : "bg-sky-50 text-sky-500")}>
           <Icon className="w-8 h-8 flex-shrink-0" />
@@ -252,9 +254,9 @@ const DeckSelection = () => {
     );
   };
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
-      <h2 className="text-3xl font-bold text-center text-slate-700 font-display">{t('setup.deckTitle')}</h2>
-      <div className="space-y-3 h-setup-content overflow-y-auto p-1">
+    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
+      <h2 className="text-3xl font-bold text-center text-slate-700 font-display mb-6">{t('setup.deckTitle')}</h2>
+      <div className="h-setup-content space-y-3 p-1">
         {isLoadingDecks ? (
           <div className="flex justify-center items-center h-48">
             <Loader2 className="w-12 h-12 animate-spin text-sky-500" />
@@ -270,9 +272,11 @@ const DeckSelection = () => {
           <Upload className="mr-4 text-sky-500" /> {t('setup.uploadDeck')}
         </Button>
       </div>
-      <Button onClick={handleContinue} disabled={!selectedDeck} className="w-full h-14 text-lg font-bold bg-sky-500 hover:bg-sky-600 rounded-2xl disabled:bg-slate-300 shadow-lg">
-        {t('setup.continue')}
-      </Button>
+      <div className="mt-6">
+        <Button onClick={handleContinue} disabled={!selectedDeck} className="w-full h-14 text-lg font-bold bg-sky-500 hover:bg-sky-600 rounded-2xl disabled:bg-slate-300 shadow-lg">
+          {t('setup.continue')}
+        </Button>
+      </div>
     </motion.div>
   );
 };
@@ -301,9 +305,9 @@ const WordCountSelection = () => {
     navigate('/play');
   };
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full space-y-6">
-      <h2 className="text-3xl font-bold text-center text-slate-700 font-display">{t('setup.wordCountTitle')}</h2>
-      <div className="h-setup-content overflow-y-auto space-y-8 p-1">
+    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
+      <h2 className="text-3xl font-bold text-center text-slate-700 font-display mb-6">{t('setup.wordCountTitle')}</h2>
+      <div className="h-setup-content space-y-4 p-1">
         <div className="space-y-4">
           <p className="text-slate-500 text-center px-4">{t('setup.wordCountDescription')}</p>
           <div className="bg-white p-4 rounded-3xl shadow-md space-y-3 border border-slate-100">
@@ -337,9 +341,11 @@ const WordCountSelection = () => {
           </div>
         </div>
       </div>
-      <Button onClick={handleStartGame} className="w-full h-16 text-xl font-bold bg-green-500 hover:bg-green-600 rounded-2xl shadow-lg transition-transform hover:scale-[1.02]">
-        {t('setup.play')}
-      </Button>
+      <div className="mt-6">
+        <Button onClick={handleStartGame} className="w-full h-16 text-xl font-bold bg-green-500 hover:bg-green-600 rounded-2xl shadow-lg transition-transform hover:scale-[1.02]">
+          {t('setup.play')}
+        </Button>
+      </div>
     </motion.div>
   );
 };
@@ -370,9 +376,9 @@ export function SetupPage() {
   const stepKeys = Object.keys(STEPS);
   const currentStepIndex = stepKeys.indexOf(setupStep);
   return (
-    <div className="flex flex-col items-center min-h-screen bg-background p-6 overflow-hidden">
-      <div className="w-full max-w-md">
-        <header className="relative flex items-center justify-center mb-8">
+    <div className="flex flex-col items-center h-[100dvh] bg-background p-6 overflow-hidden">
+      <div className="w-full max-w-md h-full flex flex-col">
+        <header className="relative flex-shrink-0 flex items-center justify-center mb-8">
           <Button onClick={handleBack} variant="ghost" size="icon" className="absolute left-0 rounded-full h-12 w-12 hover:bg-slate-100">
             <ArrowLeft className="h-6 w-6" />
           </Button>
@@ -389,7 +395,7 @@ export function SetupPage() {
             })}
           </div>
         </header>
-        <main className="flex items-center justify-center">
+        <main className="flex-1 flex flex-col items-center justify-center min-h-0">
           <AnimatePresence mode="wait">
             <CurrentStepComponent key={setupStep} />
           </AnimatePresence>

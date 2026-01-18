@@ -1,7 +1,7 @@
 {
   "home": {
     "title": "Yaygara",
-    "slogan": "Anlatma ve tahmin etmeye dayalı eğlenceli parti oyunu",
+    "slogan": "Anlatma ve tahmine dayalı eğlenceli parti oyunu",
     "howToPlay": "Nasıl Oynanır?",
     "startGame": "Oyunu Kur",
     "footer": " "
@@ -52,8 +52,9 @@
     }
   },
   "scoreboard": {
+    "score": "puan",
     "scoresTitle": "Puanlar",
-    "winnerTitle": "{teamName} Kazandı!",
+    "winnerTitle": "{teamName} kazandı!",
     "nextTurn": "Sıradaki Tur",
     "playAgain": "Tekrar Oyna",
     "backToHome": "Ana Sayfaya Dön"
@@ -121,6 +122,7 @@
       "Hain",
       "Sadık",
       "Karizmatik",
+      "Radyoaktif",
       "Yürekli",
       "Zeki",
       "Korkusuz",
@@ -153,12 +155,11 @@
       "Merhametli",
       "Şanslı",
       "Talihsiz",
-      "Vurdumduymaz",
       "İnançlı",
       "Gölgesiz",
       "Uçuk",
-      "Çetin Ceviz",
       "Şahane",
+      "Sabıkalı",
       "Sakıncalı",
       "Unutkan",
       "Soğuk",
@@ -184,8 +185,8 @@
       "İnatçı",
       "Maceracı",
       "Zarif",
-      "Sakinleşmiş",
-      "Sertbaşlı",
+      "Sakin",
+      "Dikbaşlı",
       "Enerjik",
       "Doyumsuz",
       "Tutkulu",
@@ -268,7 +269,7 @@
       "Fırlamalar",
       "Kıkırdaklar",
       "Çakallar",
-      "Sakarlılar",
+      "Sakarlar",
       "Kargalar",
       "Zıpırlar",
       "Kurnazlar",
@@ -329,7 +330,7 @@
   },
   "pwa": {
     "installTitle": "Ana Ekrana Ekle",
-    "installDescription": "Tam uygulama deneyimi yaşayın.",
+    "installDescription": "Mobil uygulama olarak kullan.",
     "installButton": "Yükle"
   }
 }
