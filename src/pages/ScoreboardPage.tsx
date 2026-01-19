@@ -62,13 +62,6 @@ export function ScoreboardPage() {
         </motion.div>
         <div className="space-y-4">
           <Button
-            onClick={handleBackToHome}
-            className="w-full h-16 text-xl font-bold bg-sky-500 hover:bg-sky-600 text-white rounded-2xl shadow-lg"
-          >
-            {t('scoreboard.playAgain')}
-            <ArrowRight className="ml-2 h-6 w-6" />
-          </Button>
-          <Button
             variant="ghost"
             onClick={handleBackToHome}
             className="text-slate-400 hover:text-slate-600 font-bold"

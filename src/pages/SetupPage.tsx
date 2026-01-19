@@ -10,6 +10,7 @@ import { useShallow } from 'zustand/react/shallow';
 import type { Deck } from '@/types';
 import { useTranslations } from '@/hooks/useTranslations';
 import { cn } from '@/lib/utils';
+import { AIDeckConstructorModal } from '@/components/AIDeckConstructorModal';
 const containerVariants: Variants = {
   hidden: { opacity: 0, x: 100 },
   visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } },
@@ -160,6 +161,7 @@ const DeckSelection = () => {
   const [decks, setDecks] = useState<Deck[]>([]);
   const [isLoadingDecks, setIsLoadingDecks] = useState(true);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isAIModalOpen, setIsAIModalOpen] = useState(false);
   const { t } = useTranslations();
   useEffect(() => {
     const fetchDecks = async () => {
@@ -271,12 +273,23 @@ const DeckSelection = () => {
         <Button onClick={handleFileUploadClick} variant="outline" className="w-full h-16 text-lg justify-start font-semibold rounded-2xl bg-white/80 dark:bg-slate-800/80 border-dashed border-2 border-slate-300 dark:border-slate-600 hover:border-sky-400 hover:bg-sky-50 dark:hover:bg-sky-900/20">
           <Upload className="mr-4 text-sky-500" /> {t('setup.uploadDeck')}
         </Button>
+        {/* AI Deck Constructor Link */}
+        <div className="flex justify-center mt-2">
+          <Button
+            variant="link"
+            className="text-slate-500 dark:text-slate-400 text-base font-semibold"
+            onClick={() => setIsAIModalOpen(true)}
+          >
+            {t('setup.createWithAI')}
+          </Button>
+        </div>
       </div>
       <div className="mt-6">
         <Button onClick={handleContinue} disabled={!selectedDeck} className="w-full h-14 text-lg font-bold bg-sky-500 hover:bg-sky-600 rounded-2xl disabled:bg-slate-300 shadow-lg">
           {t('setup.continue')}
         </Button>
       </div>
+      <AIDeckConstructorModal isOpen={isAIModalOpen} onClose={() => setIsAIModalOpen(false)} />
     </motion.div>
   );
 };

@@ -514,11 +514,6 @@
             "term": "Mezuniyet töreni",
             "hint": "Okul bitiminde yapılan, kep atılan kutlama.",
             "difficulty": 1
-        },
-        {
-            "term": "Patlamış Mısır",
-            "hint": "Sarı renkli tohumların sıcakta patlamasıyla oluşan sinema atıştırmalığı.",
-            "difficulty": 1
         }
     ]
 }
