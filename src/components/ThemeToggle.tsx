@@ -32,7 +32,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
     >
       <div className="relative w-6 h-6 flex items-center justify-center overflow-hidden">
         <AnimatePresence mode="wait" initial={false}>
-          {theme === 'light' ? (
+          {theme === 'dark' ? (
             <motion.div
               key="sun"
               initial={{ y: -30, opacity: 0, rotate: -90 }}
