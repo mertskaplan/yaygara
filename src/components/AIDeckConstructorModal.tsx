@@ -31,16 +31,6 @@ export const AIDeckConstructorModal: React.FC<AIDeckConstructorModalProps> = ({ 
         navigator.clipboard.writeText(prompt);
     };
 
-    const openLLM = (baseUrl: string, suffix: string = '') => {
-        const fullUrl = baseUrl + encodeURIComponent(prompt) + suffix;
-        window.open(fullUrl, '_blank');
-    };
-
-    const copyAndOpen = (url: string) => {
-        handleCopy();
-        window.open(url, '_blank');
-    };
-
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
             <DialogContent hideClose className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl">
@@ -62,53 +52,117 @@ export const AIDeckConstructorModal: React.FC<AIDeckConstructorModalProps> = ({ 
 
                         <div className="flex flex-wrap gap-2 pt-2 pb-4">
                             <Button
-                                onClick={() => copyAndOpen('https://gemini.google.com/app')}
+                                asChild
                                 className="bg-[#f04e23] hover:bg-[#f04e23]/90 text-white font-bold rounded-lg px-4 py-2 h-10 transition-transform duration-200 hover:scale-105 active:scale-95"
                             >
-                                {t('aiModal.llms.gemini')}
+                                <a
+                                    href={`https://gemini.google.com/app?prompt=${encodeURIComponent(prompt)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleCopy}
+                                >
+                                    {t('aiModal.llms.gemini')}
+                                </a>
                             </Button>
+
                             <Button
-                                onClick={() => openLLM('https://chatgpt.com/?prompt=')}
+                                asChild
                                 className="bg-[#00a57d] hover:bg-[#00a57d]/90 text-white font-bold rounded-lg px-4 py-2 h-10 transition-transform duration-200 hover:scale-105 active:scale-95"
                             >
-                                {t('aiModal.llms.chatgpt')}
+                                <a
+                                    href={`https://chatgpt.com/?prompt=${encodeURIComponent(prompt)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleCopy}
+                                >
+                                    {t('aiModal.llms.chatgpt')}
+                                </a>
                             </Button>
+
                             <Button
-                                onClick={() => openLLM('https://claude.ai/new?q=')}
+                                asChild
                                 className="bg-[#d77655] hover:bg-[#d77655]/90 text-white font-bold rounded-lg px-4 py-2 h-10 transition-transform duration-200 hover:scale-105 active:scale-95"
                             >
-                                {t('aiModal.llms.claude')}
+                                <a
+                                    href={`https://claude.ai/new?q=${encodeURIComponent(prompt)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleCopy}
+                                >
+                                    {t('aiModal.llms.claude')}
+                                </a>
                             </Button>
+
                             <Button
-                                onClick={() => openLLM('https://grok.com/?q=')}
+                                asChild
                                 className="bg-[#000000] hover:bg-[#000000]/90 text-white font-bold rounded-lg px-4 py-2 h-10 transition-transform duration-200 hover:scale-105 active:scale-95"
                             >
-                                {t('aiModal.llms.grok')}
+                                <a
+                                    href={`https://grok.com/?q=${encodeURIComponent(prompt)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleCopy}
+                                >
+                                    {t('aiModal.llms.grok')}
+                                </a>
                             </Button>
+
                             <Button
-                                onClick={() => openLLM('https://perplexity.ai/search/new?q=')}
+                                asChild
                                 className="bg-[#2d555d] hover:bg-[#2d555d]/90 text-white font-bold rounded-lg px-4 py-2 h-10 transition-transform duration-200 hover:scale-105 active:scale-95"
                             >
-                                {t('aiModal.llms.perplexity')}
+                                <a
+                                    href={`https://perplexity.ai/search/new?q=${encodeURIComponent(prompt)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleCopy}
+                                >
+                                    {t('aiModal.llms.perplexity')}
+                                </a>
                             </Button>
+
                             <Button
-                                onClick={() => copyAndOpen('https://copilot.microsoft.com/')}
+                                asChild
                                 className="bg-[#0279e1] hover:bg-[#0279e1]/90 text-white font-bold rounded-lg px-4 py-2 h-10 transition-transform duration-200 hover:scale-105 active:scale-95"
                             >
-                                {t('aiModal.llms.copilot')}
+                                <a
+                                    href={`https://copilot.microsoft.com/?q=${encodeURIComponent(prompt)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleCopy}
+                                >
+                                    {t('aiModal.llms.copilot')}
+                                </a>
                             </Button>
+
                             <Button
-                                onClick={() => openLLM('https://chat.mistral.ai/chat?q=')}
+                                asChild
                                 className="bg-[#f9500f] hover:bg-[#f9500f]/90 text-white font-bold rounded-lg px-4 py-2 h-10 transition-transform duration-200 hover:scale-105 active:scale-95"
                             >
-                                {t('aiModal.llms.mistral')}
+                                <a
+                                    href={`https://chat.mistral.ai/chat?q=${encodeURIComponent(prompt)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleCopy}
+                                >
+                                    {t('aiModal.llms.mistral')}
+                                </a>
                             </Button>
+
                             <Button
-                                onClick={() => copyAndOpen('https://chat.deepseek.com')}
+                                asChild
                                 className="bg-[#4e6cff] hover:bg-[#4e6cff]/90 text-white font-bold rounded-lg px-4 py-2 h-10 transition-transform duration-200 hover:scale-105 active:scale-95"
                             >
-                                {t('aiModal.llms.deepseek')}
+                                <a
+                                    href={`https://chat.deepseek.com/?q=${encodeURIComponent(prompt)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleCopy}
+                                >
+                                    {t('aiModal.llms.deepseek')}
+                                </a>
                             </Button>
+
                             <Button
                                 onClick={handleCopy}
                                 className="bg-[#6c757d] hover:bg-[#6c757d]/90 text-white font-bold rounded-lg px-4 py-2 h-10 flex gap-2 transition-transform duration-200 hover:scale-105 active:scale-95"
