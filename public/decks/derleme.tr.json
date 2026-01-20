@@ -564,6 +564,11 @@
             "term": "Protokol",
             "hint": "Resmi tören ve yazışmalarda uygulanan katı kurallar bütünü.",
             "difficulty": 2
+        },
+        {
+            "term": "Kuş bakışı",
+            "hint": "Bir yere çok yüksekten, her şeyi görecek şekilde bakmak.",
+            "difficulty": 1
         }
     ]
 }
