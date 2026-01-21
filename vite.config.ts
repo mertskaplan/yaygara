@@ -44,7 +44,7 @@ const customLogger = {
   hasErrorLogged: () => false,
 
   // Keep these as-is
-  clearScreen: () => {},
+  clearScreen: () => { },
   hasWarned: false,
 };
 
@@ -85,11 +85,100 @@ function watchDependenciesPlugin() {
   };
 }
 
+import fs from 'node:fs';
+function localizeHTMLPlugin() {
+  const languages = ['en', 'tr'] as const;
+  const baseUrl = 'https://yaygara.mertskaplan.com';
+
+  const getLocalizedHtml = (baseHtml: string, lang: string) => {
+    const localePath = path.resolve(__dirname, `public/locales/${lang}.json`);
+    if (!fs.existsSync(localePath)) return baseHtml;
+
+    const localeData = JSON.parse(fs.readFileSync(localePath, 'utf-8'));
+    const seo = localeData.seo || {};
+
+    let html = baseHtml;
+    // Replace lang
+    html = html.replace('<html lang="en">', `<html lang="${lang}">`);
+
+    // Replace Meta tags
+    html = html.replace(
+      /<meta name="description" content="[^"]*">/,
+      `<meta name="description" content="${seo.description || ''}">`
+    );
+    html = html.replace(
+      /<meta property="og:title" content="[^"]*">/,
+      `<meta property="og:title" content="${seo.ogTitle || ''}">`
+    );
+    html = html.replace(
+      /<meta property="og:description" content="[^"]*">/,
+      `<meta property="og:description" content="${seo.description || ''}">`
+    );
+
+    html = html.replace(
+      /"description": "Fun party game based on narration and guessing, played by passing a single device among players."/,
+      `"description": "${seo.schemaDescription || ''}"`
+    );
+
+    // Add Canonical and Hreflang
+    const headEndIndex = html.indexOf('</head>');
+    if (headEndIndex !== -1) {
+      const seoTags = [
+        `  <link rel="canonical" href="${baseUrl}/${lang}/">`,
+        ...languages.map(l => `  <link rel="alternate" hreflang="${l}" href="${baseUrl}/${l}/">`),
+        `  <link rel="alternate" hreflang="x-default" href="${baseUrl}/en/">`
+      ].join('\n');
+
+      html = html.slice(0, headEndIndex) + seoTags + '\n' + html.slice(headEndIndex);
+    }
+    return html;
+  };
+
+  return {
+    name: 'localize-html-ssg',
+    // Handle Dev Server
+    transformIndexHtml(html: string, ctx: any) {
+      console.log('--- transformIndexHtml called ---');
+      const url = ctx.originalUrl || ctx.url || '';
+      console.log(`[localizeHTMLPlugin] URL: ${url}`);
+
+      const langMatch = url.match(/\/(en|tr)(\/|$)/);
+      const lang = langMatch ? langMatch[1] : 'en';
+
+      console.log(`[localizeHTMLPlugin] Lang: ${lang}`);
+      const localizedHtml = getLocalizedHtml(html, lang);
+      console.log('[localizeHTMLPlugin] Transformation complete');
+      return localizedHtml;
+    },
+    // Handle Build
+    async closeBundle() {
+      const distPath = path.resolve(__dirname, 'dist');
+      const indexPath = path.join(distPath, 'index.html');
+
+      if (!fs.existsSync(indexPath)) return;
+
+      const baseHtml = fs.readFileSync(indexPath, 'utf-8');
+
+      for (const lang of languages) {
+        const html = getLocalizedHtml(baseHtml, lang);
+
+        // Create directory and write file
+        const langDir = path.join(distPath, lang);
+        if (!fs.existsSync(langDir)) {
+          fs.mkdirSync(langDir, { recursive: true });
+        }
+        fs.writeFileSync(path.join(langDir, 'index.html'), html);
+        console.log(`✅ Generated localized HTML for: ${lang}`);
+      }
+    }
+  };
+}
+
 // https://vite.dev/config/
 export default ({ mode }: { mode: string }) => {
   const env = loadEnv(mode, process.cwd());
   return defineConfig({
-    plugins: [react(), watchDependenciesPlugin()],
+    plugins: [react(), watchDependenciesPlugin(), localizeHTMLPlugin()],
     build: {
       minify: true,
       sourcemap: "inline", // Use inline source maps for better error reporting

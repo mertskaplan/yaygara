@@ -77,9 +77,11 @@ const PlayingScreen = () => {
       endTurn();
     }
   }, [timeLeft, endTurn, gameStatus]);
+  const { language, getLocalizedPath } = useTranslations();
+
   const handleConfirmEndGame = () => {
     resetGame();
-    navigate('/');
+    navigate(`/${language}`);
   };
   const handleActionClick = (action: 'pass' | 'correct') => {
     if (isActionLocked) return;
@@ -159,14 +161,15 @@ export function GamePage() {
   const teams = useGameStore(useShallow((state) => state.teams));
   const currentTeamIndex = useGameStore(useShallow((state) => state.currentTeamIndex));
   const navigate = useNavigate();
+  const { language, getLocalizedPath } = useTranslations();
   useEffect(() => {
     if (gameStatus === 'game-over') {
-      navigate('/score');
+      navigate(getLocalizedPath('score'));
     }
     if (gameStatus === 'setup') {
-      navigate('/setup');
+      navigate(getLocalizedPath('setup'));
     }
-  }, [gameStatus, navigate]);
+  }, [gameStatus, navigate, getLocalizedPath]);
   const theme = useGameStore((state) => state.theme);
   const dynamicBgStyle = useMemo(() => {
     if ((gameStatus === 'get-ready' || gameStatus === 'playing') && teams.length > 0) {

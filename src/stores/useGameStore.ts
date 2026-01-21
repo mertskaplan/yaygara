@@ -61,7 +61,7 @@ interface GameState {
 export const useGameStore = create<GameState>()(
   persist(
     immer((set, get) => ({
-      language: 'en',
+      language: (typeof window !== 'undefined' && navigator.language.startsWith('tr')) ? 'tr' : 'en',
       teams: [],
       selectedDeck: null,
       customDeck: null,

@@ -17,25 +17,48 @@ import { ThemeManager } from '@/components/ThemeManager'
 import { preloadTranslations } from '@/lib/i18n';
 // Preload all language files on app startup for instant language switching
 preloadTranslations();
+import { LanguageWrapper } from '@/components/LanguageWrapper';
+import { RootRedirector } from '@/components/RootRedirector';
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <RootRedirector />,
     errorElement: <RouteErrorBoundary />,
   },
   {
-    path: "/setup",
-    element: <SetupPage />,
+    path: "/:lang",
+    element: <LanguageWrapper><HomePage /></LanguageWrapper>,
     errorElement: <RouteErrorBoundary />,
   },
   {
-    path: "/play",
-    element: <GamePage />,
+    path: "/:lang/setup",
+    element: <LanguageWrapper><SetupPage /></LanguageWrapper>,
     errorElement: <RouteErrorBoundary />,
   },
   {
-    path: "/score",
-    element: <ScoreboardPage />,
+    path: "/:lang/kurulum",
+    element: <LanguageWrapper><SetupPage /></LanguageWrapper>,
+    errorElement: <RouteErrorBoundary />,
+  },
+  {
+    path: "/:lang/play",
+    element: <LanguageWrapper><GamePage /></LanguageWrapper>,
+    errorElement: <RouteErrorBoundary />,
+  },
+  {
+    path: "/:lang/oyun",
+    element: <LanguageWrapper><GamePage /></LanguageWrapper>,
+    errorElement: <RouteErrorBoundary />,
+  },
+  {
+    path: "/:lang/score",
+    element: <LanguageWrapper><ScoreboardPage /></LanguageWrapper>,
+    errorElement: <RouteErrorBoundary />,
+  },
+  {
+    path: "/:lang/skor",
+    element: <LanguageWrapper><ScoreboardPage /></LanguageWrapper>,
     errorElement: <RouteErrorBoundary />,
   },
 ]);

@@ -300,7 +300,7 @@ const WordCountSelection = () => {
   const turnDuration = useGameStore((state) => state.turnDuration);
   const setTurnDuration = useGameStore((state) => state.setTurnDuration);
   const navigate = useNavigate();
-  const { t } = useTranslations();
+  const { t, getLocalizedPath } = useTranslations();
   const maxWords = selectedDeck?.words?.length || 5;
   const minWords = Math.min(5, maxWords);
   const [count, setCount] = useState(maxWords);
@@ -315,7 +315,7 @@ const WordCountSelection = () => {
   const handleStartGame = () => {
     setWordCount(count);
     startGame(selectedDeck.words!);
-    navigate('/play');
+    navigate(getLocalizedPath('play'));
   };
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
@@ -373,10 +373,11 @@ export function SetupPage() {
   const setSetupStep = useGameStore((state) => state.setSetupStep);
   const resetSetup = useGameStore((state) => state.resetSetup);
   const navigate = useNavigate();
+  const { language, getLocalizedPath } = useTranslations();
   const handleBack = () => {
     if (setupStep === 'teams') {
       resetSetup();
-      navigate('/');
+      navigate(`/${language}`);
     } else if (setupStep === 'customize') {
       setSetupStep('teams');
     } else if (setupStep === 'deck') {

@@ -350,5 +350,15 @@
       "copilot": "Kopyala ve Copilot'ı aç",
       "deepseek": "Kopyala ve DeepSeek'i aç"
     }
+  },
+  "slugs": {
+    "setup": "kurulum",
+    "play": "oyun",
+    "score": "skor"
+  },
+  "seo": {
+    "description": "Anlatma ve tahmine dayalı eğlenceli parti oyunu",
+    "ogTitle": "Yaygara: Anlatma ve tahmine dayalı eğlenceli parti oyunu",
+    "schemaDescription": "Tek bir cihazın oyuncular arasında elden ele dolaştırılmasıyla oynanan, anlatma ve tahmine dayalı eğlenceli bir parti oyunu."
   }
 }

@@ -32,5 +32,11 @@ export const useTranslations = () => {
     }
     return translation;
   }, [translations, isLoading]);
-  return { t, isLoading, language, translations };
+
+  const getLocalizedPath = useCallback((path: string): string => {
+    const slug = t(`slugs.${path}`);
+    return `/${language}/${slug === `slugs.${path}` ? path : slug}`;
+  }, [language, t]);
+
+  return { t, isLoading, language, translations, getLocalizedPath };
 };

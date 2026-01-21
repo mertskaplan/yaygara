@@ -352,5 +352,15 @@
       "copilot": "Copy and Open Copilot",
       "deepseek": "Copy and Open DeepSeek"
     }
+  },
+  "slugs": {
+    "setup": "setup",
+    "play": "play",
+    "score": "score"
+  },
+  "seo": {
+    "description": "Fun party game based on narration and guessing",
+    "ogTitle": "Yaygara: Fun party game based on narration and guessing",
+    "schemaDescription": "Fun party game based on narration and guessing, played by passing a single device among players."
   }
 }

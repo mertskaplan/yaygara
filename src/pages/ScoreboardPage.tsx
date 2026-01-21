@@ -11,12 +11,12 @@ export function ScoreboardPage() {
   const gameStatus = useGameStore(useShallow((state) => state.gameStatus));
   const resetGame = useGameStore(useShallow((state) => state.resetGame));
   const navigate = useNavigate();
-  const { t } = useTranslations();
+  const { language, t } = useTranslations();
   const sortedTeams = [...teams].sort((a, b) => b.score - a.score);
   const winner = gameStatus === 'game-over' ? sortedTeams[0] : null;
   const handleBackToHome = () => {
     resetGame();
-    navigate('/');
+    navigate(`/${language}`);
   };
   return (
     <div className="flex flex-col items-center justify-center h-screen-dvh bg-background p-6 text-center overflow-hidden">

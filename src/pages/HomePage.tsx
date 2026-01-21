@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { useGameStore, Language } from '@/stores/useGameStore';
@@ -12,10 +12,30 @@ import { Logo } from '@/components/Logo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 const LanguageSelector = () => {
   const language = useGameStore(useShallow((state) => state.language));
-  const setLanguage = useGameStore(useShallow((state) => state.setLanguage));
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
   const selectLang = (lang: Language) => {
-    setLanguage(lang);
+    if (lang === language) return;
+
+    // Map current path to target language path
+    // e.g. /en/setup -> /tr/kurulum
+    const parts = pathname.split('/').filter(Boolean);
+    const currentPage = parts[1] || ''; // 'setup', 'kurulum', etc.
+
+    const SLUG_MAP: Record<string, Record<Language, string>> = {
+      'setup': { en: 'setup', tr: 'kurulum' },
+      'kurulum': { en: 'setup', tr: 'kurulum' },
+      'play': { en: 'play', tr: 'oyun' },
+      'oyun': { en: 'play', tr: 'oyun' },
+      'score': { en: 'score', tr: 'skor' },
+      'skor': { en: 'score', tr: 'skor' },
+    };
+
+    const targetSlug = currentPage && SLUG_MAP[currentPage] ? SLUG_MAP[currentPage][lang] : currentPage;
+    navigate(`/${lang}${targetSlug ? '/' + targetSlug : ''}`, { replace: true });
   };
+
   return (
     <div className="flex items-center justify-center gap-4">
       <button
@@ -35,14 +55,16 @@ const LanguageSelector = () => {
     </div>
   );
 };
+
 export function HomePage() {
   const navigate = useNavigate();
   const resetSetup = useGameStore((state) => state.resetSetup);
   const [isHowToPlayOpen, setIsHowToPlayOpen] = useState(false);
-  const { t } = useTranslations();
+  const { t, getLocalizedPath } = useTranslations();
+
   const handleStartGame = () => {
     resetSetup();
-    navigate('/setup');
+    navigate(getLocalizedPath('setup'));
   };
   return (
     <div className="flex flex-col items-center justify-center h-screen-dvh bg-background p-6 text-center overflow-hidden relative">
