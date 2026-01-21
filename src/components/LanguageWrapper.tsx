@@ -47,18 +47,20 @@ export const LanguageWrapper: React.FC<{ children: React.ReactNode }> = ({ child
 };
 
 function updateSEOTags(lang: Language, pathname: string) {
-    // Canonical URL
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-        canonical = document.createElement('link');
-        canonical.setAttribute('rel', 'canonical');
-        document.head.appendChild(canonical);
-    }
     const baseUrl = 'https://yaygara.mertskaplan.com';
+    const languages: Language[] = ['en', 'tr'];
+
+    // Remove existing Canonical and Hreflang tags to avoid duplicates
+    document.querySelectorAll('link[rel="canonical"]').forEach(el => el.remove());
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+
+    // Canonical
+    const canonical = document.createElement('link');
+    canonical.setAttribute('rel', 'canonical');
     canonical.setAttribute('href', `${baseUrl}${pathname}`);
+    document.head.appendChild(canonical);
 
     // Update Meta Description and OG tags
-    // These should match what's in the translation files
     const descriptions: Record<Language, string> = {
         en: 'Fun party game based on narration and guessing',
         tr: 'Anlatma ve tahmine dayalı eğlenceli parti oyunu'
@@ -70,26 +72,15 @@ function updateSEOTags(lang: Language, pathname: string) {
     };
 
     let metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-        metaDesc.setAttribute('content', descriptions[lang]);
-    }
+    if (metaDesc) metaDesc.setAttribute('content', descriptions[lang]);
 
     let ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-        ogTitle.setAttribute('content', ogTitles[lang]);
-    }
+    if (ogTitle) ogTitle.setAttribute('content', ogTitles[lang]);
 
     let ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) {
-        ogDesc.setAttribute('content', descriptions[lang]);
-    }
+    if (ogDesc) ogDesc.setAttribute('content', descriptions[lang]);
 
-    // Hreflang Tags
-    const languages: Language[] = ['en', 'tr'];
-
-    // Remove existing hreflang tags to avoid duplicates
-    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
-
+    // Hreflang Tags (en, tr)
     languages.forEach(l => {
         const link = document.createElement('link');
         link.setAttribute('rel', 'alternate');
