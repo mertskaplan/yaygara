@@ -120,6 +120,10 @@ function localizeHTMLPlugin() {
       `"description": "${seo.schemaDescription || ''}"`
     );
 
+    // Remove existing Canonical and Hreflang tags to prevent duplicates
+    html = html.replace(/<link rel="canonical"[^>]*>\n?/g, '');
+    html = html.replace(/<link rel="alternate" hreflang="[^"]*"[^>]*>\n?/g, '');
+
     // Add Canonical and Hreflang
     const headEndIndex = html.indexOf('</head>');
     if (headEndIndex !== -1) {
