@@ -36,7 +36,7 @@
     "noMoreWordsDesc": "You cleared the list, great job!",
     "undo": "Undo",
     "bonusTurnTitle": "Bonus Turn!",
-    "bonusTurnDescription": "You finished the round early! Start Round {round} with your remaining <b>{time}</b> seconds.",
+    "bonusTurnDescription": "You finished the round early! Start Round {round} with your remaining {time} seconds.",
     "turnSummary": {
       "title": "{teamName}'s turn is over!",
       "subtitle": "Time's up!",

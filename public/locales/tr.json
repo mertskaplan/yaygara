@@ -36,7 +36,7 @@
     "noMoreWordsDesc": "Listeyi temizlediniz, harika iş!",
     "undo": "Geri Al",
     "bonusTurnTitle": "Bonus Tur!",
-    "bonusTurnDescription": "Turu erken bitirdin! {round}. tura kalan <b>{time}</b> saniyenle başla.",
+    "bonusTurnDescription": "Turu erken bitirdin! {round}. tura kalan {time} saniyenle başla.",
     "turnSummary": {
       "title": "{teamName} takımının sırası geçti!",
       "subtitle": "Süre doldu!",
