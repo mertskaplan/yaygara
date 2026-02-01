@@ -28,15 +28,15 @@
     "round1": "1. Tur: Serbestçe anlat!",
     "round1Description": "Kelimeyi söylemeden anlat. İstediğin kadar kelime kullanabilir ya da kelimenin altındaki açıklamayı doğrudan okuyabilirsin.",
     "round2": "2. Tur: Sadece tek kelime kullan!",
-    "round2Description": "Bu sefer ipucu olarak sadece tek bir kelime kullanabilirsin. Akıllıca seç!",
+    "round2Description": "İpucu olarak sadece tek bir kelime kullanabilirsin. Akıllıca seç!",
     "round3": "3. Tur: Sessiz sinema, kelime yok!",
-    "round3Description": "Kelime kullanmak yasak! Kelimeyi sadece jestler ve beden dili kullanarak anlat.",
+    "round3Description": "Kelime kullanmak yasak! Kelimeyi sadece jest, mimik ve beden dili kullanarak anlat.",
     "start": "Başla!",
     "noMoreWords": "Başka kelime kalmadı!",
     "noMoreWordsDesc": "Listeyi temizlediniz, harika iş!",
     "undo": "Geri Al",
     "bonusTurnTitle": "Bonus Tur!",
-    "bonusTurnDescription": "Turu erken bitirdin! {round}. tura kalan {time} saniyenle başla.",
+    "bonusTurnDescription": "Turu erken bitirdin! {round}. tura kalan <b>{time}</b> saniyenle başla.",
     "turnSummary": {
       "title": "{teamName} takımının sırası geçti!",
       "subtitle": "Süre doldu!",
@@ -61,20 +61,24 @@
     "backToHome": "Ana Sayfaya Dön"
   },
   "howToPlay": {
-    "title": "Yaygara Nasıl Oynanır",
-    "description": "Eğlenceyi başlatmak için hızlı bir rehber!",
+    "title": "Yaygara Nasıl Oynanır?",
+    "description": "Yaygara, <b>4 ila 16 kişi</b> arasında oynanabilen; <b>tabu ve sessiz sinema karışımı</b> eğlenceli bir parti oyunudur. Oyun, <b>yüz yüze oynanır</b> ve tek bir cihazın elden ele dolaşmasıyla ilerler.",
     "goalTitle": "Amaç",
-    "goalDescription": "Kazanmak için 3 turda diğer takımlardan daha fazla kelime tahmin edin! Her turda aynı kelimeler kullanılır, ancak kurallar zorlaşır.",
+    "goalDescription": "Oyun en az iki takımla oynanır. Oyuncular sırayla kelime destesinden rastgele gelen kelimeleri, belirlenen süre içinde takım arkadaşlarına anlatarak puan kazanmaya çalışır.<br/>• Tek yıldızlı (kolay) kelimeler: <b>1 puan</b><br/>• İki yıldızlı (orta) kelimeler: <b>2 puan</b><br/>• Üç yıldızlı (zor) kelimeler: <b>3 puan</b><br/>Oyun 3 turdan oluşur. <b>Her turda aynı kelimeler kullanılır</b>, ancak anlatım kuralları giderek zorlaşır. Tüm turların sonunda en yüksek puana sahip takım oyunu kazanır.",
+    "seatingTitle": "Oturma Düzeni ve Sıra",
+    "seatingDescription": "Oyun tek cihazla oynandığı için cihaz, anlatımı biten oyuncudan sonraki takımın anlatıcısına <b>elden ele verilir</b>. Bu sırayla ilerleyebilmek için <b>farklı takımlardaki oyuncuların yan yana oturması ve tüm oyuncuların bir daire oluşturacak şekilde yerleşmesi tavsiye edilir</b>. Bu düzen, oyunun akıcı ve keyifli ilerlemesini sağlar.",
+    "flowTitle": "Oyun Akışı",
+    "flowDescription": "Takımlar ve takım oyunları <b>sırayla anlatıcı olur</b>. Bir oyuncunun anlatım süresi bittiğinde, sıra diğer takımın anlatıcısına geçer. Her tur, destedeki tüm kelimeler doğru tahmin edilene kadar oynanır. Bir tur tamamlandığında, aynı kelime destesiyle bir sonraki tura geçilir. Bu nedenle rakip takımın anlattığı kelimeleri de <b>iyi dinle ve kopya verme!</b> Daha sonra puan olarak senin karşına çıkabilir.",
     "round1Title": "1. Tur: Serbest Anlatım",
-    "round1Description": "Kelimeyi istediğiniz kelimeleri, sesleri veya jestleri kullanarak anlatın. Önemli: Karttaki kelimeyi, bir parçasını, onunla kafiyeli kelimeleri veya başka dildeki çevirisini söyleyemezsiniz.",
+    "round1Description": "Kelimeyi istediğiniz kelimeleri, sesleri veya jestleri kullanarak anlatın. Önemli: Karttaki kelimeyi, bir parçasını, onunla kafiyeli kelimeleri veya başka dildeki çevirisini söyleyemezsiniz. Anlatmakta zorlanırsan, kartın altındaki açıklama metnini doğrudan okuyabilirsin.",
     "round2Title": "2. Tur: Sadece Tek Kelime",
-    "round2Description": "Bu sefer ipucu olarak sadece tek bir kelime kullanabilirsiniz, jest veya vücut dili kullanamazsınız! Kelimenizi akıllıca seçin. 1. Turdaki tüm kelimeler tekrar kullanılır.",
+    "round2Description": "Bu sefer ipucu olarak sadece tek bir kelime kullanabilirsin. Jest, mimik veya vücut dili kullanamazsınız. Kelimeni akıllıca seç; çünkü 1. turdaki tüm kelimeler tekrar oyundadır.",
     "round3Title": "3. Tur: Sessiz Sinema",
-    "round3Description": "Kelime kullanmak yasak! Kelimeyi sadece jestler ve beden dili kullanarak anlatın. Tüm kelimeler son bir kez daha kullanılır.",
+    "round3Description": "Konuşmak, ses çıkarmak yasak! Kelimeyi sadece jest, mimik ve beden diliyle anlat. Tüm kelimeler son bir kez daha kullanılır.",
     "passingTitle": "Sınırsız Pas Hakkı",
-    "passingDescription": "Bir kelimeyi bilmiyor musun? Sorun değil! İstediğin kadar pas geçebilirsin. Pas geçilen kelimeler tur içinde daha sonra tekrar karşına çıkacak.",
+    "passingDescription": "Bir kelimeyi anlatamadın mı? Sorun değil! <b>İstediğin kadar pas geçebilirsin.</b> Pas geçilen kelimeler tur içinde daha sonra tekrar karşına çıkacak. Eğer yanlışlıkla pas der ya da kelimeyi doğru olarak işaretlersen ortada çıkan buton ile hatalı işlemi geri alabilirsin.",
     "bonusTimeTitle": "Bonus Süre",
-    "bonusTimeDescription": "Takımınız bir turdaki tüm kelimeleri 3 saniyeden fazla süre kala tahmin ederse, bir sonraki tura o kalan süreyle hemen başlarsınız!",
+    "bonusTimeDescription": "Takımınız bir turdaki tüm kelimeleri 3 saniyeden fazla süre kala tahmin ederse, bir sonraki tura o kalan süreyle hemen başlarsınız! Hızlı olan avantajı kapar.",
     "closeButton": "Anladım!"
   },
   "teamNameGeneration": {
@@ -345,6 +349,7 @@
       "gemini": "Kopyala ve Gemini'yi aç",
       "claude": "Claude",
       "grok": "Grok",
+      "meta": "Meta AI",
       "perplexity": "Perplexity",
       "mistral": "Mistral",
       "copilot": "Kopyala ve Copilot'ı aç",
@@ -357,8 +362,8 @@
     "score": "skor"
   },
   "seo": {
-    "description": "Anlatma ve tahmine dayalı eğlenceli parti oyunu",
+    "description": "Yaygara: Anlatma ve tahmine dayalı eğlenceli parti oyunu",
     "ogTitle": "Yaygara: Anlatma ve tahmine dayalı eğlenceli parti oyunu",
-    "schemaDescription": "Tek bir cihazın oyuncular arasında elden ele dolaştırılmasıyla oynanan, anlatma ve tahmine dayalı eğlenceli bir parti oyunu."
+    "schemaDescription": "Yaygara, 4 ila 16 kişi arasında oynanabilen; tabu ve sessiz sinema karışımı eğlenceli bir parti oyunudur. Oyun, yüz yüze oynanır ve tek bir cihazın elden ele dolaşmasıyla ilerler"
   }
 }

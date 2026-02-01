@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Gamepad2, Mic, Clapperboard, Quote, SkipForward, Timer } from 'lucide-react';
+import { Gamepad2, Mic, Clapperboard, Quote, SkipForward, Timer, Users, RefreshCw } from 'lucide-react';
 import { useTranslations } from '@/hooks/useTranslations';
 interface HowToPlayModalProps {
   isOpen: boolean;
@@ -22,7 +22,7 @@ const RuleStep = ({ icon: Icon, title, description }: { icon: React.ElementType,
     </div>
     <div>
       <h4 className="text-lg font-bold text-slate-800 dark:text-slate-200">{title}</h4>
-      <p className="text-slate-600 dark:text-slate-400">{description}</p>
+      <p className="text-slate-600 dark:text-slate-400" dangerouslySetInnerHTML={{ __html: description }} />
     </div>
   </div>
 );
@@ -35,9 +35,10 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({ isOpen, onClose 
           <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center">
             {t('howToPlay.title')}
           </DialogTitle>
-          <DialogDescription className="text-center text-slate-600 dark:text-slate-400 text-base pt-2">
-            {t('howToPlay.description')}
-          </DialogDescription>
+          <DialogDescription
+            className="text-center text-slate-600 dark:text-slate-400 text-base pt-2"
+            dangerouslySetInnerHTML={{ __html: t('howToPlay.description') }}
+          />
         </DialogHeader>
         <ScrollArea className="flex-1 w-full pr-4 overflow-y-auto">
           <div className="space-y-6 py-4">
@@ -45,6 +46,16 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({ isOpen, onClose 
               icon={Gamepad2}
               title={t('howToPlay.goalTitle')}
               description={t('howToPlay.goalDescription')}
+            />
+            <RuleStep
+              icon={Users}
+              title={t('howToPlay.seatingTitle')}
+              description={t('howToPlay.seatingDescription')}
+            />
+            <RuleStep
+              icon={RefreshCw}
+              title={t('howToPlay.flowTitle')}
+              description={t('howToPlay.flowDescription')}
             />
             <RuleStep
               icon={Mic}

@@ -33,7 +33,11 @@ export const AIDeckConstructorModal: React.FC<AIDeckConstructorModalProps> = ({ 
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent hideClose className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl">
+            <DialogContent
+                hideClose
+                onOpenAutoFocus={(e) => e.preventDefault()}
+                className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl"
+            >
                 <DialogHeader className="flex-shrink-0">
                     <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center">
                         {t('aiModal.title')}
@@ -104,6 +108,20 @@ export const AIDeckConstructorModal: React.FC<AIDeckConstructorModalProps> = ({ 
                                     onClick={handleCopy}
                                 >
                                     {t('aiModal.llms.grok')}
+                                </a>
+                            </Button>
+
+                            <Button
+                                asChild
+                                className="bg-[#9949ff] hover:bg-[#000000]/90 text-white font-bold rounded-lg px-4 py-2 h-10 transition-transform duration-200 hover:scale-105 active:scale-95"
+                            >
+                                <a
+                                    href={`https://meta.ai/?prompt=${encodeURIComponent(prompt)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={handleCopy}
+                                >
+                                    {t('aiModal.llms.meta')}
                                 </a>
                             </Button>
 

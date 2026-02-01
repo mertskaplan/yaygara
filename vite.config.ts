@@ -198,6 +198,7 @@ export default ({ mode }: { mode: string }) => {
     },
     server: {
       allowedHosts: true,
+      port: 3000,
     },
     resolve: {
       alias: {
