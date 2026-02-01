@@ -1,7 +1,9 @@
-const CACHE_NAME = 'yaygara-v1.7';
+const CACHE_NAME = 'yaygara-v1.8';
 const CORE_ASSETS = [
   '/',
   '/index.html',
+  '/tr/',
+  '/en/',
   '/manifest.json',
   '/locales/tr.json',
   '/locales/en.json',
@@ -10,16 +12,16 @@ const CORE_ASSETS = [
   '/icons/icon-512x512.png'
 ];
 
-// Install: Cache core assets
+// Install: Cache core assets (be lenient about missing ones)
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[SW] Pre-caching core assets');
-      return cache.addAll(CORE_ASSETS).catch(err => {
-        console.warn('[SW] Pre-cache failed (some assets might be missing), continuing...', err);
-        // Continue even if some assets fail to cache (e.g. 404)
-        return Promise.resolve();
-      });
+      return Promise.all(
+        CORE_ASSETS.map(url => {
+          return cache.add(url).catch(err => console.warn(`[SW] Failed to cache ${url}:`, err));
+        })
+      );
     })
   );
   self.skipWaiting();
@@ -42,12 +44,12 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch: Network First for app, Cache First for decks
+// Fetch: Logic for Network-First with Cache Fallback
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   const isDeckRequest = url.pathname.includes('/decks/');
 
-  // 1. Navigation Requests (HTML)
+  // 1. Navigation (HTML/Pages)
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
@@ -59,16 +61,23 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() => {
-          // If offline, try the specific URL, then fall back to root /
+          // If offline, try to match the request, then try localized roots, then generic root
           return caches.match(event.request).then((response) => {
-            return response || caches.match('/') || caches.match('/index.html');
+            if (response) return response;
+
+            // Fallback strategy for SPA routing
+            const lang = url.pathname.split('/')[1]; // Get 'tr' or 'en'
+            if (lang === 'tr' || lang === 'en') {
+              return caches.match(`/${lang}/`) || caches.match('/') || caches.match('/index.html');
+            }
+            return caches.match('/') || caches.match('/index.html');
           });
         })
     );
     return;
   }
 
-  // 2. Deck Requests (Cache First)
+  // 2. Deck Requests (Cache First as per requirement)
   if (isDeckRequest) {
     event.respondWith(
       caches.match(event.request).then((response) => {
@@ -85,11 +94,10 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 3. Other Assets (Network First, then Cache)
+  // 3. Static Assets (Network First with Cache fallback as per requirement)
   event.respondWith(
     fetch(event.request)
       .then((response) => {
-        // Cache successful responses for assets (JS, CSS, etc.)
         if (response && response.status === 200) {
           const resClone = response.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(event.request, resClone));
@@ -97,7 +105,6 @@ self.addEventListener('fetch', (event) => {
         return response;
       })
       .catch(() => {
-        // If network fails, try cache
         return caches.match(event.request);
       })
   );
