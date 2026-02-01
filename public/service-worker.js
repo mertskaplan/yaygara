@@ -1,7 +1,9 @@
-const CACHE_NAME = 'yaygara-v1.5';
+const CACHE_NAME = 'yaygara-v1.6';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
+  '/tr/index.html',
+  '/en/index.html',
   '/manifest.json',
   '/locales/tr.json',
   '/locales/en.json',
@@ -10,6 +12,12 @@ const ASSETS_TO_CACHE = [
   '/decks/karanlik-seruven.tr.json',
   '/decks/uygarligin-izleri.tr.json',
   '/decks/argo.tr.json',
+  '/assets/index-fOfd1tOd.css',
+  '/assets/index-oui5GQ56.js',
+  '/icons/favicon.svg',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/image.png'
 ];
 
 // Pre-cache assets
@@ -59,7 +67,7 @@ self.addEventListener('fetch', (event) => {
         .catch(() => {
           console.log('[SW] Offline navigation fallback: ', event.request.url);
           return caches.match(event.request).then(response => {
-            return response || caches.match('/') || caches.match('/index.html');
+            return response || caches.match('/') || caches.match('/index.html') || caches.match('/tr/index.html') || caches.match('/en/index.html');
           });
         })
     );
