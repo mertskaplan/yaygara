@@ -1,6 +1,10 @@
 const CACHE_NAME = 'yaygara-v1.3';
 const ASSETS_TO_CACHE = [
+  '/',
+  '/index.html',
   '/manifest.json',
+  '/locales/tr.json',
+  '/locales/en.json',
   '/decks/baslangic.tr.json',
   '/decks/zihin-acici.tr.json',
   '/decks/karanlik-seruven.tr.json',
@@ -41,6 +45,26 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   const isDeckRequest = url.pathname.includes('/decks/');
+
+  // For navigation requests, use a network-first strategy fall-backing to the root index.html
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const resClone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, resClone);
+            });
+          }
+          return response;
+        })
+        .catch(() => {
+          return caches.match('/');
+        })
+    );
+    return;
+  }
 
   // Network First Strategy for everything except decks
   if (!isDeckRequest) {
