@@ -7,6 +7,11 @@ const CORE_ASSETS = [
   '/manifest.json',
   '/locales/tr.json',
   '/locales/en.json',
+  '/decks/baslangic.tr.json',
+  '/decks/zihin-acici.tr.json',
+  '/decks/karanlik-seruven.tr.json',
+  '/decks/uygarligin-izleri.tr.json',
+  '/decks/argo.tr.json',
   '/icons/favicon.svg',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png'
