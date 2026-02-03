@@ -1,0 +1,305 @@
+{
+  "id": "ordan-burdan.tr.json",
+  "name": "Ordan burdan",
+  "language": "tr",
+  "difficulty": "medium",
+  "count": 60,
+  "words": [
+    {
+      "term": "İmar affı",
+      "hint": "Kaçak yapıların yasal hale getirilmesi için çıkarılan düzenleme.",
+      "difficulty": 2
+    },
+    {
+      "term": "Megabayt",
+      "hint": "Dijital dosyaların boyutunu belirtmekte kullanılan bir birim.",
+      "difficulty": 1
+    },
+    {
+      "term": "Ayak masajı",
+      "hint": "Vücudun en alt uzvunu rahatlatmak için yapılan fiziksel terapi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kaşar",
+      "hint": "Sarı renkli ve eriyebilen bir peynir.",
+      "difficulty": 1
+    },
+    { "term": "Moda", "hint": "Belirli bir dönemde popüler olan giyim ve yaşam tarzı", "difficulty": 1 },
+    {
+      "term": "Şarampol",
+      "hint": "Yolun kenarında bulunan derin çukur veya hendek.",
+      "difficulty": 2
+    },
+    {
+      "term": "Pelerin",
+      "hint": "Süper kahramanların omuzlarından aşağı sarkan giysi parçası.",
+      "difficulty": 1
+    },
+    {
+      "term": "Hacıyatmaz",
+      "hint": "Ne kadar itilirse itilsin dik duran oyuncak tipi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Ertesi gün hapı",
+      "hint": "Birliktelikten sonra önlem amaçlı kullanılan tıbbi yöntem.",
+      "difficulty": 2
+    },
+    {
+      "term": "Islak hamburger",
+      "hint": "Özellikle Taksim ile özdeşleşmiş, buharda bekletilen soslu ekmek arası.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kağıt havlu",
+      "hint": "Mutfakta temizlikte kullanılan rulo malzeme.",
+      "difficulty": 1
+    },
+    {
+      "term": "Bakaya",
+      "hint": "Askere gitme vakti gelip de birliğine teslim olmayan kişi.",
+      "difficulty": 3
+    },
+    {
+      "term": "Toplum sözleşmesi",
+      "hint": "Bireylerin bir arada yaşamak için haklarından feragat etmesini öngören felsefi teori.",
+      "difficulty": 3
+    },
+    {
+      "term": "Yedek anahtar",
+      "hint": "Kapıda kalmamak için güvenilir birine bırakılan kilit açıcı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kurabiye Canavarı",
+      "hint": "Susam Sokağı'nın sürekli unlu mamul tüketen mavi renkli figürü.",
+      "difficulty": 1
+    },
+    {
+      "term": "Gulyabani",
+      "hint": "Süt Kardeşler filminde korku salan devasa tüylü yaratık.",
+      "difficulty": 2
+    },
+    {
+      "term": "Misvak",
+      "hint": "Eski dönemlerde diş temizliği için kullanılan ağaç dalı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Otur Sıfır",
+      "hint": "Eski öğretmenlerin başarısız öğrencilere söylediği meşhur replik.",
+      "difficulty": 2
+    },
+    {
+      "term": "Tornet",
+      "hint": "Rulmanlar üzerine tahta çakılarak yapılan eski bir çocuk aracı.",
+      "difficulty": 3
+    },
+    {
+      "term": "Mayın tarlası",
+      "hint": "Patlayıcılarla dolu arazi veya Windows'un klasik strateji oyunu.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kondom",
+      "hint": "Bulaşıcı hastalıklardan korunmak için kullanılan lateks ürün.",
+      "difficulty": 1
+    },
+    {
+      "term": "Zeytin dalı",
+      "hint": "Barışı simgeleyen bitki parçası.",
+      "difficulty": 1
+    },
+    {
+      "term": "Güneş gözlüğü",
+      "hint": "Parlak ışıktan koruyan koyu camlı aksesuar.",
+      "difficulty": 1
+    },
+    {
+      "term": "Paraşüt",
+      "hint": "Havadayken yavaşça yere inmeye yarayan geniş kumaş düzenek.",
+      "difficulty": 1
+    },
+    {
+      "term": "Fatura",
+      "hint": "Hizmet veya mal karşılığında ödenmesi gereken tutarı gösteren belge.",
+      "difficulty": 1
+    },
+    {
+      "term": "Selfie",
+      "hint": "Bir kişinin kendi fotoğrafını çekmesiyle oluşan kare.",
+      "difficulty": 1
+    },
+    {
+      "term": "Çay kaşığı",
+      "hint": "Bardaktaki şekeri karıştırmaya yarayan metal alet.",
+      "difficulty": 1
+    },
+    {
+      "term": "Uçan balon",
+      "hint": "Hafif bir gazla doldurulmuş, gökyüzüne yükselen çocuk oyuncağı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Trafik lambası",
+      "hint": "Yollarda araç geçişini düzenleyen üç renkli ışık sistemi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kum saati",
+      "hint": "İçindeki tozun akışıyla zamanı ölçen dekoratif nesne.",
+      "difficulty": 1
+    },
+    {
+      "term": "Silecek",
+      "hint": "Yağmurlu havada aracın ön camını temizleyen düzenek.",
+      "difficulty": 1
+    },
+    {
+      "term": "Çamaşır makinesi",
+      "hint": "Kirli kıyafetleri su ve deterjanla temizleyen beyaz eşya.",
+      "difficulty": 1
+    },
+    {
+      "term": "Bebek arabası",
+      "hint": "Küçük çocukları taşımak için kullanılan tekerlekli koltuk.",
+      "difficulty": 1
+    },
+    {
+      "term": "Sırt çantası",
+      "hint": "Omuzlara asılarak taşınan, içine eşya konulan torba.",
+      "difficulty": 1
+    },
+    {
+      "term": "Otopark",
+      "hint": "Taşıtların bırakıldığı geniş ve güvenli alan.",
+      "difficulty": 1
+    },
+    {
+      "term": "Asansör",
+      "hint": "Katlar arasında dikey olarak insan taşıyan kabin.",
+      "difficulty": 1
+    },
+    {
+      "term": "Masa tenisi",
+      "hint": "File ile bölünmüş bir platformda küçük topla oynanan spor.",
+      "difficulty": 1
+    },
+    {
+      "term": "Diş fırçası",
+      "hint": "Ağız hijyenini sağlamak için kullanılan kıllı aparat.",
+      "difficulty": 1
+    },
+    {
+      "term": "Ütü masası",
+      "hint": "Kıyafetlerin kırışıklıklarını gidermek için kullanılan platform.",
+      "difficulty": 1
+    },
+    {
+      "term": "Mıknatıs",
+      "hint": "Demir ve benzeri metalleri kendine çeken madde.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kira sözleşmesi",
+      "hint": "Ev sahibi ile evde oturan arasındaki hakları belirleyen yazılı belge.",
+      "difficulty": 2
+    },
+    {
+      "term": "Tapu kadastro",
+      "hint": "Taşınmaz malların sınırlarını ve sahiplerini belirleyen devlet kurumu.",
+      "difficulty": 3
+    },
+    {
+      "term": "Bedelli askerlik",
+      "hint": "Vatan borcunu nakdi ödeme yaparak süresini kısaltan uygulama.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kaçak inşaat",
+      "hint": "İmar izni alınmadan yapılan yasadışı yapı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Rant",
+      "hint": "Bir mülkün değer artışından haksız şekilde elde edilen gelir.",
+      "difficulty": 3
+    },
+    {
+      "term": "Belediye meclisi",
+      "hint": "Yerel yönetim yetkilerini kullanan seçilmiş kurul.",
+      "difficulty": 2
+    },
+    {
+      "term": "Metropol",
+      "hint": "Milyonlarca insanın yaşadığı devasa şehir yapısı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kentsel dönüşüm",
+      "hint": "Eski binaların yıkılıp yerine depreme dayanıklı yenilerinin yapılması süreci.",
+      "difficulty": 2
+    },
+    {
+      "term": "Nostalji",
+      "hint": "Geçmişe duyulan özlem ve eskinin yad edilmesi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Melankoli",
+      "hint": "Nedensiz hüzün ve karamsarlık hali.",
+      "difficulty": 2
+    },
+    {
+      "term": "Hiyerarşi",
+      "hint": "Makamların alt ve üst olarak sıralandığı sistem.",
+      "difficulty": 3
+    },
+    {
+      "term": "Enflasyon",
+      "hint": "Fiyatların genel seviyesindeki sürekli ve hızlı artış.",
+      "difficulty": 2
+    },
+    {
+      "term": "Protokol",
+      "hint": "Resmi törenlerde uygulanan nezaket ve düzen kuralları.",
+      "difficulty": 2
+    },
+    {
+      "term": "Sansür",
+      "hint": "Yayınların veya fikirlerin denetlenerek engellenmesi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Müfredat",
+      "hint": "Okullarda okutulan derslerin içeriği ve planı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kırmızı kart",
+      "hint": "Sporda oyuncunun oyundan ihraç edildiğini gösteren nesne.",
+      "difficulty": 1
+    },
+    {
+      "term": "Karaborsa",
+      "hint": "Piyasada bulunmayan ürünlerin gizli ve pahalı satışı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Bürokrasi",
+      "hint": "Devlet işlerinin yürütülmesinde karşılaşılan hantal işlem süreci.",
+      "difficulty": 3
+    },
+    {
+      "term": "Referandum",
+      "hint": "Halkın bir yasa için evet veya hayır oyu vermesi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kripto para",
+      "hint": "Merkezi olmayan, dijital ve şifreli değişim aracı.",
+      "difficulty": 2
+    }
+  ]
+}
