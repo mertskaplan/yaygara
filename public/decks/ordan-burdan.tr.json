@@ -3,7 +3,6 @@
   "name": "Ordan burdan",
   "language": "tr",
   "difficulty": "medium",
-  "count": 60,
   "words": [
     {
       "term": "İmar affı",
@@ -25,7 +24,11 @@
       "hint": "Sarı renkli ve eriyebilen bir peynir.",
       "difficulty": 1
     },
-    { "term": "Moda", "hint": "Belirli bir dönemde popüler olan giyim ve yaşam tarzı", "difficulty": 1 },
+    {
+      "term": "Moda",
+      "hint": "Belirli bir dönemde popüler olan giyim ve yaşam tarzı",
+      "difficulty": 1
+    },
     {
       "term": "Şarampol",
       "hint": "Yolun kenarında bulunan derin çukur veya hendek.",

@@ -4,47 +4,215 @@
   "language": "tr",
   "difficulty": "medium",
   "words": [
-    { "term": "Avatar", "hint": "Dijital dünyada kullanıcıları temsil eden görsel", "difficulty": 2 },
-    { "term": "Beyni sulanmak", "hint": "Aklın karışması ya da kafanın bulanması durumunu", "difficulty": 2 },
-    { "term": "Tersane", "hint": "Gemi yapımı ve onarımı yapılan büyük tesis", "difficulty": 2 },
-    { "term": "Hatmi Çiçeği", "hint": "Beyaz ve pembe çiçek açan bir bitki", "difficulty": 2 },
-    { "term": "İsviçre çakısı", "hint": "Çok amaçlı, katlanabilir küçük alet", "difficulty": 1 },
-    { "term": "Rumuz", "hint": "Gerçek isim yerine kullanılan takma ad veya lakap", "difficulty": 1 },
-    { "term": "Pandora'nın kutusu", "hint": "Her şeyi kötüye sürükleyen gizli veya tehlikeli bir şeyin metaforu", "difficulty": 2 },
-    { "term": "Yansıma", "hint": "Işığın veya görüntünün geri dönmesi", "difficulty": 1 },
-    { "term": "Oynama Şıkıdım Şıkıdım", "hint": "Popüler bir Tarkan şarkının nakaratı", "difficulty": 2 },
-    { "term": "Fay hattı", "hint": "Deprem riskinin yüksek olduğu yer kabuğu kırıkları", "difficulty": 2 },
-    { "term": "Telepati", "hint": "Zihinden zihne bilgi aktarımı iddiası için kullanılan kavram", "difficulty": 2 },
-    { "term": "Deja vu", "hint": "Daha önce yaşanmış gibi hissedilen an", "difficulty": 2 },
-    { "term": "Simurg", "hint": "Pers mitolojisinde yer alan efsanevi ve bilge kuş", "difficulty": 3 },
-    { "term": "Karabasan", "hint": "Uykuda hissedilen korkutucu baskı veya rüya", "difficulty": 2 },
-    { "term": "Kelebek etkisi", "hint": "Küçük bir değişikliğin büyük sonuçlar doğurması teorisi", "difficulty": 3 },
-    { "term": "Toksik ilişki", "hint": "Zararlı ve sağlıksız ilişkiler", "difficulty": 2 },
-    { "term": "Darağacı", "hint": "İdam cezalarının infaz edildiği yapı", "difficulty": 1 },
-    { "term": "Banker", "hint": "Müşterilerinin paralarını işleten ve faiz karşılığı kredi veren kişi", "difficulty": 1 },
-    { "term": "Gelgit", "hint": "Ay ve güneşin etkisiyle deniz seviyesinde meydana gelen yükselip alçalma", "difficulty": 2 },
-    { "term": "Veba", "hint": "Orta Çağ’da milyonlarca insanın ölümüne neden olan salgın hastalık", "difficulty": 2 },
-    { "term": "Moda", "hint": "Belirli bir dönemde popüler olan giyim ve yaşam tarzı", "difficulty": 1 },
-    { "term": "Siyanür", "hint": "Genellikle madencilikte kullanılan zehirli kimyasal madde", "difficulty": 2 },
-    { "term": "Cross dresser", "hint": "Kendi cinsiyetinin dışındaki kıyafetleri giyen kişi", "difficulty": 3 },
-    { "term": "Carpe Diem", "hint": "'Anı yaşa' anlamına gelen Latince ünlü söz", "difficulty": 2 },
-    { "term": "Süleyman Demirel", "hint": "Türkiye'nin eski cumhurbaşkanı ve başbakanlarından biri", "difficulty": 1 },
-    { "term": "Schrödinger’in kedisi", "hint": "Kuantum mekaniğinde olasılık ve belirsizlik üzerine düşünce deneyi", "difficulty": 3 },
-    { "term": "Hafıza sarayı", "hint": "Belleği güçlendirmek için kullanılan görsel hatırlama tekniği", "difficulty": 3 },
-    { "term": "Avukat cübbesi", "hint": "Mahkemede başkaları adına savunma yapan kişinin giydiği siyah giysi", "difficulty": 1 },
-    { "term": "Haçlı seferleri", "hint": "Orta Çağ’da Avrupalıların kutsal kabul ettikleri toprakları ele geçirme girişimleri", "difficulty": 2 },
-    { "term": "Olay ufku", "hint": "Kara deliklerde ışığın bile kaçamadığı sınır", "difficulty": 3 },
-    { "term": "Kabak tadı vermek", "hint": "Bir şeyin tekrar tekrar yapılmasından bıkmak anlamındaki deyim", "difficulty": 2 },
-    { "term": "Simya", "hint": "Ölümsüzlüğü bulmak, değersiz madenleri altına dönüştürmek gibi hedefleri olan sözde bilim", "difficulty": 3 },
-    { "term": "Gölgelerin gücü adına", "hint": "He-Man çizgi filminde kullanılan ünlü söz", "difficulty": 2 },
-    { "term": "Distopya", "hint": "Kötü bir gelecek veya toplum düzeninin anlatıldığı kurgu", "difficulty": 2 },
-    { "term": "Azrail", "hint": "İslam ve Hristiyan kültürlerinde ölüm meleği", "difficulty": 2 },
-    { "term": "Küpür", "hint": "Gazete veya dergiden kesilen haber veya yazı parçası", "difficulty": 2 },
-    { "term": "Emrah Serbes", "hint": "Türkiye'de polisiye romanlarıyla tanınan yazar", "difficulty": 3 },
-    { "term": "Zaman yolcusu", "hint": "Farklı dönemlere seyahat eden kişi", "difficulty": 2 },
-    { "term": "Karantina", "hint": "Hastalık veya bulaşıcı durumlardan korunmak için izole edilme", "difficulty": 2 },
-    { "term": "Bumerang", "hint": "Fırlatıldığında geri dönen bir oyuncak", "difficulty": 2 },
-    { "term": "Çam yarması", "hint": "Aşırı iri kişiler için kullanılan bir deyim", "difficulty": 3 },
-    { "term": "Matara", "hint": "Su veya içecek taşımak için kullanılan taşınabilir kap", "difficulty": 1 }
+    {
+      "term": "Avatar",
+      "hint": "Dijital dünyada kullanıcıları temsil eden görsel",
+      "difficulty": 2
+    },
+    {
+      "term": "Beyni sulanmak",
+      "hint": "Aklın karışması ya da kafanın bulanması durumunu",
+      "difficulty": 2
+    },
+    {
+      "term": "Tersane",
+      "hint": "Gemi yapımı ve onarımı yapılan büyük tesis",
+      "difficulty": 2
+    },
+    {
+      "term": "Hatmi Çiçeği",
+      "hint": "Beyaz ve pembe çiçek açan bir bitki",
+      "difficulty": 2
+    },
+    {
+      "term": "İsviçre çakısı",
+      "hint": "Çok amaçlı, katlanabilir küçük alet",
+      "difficulty": 1
+    },
+    {
+      "term": "Rumuz",
+      "hint": "Gerçek isim yerine kullanılan takma ad veya lakap",
+      "difficulty": 1
+    },
+    {
+      "term": "Pandora'nın kutusu",
+      "hint": "Her şeyi kötüye sürükleyen gizli veya tehlikeli bir şeyin metaforu",
+      "difficulty": 2
+    },
+    {
+      "term": "Yansıma",
+      "hint": "Işığın veya görüntünün geri dönmesi",
+      "difficulty": 1
+    },
+    {
+      "term": "Oynama Şıkıdım Şıkıdım",
+      "hint": "Popüler bir Tarkan şarkının nakaratı",
+      "difficulty": 2
+    },
+    {
+      "term": "Fay hattı",
+      "hint": "Deprem riskinin yüksek olduğu yer kabuğu kırıkları",
+      "difficulty": 2
+    },
+    {
+      "term": "Telepati",
+      "hint": "Zihinden zihne bilgi aktarımı iddiası için kullanılan kavram",
+      "difficulty": 2
+    },
+    {
+      "term": "Deja vu",
+      "hint": "Daha önce yaşanmış gibi hissedilen an",
+      "difficulty": 2
+    },
+    {
+      "term": "Simurg",
+      "hint": "Pers mitolojisinde yer alan efsanevi ve bilge kuş",
+      "difficulty": 3
+    },
+    {
+      "term": "Karabasan",
+      "hint": "Uykuda hissedilen korkutucu baskı veya rüya",
+      "difficulty": 2
+    },
+    {
+      "term": "Kelebek etkisi",
+      "hint": "Küçük bir değişikliğin büyük sonuçlar doğurması teorisi",
+      "difficulty": 3
+    },
+    {
+      "term": "Toksik ilişki",
+      "hint": "Zararlı ve sağlıksız ilişkiler",
+      "difficulty": 2
+    },
+    {
+      "term": "Darağacı",
+      "hint": "İdam cezalarının infaz edildiği yapı",
+      "difficulty": 1
+    },
+    {
+      "term": "Banker",
+      "hint": "Müşterilerinin paralarını işleten ve faiz karşılığı kredi veren kişi",
+      "difficulty": 1
+    },
+    {
+      "term": "Gelgit",
+      "hint": "Ay ve güneşin etkisiyle deniz seviyesinde meydana gelen yükselip alçalma",
+      "difficulty": 2
+    },
+    {
+      "term": "Veba",
+      "hint": "Orta Çağ’da milyonlarca insanın ölümüne neden olan salgın hastalık",
+      "difficulty": 2
+    },
+    {
+      "term": "Moda",
+      "hint": "Belirli bir dönemde popüler olan giyim ve yaşam tarzı",
+      "difficulty": 1
+    },
+    {
+      "term": "Siyanür",
+      "hint": "Genellikle madencilikte kullanılan zehirli kimyasal madde",
+      "difficulty": 2
+    },
+    {
+      "term": "Cross dresser",
+      "hint": "Kendi cinsiyetinin dışındaki kıyafetleri giyen kişi",
+      "difficulty": 3
+    },
+    {
+      "term": "Carpe Diem",
+      "hint": "'Anı yaşa' anlamına gelen Latince ünlü söz",
+      "difficulty": 2
+    },
+    {
+      "term": "Süleyman Demirel",
+      "hint": "Türkiye'nin eski cumhurbaşkanı ve başbakanlarından biri",
+      "difficulty": 1
+    },
+    {
+      "term": "Schrödinger’in kedisi",
+      "hint": "Kuantum mekaniğinde olasılık ve belirsizlik üzerine düşünce deneyi",
+      "difficulty": 3
+    },
+    {
+      "term": "Hafıza sarayı",
+      "hint": "Belleği güçlendirmek için kullanılan görsel hatırlama tekniği",
+      "difficulty": 3
+    },
+    {
+      "term": "Avukat cübbesi",
+      "hint": "Mahkemede başkaları adına savunma yapan kişinin giydiği siyah giysi",
+      "difficulty": 1
+    },
+    {
+      "term": "Haçlı seferleri",
+      "hint": "Orta Çağ’da Avrupalıların kutsal kabul ettikleri toprakları ele geçirme girişimleri",
+      "difficulty": 2
+    },
+    {
+      "term": "Olay ufku",
+      "hint": "Kara deliklerde ışığın bile kaçamadığı sınır",
+      "difficulty": 3
+    },
+    {
+      "term": "Kabak tadı vermek",
+      "hint": "Bir şeyin tekrar tekrar yapılmasından bıkmak anlamındaki deyim",
+      "difficulty": 2
+    },
+    {
+      "term": "Simya",
+      "hint": "Ölümsüzlüğü bulmak, değersiz madenleri altına dönüştürmek gibi hedefleri olan sözde bilim",
+      "difficulty": 3
+    },
+    {
+      "term": "Gölgelerin gücü adına",
+      "hint": "He-Man çizgi filminde kullanılan ünlü söz",
+      "difficulty": 2
+    },
+    {
+      "term": "Distopya",
+      "hint": "Kötü bir gelecek veya toplum düzeninin anlatıldığı kurgu",
+      "difficulty": 2
+    },
+    {
+      "term": "Azrail",
+      "hint": "İslam ve Hristiyan kültürlerinde ölüm meleği",
+      "difficulty": 2
+    },
+    {
+      "term": "Küpür",
+      "hint": "Gazete veya dergiden kesilen haber veya yazı parçası",
+      "difficulty": 2
+    },
+    {
+      "term": "Emrah Serbes",
+      "hint": "Türkiye'de polisiye romanlarıyla tanınan yazar",
+      "difficulty": 3
+    },
+    {
+      "term": "Zaman yolcusu",
+      "hint": "Farklı dönemlere seyahat eden kişi",
+      "difficulty": 2
+    },
+    {
+      "term": "Karantina",
+      "hint": "Hastalık veya bulaşıcı durumlardan korunmak için izole edilme",
+      "difficulty": 2
+    },
+    {
+      "term": "Bumerang",
+      "hint": "Fırlatıldığında geri dönen bir oyuncak",
+      "difficulty": 2
+    },
+    {
+      "term": "Çam yarması",
+      "hint": "Aşırı iri kişiler için kullanılan bir deyim",
+      "difficulty": 3
+    },
+    {
+      "term": "Matara",
+      "hint": "Su veya içecek taşımak için kullanılan taşınabilir kap",
+      "difficulty": 1
+    }
   ]
 }

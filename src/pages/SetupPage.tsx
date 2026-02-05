@@ -150,7 +150,7 @@ const TeamCustomization = () => {
     </motion.div>
   );
 };
-const deckFilenames = ['baslangic.tr.json', 'zihin-acici.tr.json', 'kor-kursun-destesi.tr.json', 'ordan-burdan.tr.json', 'karanlik-seruven.tr.json', 'uygarligin-izleri.tr.json', 'argo.tr.json'];
+const deckFilenames = ['baslangic.tr.json', 'zihin-jimlastigi.tr.json', 'kor-kursun-destesi.tr.json', 'ordan-burdan.tr.json', 'laf-ebesi.tr.json', 'sisli-cagrisimlar.tr.json', 'hayatin-ritmi.tr.json', 'karanlik-seruven.tr.json', 'meshur-filmler.tr.json', 'uygarligin-izleri.tr.json', 'argo.tr.json'];
 const DeckSelection = () => {
   const language = useGameStore((state) => state.language);
   const selectDeck = useGameStore((state) => state.selectDeck);

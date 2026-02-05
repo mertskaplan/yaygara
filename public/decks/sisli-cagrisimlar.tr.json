@@ -1,0 +1,258 @@
+{
+    "id": "sisli-cagrisimlar.tr.json",
+    "name": "Sisli çağrışımlar",
+    "language": "tr",
+    "difficulty": "medium",
+    "words": [
+        {
+            "term": "Albastı",
+            "hint": "Anadolu anlatılarında lohusalara musallat olduğuna inanılan varlık.",
+            "difficulty": 3
+        },
+        {
+            "term": "Nirvana",
+            "hint": "Budizm'de ulaşılan en yüksek huzur ve aydınlanma mertebesi.",
+            "difficulty": 3
+        },
+        {
+            "term": "Sarımsak",
+            "hint": "Kokusuna vampirlerin dayanamadığı söylenen bitki.",
+            "difficulty": 1
+        },
+        {
+            "term": "Stokholm sendromu",
+            "hint": "Rehinenin kendisini kaçıran kişiye duyduğu duygusal bağlılık.",
+            "difficulty": 3
+        },
+        {
+            "term": "Pembe mezarlık",
+            "hint": "Rengiyle alışılmış ölüm algısını tersyüz eden sıra dışı bir gömüt alanı.",
+            "difficulty": 2
+        },
+        {
+            "term": "Cemre",
+            "hint": "Baharın gelişini simgeleyen ve sırayla düşen sıcaklık işareti.",
+            "difficulty": 2
+        },
+        {
+            "term": "Kara mizah",
+            "hint": "Rahatsız edici konuları alaycı bir dille ele alan anlatım.",
+            "difficulty": 2
+        },
+        {
+            "term": "Gizli tanık",
+            "hint": "Olayı bilen ama ortaya çıkmayan kişi.",
+            "difficulty": 2
+        },
+        {
+            "term": "İkinci perde",
+            "hint": "Hikâyenin asıl çatışmasının başladığı bölüm.",
+            "difficulty": 2
+        },
+        {
+            "term": "Steteskop",
+            "hint": "Doktorların kalp ve ciğer seslerini dinlediği boyna asılan alet.",
+            "difficulty": 2
+        },
+        {
+            "term": "Üç maymun",
+            "hint": "Görmedim, duymadım, bilmiyorum şeklinde özetlenen tepkisizlik durumu.",
+            "difficulty": 2
+        },
+        {
+            "term": "Açık çek",
+            "hint": "Miktarı yazılmamış, istenilen tutarın yazılabileceği ödeme emri.",
+            "difficulty": 2
+        },
+        {
+            "term": "Paralel evren",
+            "hint": "Bilim kurguda, bizim gerçekliğimizle aynı anda var olan farklı boyut.",
+            "difficulty": 2
+        },
+        {
+            "term": "Truva atı",
+            "hint": "İçine askerlerin saklandığı, hediye süsü verilmiş tahta heykel.",
+            "difficulty": 2
+        },
+        {
+            "term": "Günah keçisi",
+            "hint": "Bütün suçun üzerine yıkıldığı masum kişi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Mona Lisa",
+            "hint": "Da Vinci'nin yaptığı, gizemli gülümsemesiyle ünlü kadın tablosu.",
+            "difficulty": 2
+        },
+        {
+            "term": "Frankenstein",
+            "hint": "Ölü parçalarından yaratılan canavarın hikayesi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Tüp bebek",
+            "hint": "Laboratuvar ortamında döllenme yoluyla çocuk sahibi olma yöntemi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Karavana",
+            "hint": "Hedefi tutturamayan atış ya da başarısız deneme.",
+            "difficulty": 1
+        },
+        {
+            "term": "Çıkmaz sokak",
+            "hint": "İlerledikçe çözüm üretmeyen, geri dönmeyi gerektiren durum.",
+            "difficulty": 1
+        },
+        {
+            "term": "Zaman tüneli",
+            "hint": "Geçmişle bugün arasında hayali bir geçiş fikri.",
+            "difficulty": 1
+        },
+        {
+            "term": "Boş koltuk",
+            "hint": "Eksikliği varlığıyla hissedilen yer.",
+            "difficulty": 1
+        },
+        {
+            "term": "Gece yarısı",
+            "hint": "Günün bitişiyle belirsizliğin arttığı zaman dilimi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Dedektif",
+            "hint": "Suçları araştıran, ipuçlarını birleştirip gizemi çözen kişi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Nazar boncuğu",
+            "hint": "Kötü enerjiden ve kem gözlerden koruduğuna inanılan mavi nesne.",
+            "difficulty": 1
+        },
+        {
+            "term": "Metrobüs",
+            "hint": "İstanbul'da kendi şeridinde giden, çok kalabalık toplu taşıma aracı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Düğün pastası",
+            "hint": "Evlenen çiftin birlikte kestiği, katlı tatlı yiyecek.",
+            "difficulty": 1
+        },
+        {
+            "term": "Hamam böceği",
+            "hint": "Evlerde görülen, kahverengi, hızlı kaçan ve dayanıklı haşere.",
+            "difficulty": 1
+        },
+        {
+            "term": "Korna",
+            "hint": "Trafikte araçların sesli uyarı vermesini sağlayan düzenek.",
+            "difficulty": 1
+        },
+        {
+            "term": "Oklava",
+            "hint": "Hamur açmak için kullanılan uzun, silindir şeklinde tahta çubuk.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kelepçe",
+            "hint": "Polislerin suçluların ellerini bağlamak için kullandığı metal halka.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kağıt helva",
+            "hint": "Genellikle dondurma ile yenen, çıtır çıtır, yuvarlak gofret.",
+            "difficulty": 1
+        },
+        {
+            "term": "Pinokyo",
+            "hint": "Yalan söylediğinde burnu uzayan tahta kukla.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kumanda",
+            "hint": "Televizyonu uzaktan yönetmeye yarayan tuşlu cihaz.",
+            "difficulty": 1
+        },
+        {
+            "term": "Pamuk Prenses",
+            "hint": "Yedi cücelerle yaşayan ve zehirli meyve yiyen masal kahramanı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Mangal",
+            "hint": "Pikniklerde et pişirmek için yakılan kömürlü düzenek.",
+            "difficulty": 1
+        },
+        {
+            "term": "Korkuluk",
+            "hint": "Tarlalarda kuşları kaçırmak için dikilen insan görünümlü kukla.",
+            "difficulty": 1
+        },
+        {
+            "term": "Sihirli değnek",
+            "hint": "Perilerin büyü yapmak için kullandığı çubuk.",
+            "difficulty": 1
+        },
+        {
+            "term": "Döner",
+            "hint": "Dikey bir şişe takılarak pişirilen ve bıçakla kesilen et yemeği.",
+            "difficulty": 1
+        },
+        {
+            "term": "Falcı",
+            "hint": "Gelecekten haber verdiğini iddia eden kişi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Horon",
+            "hint": "Karadeniz yöresine ait, hızlı ve hareketli halk oyunu.",
+            "difficulty": 1
+        },
+        {
+            "term": "Biber gazı",
+            "hint": "Göz yaşartıcı ve yakıcı etkisi olan savunma spreyi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Sinek ilacı",
+            "hint": "Uçan haşereleri uzaklaştırmak veya öldürmek için sıkılan kimyasal.",
+            "difficulty": 1
+        },
+        {
+            "term": "Davul zurna",
+            "hint": "Düğünlerde çalınan, çok gürültülü iki geleneksel çalgı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Mezuniyet töreni",
+            "hint": "Okul bitiminde yapılan, kep atılan kutlama.",
+            "difficulty": 1
+        },
+        {
+            "term": "Pusula",
+            "hint": "Yön tayin etmeye yarayan mıknatıslı gösterge.",
+            "difficulty": 1
+        },
+        {
+            "term": "Pil",
+            "hint": "Kimyasal enerjiyi elektriğe dönüştüren küçük güç kaynağı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Battaniye",
+            "hint": "Isınmak için yatağın üzerine serilen kalın örtü.",
+            "difficulty": 1
+        },
+        {
+            "term": "Makas",
+            "hint": "Nesneleri kesmek için kullanılan, çapraz iki bıçaklı alet.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kuş bakışı",
+            "hint": "Bir yere çok yüksekten, her şeyi görecek şekilde bakmak.",
+            "difficulty": 1
+        }
+    ]
+}
