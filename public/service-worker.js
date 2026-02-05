@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yaygara-v1.1.9';
+const CACHE_NAME = 'yaygara-v1.1.10';
 const CORE_ASSETS = [
   '/',
   '/index.html',
@@ -8,10 +8,14 @@ const CORE_ASSETS = [
   '/locales/tr.json',
   '/locales/en.json',
   '/decks/baslangic.tr.json',
-  '/decks/zihin-acici.tr.json',
+  '/decks/zihin-jimnastigi.tr.json',
   '/decks/kor-kursun-destesi.tr.json',
   '/decks/ordan-burdan.tr.json',
+  '/decks/laf-ebesi.tr.json',
+  '/decks/sisli-cagrisimlar.tr.json',
+  '/decks/hayatin-ritmi.tr.json',
   '/decks/karanlik-seruven.tr.json',
+  '/decks/meshur-filmler.tr.json',
   '/decks/uygarligin-izleri.tr.json',
   '/decks/argo.tr.json',
   '/icons/favicon.svg',

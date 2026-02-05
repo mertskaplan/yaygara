@@ -237,13 +237,13 @@ const DeckSelection = () => {
       <Button
         onClick={() => selectDeck(deck)}
         variant={isSelected ? 'default' : 'outline'}
-        className={`w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 transition-all duration-300 ${isSelected ? 'bg-sky-500 text-white scale-[1.02] shadow-md border-transparent' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 dark:hover:border-sky-700'}`}
+        className={`w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 whitespace-normal transition-all duration-300 ${isSelected ? 'bg-sky-500 text-white scale-[1.02] shadow-md border-transparent' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 dark:hover:border-sky-700'}`}
       >
         <div className={cn("p-2 rounded-xl", isSelected ? "bg-white/20" : "bg-sky-50 dark:bg-sky-900/40 text-sky-500 dark:text-sky-400")}>
           <Icon className="w-8 h-8 flex-shrink-0" />
         </div>
         <div className="flex-grow">
-          <p className="text-lg truncate">{deck.name}</p>
+          <p className="text-lg">{deck.name}</p>
           <div className={`flex items-center gap-2 text-sm ${isSelected ? 'text-white/80' : 'text-muted-foreground'}`}>
             <span>{t('setup.deckWords', { count: wordCount })}</span>
             <span>&bull;</span>
