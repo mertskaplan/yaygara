@@ -32,11 +32,11 @@ export const HowToPlayModal: React.FC<HowToPlayModalProps> = ({ isOpen, onClose 
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent hideClose className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl">
         <DialogHeader className="flex-shrink-0">
-          <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center">
+          <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center text-balance">
             {t('howToPlay.title')}
           </DialogTitle>
           <DialogDescription
-            className="text-center text-slate-600 dark:text-slate-400 text-base pt-2"
+            className="text-center text-slate-600 dark:text-slate-400 text-base pt-2 text-balance"
             dangerouslySetInnerHTML={{ __html: t('howToPlay.description') }}
           />
         </DialogHeader>

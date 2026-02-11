@@ -33,30 +33,28 @@
   }
 
   .dark {
-    --background: 222 47% 7%;
-    /* Deep Slate Blue - darker */
+    --background: 240 10% 4%;
+    /* Deep Neutral Grey */
     --foreground: 210 40% 98%;
     /* Soft white */
     --primary: 201 99% 41%;
-    /* Stay blue but maybe slightly brighter or same */
     --primary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --border: 217 33% 17%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 215 10% 65%;
+    --border: 240 5% 15%;
     --ring: 201 99% 41%;
-    --card: 222 47% 10%;
+    --card: 240 10% 6%;
     /* Slightly lighter than background */
     --card-foreground: 210 40% 98%;
-    --popover: 222 47% 10%;
+    --popover: 240 10% 6%;
     --popover-foreground: 210 40% 98%;
-    --secondary: 217 33% 17%;
+    --secondary: 240 5% 15%;
     --secondary-foreground: 210 40% 98%;
     --accent: 42 97% 53%;
-    /* Yellow stays */
     --accent-foreground: 210 40% 98%;
     --destructive: 338 100% 40%;
     --destructive-foreground: 210 40% 98%;
-    --input: 217 33% 17%;
+    --input: 240 5% 15%;
   }
 
   * {
@@ -70,10 +68,29 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(at 0% 0%, hsla(201, 100%, 94%, 1) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, hsla(250, 70%, 94%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(320, 70%, 95%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(201, 100%, 94%, 1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(250, 70%, 94%, 1) 0px, transparent 50%);
+    background-attachment: fixed;
+    @apply text-foreground;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     text-rendering: optimizeLegibility;
     font-family: 'Nunito', sans-serif;
+  }
+
+  .dark body {
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(at 0% 0%, hsla(240, 10%, 10%, 1) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, hsla(240, 10%, 8%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(240, 10%, 10%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(240, 10%, 8%, 1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(240, 10%, 10%, 1) 0px, transparent 50%);
+    background-attachment: fixed;
   }
 }
 

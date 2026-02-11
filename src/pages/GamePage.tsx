@@ -29,11 +29,11 @@ const GetReadyScreen = () => {
       exit={{ opacity: 0, scale: 0.8 }}
       className="flex flex-col items-center justify-center text-center p-8 bg-card rounded-3xl shadow-xl w-full max-w-md"
     >
-      <h1 className="text-4xl font-extrabold font-display drop-shadow-lg" style={{ color: initialTeam.color }}>
+      <h1 className="text-4xl font-extrabold font-display drop-shadow-lg text-balance" style={{ color: initialTeam.color }}>
         {t('game.getReadyTitle', { teamName: initialTeam.name })}
       </h1>
-      <p className="text-2xl font-bold text-slate-700 dark:text-slate-100 mt-4 drop-shadow-md">{roundTitles[initialRound - 1]}</p>
-      <p className="text-lg text-slate-500 dark:text-slate-400 mt-2 max-w-xs">{roundDescriptions[initialRound - 1]}</p>
+      <p className="text-2xl font-bold text-slate-700 dark:text-slate-100 mt-4 drop-shadow-md text-balance">{roundTitles[initialRound - 1]}</p>
+      <p className="text-lg text-slate-500 dark:text-slate-400 mt-2 max-w-xs text-balance">{roundDescriptions[initialRound - 1]}</p>
       <Button
         onClick={startTurn}
         className="mt-12 h-20 w-full text-3xl font-bold text-white rounded-2xl shadow-xl transition-transform hover:scale-105 active:scale-95"
@@ -115,8 +115,8 @@ const PlayingScreen = () => {
             <WordCard key={currentWord.term} word={currentWord} />
           ) : (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
-              <h2 className="text-3xl font-bold text-slate-700 dark:text-slate-200">{t('game.noMoreWords')}</h2>
-              <p className="text-slate-500 dark:text-slate-400">{t('game.noMoreWordsDesc')}</p>
+              <h2 className="text-3xl font-bold text-slate-700 dark:text-slate-200 text-balance">{t('game.noMoreWords')}</h2>
+              <p className="text-slate-500 dark:text-slate-400 text-balance">{t('game.noMoreWordsDesc')}</p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -181,7 +181,7 @@ export function GamePage() {
   }, [gameStatus, teams, currentTeamIndex, theme]);
   return (
     <div
-      className="flex flex-col items-center justify-center h-screen-dvh bg-background p-6 transition-colors duration-500 overflow-hidden"
+      className="flex flex-col items-center justify-center h-screen-dvh bg-transparent p-6 transition-colors duration-500 overflow-hidden"
       style={dynamicBgStyle}
     >
       <AnimatePresence mode="wait">

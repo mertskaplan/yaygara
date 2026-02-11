@@ -39,14 +39,14 @@ export const TurnSummaryScreen: React.FC = () => {
       exit={{ opacity: 0, y: -50 }}
       className="flex flex-col items-center justify-center text-center p-6 bg-white dark:bg-slate-800 rounded-3xl shadow-xl w-full max-w-md"
     >
-      <h1 className="text-4xl font-extrabold text-slate-800 dark:text-slate-100 font-display">
+      <h1 className="text-4xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-balance">
         {initialBonusTime ? t('game.bonusTurnTitle') : (
           turnEndReason === 'words-exhausted'
             ? t('game.turnSummary.wordsExhaustedTitle')
             : t('game.turnSummary.subtitle')
         )}
       </h1>
-      <p className="text-xl text-slate-500 dark:text-slate-400 mt-1">
+      <p className="text-xl text-slate-500 dark:text-slate-400 mt-1 text-balance">
         {initialBonusTime
           ? t('game.bonusTurnDescription', { round: initialRound + 1, time: initialBonusTime })
           : t('game.turnSummary.title', { teamName: initialTeam.name })}
@@ -81,7 +81,7 @@ export const TurnSummaryScreen: React.FC = () => {
           >
             <div className="flex items-center gap-3">
               {index === 0 ? <Trophy className="w-5 h-5 text-amber-300" /> : <span className="font-bold w-5 text-center">{index + 1}.</span>}
-              <span className="font-bold text-lg">{team.name}</span>
+              <span className="font-bold text-lg text-balance">{team.name}</span>
             </div>
             <div className="flex flex-col items-center leading-none">
               <span className="text-2xl font-extrabold font-display leading-none">{team.score}</span>

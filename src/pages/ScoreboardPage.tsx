@@ -19,7 +19,7 @@ export function ScoreboardPage() {
     navigate(`/${language}`);
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen-dvh bg-background p-6 text-center overflow-hidden">
+    <div className="flex flex-col items-center justify-center h-screen-dvh bg-transparent p-6 text-center overflow-hidden">
       <main className="w-full max-w-md space-y-8">
         {winner ? (
           <motion.div
@@ -29,12 +29,12 @@ export function ScoreboardPage() {
             className="flex flex-col items-center space-y-4"
           >
             <Trophy className="w-20 h-20 text-amber-400" />
-            <h2 className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display">
+            <h2 className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-balance">
               {t('scoreboard.winnerTitle', { teamName: winner.name })}
             </h2>
           </motion.div>
         ) : (
-          <h1 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 font-display">{t('scoreboard.scoresTitle')}</h1>
+          <h1 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-balance">{t('scoreboard.scoresTitle')}</h1>
         )}
         <motion.div
           className="space-y-3"
@@ -51,7 +51,7 @@ export function ScoreboardPage() {
             >
               <div className="flex items-center">
                 {index === 0 ? <Trophy className="w-5 h-5 text-amber-300 ml-1 mr-2" /> : <span className="text-[1.375rem] font-bold w-8">{index + 1}.</span>}
-                <span className="text-[1.375rem] font-bold">{team.name}</span>
+                <span className="text-[1.375rem] font-bold text-balance">{team.name}</span>
               </div>
               <div className="flex flex-col items-center leading-none">
                 <span className="text-2xl font-extrabold font-display leading-none">{team.score}</span>

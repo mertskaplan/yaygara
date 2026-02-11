@@ -25,7 +25,7 @@ const TeamCountSelection = () => {
   };
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
-      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6">{t('setup.teamsTitle')}</h2>
+      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6 text-balance">{t('setup.teamsTitle')}</h2>
       <div className="flex-1 flex flex-col justify-center gap-4">
         {[2, 3, 4].map((count) => (
           <Button key={count} onClick={() => handleTeamSelect(count)} className="h-24 text-4xl font-extrabold bg-white dark:bg-sky-500 text-sky-500 dark:text-white border-4 border-sky-500 hover:bg-sky-100 dark:hover:bg-sky-600 rounded-2xl shadow-lg">
@@ -81,7 +81,7 @@ const TeamCustomization = () => {
   const usedColors = teams.map(t => t.color);
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
-      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6">{t('setup.customizeTitle')}</h2>
+      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6 text-balance">{t('setup.customizeTitle')}</h2>
       <div className="h-setup-content space-y-6 p-1">
         {teams.map((team) => {
           const otherTeamsColors = usedColors.filter(c => c !== team.color);
@@ -236,14 +236,14 @@ const DeckSelection = () => {
     return (
       <Button
         onClick={() => selectDeck(deck)}
-        variant={isSelected ? 'default' : 'outline'}
-        className={`w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 whitespace-normal transition-all duration-300 ${isSelected ? 'bg-sky-500 text-white scale-[1.02] shadow-md border-transparent' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 dark:hover:border-sky-700'}`}
+        variant="outline"
+        className={`w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 whitespace-normal transition-colors duration-200 shadow-none ${isSelected ? 'bg-sky-500 text-white border-sky-500' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 dark:hover:border-sky-700'}`}
       >
         <div className={cn("p-2 rounded-xl", isSelected ? "bg-white/20" : "bg-sky-50 dark:bg-sky-900/40 text-sky-500 dark:text-sky-400")}>
           <Icon className="w-8 h-8 flex-shrink-0" />
         </div>
         <div className="flex-grow">
-          <p className="text-lg">{deck.name}</p>
+          <p className="text-lg text-balance">{deck.name}</p>
           <div className={`flex items-center gap-2 text-sm ${isSelected ? 'text-white/80' : 'text-muted-foreground'}`}>
             <span>{t('setup.deckWords', { count: wordCount })}</span>
             <span>&bull;</span>
@@ -257,7 +257,7 @@ const DeckSelection = () => {
   };
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
-      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6">{t('setup.deckTitle')}</h2>
+      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6 text-balance">{t('setup.deckTitle')}</h2>
       <div className="h-setup-content space-y-3 p-1">
         {isLoadingDecks ? (
           <div className="flex justify-center items-center h-48">
@@ -319,10 +319,10 @@ const WordCountSelection = () => {
   };
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
-      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6">{t('setup.wordCountTitle')}</h2>
+      <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6 text-balance">{t('setup.wordCountTitle')}</h2>
       <div className="h-setup-content space-y-4 p-1">
         <div className="space-y-4">
-          <p className="text-slate-500 dark:text-slate-400 text-center px-4">{t('setup.wordCountDescription')}</p>
+          <p className="text-slate-500 dark:text-slate-400 text-center px-4 text-balance">{t('setup.wordCountDescription')}</p>
           <div className="bg-white dark:bg-slate-800 p-4 rounded-3xl shadow-md space-y-3 border border-slate-100 dark:border-slate-700">
             <div className="text-center">
               <span className="text-5xl font-black text-sky-500 dark:text-sky-400 font-display drop-shadow-sm">{count}</span>
@@ -338,7 +338,7 @@ const WordCountSelection = () => {
           </div>
         </div>
         <div className="space-y-3">
-          <p className="text-slate-500 dark:text-slate-400 text-center px-4">{t('setup.turnDurationDescription')}</p>
+          <p className="text-slate-500 dark:text-slate-400 text-center px-4 text-balance">{t('setup.turnDurationDescription')}</p>
           <div className="bg-white dark:bg-slate-800 p-4 rounded-3xl shadow-md space-y-3 border border-slate-100 dark:border-slate-700">
             <div className="text-center">
               <span className="text-5xl font-black text-sky-500 dark:text-sky-400 font-display drop-shadow-sm">{turnDuration}</span>
@@ -390,7 +390,7 @@ export function SetupPage() {
   const stepKeys = Object.keys(STEPS);
   const currentStepIndex = stepKeys.indexOf(setupStep);
   return (
-    <div className="flex flex-col items-center h-[100dvh] bg-background p-6 overflow-hidden">
+    <div className="flex flex-col items-center h-[100dvh] bg-transparent p-6 overflow-hidden">
       <div className="w-full max-w-md h-full flex flex-col">
         <header className="relative flex-shrink-0 flex items-center justify-center mb-8">
           <Button onClick={handleBack} variant="ghost" size="icon" className="absolute left-0 rounded-full h-12 w-12 hover:bg-slate-100 dark:hover:bg-slate-800 dark:text-slate-400">

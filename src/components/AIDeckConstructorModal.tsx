@@ -39,12 +39,12 @@ export const AIDeckConstructorModal: React.FC<AIDeckConstructorModalProps> = ({ 
                 className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl"
             >
                 <DialogHeader className="flex-shrink-0">
-                    <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center">
+                    <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center text-balance">
                         {t('aiModal.title')}
                     </DialogTitle>
                 </DialogHeader>
                 <ScrollArea className="flex-1 w-full">
-                    <DialogDescription className="text-center text-slate-600 dark:text-slate-400 text-base">
+                    <DialogDescription className="text-center text-slate-600 dark:text-slate-400 text-base text-balance">
                         {t('aiModal.description')}
                     </DialogDescription>
                     <div className="space-y-4 p-1 mt-3">

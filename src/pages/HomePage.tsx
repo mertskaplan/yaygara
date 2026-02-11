@@ -67,7 +67,7 @@ export function HomePage() {
     navigate(getLocalizedPath('setup'));
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen-dvh bg-background p-6 text-center overflow-hidden relative">
+    <div className="flex flex-col items-center justify-center h-screen-dvh bg-transparent p-6 text-center overflow-hidden relative">
       <ThemeToggle className="!fixed !top-4 !right-4 z-50 shadow-lg" />
       <main className="flex flex-col items-center justify-center space-y-10 z-10 w-full max-w-md">
         <motion.div
@@ -89,7 +89,7 @@ export function HomePage() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="space-y-4"
         >
-          <p className="text-xl font-medium text-slate-600 dark:text-slate-400 tracking-tight">
+          <p className="text-xl font-medium text-slate-600 dark:text-slate-400 tracking-tight text-balance">
             {t('home.slogan')}
           </p>
         </motion.div>
