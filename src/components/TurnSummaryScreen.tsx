@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useGameStore } from '@/stores/useGameStore';
 import { useShallow } from 'zustand/react/shallow';
 import { Button } from '@/components/ui/button';
@@ -33,7 +33,7 @@ export const TurnSummaryScreen: React.FC = () => {
   const [initialRound] = useState(round);
   const sortedTeams = [...teams].sort((a, b) => b.score - a.score);
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
@@ -96,6 +96,6 @@ export const TurnSummaryScreen: React.FC = () => {
       >
         {t('game.turnSummary.continue')}
       </Button>
-    </motion.div>
+    </m.div>
   );
 };

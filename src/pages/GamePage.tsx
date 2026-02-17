@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { Check, X, Undo2, LogOut } from 'lucide-react';
 import { useGameStore } from '@/stores/useGameStore';
 import { useShallow } from 'zustand/react/shallow';
@@ -23,7 +23,7 @@ const GetReadyScreen = () => {
   const roundTitles = [t('game.round1'), t('game.round2'), t('game.round3')];
   const roundDescriptions = [t('game.round1Description'), t('game.round2Description'), t('game.round3Description')];
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}
@@ -41,7 +41,7 @@ const GetReadyScreen = () => {
       >
         {t('game.start')}
       </Button>
-    </motion.div>
+    </m.div>
   );
 };
 const PlayingScreen = () => {
@@ -114,10 +114,10 @@ const PlayingScreen = () => {
           {currentWord ? (
             <WordCard key={currentWord.term} word={currentWord} />
           ) : (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
+            <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
               <h2 className="text-3xl font-bold text-slate-700 dark:text-slate-200 text-balance">{t('game.noMoreWords')}</h2>
               <p className="text-slate-500 dark:text-slate-400 text-balance">{t('game.noMoreWordsDesc')}</p>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>

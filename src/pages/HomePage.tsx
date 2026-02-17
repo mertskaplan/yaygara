@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { useGameStore, Language } from '@/stores/useGameStore';
 import { useShallow } from 'zustand/react/shallow';
@@ -70,7 +70,7 @@ export function HomePage() {
     <div className="flex flex-col items-center justify-center h-screen-dvh bg-transparent p-6 text-center overflow-hidden relative">
       <ThemeToggle className="!fixed !top-4 !right-4 z-50 shadow-lg" />
       <main className="flex flex-col items-center justify-center space-y-10 z-10 w-full max-w-md">
-        <motion.div
+        <m.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
@@ -82,8 +82,8 @@ export function HomePage() {
           className="w-full"
         >
           <Logo className="w-full h-auto text-sky-500 drop-shadow-sm" />
-        </motion.div>
-        <motion.div
+        </m.div>
+        <m.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
@@ -92,8 +92,8 @@ export function HomePage() {
           <p className="text-xl font-medium text-slate-600 dark:text-slate-400 tracking-tight text-balance">
             {t('home.slogan')}
           </p>
-        </motion.div>
-        <motion.div
+        </m.div>
+        <m.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
@@ -113,7 +113,7 @@ export function HomePage() {
           >
             {t('home.howToPlay')}
           </Button>
-        </motion.div>
+        </m.div>
       </main>
       <footer className="absolute bottom-6 text-center text-slate-500/80 dark:text-slate-400/80 text-sm">
         <p>{t('home.footer')}</p>

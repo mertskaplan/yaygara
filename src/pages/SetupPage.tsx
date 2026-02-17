@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { AnimatePresence, m, Variants } from 'framer-motion';
 import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2, RefreshCw, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -24,7 +24,7 @@ const TeamCountSelection = () => {
     setTeamCount(count, nameParts);
   };
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
+    <m.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
       <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6 text-balance">{t('setup.teamsTitle')}</h2>
       <div className="flex-1 flex flex-col justify-center gap-4">
         {[2, 3, 4].map((count) => (
@@ -33,7 +33,7 @@ const TeamCountSelection = () => {
           </Button>
         ))}
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 const TeamCustomization = () => {
@@ -80,7 +80,7 @@ const TeamCustomization = () => {
   };
   const usedColors = teams.map(t => t.color);
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
+    <m.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
       <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6 text-balance">{t('setup.customizeTitle')}</h2>
       <div className="h-setup-content space-y-6 p-1">
         {teams.map((team) => {
@@ -108,9 +108,9 @@ const TeamCustomization = () => {
                   onClick={() => handleRegenerateName(team.id)}
                   aria-label="Generate new random name"
                 >
-                  <motion.div animate={{ rotate: rotations[team.id] || 0 }} transition={{ duration: 0.5 }}>
+                  <m.div animate={{ rotate: rotations[team.id] || 0 }} transition={{ duration: 0.5 }}>
                     <RefreshCw className="w-5 h-5" style={{ color: team.color }} />
-                  </motion.div>
+                  </m.div>
                 </Button>
               </div>
               <div className="flex flex-wrap justify-center gap-3 pt-1">
@@ -147,7 +147,7 @@ const TeamCustomization = () => {
           {t('setup.continue')}
         </Button>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 const deckFilenames = ['baslangic.tr.json', 'zihin-jimlastigi.tr.json', 'kor-kursun-destesi.tr.json', 'ordan-burdan.tr.json', 'laf-ebesi.tr.json', 'sisli-cagrisimlar.tr.json', 'hayatin-ritmi.tr.json', 'karanlik-seruven.tr.json', 'meshur-filmler.tr.json', 'uygarligin-izleri.tr.json', 'argo.tr.json'];
@@ -256,7 +256,7 @@ const DeckSelection = () => {
     );
   };
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
+    <m.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
       <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6 text-balance">{t('setup.deckTitle')}</h2>
       <div className="h-setup-content space-y-3 p-1">
         {isLoadingDecks ? (
@@ -290,7 +290,7 @@ const DeckSelection = () => {
         </Button>
       </div>
       <AIDeckConstructorModal isOpen={isAIModalOpen} onClose={() => setIsAIModalOpen(false)} />
-    </motion.div>
+    </m.div>
   );
 };
 const WordCountSelection = () => {
@@ -318,7 +318,7 @@ const WordCountSelection = () => {
     navigate(getLocalizedPath('play'));
   };
   return (
-    <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
+    <m.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
       <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6 text-balance">{t('setup.wordCountTitle')}</h2>
       <div className="h-setup-content space-y-4 p-1">
         <div className="space-y-4">
@@ -359,7 +359,7 @@ const WordCountSelection = () => {
           {t('setup.play')}
         </Button>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 const STEPS: { [key: string]: { component: React.FC, icon: React.FC<any> } } = {

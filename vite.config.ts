@@ -103,6 +103,10 @@ function localizeHTMLPlugin() {
 
     // Replace Meta tags
     html = html.replace(
+      /<title>[^<]*<\/title>/,
+      `<title>${seo.title || 'Yaygara'}</title>`
+    );
+    html = html.replace(
       /<meta name="description" content="[^"]*">/,
       `<meta name="description" content="${seo.description || ''}">`
     );
@@ -188,6 +192,19 @@ export default ({ mode }: { mode: string }) => {
       rollupOptions: {
         output: {
           sourcemapExcludeSources: false, // Include original source in source maps
+          manualChunks: {
+            'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+            'vendor-framer': ['framer-motion'],
+            'vendor-radix': [
+              '@radix-ui/react-dialog',
+              '@radix-ui/react-alert-dialog',
+              '@radix-ui/react-scroll-area',
+              '@radix-ui/react-slider',
+              '@radix-ui/react-slot',
+              '@radix-ui/react-tooltip'
+            ],
+            'vendor-utils': ['zustand', 'lucide-react', 'clsx', 'tailwind-merge']
+          }
         },
       },
     },

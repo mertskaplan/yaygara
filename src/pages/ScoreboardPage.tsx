@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Trophy, ArrowRight, Home } from 'lucide-react';
 import { useGameStore } from '@/stores/useGameStore';
 import { useShallow } from 'zustand/react/shallow';
@@ -22,7 +22,7 @@ export function ScoreboardPage() {
     <div className="flex flex-col items-center justify-center h-screen-dvh bg-transparent p-6 text-center overflow-hidden">
       <main className="w-full max-w-md space-y-8">
         {winner ? (
-          <motion.div
+          <m.div
             initial={{ scale: 0.5, y: -100, opacity: 0 }}
             animate={{ scale: 1, y: 0, opacity: 1 }}
             transition={{ type: 'spring', damping: 15, stiffness: 100 }}
@@ -32,17 +32,17 @@ export function ScoreboardPage() {
             <h2 className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-balance">
               {t('scoreboard.winnerTitle', { teamName: winner.name })}
             </h2>
-          </motion.div>
+          </m.div>
         ) : (
           <h1 className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-balance">{t('scoreboard.scoresTitle')}</h1>
         )}
-        <motion.div
+        <m.div
           className="space-y-3"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.3 } }}
         >
           {sortedTeams.map((team, index) => (
-            <motion.div
+            <m.div
               key={team.id}
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -57,9 +57,9 @@ export function ScoreboardPage() {
                 <span className="text-2xl font-extrabold font-display leading-none">{team.score}</span>
                 <span className="text-[12px] font-bold tracking-widest opacity-80 ">{t('scoreboard.score')}</span>
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
         <div className="space-y-4">
           <Button
             variant="ghost"

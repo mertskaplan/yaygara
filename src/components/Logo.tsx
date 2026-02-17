@@ -8,6 +8,8 @@ export const Logo: React.FC<LogoProps> = ({ className }) => {
       src="/yaygara.svg"
       alt="Yaygara Logo"
       className={className}
+      fetchpriority="high"
+      decoding="async"
     />
   );
 };

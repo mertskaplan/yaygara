@@ -1,0 +1,288 @@
+{
+    "id": "laf-ebesi.tr",
+    "name": "Laf ebesi destesi",
+    "language": "tr",
+    "difficulty": "medium",
+    "words": [
+        {
+            "term": "Baldız",
+            "hint": "Erkeğin nikahlı hayat arkadaşının kız kardeşi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Bulmaca",
+            "hint": "Karelerin içine harfler yerleştirilerek çözülen zeka oyunu.",
+            "difficulty": 1
+        },
+        {
+            "term": "Totem",
+            "hint": "Uğur getireceğine inanılan simgesel nesne veya davranış.",
+            "difficulty": 1
+        },
+        {
+            "term": "Süper Kahraman",
+            "hint": "Olağanüstü yetenekleri olan kurgusal adalet savaşçısı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Ambulans",
+            "hint": "Yaralıları hastaneye yetiştiren sirenli araç.",
+            "difficulty": 1
+        },
+        {
+            "term": "Raket",
+            "hint": "Tenis maçında topa vurmak için kullanılan fileli gereç.",
+            "difficulty": 1
+        },
+        {
+            "term": "Korsan",
+            "hint": "Denizlerde gemi yağmalayan yasa dışı savaşçı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Heykel",
+            "hint": "Taş veya bronzdan yapılan sanatsal figür.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kaktüs",
+            "hint": "Susuzluğa dayanıklı, gövdesi iğneli bitki.",
+            "difficulty": 1
+        },
+        {
+            "term": "İtfaiye",
+            "hint": "Alevlere suyla müdahale eden kurtarma ekibi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Gondol",
+            "hint": "Venedik su yollarında kullanılan uzun kayık.",
+            "difficulty": 1
+        },
+        {
+            "term": "Çadır",
+            "hint": "Doğada konaklamak için kurulan geçici barınak.",
+            "difficulty": 1
+        },
+        {
+            "term": "Balerin",
+            "hint": "Tütü giyerek parmak ucunda dans eden kadın sanatçı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Peruk",
+            "hint": "Kafaya takılan yapay saç.",
+            "difficulty": 1
+        },
+        {
+            "term": "Fener",
+            "hint": "Karanlıkta yol gösteren taşınabilir ışık kaynağı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Hamak",
+            "hint": "İki ağaç arasına asılan ağdan yatak.",
+            "difficulty": 1
+        },
+        {
+            "term": "Rodeo",
+            "hint": "Vahşi bir hayvanın üzerinde durmaya dayalı spor.",
+            "difficulty": 1
+        },
+        {
+            "term": "Madalya",
+            "hint": "Yarışmayı kazanan kişiye takılan metal nişan.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kask",
+            "hint": "Başı darbelerden koruyan sert başlık.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kavanoz",
+            "hint": "İçine gıda konulan silindir cam kap.",
+            "difficulty": 1
+        },
+        {
+            "term": "Sandalet",
+            "hint": "Sıcak havalarda giyilen açık pabuç.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kasatura",
+            "hint": "Ateşli silahın namlu ucuna takılan kesici alet.",
+            "difficulty": 2
+        },
+        {
+            "term": "Küfe",
+            "hint": "Eskiden yük taşımak için örülen büyük hasır sepet.",
+            "difficulty": 2
+        },
+        {
+            "term": "Zeplin",
+            "hint": "Gökyüzünde süzülen, içi gaz dolu devasa hava gemisi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Kont Drakula",
+            "hint": "Şatosunda yaşayan, pelerinli meşhur vampir.",
+            "difficulty": 2
+        },
+        {
+            "term": "Astronot",
+            "hint": "Atmosfer dışındaki görevlere giden bilim insanı.",
+            "difficulty": 2
+        },
+        {
+            "term": "Fay Hattı",
+            "hint": "Yer kabuğundaki sarsıntılara neden olan kırılma bölgesi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Karikatür",
+            "hint": "İnsanları veya olayları gülünçleştiren abartılı çizim.",
+            "difficulty": 2
+        },
+        {
+            "term": "Nostalji",
+            "hint": "Geçmişe karşı duyulan yoğun özlem hissi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Origami",
+            "hint": "Kağıdı katlayarak şekil verme sanatı.",
+            "difficulty": 2
+        },
+        {
+            "term": "Pandomim",
+            "hint": "Sadece el ve vücut hareketleriyle yapılan sessiz gösteri.",
+            "difficulty": 2
+        },
+        {
+            "term": "Bumerang",
+            "hint": "Fırlatıldığında havada kavis çizerek geri gelen tahta.",
+            "difficulty": 2
+        },
+        {
+            "term": "Bukalemun",
+            "hint": "Deri rengini bulunduğu ortama uyduran sürüngen.",
+            "difficulty": 2
+        },
+        {
+            "term": "Mumya",
+            "hint": "Eskiden ilaçlanıp sargılarla korunan cesedi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Yanardağ",
+            "hint": "Lavları dışarı atan yükselti.",
+            "difficulty": 2
+        },
+        {
+            "term": "Meksika Açmazı",
+            "hint": "Tüm tarafların birbirini tehdit ettiği kilitlenme durumu.",
+            "difficulty": 3
+        },
+        {
+            "term": "Distopya",
+            "hint": "Geleceğin karanlık ve baskıcı toplumlarını anlatan tür.",
+            "difficulty": 3
+        },
+        {
+            "term": "Dinozor",
+            "hint": "Nesli tükenmiş dev antik canlı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Mum",
+            "hint": "Fitili yakılan aydınlatma gereci.",
+            "difficulty": 1
+        },
+        {
+            "term": "Makas",
+            "hint": "Kağıt kesmeye yarayan iki bıçaklı gereç.",
+            "difficulty": 1
+        },
+        {
+            "term": "Bisiklet",
+            "hint": "İki tekerlekli, zincirli ulaşım aracı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Fil",
+            "hint": "Hortumu olan en büyük kara hayvanı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kutup Ayısı",
+            "hint": "Beyaz tüylü dev kış hayvanı.",
+            "difficulty": 2
+        },
+        {
+            "term": "Krater",
+            "hint": "Gök taşı çarpmasıyla oluşan çukur.",
+            "difficulty": 2
+        },
+        {
+            "term": "Karakutu",
+            "hint": "Hava taşıtlarındaki uçuş verilerini kaydeden dayanıklı cihaz.",
+            "difficulty": 1
+        },
+        {
+            "term": "İştah",
+            "hint": "Yemek yeme isteği ve arzusu.",
+            "difficulty": 1
+        },
+        {
+            "term": "Halay",
+            "hint": "El ele tutuşarak, omuz omuza çekilen halk dansı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Veresiye",
+            "hint": "Bedeli sonra ödenmek üzere yapılan alışveriş türü.",
+            "difficulty": 2
+        },
+        {
+            "term": "Çamaşır",
+            "hint": "Yıkanması gereken kirli giyeceklerin genel adı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Yardım",
+            "hint": "Birinin güç bir durumdan kurtulması için yapılan destek.",
+            "difficulty": 1
+        },
+        {
+            "term": "Nokta",
+            "hint": "Cümlenin bittiğini gösteren, kalemin kağıtta bıraktığı iz.",
+            "difficulty": 1
+        },
+        {
+            "term": "Petrol",
+            "hint": "Yerin altından çıkarılan, işlenerek yakıta dönüşen koyu renkli yağ.",
+            "difficulty": 1
+        },
+        {
+            "term": "Motor",
+            "hint": "Yakıttan elde ettiği enerjiyi hareket gücüne çeviren düzenek.",
+            "difficulty": 1
+        },
+        {
+            "term": "Takvim",
+            "hint": "Zamanı günlere, aylara ve yıllara bölen çizelge.",
+            "difficulty": 1
+        },
+        {
+            "term": "Para",
+            "hint": "Mal ve hizmet alımında kullanılan değişim aracı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Yıldırım",
+            "hint": "Gök gürültüsüyle birlikte bulut ile yer arasında oluşan elektrik boşalması.",
+            "difficulty": 1
+        }
+    ]
+}

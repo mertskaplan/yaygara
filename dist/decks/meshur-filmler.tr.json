@@ -1,0 +1,258 @@
+{
+  "id": "meshur-filmler.tr",
+  "name": "Orjinal adı da kabul (Meşhur filmler)",
+  "language": "tr",
+  "difficulty": "easy",
+  "words": [
+    {
+      "term": "Titanik",
+      "hint": "Batmaz denilen büyük yolcu gemisinin buzdağına çarpmasını anlatan yapım.",
+      "difficulty": 1
+    },
+    {
+      "term": "Aslan Kral",
+      "hint": "Küçük Simba'nın amcasına karşı verdiği orman mücadelesi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Örümcek Adam",
+      "hint": "Peter Parker'ın radyoaktif bir canlı tarafından ısırılmasıyla kazandığı güçler.",
+      "difficulty": 1
+    },
+    {
+      "term": "Batman",
+      "hint": "Gotham şehrini suçlulardan koruyan pelerinli kahraman.",
+      "difficulty": 1
+    },
+    {
+      "term": "Harry Potter",
+      "hint": "Gözlüklü bir çocuğun sihir okulundaki maceraları.",
+      "difficulty": 1
+    },
+    {
+      "term": "Yıldız Savaşları",
+      "hint": "Darth Vader ve Luke Skywalker arasındaki galaktik mücadele.",
+      "difficulty": 1
+    },
+    {
+      "term": "Jurassic Park",
+      "hint": "Genetikle yeniden canlandırılan dev sürüngenlerin olduğu ada.",
+      "difficulty": 1
+    },
+    {
+      "term": "Shrek",
+      "hint": "Yeşil bir devin bataklığını korumaya çalışırken bir prensesle tanışması.",
+      "difficulty": 1
+    },
+    {
+      "term": "Buz Devri",
+      "hint": "Mamut, kılıç dişli kaplan ve miskinin göç yolculuğu.",
+      "difficulty": 1
+    },
+    {
+      "term": "Evde Tek Başına",
+      "hint": "Ailesi tatile gidince unutulan çocuğun hırsızlarla mücadelesi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Karayip Korsanları",
+      "hint": "Kaptan Jack Sparrow'un denizde geçen maceraları.",
+      "difficulty": 1
+    },
+    {
+      "term": "Gladyatör",
+      "hint": "Romalı bir generalin köle yapıldıktan sonra arenada intikam araması.",
+      "difficulty": 1
+    },
+    {
+      "term": "Baba",
+      "hint": "Marlon Brando'nun başrolünde olduğu İtalyan mafya ailesi destanı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Başlangıç",
+      "hint": "Rüyaların içine girerek fikir yerleştirme konusunu işleyen Christopher Nolan yapımı.",
+      "difficulty": 1
+    },
+    {
+      "term": "The Matrix",
+      "hint": "Neo'nun bir simülasyonda yaşadığını fark edip gerçekliği sorgulaması.",
+      "difficulty": 1
+    },
+    {
+      "term": "Rocky",
+      "hint": "Amatör bir boksörün şampiyonluk için verdiği azimli mücadele.",
+      "difficulty": 1
+    },
+    {
+      "term": "Rambo",
+      "hint": "Vietnam gazisi bir askerin tek başına verdiği gerilla savaşı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Terminatör",
+      "hint": "Gelecekten gönderilen bir robotun Sarah Connor'ı durdurmaya çalışması.",
+      "difficulty": 1
+    },
+    {
+      "term": "Cesur Yürek",
+      "hint": "William Wallace'ın İskoçya'nın bağımsızlığı için verdiği savaş.",
+      "difficulty": 1
+    },
+    {
+      "term": "Forrest Gump",
+      "hint": "Düşük IQ'lu bir adamın tesadüflerle dolu inanılmaz hayat hikayesi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Ucuz Roman",
+      "hint": "Quentin Tarantino'nun iç içe geçmiş hikayelerden oluşan suç klasiği.",
+      "difficulty": 1
+    },
+    {
+      "term": "Sevginin Gücü",
+      "hint": "Küçük bir kızla profesyonel bir tetikçi arasındaki bağ.",
+      "difficulty": 1
+    },
+    {
+      "term": "Dövüş Kulübü",
+      "hint": "Birinci kuralı hakkında konuşulmaması gereken gizli organizasyon.",
+      "difficulty": 1
+    },
+    {
+      "term": "Yıldızlar Arasında",
+      "hint": "Uzayda yeni bir gezegen arayan bir babanın zamanla yarışı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Esaretin Bedeli",
+      "hint": "Suçsuz yere hapse giren bir bankacının umut dolu hikayesi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Süpermen",
+      "hint": "Kripton gezegeninden gelen, pelerinli ve uçabilen kahraman.",
+      "difficulty": 1
+    },
+    {
+      "term": "Joker",
+      "hint": "Gotham'ın kaos yanlısı, makyajlı ve gülen kötü karakteri.",
+      "difficulty": 1
+    },
+    {
+      "term": "Avatar",
+      "hint": "Pandora isimli gezegende mavi yerlilerle insanların çatışması.",
+      "difficulty": 1
+    },
+    {
+      "term": "Parazit",
+      "hint": "Fakir bir ailenin zengin bir ailenin evine sızmasını anlatan Güney Kore yapımı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Whiplash",
+      "hint": "Sert bir hocanın öğrencisini sınırlarını zorlayarak davulcu yapma süreci.",
+      "difficulty": 2
+    },
+    {
+      "term": "Siyah Kuğu",
+      "hint": "Bir balerinin mükemmellik uğruna akıl sağlığını yitirmesi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Amelie",
+      "hint": "Paris'te yaşayan genç bir kadının çevresindekileri mutlu etme çabası.",
+      "difficulty": 2
+    },
+    {
+      "term": "Piyanist",
+      "hint": "İkinci Dünya Savaşı'nda hayatta kalmaya çalışan Polonyalı müzisyen.",
+      "difficulty": 2
+    },
+    {
+      "term": "Yeşil Yol",
+      "hint": "İdam mahkumlarının olduğu blokta mucizeler yaratan dev cüsseli adam.",
+      "difficulty": 2
+    },
+    {
+      "term": "Sapık",
+      "hint": "Norman Bates ve annesi temalı meşhur Alfred Hitchcock gerilimi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Yaralı Yüz",
+      "hint": "Tony Montana'nın uyuşturucu dünyasındaki yükselişi ve düşüşü.",
+      "difficulty": 2
+    },
+    {
+      "term": "Geleceğe Dönüş",
+      "hint": "Marty McFly'ın bir araba ile geçmişe gitmesini anlatan seri.",
+      "difficulty": 2
+    },
+    {
+      "term": "Indiana Jones",
+      "hint": "Şapkalı ve kamçılı bir arkeoloğun tarihi eserlerin peşinden koşması.",
+      "difficulty": 2
+    },
+    {
+      "term": "Mad Max: Fury Road",
+      "hint": "Çöl ortamında geçen, yüksek tempolu ve bol araçlı takip sahneleri.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kara Şövalye",
+      "hint": "Heath Ledger'ın düşman karakteri canlandırdığı Christopher Nolan yapımı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Ruhların Kaçışı",
+      "hint": "Ailesini kurtarmaya çalışan küçük bir kızın fantastik hamam dünyasındaki serüveni.",
+      "difficulty": 2
+    },
+    {
+      "term": "Truman Show",
+      "hint": "Tüm hayatı gizli kameralarla bir televizyon programı olan adamın gerçeği bulması.",
+      "difficulty": 2
+    },
+    {
+      "term": "2001: Bir Uzay Destanı",
+      "hint": "Stanley Kubrick'in insan evrimini ve yapay zekayı sorguladığı felsefi başyapıt.",
+      "difficulty": 3
+    },
+    {
+      "term": "Otomatik Portakal",
+      "hint": "Şiddet düşkünü bir gencin devlet eliyle rehabilite edilmeye çalışılması.",
+      "difficulty": 3
+    },
+    {
+      "term": "Sil Baştan",
+      "hint": "Anılarını sildiren bir çiftin, işlem sırasında birbirlerini yeniden keşfetmesi.",
+      "difficulty": 3
+    },
+    {
+      "term": "Yüzüklerin Efendisi",
+      "hint": "Orta Dünya'da geçen, bir takının yok edilmesi üzerine kurulu epik seri.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kayıp Balık Nemo",
+      "hint": "Okyanusta kaybolan oğlunu arayan bir palyaço balığının macerası.",
+      "difficulty": 1
+    },
+    {
+      "term": "Maske",
+      "hint": "Jim Carrey'nin yeşil bir suratla aşırı hareketli bir karaktere dönüştüğü komedi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Yedi",
+      "hint": "Ölümcül günahları temel alan cinayetleri araştıran iki dedektifin hikayesi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Taksi Şoförü",
+      "hint": "New York gecelerinde adaleti sağlamaya çalışan yalnız bir adamın hikayesi.",
+      "difficulty": 3
+    }
+  ]
+}

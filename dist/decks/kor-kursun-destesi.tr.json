@@ -1,0 +1,273 @@
+{
+  "id": "kor-kursun-destesi.tr",
+  "name": "Kör kurşun destesi",
+  "language": "tr",
+  "difficulty": "medium",
+  "words": [
+    {
+      "term": "Labirent",
+      "hint": "Çıkış yolunu bulmanın zor olduğu karmaşık yollar bütünü.",
+      "difficulty": 2
+    },
+    {
+      "term": "Referans",
+      "hint": "Bir işe girerken kişinin yetkinliğine tanıklık eden kaynak.",
+      "difficulty": 2
+    },
+    {
+      "term": "Mezarlık",
+      "hint": "Ölülerin gömüldüğü alan.",
+      "difficulty": 1
+    },
+    {
+      "term": "Tılsım",
+      "hint": "Doğaüstü güçleri olduğuna inanılan büyülü nesne.",
+      "difficulty": 2
+    },
+    {
+      "term": "Sis perdesi",
+      "hint": "Bir olayın ardındaki gerçeği görmeyi engelleyen belirsizlik.",
+      "difficulty": 2
+    },
+    {
+      "term": "Yarasa",
+      "hint": "Mağaralarda yaşayan, uçabilen memeli hayvan.",
+      "difficulty": 1
+    },
+    {
+      "term": "Feribot",
+      "hint": "Deniz yoluyla araç ve yolcu taşıyan büyük ulaşım aracı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Deniz tutması",
+      "hint": "Dalgaların etkisiyle oluşan mide bulantısı ve baş dönmesi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Asker kaçağı",
+      "hint": "Vatani görevini yaparken birliğinden firar eden kişi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Tabut",
+      "hint": "Cenazenin içine konulduğu tahta sandık.",
+      "difficulty": 1
+    },
+    {
+      "term": "Mektep",
+      "hint": "Eğitim ve öğretim verilen kurumun eski dildeki adı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Tek kale maç",
+      "hint": "Bir tarafın diğerine sürekli baskı kurduğu müsabaka.",
+      "difficulty": 1
+    },
+    {
+      "term": "Cadılar Bayramı",
+      "hint": "Ekim sonunda kostümlerle kutlanan korku temalı festival.",
+      "difficulty": 2
+    },
+    {
+      "term": "Falaka",
+      "hint": "Ayak tabanına sopayla vurularak yapılan eski bir ceza yöntemi.",
+      "difficulty": 3
+    },
+    {
+      "term": "Salağa yatmak",
+      "hint": "Bir şeyi bildiği halde anlamamış gibi davranmak.",
+      "difficulty": 2
+    },
+    {
+      "term": "Mezar taşı",
+      "hint": "Kabrin başına dikilen, üzerinde kimlik bilgilerinin yazdığı mermer.",
+      "difficulty": 1
+    },
+    {
+      "term": "Gebe",
+      "hint": "Karnında bebek taşıyan anne adayı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Teleferik",
+      "hint": "Havada asılı kabinlerle ulaşım sağlayan araç.",
+      "difficulty": 1
+    },
+    {
+      "term": "Çetele",
+      "hint": "Sayıları akılda tutmak için bir yere atılan çentikler.",
+      "difficulty": 2
+    },
+    {
+      "term": "Fanzin",
+      "hint": "Amatör bir ruhla hazırlanan, fotokopiyle çoğaltılan dergi.",
+      "difficulty": 3
+    },
+    {
+      "term": "Öpücük",
+      "hint": "Sevgi göstergesi olarak dudakların bir yere dokunması.",
+      "difficulty": 1
+    },
+    {
+      "term": "Yağlı kazık",
+      "hint": "Geleneksel bir oyunda tırmanılması zor olan kaygan direk.",
+      "difficulty": 3
+    },
+    {
+      "term": "Ozon tabakası",
+      "hint": "Güneşin zararlı ışınlarını süzen atmosfer katmanı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Cumhuriyet",
+      "hint": "Halkın kendi kendini yönettiği rejim türü.",
+      "difficulty": 1
+    },
+    {
+      "term": "Mastürbasyon",
+      "hint": "Kişinin kendi kendine cinsel doyum sağlaması.",
+      "difficulty": 2
+    },
+    {
+      "term": "Fransız öpücüğü",
+      "hint": "Dillerin de dahil olduğu tutkulu dudak birleşmesi.",
+      "difficulty": 3
+    },
+    {
+      "term": "Dondurma",
+      "hint": "Sütten yapılan soğuk ve tatlı yiyecek.",
+      "difficulty": 1
+    },
+    {
+      "term": "Uçurtma",
+      "hint": "Rüzgarla havada süzülen kağıttan oyuncak.",
+      "difficulty": 1
+    },
+    {
+      "term": "Sarımsak",
+      "hint": "Kokusuna vampirlerin dayanamadığı söylenen bitki.",
+      "difficulty": 1
+    },
+    {
+      "term": "Tavla",
+      "hint": "Zar ve pullarla oynanan geleneksel bir masa oyunu.",
+      "difficulty": 1
+    },
+    {
+      "term": "Paraşüt",
+      "hint": "Yüksekten atlayanların yavaşça yere inmesini sağlayan bez.",
+      "difficulty": 1
+    },
+    {
+      "term": "Pijama",
+      "hint": "Uyurken giyilen rahat kıyafet takımı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kamera",
+      "hint": "Görüntüleri kaydetmeye yarayan cihaz.",
+      "difficulty": 1
+    },
+    {
+      "term": "Mikroskop",
+      "hint": "Gözle görülmeyecej kadar küçük canlıları inceleyen alet.",
+      "difficulty": 2
+    },
+    {
+      "term": "Mıknatıs",
+      "hint": "Metalleri kendine çeken nesne.",
+      "difficulty": 1
+    },
+    {
+      "term": "Güneş gözlüğü",
+      "hint": "Parlak ışığa karşı koruma amaçlı takılan aksesuar.",
+      "difficulty": 1
+    },
+    {
+      "term": "Fren",
+      "hint": "Hareket halindeki bir aracı durdurmaya yarayan düzenek.",
+      "difficulty": 1
+    },
+    {
+      "term": "Anahtar",
+      "hint": "Kilidi açıp kapamaya yarayan metal parça.",
+      "difficulty": 1
+    },
+    {
+      "term": "Cüzdan",
+      "hint": "Para ve kartların taşındığı küçük çanta.",
+      "difficulty": 1
+    },
+    {
+      "term": "Şemsiye",
+      "hint": "Yağmurdan korunmak için açılan su geçirmez eşya.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kibrit",
+      "hint": "Ucu yanıcı maddeyle kaplı küçük ahşap çöp.",
+      "difficulty": 1
+    },
+    {
+      "term": "Ruj",
+      "hint": "Dudaklara renk vermek için sürülen kozmetik ürün.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kum saati",
+      "hint": "İçindeki tozun akışıyla zamanı ölçen araç.",
+      "difficulty": 2
+    },
+    {
+      "term": "Astronot",
+      "hint": "Uzay araştırmaları için atmosfere çıkan kişi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Piyano",
+      "hint": "Tuşlarına basılarak çalınan masa büyüklüğündeki müzik aleti.",
+      "difficulty": 1
+    },
+    {
+      "term": "Teleskop",
+      "hint": "Uzak gök cisimlerini yakınlaştıran gözlem aleti.",
+      "difficulty": 2
+    },
+    {
+      "term": "Pusula",
+      "hint": "Yön bulmaya yarayan, ibresi kuzeyi gösteren cihaz.",
+      "difficulty": 1
+    },
+    {
+      "term": "Bumerang",
+      "hint": "Fırlatıldığında geri dönen kavisli oyuncak.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kelebek etkisi",
+      "hint": "Küçük bir değişikliğin büyük sonuçlar doğurması teorisi.",
+      "difficulty": 3
+    },
+    {
+      "term": "Argo",
+      "hint": "Belli bir kesimin kullandığı, standart dilden farklı sözcükler.",
+      "difficulty": 2
+    },
+    {
+      "term": "Felsefe",
+      "hint": "Varlık ve bilgi üzerine derinlemesine düşünme disiplini.",
+      "difficulty": 3
+    },
+    {
+      "term": "Mitoloji",
+      "hint": "Efsaneleri ve tanrı hikayelerini inceleyen alan.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kadraj",
+      "hint": "Fotoğraf makinesinin vizöründen görünen sınırlı alan.",
+      "difficulty": 3
+    }
+  ]
+}

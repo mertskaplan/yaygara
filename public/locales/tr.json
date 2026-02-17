@@ -1,6 +1,6 @@
 {
   "home": {
-    "title": "Yaygara",
+    "title": "Yaygara | Anlatma ve tahmine dayalı eğlenceli parti oyunu",
     "slogan": "Anlatma ve tahmine dayalı eğlenceli parti oyunu",
     "howToPlay": "Nasıl Oynanır?",
     "startGame": "Oyunu Kur",
@@ -68,7 +68,7 @@
     "seatingTitle": "Oturma Düzeni ve Sıra",
     "seatingDescription": "Oyun tek cihazla oynandığı için cihaz, anlatımı biten oyuncudan sonraki takımın anlatıcısına <b>elden ele verilir</b>. Bu sırayla ilerleyebilmek için <b>farklı takımlardaki oyuncuların yan yana oturması ve tüm oyuncuların bir daire oluşturacak şekilde yerleşmesi tavsiye edilir</b>. Bu düzen, oyunun akıcı ve keyifli ilerlemesini sağlar.",
     "flowTitle": "Oyun Akışı",
-    "flowDescription": "Takımlar ve takım oyunları <b>sırayla anlatıcı olur</b>. Bir oyuncunun anlatım süresi bittiğinde, sıra diğer takımın anlatıcısına geçer. Her tur, destedeki tüm kelimeler doğru tahmin edilene kadar oynanır. Bir tur tamamlandığında, aynı kelime destesiyle bir sonraki tura geçilir. Bu nedenle rakip takımın anlattığı kelimeleri de <b>iyi dinle ve kopya verme!</b> Daha sonra puan olarak senin karşına çıkabilir.",
+    "flowDescription": "Takımlar ve takım oyuncuları <b>sırayla anlatıcı olur</b>. Bir oyuncunun anlatım süresi bittiğinde, sıra diğer takımın anlatıcısına geçer. Her tur, destedeki tüm kelimeler doğru tahmin edilene kadar oynanır. Bir tur tamamlandığında, aynı kelime destesiyle bir sonraki tura geçilir. Bu nedenle rakip takımın anlattığı kelimeleri de <b>iyi dinle ve kopya verme!</b> Daha sonra puan olarak senin karşına çıkabilir.",
     "round1Title": "1. Tur: Serbest Anlatım",
     "round1Description": "Kelimeyi istediğiniz kelimeleri, sesleri veya jestleri kullanarak anlatın. Önemli: Karttaki kelimeyi, bir parçasını, onunla kafiyeli kelimeleri veya başka dildeki çevirisini söyleyemezsiniz. Anlatmakta zorlanırsan, kartın altındaki açıklama metnini doğrudan okuyabilirsin.",
     "round2Title": "2. Tur: Sadece Tek Kelime",
@@ -371,7 +371,8 @@
     "score": "skor"
   },
   "seo": {
-    "description": "Yaygara: Anlatma ve tahmine dayalı eğlenceli parti oyunu",
+    "title": "Yaygara | Anlatma ve tahmine dayalı eğlenceli parti oyunu",
+    "description": "Yaygara, 4–16 kişiyle oynanan, anlatma ve tahmine dayalı eğlenceli bir kelime ve parti oyunu.",
     "ogTitle": "Yaygara: Anlatma ve tahmine dayalı eğlenceli parti oyunu",
     "schemaDescription": "Yaygara, 4 ila 16 kişi arasında oynanabilen; tabu ve sessiz sinema karışımı eğlenceli bir parti oyunudur. Oyun, yüz yüze oynanır ve tek bir cihazın elden ele dolaşmasıyla ilerler"
   }

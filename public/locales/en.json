@@ -68,7 +68,7 @@
     "seatingTitle": "Seating and Order",
     "seatingDescription": "Since the game is played on a single device, it is <b>passed from hand to hand</b> to the next team's narrator after each turn. For a smooth rotation, it is recommended that <b>players from different teams sit next to each other in a circle</b>. This arrangement ensures the game moves quickly and stays fun.",
     "flowTitle": "Game Flow",
-    "flowDescription": "Teams and narrators <b>take turns</b>. When a player's time runs out, the turn passes to the next team's narrator. Each round is played until all words in the deck are correctly guessed. When a round is complete, you move to the next round using the same deck. For this reason, <b>listen closely and don't give spoilers</b> while the other team is describing! Those same words will come back to you as potential points later.",
+    "flowDescription": "Teams and team players <b>take turns</b>. When a player's time runs out, the turn passes to the next team's narrator. Each round is played until all words in the deck are correctly guessed. When a round is complete, you move to the next round using the same deck. For this reason, <b>listen closely and don't give spoilers</b> while the other team is describing! Those same words will come back to you as potential points later.",
     "round1Title": "Round 1: Free Description",
     "round1Description": "Describe the word using any words, sounds, or gestures you like. Important: You cannot say the word itself, any part of it, its rhymes, or its translation in another language. If you're struggling, you can read the hint text directly below the card.",
     "round2Title": "Round 2: Only One Word",
@@ -362,6 +362,7 @@
     "score": "score"
   },
   "seo": {
+    "title": "Yaygara | Fun party game based on narration and guessing",
     "description": "Fun party game based on narration and guessing",
     "ogTitle": "Yaygara: Fun party game based on narration and guessing",
     "schemaDescription": "A fun party game based on narration and guessing, played by passing a single device from hand to hand among players."

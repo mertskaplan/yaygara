@@ -71,6 +71,13 @@ function updateSEOTags(lang: Language, pathname: string) {
         tr: 'Yaygara: Anlatma ve tahmine dayalı eğlenceli parti oyunu'
     };
 
+    const titles: Record<Language, string> = {
+        en: 'Yaygara | Fun party game based on narration and guessing',
+        tr: 'Yaygara | Anlatma ve tahmine dayalı eğlenceli parti oyunu'
+    };
+
+    document.title = titles[lang];
+
     let metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', descriptions[lang]);
 

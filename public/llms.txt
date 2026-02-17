@@ -1,0 +1,22 @@
+# Yaygara
+
+> Fun party game based on narration and guessing.
+
+## Description
+Yaygara is an interactive, in-person party game where players describe words through narration, single-word clues, or charades. It supports multiple languages (English and Turkish) and allows for AI-generated custom decks.
+
+## Key Features
+- Multi-language support (EN, TR)
+- Single-device hand-to-hand gameplay
+- AI Deck Constructor
+- PWA support for offline play
+
+## Tech Stack
+- React, Vite, TypeScript
+- Tailwind CSS, Framer Motion
+- Zustand for state management
+- Cloudflare Workers/Wrangler for deployment
+
+## URLs
+- Homepage: https://yaygara.mertskaplan.com
+- GitHub: https://github.com/mertskaplan/yaygara

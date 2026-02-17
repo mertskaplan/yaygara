@@ -1,0 +1,258 @@
+{
+    "id": "hayatin-ritmi.tr.json",
+    "name": "Hayatın ritmi destesi",
+    "language": "tr",
+    "difficulty": "medium",
+    "words": [
+        {
+            "term": "Mahşerin dört atlısı",
+            "hint": "Kıyamet alameti olarak bilinen sembolik figürler grubu.",
+            "difficulty": 3
+        },
+        {
+            "term": "Demokles'in kılıcı",
+            "hint": "Kişinin tepesinde sürekli var olan büyük tehlike ve tehdit.",
+            "difficulty": 3
+        },
+        {
+            "term": "Narsist",
+            "hint": "Kendi benliğine aşırı hayranlık duyan, kendini beğenmiş kişi.",
+            "difficulty": 3
+        },
+        {
+            "term": "Gölge oyunları",
+            "hint": "Işıkla oluşturulan ve dolaylı anlatıma dayanan görsel sahneler.",
+            "difficulty": 2
+        },
+        {
+            "term": "Pusula",
+            "hint": "Yön bulmaya yarayan, ibresi kuzeyi gösteren cihaz.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kör nokta",
+            "hint": "Fark edilmesi zor olan ama etkisi büyük alan.",
+            "difficulty": 2
+        },
+        {
+            "term": "Sessiz çığlık",
+            "hint": "Dışa vurulamayan ama yoğun biçimde hissedilen tepki.",
+            "difficulty": 2
+        },
+        {
+            "term": "Tahta bavul",
+            "hint": "Göç ve yoksulluk çağrışımı yapan eski yolculuk eşyası.",
+            "difficulty": 2
+        },
+        {
+            "term": "Muska",
+            "hint": "İçinde dua yazılı olan, boyna asılan üçgen şeklindeki koruyucu nesne.",
+            "difficulty": 2
+        },
+        {
+            "term": "Deja vu",
+            "hint": "Yaşanan bir anı daha önce yaşamış gibi hissetme durumu.",
+            "difficulty": 2
+        },
+        {
+            "term": "Kara kutu",
+            "hint": "Uçak kazalarından sonra kayıtları incelemek için aranan cihaz.",
+            "difficulty": 2
+        },
+        {
+            "term": "Saman altından su yürütmek",
+            "hint": "Gizlice, kimseye hissettirmeden iş çevirmek.",
+            "difficulty": 2
+        },
+        {
+            "term": "Bermuda şeytan üçgeni",
+            "hint": "Gemilerin ve uçakların kaybolduğu iddia edilen gizemli okyanus bölgesi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Çin işkencesi",
+            "hint": "Dayanılması çok zor, yavaş ve eziyet verici durumlar için kullanılan tabir.",
+            "difficulty": 2
+        },
+        {
+            "term": "Yasak elma",
+            "hint": "Adem ile Havva'nın cennetten kovulmasına neden olan meyve.",
+            "difficulty": 2
+        },
+        {
+            "term": "Çoban matı",
+            "hint": "Satrançta oyunu dört hamlede bitiren meşhur taktik.",
+            "difficulty": 2
+        },
+        {
+            "term": "Şeytanın avukatı",
+            "hint": "Tartışmada karşı tarafın tezini çürütmek için, inanmadığı halde zıt fikri savunan kişi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Medusa",
+            "hint": "Saçları yılandan oluşan ve gözlerine bakanı taşa çeviren mitolojik kadın.",
+            "difficulty": 2
+        },
+        {
+            "term": "Timsah gözyaşları",
+            "hint": "Samimiyetsiz ve sahte üzüntü ifadesi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Titanik",
+            "hint": "Buzdağına çarparak batan devasa yolcu gemisi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Matrix",
+            "hint": "İnsanların sanal bir simülasyonda yaşadığını anlatan bilim kurgu filmi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Osmanlı tokadı",
+            "hint": "Tarihte düşmanı sersemletmek veya öldürmek için el içiyle yapılan sert vuruş.",
+            "difficulty": 2
+        },
+        {
+            "term": "Pollyanna",
+            "hint": "Her olayın iyi yönünü görmeye çalışan aşırı iyimser karakter.",
+            "difficulty": 2
+        },
+        {
+            "term": "Beyaz yalan",
+            "hint": "Zararsız, kimseyi üzmemek için söylenen gerçek dışı söz.",
+            "difficulty": 2
+        },
+        {
+            "term": "Organik",
+            "hint": "Katkısız ve doğal yöntemlerle üretilen tarım ürünü.",
+            "difficulty": 2
+        },
+        {
+            "term": "Protokol",
+            "hint": "Resmi tören ve yazışmalarda uygulanan katı kurallar bütünü.",
+            "difficulty": 2
+        },
+        {
+            "term": "Armut piş ağzıma düş",
+            "hint": "Emek vermeden her şeyin hazır olarak gelmesini bekleme durumu.",
+            "difficulty": 2
+        },
+        {
+            "term": "Yanlış alarm",
+            "hint": "Tehlike varmış hissi yaratıp gerçekte olmayan durum.",
+            "difficulty": 1
+        },
+        {
+            "term": "Ultrason",
+            "hint": "Anne karnındaki bebeği görüntülemeye yarayan tıbbi cihaz.",
+            "difficulty": 1
+        },
+        {
+            "term": "Bıyık",
+            "hint": "Erkeklerde üst dudak üzerinde bırakılan kıllar.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kaynana",
+            "hint": "Eşlerden birinin diğerine göre annesi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Selfie",
+            "hint": "Telefonun ön kamerasıyla kişinin kendi fotoğrafını çekmesi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Çalar saat",
+            "hint": "Sabahları uyanmak için kurulan zamanlayıcı cihaz.",
+            "difficulty": 1
+        },
+        {
+            "term": "Papatya falı",
+            "hint": "Bir çiçeğin yapraklarını 'seviyor, sevmiyor' diyerek koparma ritüeli.",
+            "difficulty": 1
+        },
+        {
+            "term": "Halay başı",
+            "hint": "Düğünlerde el ele tutuşularak oynanan oyunun en önündeki kişi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Beşik",
+            "hint": "Bebeklerin uyuması için sallanabilen küçük yatak.",
+            "difficulty": 1
+        },
+        {
+            "term": "Mumya",
+            "hint": "Mısır piramitlerinde bulunan, bezle sarılmış korunmuş ceset.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kardan adam",
+            "hint": "Kışın yağan beyaz yağışın yuvarlanmasıyla yapılan havuç burunlu figür.",
+            "difficulty": 1
+        },
+        {
+            "term": "Trafik lambası",
+            "hint": "Kavşaklarda araçlara dur veya geç komutu veren ışıklı direk.",
+            "difficulty": 1
+        },
+        {
+            "term": "Türk kahvesi",
+            "hint": "Telvesiyle ikram edilen ve fincanda pişirilen geleneksel içecek.",
+            "difficulty": 1
+        },
+        {
+            "term": "Uçan halı",
+            "hint": "Masallarda gökyüzünde seyahat etmeyi sağlayan dokuma eşya.",
+            "difficulty": 1
+        },
+        {
+            "term": "Altın günü",
+            "hint": "Ev hanımlarının sırayla birbirini ağırlayıp birikim yaptığı toplantı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Çeyiz",
+            "hint": "Evlenecek kızın yeni evi için hazırladığı eşyaların tamamı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kese",
+            "hint": "Hamamda kir atmak için ele geçirilen sert bez eldiven.",
+            "difficulty": 1
+        },
+        {
+            "term": "Gelin çiçeği",
+            "hint": "Düğünün sonunda bekar kızlara doğru fırlatılan bitki demeti.",
+            "difficulty": 1
+        },
+        {
+            "term": "Ütü masası",
+            "hint": "Kıyafetlerin kırışıklığını açarken kullanılan ayaklı tezgah.",
+            "difficulty": 1
+        },
+        {
+            "term": "Patlamış Mısır",
+            "hint": "Sarı renkli tohumların sıcakta patlamasıyla oluşan sinema atıştırmalığı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Limonata",
+            "hint": "Sarı ekşi meyvenin suyu ve şekerle yapılan serinletici içecek.",
+            "difficulty": 1
+        },
+        {
+            "term": "Harita",
+            "hint": "Yeryüzünün kuş bakışı görünümünün kağıda aktarılmış hali.",
+            "difficulty": 1
+        },
+        {
+            "term": "Sabun",
+            "hint": "Suyla birleştiğinde köpürerek kirleri temizleyen madde.",
+            "difficulty": 1
+        }
+    ]
+}

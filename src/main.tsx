@@ -9,16 +9,31 @@ import {
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { RouteErrorBoundary } from '@/components/RouteErrorBoundary';
 import '@/index.css'
-import { HomePage } from '@/pages/HomePage'
-import { SetupPage } from '@/pages/SetupPage'
-import { GamePage } from '@/pages/GamePage'
-import { ScoreboardPage } from '@/pages/ScoreboardPage'
-import { ThemeManager } from '@/components/ThemeManager'
-import { preloadTranslations } from '@/lib/i18n';
-// Preload all language files on app startup for instant language switching
-preloadTranslations();
 import { LanguageWrapper } from '@/components/LanguageWrapper';
 import { RootRedirector } from '@/components/RootRedirector';
+import { ThemeManager } from '@/components/ThemeManager';
+import { preloadTranslations } from '@/lib/i18n';
+import { Suspense, lazy } from 'react';
+
+// Preload all language files on app startup for instant language switching
+preloadTranslations();
+
+const HomePage = lazy(() => import('@/pages/HomePage').then(m => ({ default: m.HomePage })));
+const SetupPage = lazy(() => import('@/pages/SetupPage').then(m => ({ default: m.SetupPage })));
+const GamePage = lazy(() => import('@/pages/GamePage').then(m => ({ default: m.GamePage })));
+const ScoreboardPage = lazy(() => import('@/pages/ScoreboardPage').then(m => ({ default: m.ScoreboardPage })));
+
+const LoadingPage = () => (
+  <div className="flex items-center justify-center h-screen-dvh bg-transparent">
+    <div className="w-12 h-12 border-4 border-sky-500 border-t-transparent rounded-full animate-spin" />
+  </div>
+);
+
+const SuspenseLayout = ({ children }: { children: React.ReactNode }) => (
+  <Suspense fallback={<LoadingPage />}>
+    {children}
+  </Suspense>
+);
 
 const router = createBrowserRouter([
   {
@@ -28,46 +43,60 @@ const router = createBrowserRouter([
   },
   {
     path: "/:lang",
-    element: <LanguageWrapper><HomePage /></LanguageWrapper>,
+    element: <SuspenseLayout><LanguageWrapper><HomePage /></LanguageWrapper></SuspenseLayout>,
     errorElement: <RouteErrorBoundary />,
   },
   {
     path: "/:lang/setup",
-    element: <LanguageWrapper><SetupPage /></LanguageWrapper>,
+    element: <SuspenseLayout><LanguageWrapper><SetupPage /></LanguageWrapper></SuspenseLayout>,
     errorElement: <RouteErrorBoundary />,
   },
   {
     path: "/:lang/kurulum",
-    element: <LanguageWrapper><SetupPage /></LanguageWrapper>,
+    element: <SuspenseLayout><LanguageWrapper><SetupPage /></LanguageWrapper></SuspenseLayout>,
     errorElement: <RouteErrorBoundary />,
   },
   {
     path: "/:lang/play",
-    element: <LanguageWrapper><GamePage /></LanguageWrapper>,
+    element: <SuspenseLayout><LanguageWrapper><GamePage /></LanguageWrapper></SuspenseLayout>,
     errorElement: <RouteErrorBoundary />,
   },
   {
     path: "/:lang/oyun",
-    element: <LanguageWrapper><GamePage /></LanguageWrapper>,
+    element: <SuspenseLayout><LanguageWrapper><GamePage /></LanguageWrapper></SuspenseLayout>,
     errorElement: <RouteErrorBoundary />,
   },
   {
     path: "/:lang/score",
-    element: <LanguageWrapper><ScoreboardPage /></LanguageWrapper>,
+    element: <SuspenseLayout><LanguageWrapper><ScoreboardPage /></LanguageWrapper></SuspenseLayout>,
     errorElement: <RouteErrorBoundary />,
   },
   {
     path: "/:lang/skor",
-    element: <LanguageWrapper><ScoreboardPage /></LanguageWrapper>,
+    element: <SuspenseLayout><LanguageWrapper><ScoreboardPage /></LanguageWrapper></SuspenseLayout>,
     errorElement: <RouteErrorBoundary />,
   },
-]);
+], {
+  future: {
+    v7_startTransition: true,
+    v7_relativeSplatPath: true,
+  },
+});
+import { LazyMotion, domAnimation } from 'framer-motion';
+
 // Do not touch this code
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ErrorBoundary>
       <ThemeManager>
-        <RouterProvider router={router} />
+        <LazyMotion features={domAnimation}>
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        </LazyMotion>
       </ThemeManager>
     </ErrorBoundary>
   </StrictMode>,

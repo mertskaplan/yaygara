@@ -25,7 +25,7 @@ export const TimerCircle: React.FC<TimerCircleProps> = ({ timeLeft, duration, co
           cy="60"
         />
         <circle
-          className="transition-all duration-500"
+          className="transition-[stroke-dashoffset] duration-1000 ease-linear"
           style={{ color: isUrgent ? '#ef4444' : color }}
           strokeWidth="10"
           strokeDasharray={circumference}

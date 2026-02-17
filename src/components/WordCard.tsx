@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { m, Variants } from 'framer-motion';
 import { Star } from 'lucide-react';
 import type { Word } from '@/types';
 interface WordCardProps {
@@ -11,7 +11,7 @@ const cardVariants: Variants = {
 };
 export const WordCard: React.FC<WordCardProps> = ({ word }) => {
   return (
-    <motion.div
+    <m.div
       key={word.term}
       variants={cardVariants}
       initial="hidden"
@@ -33,6 +33,6 @@ export const WordCard: React.FC<WordCardProps> = ({ word }) => {
           ))}
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
