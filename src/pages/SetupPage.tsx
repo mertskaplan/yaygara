@@ -11,6 +11,7 @@ import type { Deck } from '@/types';
 import { useTranslations } from '@/hooks/useTranslations';
 import { cn } from '@/lib/utils';
 import { AIDeckConstructorModal } from '@/components/AIDeckConstructorModal';
+import { fetchDecksManifest, fetchFullDeck, type DeckManifestItem } from '@/lib/decks';
 const containerVariants: Variants = {
   hidden: { opacity: 0, x: 100 },
   visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } },
@@ -150,7 +151,9 @@ const TeamCustomization = () => {
     </m.div>
   );
 };
-const deckFilenames = ['baslangic.tr.json', 'zihin-jimlastigi.tr.json', 'kor-kursun-destesi.tr.json', 'ordan-burdan.tr.json', 'laf-ebesi.tr.json', 'sisli-cagrisimlar.tr.json', 'hayatin-ritmi.tr.json', 'karanlik-seruven.tr.json', 'meshur-filmler.tr.json', 'uygarligin-izleri.tr.json', 'argo.tr.json'];
+// Hardcoded list removed. Decks are now discovered via decks-manifest.json
+// Interface moved to @/lib/decks
+
 const DeckSelection = () => {
   const language = useGameStore((state) => state.language);
   const selectDeck = useGameStore((state) => state.selectDeck);
@@ -164,31 +167,31 @@ const DeckSelection = () => {
   const [isAIModalOpen, setIsAIModalOpen] = useState(false);
   const { t } = useTranslations();
   useEffect(() => {
-    const fetchDecks = async () => {
+    const fetchManifest = async () => {
       setIsLoadingDecks(true);
       try {
-        const allDecks = await Promise.all(
-          deckFilenames.map(async (filename) => {
-            try {
-              const res = await fetch(`/decks/${filename}`);
-              if (!res.ok) throw new Error(`Failed to fetch deck: ${filename}`);
-              const deckData: Deck = await res.json();
-              return deckData;
-            } catch (error) {
-              console.error(error);
-              return null;
-            }
-          })
-        );
-        const validDecks = allDecks.filter((deck): deck is Deck => deck !== null);
-        setDecks(validDecks.filter(deck => deck.language === language));
+        const manifest = await fetchDecksManifest();
+
+        // Map manifest items to Deck structure
+        const mappedDecks: Deck[] = manifest
+          .filter(item => item.language === language)
+          .map(item => ({
+            id: item.id,
+            name: item.name,
+            language: item.language,
+            difficulty: item.difficulty,
+            words: new Array(item.wordCount).fill(null) as any,
+            filename: item.filename
+          } as any));
+
+        setDecks(mappedDecks);
       } catch (error) {
         console.error("Failed to fetch decks", error);
       } finally {
         setIsLoadingDecks(false);
       }
     };
-    fetchDecks();
+    fetchManifest();
   }, [language]);
   const handleFileUploadClick = () => {
     fileInputRef.current?.click();
@@ -220,8 +223,26 @@ const DeckSelection = () => {
     };
     reader.readAsText(file);
   };
-  const handleContinue = () => {
+  const handleContinue = async () => {
     if (!selectedDeck) return;
+
+    // If the selected deck doesn't have words (just metadata from manifest), load them now
+    // Most likely it will be in browser cache due to background preloading
+    if (!selectedDeck.words || selectedDeck.words.some(w => w === null)) {
+      setIsLoadingDecks(true);
+      try {
+        const filename = (selectedDeck as any).filename;
+        if (filename) {
+          const fullDeck = await fetchFullDeck(filename);
+          selectDeck(fullDeck);
+        }
+      } catch (e) {
+        console.error("Failed to load full deck", e);
+      } finally {
+        setIsLoadingDecks(false);
+      }
+    }
+
     setSetupStep('word-count');
   };
   const DeckButton = ({ deck, icon: Icon }: { deck: Deck, icon: React.ElementType }) => {

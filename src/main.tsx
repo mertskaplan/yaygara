@@ -23,6 +23,39 @@ const SetupPage = lazy(() => import('@/pages/SetupPage').then(m => ({ default: m
 const GamePage = lazy(() => import('@/pages/GamePage').then(m => ({ default: m.GamePage })));
 const ScoreboardPage = lazy(() => import('@/pages/ScoreboardPage').then(m => ({ default: m.ScoreboardPage })));
 
+import { fetchDecksManifest, fetchFullDeck } from '@/lib/decks';
+
+// Preload components and decks in the background for instant navigation and offline support
+const preloadAssets = () => {
+  // Wait for initial render and idle time
+  if (typeof window !== 'undefined') {
+    window.addEventListener('load', () => {
+      // Small delay to ensure initial load is completely finished
+      setTimeout(async () => {
+        // 1. Preload JS Pages
+        import('@/pages/SetupPage');
+        setTimeout(() => import('@/pages/GamePage'), 1000);
+        setTimeout(() => import('@/pages/ScoreboardPage'), 2000);
+
+        // 2. Preload Decks
+        try {
+          const manifest = await fetchDecksManifest();
+          // Preload decks sequentially to avoid network congestion
+          manifest.forEach((deck: any, index: number) => {
+            setTimeout(() => {
+              fetchFullDeck(deck.filename).catch(() => { });
+            }, 3000 + (index * 500));
+          });
+        } catch (e) {
+          console.error("Failed to preload decks", e);
+        }
+      }, 2000);
+    });
+  }
+};
+
+preloadAssets();
+
 const LoadingPage = () => (
   <div className="flex items-center justify-center h-screen-dvh bg-transparent">
     <div className="w-12 h-12 border-4 border-sky-500 border-t-transparent rounded-full animate-spin" />

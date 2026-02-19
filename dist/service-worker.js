@@ -1,38 +1,59 @@
-const CACHE_NAME = 'yaygara-v1.2';
+const CACHE_NAME = 'yaygara-v1.2.1';
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/tr/',
   '/en/',
   '/manifest.json',
+  '/decks-manifest.json',
   '/locales/tr.json',
   '/locales/en.json',
-  '/decks/baslangic.tr.json',
-  '/decks/zihin-jimnastigi.tr.json',
-  '/decks/kor-kursun-destesi.tr.json',
-  '/decks/ordan-burdan.tr.json',
-  '/decks/laf-ebesi.tr.json',
-  '/decks/sisli-cagrisimlar.tr.json',
-  '/decks/hayatin-ritmi.tr.json',
-  '/decks/karanlik-seruven.tr.json',
-  '/decks/meshur-filmler.tr.json',
-  '/decks/uygarligin-izleri.tr.json',
-  '/decks/argo.tr.json',
   '/icons/favicon.svg',
   '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  '/icons/icon-512x512.png',
+  '/yaygara.svg'
 ];
 
-// Install: Cache core assets (be lenient about missing ones)
+// Install: Cache core assets and dynamically discovered assets (production)
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log('[SW] Pre-caching core assets');
-      return Promise.all(
+    caches.open(CACHE_NAME).then(async (cache) => {
+      console.log('[SW] Pre-caching assets');
+
+      // 1. Cache Core Assets
+      await Promise.all(
         CORE_ASSETS.map(url => {
           return cache.add(url).catch(err => console.warn(`[SW] Failed to cache ${url}:`, err));
         })
       );
+
+      // 2. Fetch Decks Manifest and Cache all Decks
+      try {
+        const decksRes = await fetch('/decks-manifest.json');
+        if (decksRes.ok) {
+          const decks = await decksRes.json();
+          const deckUrls = decks.map(deck => `/decks/${deck.filename}`);
+          await Promise.all(
+            deckUrls.map(url => cache.add(url).catch(err => console.warn(`[SW] Failed to cache deck ${url}:`, err)))
+          );
+        }
+      } catch (err) {
+        console.error('[SW] Failed to fetch decks manifest during install:', err);
+      }
+
+      // 3. Fetch Production Assets Manifest (if in production)
+      try {
+        const assetsRes = await fetch('/assets-manifest.json');
+        if (assetsRes.ok) {
+          const assets = await assetsRes.json();
+          await Promise.all(
+            assets.map(url => cache.add(url).catch(err => console.warn(`[SW] Failed to cache production asset ${url}:`, err)))
+          );
+        }
+      } catch (err) {
+        // This is expected in dev mode
+        console.log('[SW] No assets-manifest.json found (likely dev mode)');
+      }
     })
   );
   self.skipWaiting();
@@ -52,71 +73,85 @@ self.addEventListener('activate', (event) => {
       );
     })
   );
-  self.clients.claim();
+  return self.clients.claim();
 });
 
-// Fetch: Logic for Network-First with Cache Fallback
+// Helper: Stale-While-Revalidate Strategy
+// Returns cached response immediately if available, while updating cache in background
+async function staleWhileRevalidate(request) {
+  const cache = await caches.open(CACHE_NAME);
+  const cachedResponse = await cache.match(request);
+
+  const networkPromise = fetch(request).then((networkResponse) => {
+    if (networkResponse && networkResponse.status === 200) {
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  }).catch(() => {
+    // Fail silently if network fails
+  });
+
+  return cachedResponse || networkPromise;
+}
+
+// Helper: Cache-First Strategy (for hashed assets/images)
+async function cacheFirst(request) {
+  const cache = await caches.open(CACHE_NAME);
+  const cachedResponse = await cache.match(request);
+  if (cachedResponse) return cachedResponse;
+
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse && networkResponse.status === 200) {
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (err) {
+    return null;
+  }
+}
+
+// Fetch handler
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
-  const isDeckRequest = url.pathname.includes('/decks/');
 
-  // 1. Navigation (HTML/Pages)
+  // 1. Navigation requests (HTML)
+  // Use Stale-While-Revalidate for fast opening and background updates
   if (event.request.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request)
-        .then((response) => {
-          if (response && response.status === 200) {
-            const resClone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, resClone));
-          }
-          return response;
-        })
-        .catch(() => {
-          // If offline, try to match the request, then try localized roots, then generic root
-          return caches.match(event.request).then((response) => {
-            if (response) return response;
-
-            // Fallback strategy for SPA routing
-            const lang = url.pathname.split('/')[1]; // Get 'tr' or 'en'
-            if (lang === 'tr' || lang === 'en') {
-              return caches.match(`/${lang}/`) || caches.match('/') || caches.match('/index.html');
-            }
-            return caches.match('/') || caches.match('/index.html');
-          });
-        })
-    );
-    return;
-  }
-
-  // 2. Deck Requests (Cache First as per requirement)
-  if (isDeckRequest) {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-        if (response) return response;
-        return fetch(event.request).then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const resClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, resClone));
-          }
-          return networkResponse;
-        });
+      staleWhileRevalidate(event.request).then(response => {
+        // Fallback to /index.html if we get nothing (truly offline and not in cache)
+        return response || caches.match('/index.html') || caches.match('/') || caches.match('/tr/') || caches.match('/en/');
       })
     );
     return;
   }
 
-  // 3. Static Assets (Network First with Cache fallback as per requirement)
+  // 2. Static Assets (JS, CSS, Images)
+  // Hashed assets (/assets/) or images/icons use Cache-First because their names change if content changes
+  const isHashedAsset = url.pathname.includes('/assets/');
+  const isStaticFile = url.pathname.includes('/icons/') ||
+    url.pathname.includes('/decks/') ||
+    url.pathname.endsWith('.png') ||
+    url.pathname.endsWith('.svg') ||
+    url.pathname.endsWith('.ico');
+
+  if (isHashedAsset || isStaticFile) {
+    event.respondWith(cacheFirst(event.request));
+    return;
+  }
+
+  // 3. Manifests and Locales - Use Stale-While-Revalidate to discover updates
+  const isUpdateTrigger = url.pathname.endsWith('.json');
+  if (isUpdateTrigger) {
+    event.respondWith(staleWhileRevalidate(event.request));
+    return;
+  }
+
+  // 4. Default: Stale-While-Revalidate for other app-related files
   event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        if (response && response.status === 200) {
-          const resClone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, resClone));
-        }
-        return response;
-      })
-      .catch(() => {
-        return caches.match(event.request);
-      })
+    staleWhileRevalidate(event.request).catch(() => {
+      return caches.match(event.request);
+    })
   );
 });

@@ -181,11 +181,138 @@ function localizeHTMLPlugin() {
   };
 }
 
+function generateDecksManifestPlugin() {
+  const decksDir = path.resolve(__dirname, 'public/decks');
+  const manifestPath = path.resolve(__dirname, 'public/decks-manifest.json');
+
+  const generateManifest = () => {
+    if (!fs.existsSync(decksDir)) return;
+
+    let existingManifest: any[] = [];
+    if (fs.existsSync(manifestPath)) {
+      try {
+        existingManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+      } catch (e) {
+        console.error('Failed to parse existing manifest:', e);
+      }
+    }
+
+    const filesOnDisk = fs.readdirSync(decksDir).filter(f => f.endsWith('.json'));
+
+    // 1. Process existing items from manifest (preserving order)
+    const updatedManifest = existingManifest.map(item => {
+      if (filesOnDisk.includes(item.filename)) {
+        try {
+          const content = fs.readFileSync(path.join(decksDir, item.filename), 'utf-8');
+          const deck = JSON.parse(content);
+          // Remove from filesOnDisk list so we know what's left
+          const index = filesOnDisk.indexOf(item.filename);
+          if (index > -1) filesOnDisk.splice(index, 1);
+
+          return {
+            ...item,
+            id: deck.id || item.filename.replace('.json', ''),
+            name: deck.name,
+            language: deck.language,
+            difficulty: deck.difficulty,
+            wordCount: deck.words?.length || 0,
+            filename: item.filename
+          };
+        } catch (e) {
+          return item; // Keep as is if file is unreadable but exists
+        }
+      }
+      return null; // File no longer exists
+    }).filter(Boolean);
+
+    // 2. Add new files found on disk
+    const newItems = filesOnDisk.map(filename => {
+      try {
+        const content = fs.readFileSync(path.join(decksDir, filename), 'utf-8');
+        const deck = JSON.parse(content);
+        return {
+          id: deck.id || filename.replace('.json', ''),
+          name: deck.name,
+          language: deck.language,
+          difficulty: deck.difficulty,
+          wordCount: deck.words?.length || 0,
+          filename: filename
+        };
+      } catch (e) {
+        return null;
+      }
+    }).filter(Boolean);
+
+    const finalManifest = [...updatedManifest, ...newItems];
+    fs.writeFileSync(manifestPath, JSON.stringify(finalManifest, null, 2));
+    console.log('✅ Updated decks-manifest.json (preserved order)');
+  };
+
+  return {
+    name: 'generate-decks-manifest',
+    buildStart() {
+      generateManifest();
+    },
+    handleHotUpdate({ file, server }: { file: string; server: any }) {
+      if (file.includes('/public/decks/') && file.endsWith('.json')) {
+        generateManifest();
+        // Notify clients to reload if needed, or just let the manifest change trigger updates
+        server.ws.send({ type: 'full-reload' });
+      }
+    }
+  };
+}
+
+function generateAssetsManifestPlugin() {
+  return {
+    name: 'generate-assets-manifest',
+    async closeBundle() {
+      const distPath = path.resolve(__dirname, 'dist');
+      if (!fs.existsSync(distPath)) return;
+
+      const getFilesRecursively = (dir: string): string[] => {
+        const files: string[] = [];
+        const items = fs.readdirSync(dir, { withFileTypes: true });
+        for (const item of items) {
+          const res = path.resolve(dir, item.name);
+          if (item.isDirectory()) {
+            files.push(...getFilesRecursively(res));
+          } else {
+            files.push(res);
+          }
+        }
+        return files;
+      };
+
+      const allFiles = getFilesRecursively(distPath);
+      const relativeFiles = allFiles
+        .map(file => path.relative(distPath, file))
+        .filter(file => {
+          // Filter out files we don't want to cache or that are already in CORE_ASSETS
+          const excluded = [
+            'service-worker.js',
+            'assets-manifest.json',
+            'decks-manifest.json',
+            'index.html'
+          ];
+          return !excluded.includes(file) && !file.endsWith('.map');
+        })
+        .map(file => `/${file.replace(/\\/g, '/')}`);
+
+      fs.writeFileSync(
+        path.join(distPath, 'assets-manifest.json'),
+        JSON.stringify(relativeFiles, null, 2)
+      );
+      console.log('✅ Generated assets-manifest.json');
+    }
+  };
+}
+
 // https://vite.dev/config/
 export default ({ mode }: { mode: string }) => {
   const env = loadEnv(mode, process.cwd());
   return defineConfig({
-    plugins: [react(), watchDependenciesPlugin(), localizeHTMLPlugin()],
+    plugins: [react(), watchDependenciesPlugin(), localizeHTMLPlugin(), generateDecksManifestPlugin(), generateAssetsManifestPlugin()],
     build: {
       minify: true,
       sourcemap: "inline", // Use inline source maps for better error reporting
