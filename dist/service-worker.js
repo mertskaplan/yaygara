@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yaygara-v1.2.1';
+const CACHE_NAME = 'yaygara-v1.2.2';
 const CORE_ASSETS = [
   '/',
   '/index.html',
@@ -32,7 +32,7 @@ self.addEventListener('install', (event) => {
         const decksRes = await fetch('/decks-manifest.json');
         if (decksRes.ok) {
           const decks = await decksRes.json();
-          const deckUrls = decks.map(deck => `/decks/${deck.filename}`);
+          const deckUrls = decks.map(filename => `/decks/${filename}`);
           await Promise.all(
             deckUrls.map(url => cache.add(url).catch(err => console.warn(`[SW] Failed to cache deck ${url}:`, err)))
           );

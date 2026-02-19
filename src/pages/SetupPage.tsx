@@ -11,7 +11,7 @@ import type { Deck } from '@/types';
 import { useTranslations } from '@/hooks/useTranslations';
 import { cn } from '@/lib/utils';
 import { AIDeckConstructorModal } from '@/components/AIDeckConstructorModal';
-import { fetchDecksManifest, fetchFullDeck, type DeckManifestItem } from '@/lib/decks';
+import { fetchDecksManifest, fetchFullDeck } from '@/lib/decks';
 const containerVariants: Variants = {
   hidden: { opacity: 0, x: 100 },
   visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } },
@@ -170,23 +170,33 @@ const DeckSelection = () => {
     const fetchManifest = async () => {
       setIsLoadingDecks(true);
       try {
-        const manifest = await fetchDecksManifest();
+        const filenames = await fetchDecksManifest();
 
-        // Map manifest items to Deck structure
-        const mappedDecks: Deck[] = manifest
-          .filter(item => item.language === language)
-          .map(item => ({
-            id: item.id,
-            name: item.name,
-            language: item.language,
-            difficulty: item.difficulty,
-            words: new Array(item.wordCount).fill(null) as any,
-            filename: item.filename
-          } as any));
+        // Fetch all decks in parallel to get metadata
+        const allDecks = await Promise.all(
+          filenames.map(async (filename) => {
+            try {
+              const deck = await fetchFullDeck(filename);
+              return {
+                ...deck,
+                filename // Keep track of filename for loading later
+              };
+            } catch (err) {
+              console.error(`Failed to load metadata for ${filename}`, err);
+              return null;
+            }
+          })
+        );
 
-        setDecks(mappedDecks);
+        // Filter and set decks
+        const filteredDecks = allDecks
+          .filter((deck): deck is Deck & { filename: string } =>
+            deck !== null && deck.language === language
+          );
+
+        setDecks(filteredDecks as any);
       } catch (error) {
-        console.error("Failed to fetch decks", error);
+        console.error("Failed to fetch decks manifest", error);
       } finally {
         setIsLoadingDecks(false);
       }

@@ -1,0 +1,178 @@
+{
+  "id": "dostlar-bir-arada.tr.json",
+  "name": "Dostlar bir arada",
+  "language": "tr",
+  "difficulty": "hard",
+  "words": [
+    {
+      "term": "Çiğ köfte",
+      "hint": "Bulgur, salça ve baharatla yoğrulan, genellikle marulla yenen yiyecek.",
+      "difficulty": 1
+    },
+    {
+      "term": "Uçurtma",
+      "hint": "İp yardımıyla rüzgarda havalandırılan, çıta ve kağıttan yapılan oyuncak.",
+      "difficulty": 1
+    },
+    {
+      "term": "Ruj",
+      "hint": "Dudakları renklendirmek için kullanılan kozmetik ürünü.",
+      "difficulty": 1
+    },
+    {
+      "term": "Heyecanlı",
+      "hint": "Coşkun duygu. Yerinde duramayan ruh hali.",
+      "difficulty": 1
+    },
+    {
+      "term": "Lama",
+      "hint": "Tükürmesiyle ünlü, uzun boyunlu Güney Amerika hayvanı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Dart",
+      "hint": "İç içe halkalardan oluşan hedefe küçük okların atıldığı oyun.",
+      "difficulty": 1
+    },
+    {
+      "term": "Michael Jackson",
+      "hint": "Ay yürüyüşü dansı ve tek eldiveniyle bilinen pop müziğin kralı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Mandalina",
+      "hint": "Turuncu renkli, dilim dilim ayrılan, C vitamini deposu kış meyvesi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Metamorfoz",
+      "hint": "Canlıların yapısal olarak başkalaşım geçirmesi, dönüşüm.",
+      "difficulty": 3
+    },
+    {
+      "term": "Serap",
+      "hint": "Çöllerde sıcağın etkisiyle uzakta su varmış gibi görünmesi olayı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Labirent",
+      "hint": "Çıkışı bulunması zor olan karışık yollar bütünü.",
+      "difficulty": 2
+    },
+    {
+      "term": "İllüzyon",
+      "hint": "Göz yanılması veya algı sapması, gerçekte olmayanı varmış gibi görme.",
+      "difficulty": 2
+    },
+    {
+      "term": "Miras",
+      "hint": "Ölen bir kimseden yakınlarına kalan mal veya para.",
+      "difficulty": 2
+    },
+    {
+      "term": "İsyan",
+      "hint": "Mevcut düzene veya emre karşı gelme, başkaldırı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Maskaralık",
+      "hint": "Güldürmek için yapılan tuhaf ve komik davranışlar.",
+      "difficulty": 2
+    },
+    {
+      "term": "Tutku",
+      "hint": "İrade ve mantığı aşan güçlü, coşkulu duygu veya hırs.",
+      "difficulty": 2
+    },
+    {
+      "term": "Hiciv",
+      "hint": "Bir kişiyi veya toplumu iğneleyici bir dille eleştirme sanatı.",
+      "difficulty": 3
+    },
+    {
+      "term": "Fısıltı",
+      "hint": "Başkaları duymasın diye çok alçak sesle konuşma.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kader",
+      "hint": "Hayatın kaçınılmaz akışı, alın yazısı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kaos",
+      "hint": "Evrenin düzenden önceki karmaşık durumu, tam kargaşa.",
+      "difficulty": 3
+    },
+    {
+      "term": "Harry Potter",
+      "hint": "Alnında şimşek izi olan ünlü büyücü çocuk.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kıyamet",
+      "hint": "Dünyanın sonunun geleceğine inanılan o büyük an.",
+      "difficulty": 3
+    },
+    {
+      "term": "Dönemeç",
+      "hint": "Yolun yön değiştirdiği kavisli yer, viraj.",
+      "difficulty": 3
+    },
+    {
+      "term": "Esaret",
+      "hint": "Özgürlüğün elinden alınması, tutsaklık durumu.",
+      "difficulty": 2
+    },
+    {
+      "term": "Çatışma",
+      "hint": "Fikirlerin veya silahlı grupların birbirine girmesi, uyuşmazlık.",
+      "difficulty": 2
+    },
+    {
+      "term": "Göç",
+      "hint": "Kuşların veya insanların bir yerden başka bir yere taşınması.",
+      "difficulty": 1
+    },
+    {
+      "term": "Yemin",
+      "hint": "Bir şeyi yapacağına veya yapmayacağına dair verilen büyük söz, ant.",
+      "difficulty": 3
+    },
+    {
+      "term": "Hüzün",
+      "hint": "Gönülde hissedilen ince keder, gam.",
+      "difficulty": 2
+    },
+    {
+      "term": "Gölge",
+      "hint": "Işığın engellenmesiyle oluşan karanlık bölge.",
+      "difficulty": 1
+    },
+    {
+      "term": "Takıntı",
+      "hint": "Zihinden atılamayan ve sürekli tekrarlanan düşünce, obsesyon",
+      "difficulty": 2
+    },
+    {
+      "term": "Hafıza",
+      "hint": "Bilgileri beyinde saklama ve hatırlama gücü, bellek.",
+      "difficulty": 2
+    },
+    {
+      "term": "Çürüme",
+      "hint": "Organik maddelerin bozulup dağılması.",
+      "difficulty": 3
+    },
+    {
+      "term": "Sabotaj",
+      "hint": "Bir işi veya düzeni baltalamak için yapılan kasten zarar verme.",
+      "difficulty": 3
+    },
+    {
+      "term": "Horlama",
+      "hint": "Uyku sırasında solunum yolundan çıkan gürültülü ses.",
+      "difficulty": 2
+    }
+  ]
+}

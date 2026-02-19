@@ -1,18 +1,13 @@
 import type { Deck } from '@/types';
 
-export interface DeckManifestItem extends Omit<Deck, 'words'> {
-    filename: string;
-    wordCount: number;
-}
-
-let manifestPromise: Promise<DeckManifestItem[]> | null = null;
+let manifestPromise: Promise<string[]> | null = null;
 const deckCache: Record<string, Promise<Deck>> = {};
 
 /**
- * Fetches the decks manifest. If a request is already in progress, 
- * returns the existing promise to avoid duplicate fetches.
+ * Fetches the manifest of all available word decks.
+ * Returns a list of filenames.
  */
-export const fetchDecksManifest = (): Promise<DeckManifestItem[]> => {
+export const fetchDecksManifest = (): Promise<string[]> => {
     if (manifestPromise) {
         return manifestPromise;
     }

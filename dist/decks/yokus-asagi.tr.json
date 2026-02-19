@@ -1,0 +1,198 @@
+{
+  "id": "yokus-asagi.tr.json",
+  "name": "Yokuş aşağı kelime destesi",
+  "language": "tr",
+  "difficulty": "medium",
+  "words": [
+    {
+      "term": "Uykusuzluk",
+      "hint": "Gece boyunca bir türlü dalamama sorunu, insomnia.",
+      "difficulty": 1
+    },
+    {
+      "term": "Trafik",
+      "hint": "Araçların ve yayaların yollardaki gidiş gelişi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Diyet",
+      "hint": "Kilo vermek veya sağlıklı kalmak için uygulanan beslenme düzeni.",
+      "difficulty": 2
+    },
+    {
+      "term": "Abur cubur",
+      "hint": "Cips, kraker, çikolata gibi ayaküstü yenen sağlıksız atıştırmalıklar.",
+      "difficulty": 1
+    },
+    {
+      "term": "Dedikodu",
+      "hint": "Başkalarının arkasından yapılan çekiştirme konuşması.",
+      "difficulty": 1
+    },
+    {
+      "term": "Randevu",
+      "hint": "Belli bir saatte buluşmak üzere verilen söz.",
+      "difficulty": 2
+    },
+    {
+      "term": "Hıçkırık",
+      "hint": "Diyaframın ani kasılmasıyla boğazdan çıkan istemsiz ses.",
+      "difficulty": 1
+    },
+    {
+      "term": "Hapşırmak",
+      "hint": "Burnun gıcıklanmasıyla havanın sesli ve şiddetli dışarı atılması.",
+      "difficulty": 1
+    },
+    {
+      "term": "Ütü",
+      "hint": "Kıyafetlerin kırışıklığını açmak için kullanılan sıcak ev aleti.",
+      "difficulty": 1
+    },
+    {
+      "term": "Temizlik",
+      "hint": "Kir ve tozdan arındırma faaliyeti.",
+      "difficulty": 1
+    },
+    {
+      "term": "Filtre",
+      "hint": "Fotoğrafların rengini değiştiren efekt.",
+      "difficulty": 2
+    },
+    {
+      "term": "Sipariş",
+      "hint": "Bir ürünün getirilmesi için yapılan istek.",
+      "difficulty": 3
+    },
+    {
+      "term": "Pazarlık",
+      "hint": "Fiyatı düşürmek için satıcıyla yapılan konuşma.",
+      "difficulty": 1
+    },
+    {
+      "term": "Komşu",
+      "hint": "Evi yan yana veya aynı binada olan kimse.",
+      "difficulty": 1
+    },
+    {
+      "term": "Asansör",
+      "hint": "Binalarda katlar arası inip çıkmayı sağlayan kabin.",
+      "difficulty": 1
+    },
+    {
+      "term": "Poğaça",
+      "hint": "Genellikle kahvaltıda yenen, içi peynirli veya patatesli hamur işi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Toplantı",
+      "hint": "İş yerinde konuları görüşmek için bir araya gelme.",
+      "difficulty": 1
+    },
+    {
+      "term": "İkilem",
+      "hint": "Birden fazla seçenek arasında karar verememe, arada kalma.",
+      "difficulty": 2
+    },
+    {
+      "term": "Önsezi",
+      "hint": "Bir olayı olmadan hissetme.",
+      "difficulty": 3
+    },
+    {
+      "term": "İtham",
+      "hint": "Birini bir suçla ilgili suçlama.",
+      "difficulty": 3
+    },
+    {
+      "term": "Niyet",
+      "hint": "Bir şeyi yapmayı zihinde tasarlama, amaç.",
+      "difficulty": 3
+    },
+    {
+      "term": "Tereddüt",
+      "hint": "Kararsızlık yaşama, duraksama.",
+      "difficulty": 3
+    },
+    {
+      "term": "Zombi",
+      "hint": "Dirilmiş ölü olarak bilinen, beyin yiyen kurgusal canavar.",
+      "difficulty": 1
+    },
+    {
+      "term": "Fenomen",
+      "hint": "Sosyal medyada çok takipçisi olan popüler kişi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Spoiler",
+      "hint": "Bir filmin veya dizinin sonunu önceden söyleyip tadını kaçırma.",
+      "difficulty": 3
+    },
+    {
+      "term": "Devrim",
+      "hint": "Bir ülkenin siyasi ve sosyal düzeninin kökten değişmesi, ihtilal.",
+      "difficulty": 2
+    },
+    {
+      "term": "Joker",
+      "hint": "Batman'in baş düşmanı olan palyaço makyajlı kötü karakter.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kızıl ötesi",
+      "hint": "Televizyon kumandalarında kullanılan, gözle görülmez ışın türü.",
+      "difficulty": 1
+    },
+    {
+      "term": "Drone",
+      "hint": "Uzaktan kumandayla uçurulan kameralı hava aracı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Emoji",
+      "hint": "Mesajlaşırken kullanılan sarı yüz ifadeleri ve simgeler.",
+      "difficulty": 2
+    },
+    {
+      "term": "Gladyatör",
+      "hint": "Roma arenasında dövüşen savaşçı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Mumya",
+      "hint": "Mısır piramitlerinde sargılar içinde saklanan ölü beden.",
+      "difficulty": 1
+    },
+    {
+      "term": "Sherlock Holmes",
+      "hint": "Piposu ve büyüteciyle ünlü İngiliz dedektif.",
+      "difficulty": 1
+    },
+    {
+      "term": "Oscar",
+      "hint": "Sinema dünyasının en prestijli altın heykelcik ödülü.",
+      "difficulty": 1
+    },
+    {
+      "term": "Powerbank",
+      "hint": "Telefonu şarj etmeye yarayan taşınabilir batarya.",
+      "difficulty": 1
+    },
+    {
+      "term": "QR Kod",
+      "hint": "Telefon kamerasıyla okutulan kare şeklindeki barkod.",
+      "difficulty": 2
+    },
+    {
+      "term": "Pilates",
+      "hint": "Vücut direncini artırmak için topla veya aletle yapılan egzersiz.",
+      "difficulty": 1
+    },
+    {
+      "term": "Sushi",
+      "hint": "Çiğ balık ve pirinçle yapılan Japon yemeği.",
+      "difficulty": 2
+    }
+  ]
+}

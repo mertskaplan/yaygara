@@ -1,90 +1,15 @@
 [
-  {
-    "id": "baslangic.tr",
-    "name": "Başlangıç destesi",
-    "language": "tr",
-    "difficulty": "medium",
-    "wordCount": 42,
-    "filename": "baslangic.tr.json"
-  },
-  {
-    "id": "zihin-jimlastigi.tr",
-    "name": "Zihin jimlastiği",
-    "language": "tr",
-    "difficulty": "medium",
-    "wordCount": 35,
-    "filename": "zihin-jimlastigi.tr.json"
-  },
-  {
-    "id": "karanlik-seruven.tr",
-    "name": "Karanlık serüven destesi",
-    "language": "tr",
-    "difficulty": "hard",
-    "wordCount": 36,
-    "filename": "karanlik-seruven.tr.json"
-  },
-  {
-    "id": "hayatin-ritmi.tr.json",
-    "name": "Hayatın ritmi destesi",
-    "language": "tr",
-    "difficulty": "medium",
-    "wordCount": 50,
-    "filename": "hayatin-ritmi.tr.json"
-  },
-  {
-    "id": "kor-kursun-destesi.tr",
-    "name": "Kör kurşun destesi",
-    "language": "tr",
-    "difficulty": "medium",
-    "wordCount": 53,
-    "filename": "kor-kursun-destesi.tr.json"
-  },
-  {
-    "id": "ordan-burdan.tr.json",
-    "name": "Ordan burdan",
-    "language": "tr",
-    "difficulty": "medium",
-    "wordCount": 60,
-    "filename": "ordan-burdan.tr.json"
-  },
-  {
-    "id": "sisli-cagrisimlar.tr.json",
-    "name": "Sisli çağrışımlar",
-    "language": "tr",
-    "difficulty": "medium",
-    "wordCount": 50,
-    "filename": "sisli-cagrisimlar.tr.json"
-  },
-  {
-    "id": "laf-ebesi.tr",
-    "name": "Laf ebesi destesi",
-    "language": "tr",
-    "difficulty": "medium",
-    "wordCount": 56,
-    "filename": "laf-ebesi.tr.json"
-  },
-  {
-    "id": "meshur-filmler.tr",
-    "name": "Orjinal adı da kabul (Meşhur filmler)",
-    "language": "tr",
-    "difficulty": "easy",
-    "wordCount": 50,
-    "filename": "meshur-filmler.tr.json"
-  },
-  {
-    "id": "uygarligin-izleri.tr",
-    "name": "Uygarlığın izleri (Tarihi kişiler)",
-    "language": "tr",
-    "difficulty": "hard",
-    "wordCount": 44,
-    "filename": "uygarligin-izleri.tr.json"
-  },
-  {
-    "id": "argo.tr",
-    "name": "Öt bakalım (Argo destesi)",
-    "language": "tr",
-    "difficulty": "hard",
-    "wordCount": 50,
-    "filename": "argo.tr.json"
-  }
+  "baslangic.tr.json",
+  "zihin-jimlastigi.tr.json",
+  "karanlik-seruven.tr.json",
+  "hayatin-ritmi.tr.json",
+  "kor-kursun-destesi.tr.json",
+  "ordan-burdan.tr.json",
+  "sisli-cagrisimlar.tr.json",
+  "laf-ebesi.tr.json",
+  "dostlar-bir-arada.tr.json",
+  "yokus-asagi.tr.json",
+  "meshur-filmler.tr.json",
+  "uygarligin-izleri.tr.json",
+  "argo.tr.json"
 ]

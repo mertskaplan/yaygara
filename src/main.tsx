@@ -39,11 +39,11 @@ const preloadAssets = () => {
 
         // 2. Preload Decks
         try {
-          const manifest = await fetchDecksManifest();
+          const filenames = await fetchDecksManifest();
           // Preload decks sequentially to avoid network congestion
-          manifest.forEach((deck: any, index: number) => {
+          filenames.forEach((filename: string, index: number) => {
             setTimeout(() => {
-              fetchFullDeck(deck.filename).catch(() => { });
+              fetchFullDeck(filename).catch(() => { });
             }, 3000 + (index * 500));
           });
         } catch (e) {

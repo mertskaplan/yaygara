@@ -191,7 +191,10 @@ function generateDecksManifestPlugin() {
     let existingManifest: any[] = [];
     if (fs.existsSync(manifestPath)) {
       try {
-        existingManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+        const content = fs.readFileSync(manifestPath, 'utf-8');
+        const parsed = JSON.parse(content);
+        // Handle both old object format and new string array format
+        existingManifest = Array.isArray(parsed) ? parsed : [];
       } catch (e) {
         console.error('Failed to parse existing manifest:', e);
       }
@@ -201,51 +204,22 @@ function generateDecksManifestPlugin() {
 
     // 1. Process existing items from manifest (preserving order)
     const updatedManifest = existingManifest.map(item => {
-      if (filesOnDisk.includes(item.filename)) {
-        try {
-          const content = fs.readFileSync(path.join(decksDir, item.filename), 'utf-8');
-          const deck = JSON.parse(content);
-          // Remove from filesOnDisk list so we know what's left
-          const index = filesOnDisk.indexOf(item.filename);
-          if (index > -1) filesOnDisk.splice(index, 1);
+      // item might be a string (new format) or an object (old format)
+      const filename = typeof item === 'string' ? item : item.filename;
 
-          return {
-            ...item,
-            id: deck.id || item.filename.replace('.json', ''),
-            name: deck.name,
-            language: deck.language,
-            difficulty: deck.difficulty,
-            wordCount: deck.words?.length || 0,
-            filename: item.filename
-          };
-        } catch (e) {
-          return item; // Keep as is if file is unreadable but exists
-        }
+      if (filesOnDisk.includes(filename)) {
+        // Remove from filesOnDisk list so we know what's left
+        const index = filesOnDisk.indexOf(filename);
+        if (index > -1) filesOnDisk.splice(index, 1);
+        return filename;
       }
       return null; // File no longer exists
     }).filter(Boolean);
 
     // 2. Add new files found on disk
-    const newItems = filesOnDisk.map(filename => {
-      try {
-        const content = fs.readFileSync(path.join(decksDir, filename), 'utf-8');
-        const deck = JSON.parse(content);
-        return {
-          id: deck.id || filename.replace('.json', ''),
-          name: deck.name,
-          language: deck.language,
-          difficulty: deck.difficulty,
-          wordCount: deck.words?.length || 0,
-          filename: filename
-        };
-      } catch (e) {
-        return null;
-      }
-    }).filter(Boolean);
-
-    const finalManifest = [...updatedManifest, ...newItems];
+    const finalManifest = [...updatedManifest, ...filesOnDisk];
     fs.writeFileSync(manifestPath, JSON.stringify(finalManifest, null, 2));
-    console.log('✅ Updated decks-manifest.json (preserved order)');
+    console.log('✅ Updated simplified decks-manifest.json (preserved order)');
   };
 
   return {
