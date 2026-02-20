@@ -10,6 +10,8 @@ import { FlagIcon } from '@/components/FlagIcon';
 import { PWAInstallPrompt } from '@/components/PWAInstallPrompt';
 import { Logo } from '@/components/Logo';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { AboutModal } from '@/components/AboutModal';
+import { Info } from 'lucide-react';
 const LanguageSelector = () => {
   const language = useGameStore(useShallow((state) => state.language));
   const navigate = useNavigate();
@@ -60,6 +62,7 @@ export function HomePage() {
   const navigate = useNavigate();
   const resetSetup = useGameStore((state) => state.resetSetup);
   const [isHowToPlayOpen, setIsHowToPlayOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const { t, getLocalizedPath } = useTranslations();
 
   const handleStartGame = () => {
@@ -69,6 +72,13 @@ export function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center h-screen-dvh bg-transparent p-6 text-center overflow-hidden relative">
       <ThemeToggle className="!fixed !top-4 !right-4 z-50 shadow-lg" />
+      <button
+        onClick={() => setIsAboutOpen(true)}
+        className="!fixed !top-[4.5rem] !right-4 z-50 p-3 rounded-2xl bg-white shadow-md transition-all duration-300 hover:scale-110 active:scale-95 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+        aria-label={t('home.about')}
+      >
+        <Info className="w-6 h-6" />
+      </button>
       <main className="flex flex-col items-center justify-center space-y-10 z-10 w-full max-w-md">
         <m.div
           initial={{ y: 50, opacity: 0 }}
@@ -119,6 +129,7 @@ export function HomePage() {
         <p>{t('home.footer')}</p>
       </footer>
       <HowToPlayModal isOpen={isHowToPlayOpen} onClose={() => setIsHowToPlayOpen(false)} />
+      <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
       <PWAInstallPrompt />
     </div>
   );

@@ -3,6 +3,7 @@
     "title": "Yaygara",
     "slogan": "Fun party game based on narration and guessing",
     "howToPlay": "How to Play?",
+    "about": "About",
     "startGame": "Set Up Game",
     "footer": " "
   },
@@ -80,6 +81,26 @@
     "bonusTimeTitle": "Bonus Time",
     "bonusTimeDescription": "If your team guesses all the words in a round with more than 3 seconds left, you start the next round immediately with that remaining time! Fast players get the advantage.",
     "closeButton": "Got It!"
+  },
+  "about": {
+    "title": "Yaygara",
+    "version": "v{version}",
+    "intro": "<b>Yaygara</b> was developed by Mert S. Kaplan, inspired by classic games like <i>Taboo, Charades, and Makara</i>. It is free and ad-free. It works even without an internet connection. Plus, with AI support, you can create your own word decks and never get bored.",
+    "purpose": "The goal of the game is not only to entertain but also to help people improve their self-expression skills, strengthen social bonds, and learn new words along the way.<br/>In other words, both brain exercise and fun! 🧠✨",
+    "contact": "If you have any suggestions or questions about the game, feel free to <a href=\"https://mertskaplan.com/en/contact\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">get in touch</a>. We can make Yaygara even better together.",
+    "licenseTitle": "License & Source Code",
+    "licenseSummary": "Yaygara is published under the <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">BY-NC-SA 4.0 license</a>. In summary:",
+    "licensePoints": [
+      "Attribute the creator <a href=\"https://mertskaplan.com/en\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Mert S. Kaplan</a> and the game name <a href=\"https://yaygara.mertskaplan.com/en\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Yaygara</a> by providing a link,",
+      "keep the same license,",
+      "and do not use for commercial purposes"
+    ],
+    "licenseSuffix": "you can develop and distribute it as you wish.",
+    "sourceCode": "I've shared the game's source code on <a href=\"https://github.com/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GitHub</a>. If you notice a bug, you can report it, or even contribute directly if you wish. Open source is the way! ❤️",
+    "toolsTitle": "Development Tools",
+    "toolsDescription": "I first started developing Yaygara with the Cloudflare Vibe SDK, then continued with Antigravity. In the software process, in addition to manual coding, I received intensive support from large language models such as Gemini, Grok, and ChatGPT in the planning, coding and debugging phases.",
+    "outro": "A little human intelligence, a little artificial intelligence, lots of code and the result: Yaygara! Enjoy, everyone.",
+    "closeButton": "Close"
   },
   "teamNameGeneration": {
     "adjectives": [

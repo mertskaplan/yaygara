@@ -3,6 +3,7 @@
     "title": "Yaygara | Anlatma ve tahmine dayalı eğlenceli parti oyunu",
     "slogan": "Anlatma ve tahmine dayalı eğlenceli parti oyunu",
     "howToPlay": "Nasıl Oynanır?",
+    "about": "Hakkında",
     "startGame": "Oyunu Kur",
     "footer": " "
   },
@@ -80,6 +81,26 @@
     "bonusTimeTitle": "Bonus Süre",
     "bonusTimeDescription": "Takımınız bir turdaki tüm kelimeleri 3 saniyeden fazla süre kala tahmin ederse, bir sonraki tura o kalan süreyle hemen başlarsınız! Hızlı olan avantajı kapar.",
     "closeButton": "Anladım!"
+  },
+  "about": {
+    "title": "Yaygara",
+    "version": "v{version}",
+    "intro": "<b>Yaygara</b>, Mert S. Kaplan tarafından <i>Tabu, Sessiz Sinema ve Makara</i> gibi klasik oyunlardan ilham alınarak geliştirildi. Ücretsiz ve reklamsızdır. İnternet bağlantınız olmasa da çalışır. Üstelik YZ desteği ile kendi kelime destelerini oluşturarak hiç sıkılmadan oynayabilirsin.",
+    "purpose": "Oyunun amacı, sadece eğlendirmek değil; aynı zamanda insanların kendini ifade etme becerilerini geliştirmesine, sosyal bağlarını güçlendirmesine ve arada yeni kelimeler öğrenmesine katkı sağlamak.<br/>Yani hem beyin jimnastiği hem de eğlence! 🧠✨",
+    "contact": "Oyunla ilgili öneri ya da soruların olursa <a href=\"https://mertskaplan.com/tr/iletisim\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">iletişime geçmekten</a> çekinme. Yaygara’yı birlikte daha da güzelleştirebiliriz.",
+    "licenseTitle": "Lisans & Kaynak Kod",
+    "licenseSummary": "Yaygara, <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/deed.tr\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">BY-NC-SA 4.0 lisansı</a> ile yayınlandı. Özetle:",
+    "licensePoints": [
+      "Oyunun yapımcısı <a href=\"https://mertskaplan.com/tr\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Mert S. Kaplan</a> ve oyun adı olan <a href=\"https://yaygara.mertskaplan.com/tr\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Yaygara</a>'ya bağlantı vererek atıf yapmak,",
+      "aynı lisansı devam ettirmek,",
+      "ve ticari amaç taşımamak"
+    ],
+    "licenseSuffix": "şartıyla dilediğin gibi geliştirebilir ve dağıtılabilirsin.",
+    "sourceCode": "Oyunun kaynak kodlarını <a href=\"https://github.com/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GitHub</a> üzerinden paylaştım. Bir hata fark edersen bildirebilir, hatta istersen doğrudan katkıda da bulunabilirsin. Açık kaynak candır. ❤️",
+    "toolsTitle": "Geliştirme Araçları",
+    "toolsDescription": "Yaygara’yı ilk olarak Cloudflare Vibe SDK ile geliştirmeye başladım, sonrasında Antigravitiy ile devam ettim. Yazılım sürecinde manuel kodlamanın yanı sıra Gemini, Grok ve ChatGPT gibi büyük dil modellerinden planlama, kodlama ve hata ayıklama aşamalarında yoğun şekilde destek aldım.",
+    "outro": "Biraz insan zekâsı, biraz yapay zekâ, bolca kod ve ortaya çıkan: Yaygara! Herkese afiyet olsun.",
+    "closeButton": "Kapat"
   },
   "teamNameGeneration": {
     "adjectives": [
