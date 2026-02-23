@@ -43,11 +43,14 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
             <DialogContent hideClose className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl">
                 <DialogHeader className="flex-shrink-0">
                     <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center flex items-baseline justify-center gap-2">
-                        <h2 className="text-3xl font-extrabold">{t('about.title')}</h2>
+                        {t('about.title')}
                         <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
                             {t('about.version', { version })}
                         </span>
                     </DialogTitle>
+                    <DialogDescription className="sr-only">
+                        {t('about.intro')}
+                    </DialogDescription>
                 </DialogHeader>
 
                 <ScrollArea className="flex-1 w-full pr-4 overflow-y-auto">
@@ -85,7 +88,6 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
 
                         <InfoSection
                             icon={Code2}
-                            title={t('about.toolsTitle')}
                             description={t('about.toolsDescription')}
                         />
 
