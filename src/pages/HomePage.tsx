@@ -99,9 +99,10 @@ export function HomePage() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="space-y-4"
         >
-          <p className="text-xl font-medium text-slate-600 dark:text-slate-400 tracking-tight text-balance">
+          <h1 className="text-xl font-medium text-slate-600 dark:text-slate-400 tracking-tight text-balance">
+            <span className="sr-only">Yaygara - </span>
             {t('home.slogan')}
-          </p>
+          </h1>
         </m.div>
         <m.div
           initial={{ y: 30, opacity: 0 }}

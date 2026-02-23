@@ -1,0 +1,183 @@
+{
+    "id": "steep-descent.en",
+    "name": "Steep Descent",
+    "language": "en",
+    "difficulty": "hard",
+    "words": [
+        {
+            "term": "Insomnia",
+            "hint": "The medical condition of being totally unable to fall asleep",
+            "difficulty": 1
+        },
+        {
+            "term": "Diet",
+            "hint": "Restricting what you eat to lose weight or be healthy",
+            "difficulty": 2
+        },
+        {
+            "term": "Junk Food",
+            "hint": "Salty, sugary, or greasy snacks that are bad for your body",
+            "difficulty": 1
+        },
+        {
+            "term": "Gossip",
+            "hint": "Casual talk about other people's private lives and secrets",
+            "difficulty": 1
+        },
+        {
+            "term": "Hiccup",
+            "hint": "The annoying sound you make when your midriff spasms",
+            "difficulty": 1
+        },
+        {
+            "term": "Sneezing",
+            "hint": "What you say 'bless you' to when someone does it loudly",
+            "difficulty": 1
+        },
+        {
+            "term": "Bargaining",
+            "hint": "Trying to get a lower price from a seller at a market",
+            "difficulty": 1
+        },
+        {
+            "term": "Zombie",
+            "hint": "An undead monster that shuffles around looking for brains",
+            "difficulty": 1
+        },
+        {
+            "term": "Spoiler",
+            "hint": "Revealing the big twist of a series to someone who hasn't seen it",
+            "difficulty": 3
+        },
+        {
+            "term": "Revolution",
+            "hint": "A total overthrow of a government for a brand new system",
+            "difficulty": 2
+        },
+        {
+            "term": "The Joker",
+            "hint": "The clown-faced criminal who wants to see Gotham burn",
+            "difficulty": 1
+        },
+        {
+            "term": "Infrared",
+            "hint": "The type of light beam used by your TV remote to work",
+            "difficulty": 1
+        },
+        {
+            "term": "Drone",
+            "hint": "A flying device with four rotors and a camera on the bottom",
+            "difficulty": 2
+        },
+        {
+            "term": "Emoji",
+            "hint": "The yellow smiley faces and tiny icons used in text chats",
+            "difficulty": 2
+        },
+        {
+            "term": "Gladiator",
+            "hint": "A person who fought for their life in the Roman Colosseum",
+            "difficulty": 1
+        },
+        {
+            "term": "Mum",
+            "hint": "A body covered in bandages found inside a stone tomb",
+            "difficulty": 1
+        },
+        {
+            "term": "Sherlock Holmes",
+            "hint": "The clever investigator who solved crimes with Doctor Watson",
+            "difficulty": 1
+        },
+        {
+            "term": "Oscar",
+            "hint": "The golden man statue given for being a great movie star",
+            "difficulty": 1
+        },
+        {
+            "term": "Powerbank",
+            "hint": "A portable battery you carry to juice up your phone",
+            "difficulty": 1
+        },
+        {
+            "term": "QR Code",
+            "hint": "The square grid of black dots you scan with your camera",
+            "difficulty": 2
+        },
+        {
+            "term": "Sushi",
+            "hint": "The Japanese meal consisting of vinegared rice and raw fish",
+            "difficulty": 2
+        },
+        {
+            "term": "Meme",
+            "hint": "A funny image shared widely across the internet for laughs",
+            "difficulty": 2
+        },
+        {
+            "term": "Clickbait",
+            "hint": "A headline that makes you curious so you'll go to the site",
+            "difficulty": 2
+        },
+        {
+            "term": "Streaming",
+            "hint": "Watching a movie over the web without downloading it first",
+            "difficulty": 1
+        },
+        {
+            "term": "Podcast",
+            "hint": "An audio series you subscribe to and listen to on your phone",
+            "difficulty": 1
+        },
+        {
+            "term": "Cryptocurrency",
+            "hint": "Digital assets like Ether or Dogecoin that aren't physical",
+            "difficulty": 2
+        },
+        {
+            "term": "Selfie Stick",
+            "hint": "A pole used to hold your phone further away for a photo",
+            "difficulty": 1
+        },
+        {
+            "term": "WIFI",
+            "hint": "The invisible signal that connects your computer to the web",
+            "difficulty": 1
+        },
+        {
+            "term": "Hashtag",
+            "hint": "The pound sign followed by keywords on social media posts",
+            "difficulty": 1
+        },
+        {
+            "term": "Influencer",
+            "hint": "A person with many followers who gets paid to push products",
+            "difficulty": 2
+        },
+        {
+            "term": "Cloud Storage",
+            "hint": "Saving your photos on a remote server instead of your device",
+            "difficulty": 2
+        },
+        {
+            "term": "Algorithm",
+            "hint": "The secret code that decides which videos you see on TikTok",
+            "difficulty": 2
+        },
+        {
+            "term": "Virtual Reality",
+            "hint": "Wearing a headset that places you inside a digital world",
+            "difficulty": 2
+        },
+        {
+            "term": "Catfishing",
+            "hint": "Luring someone into a fake relationship with a false identity",
+            "difficulty": 2
+        },
+        {
+            "term": "Cancel Culture",
+            "hint": "When the public stops supporting a celeb after a mistake",
+            "difficulty": 3
+        }
+    ]
+}

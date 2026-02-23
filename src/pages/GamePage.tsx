@@ -22,6 +22,8 @@ const GetReadyScreen = () => {
   const { t } = useTranslations();
   const roundTitles = [t('game.round1'), t('game.round2'), t('game.round3')];
   const roundDescriptions = [t('game.round1Description'), t('game.round2Description'), t('game.round3Description')];
+
+  if (!initialTeam) return null;
   return (
     <m.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -57,6 +59,7 @@ const PlayingScreen = () => {
   const resetGame = useGameStore(useShallow((state) => state.resetGame));
   const turnDuration = useGameStore(useShallow((state) => state.turnDuration));
   const gameStatus = useGameStore(useShallow((state) => state.gameStatus));
+  const unseenWords = useGameStore(useShallow((state) => state.unseenWords));
   const { t } = useTranslations();
   const navigate = useNavigate();
   const [isEndGameModalOpen, setIsEndGameModalOpen] = useState(false);
@@ -97,6 +100,8 @@ const PlayingScreen = () => {
   const currentTeamIndex = useGameStore(useShallow((state) => state.currentTeamIndex));
   const currentTeam = teams[currentTeamIndex];
 
+  if (!currentTeam) return null;
+
   return (
     <div className="relative flex flex-col items-center justify-between h-full w-full max-w-md">
       <Button
@@ -124,7 +129,7 @@ const PlayingScreen = () => {
       <div className="relative grid grid-cols-2 gap-4 w-full">
         <Button
           onClick={() => handleActionClick('pass')}
-          disabled={!currentWord || isActionLocked}
+          disabled={!currentWord || isActionLocked || unseenWords.length === 0}
           className="h-24 bg-rose-500 hover:bg-rose-600 text-white rounded-3xl shadow-lg text-3xl font-bold"
         >
           <X className="w-12 h-12" />
@@ -166,13 +171,10 @@ export function GamePage() {
     if (gameStatus === 'game-over') {
       navigate(getLocalizedPath('score'));
     }
-    if (gameStatus === 'setup') {
-      navigate(getLocalizedPath('setup'));
-    }
   }, [gameStatus, navigate, getLocalizedPath]);
   const theme = useGameStore((state) => state.theme);
   const dynamicBgStyle = useMemo(() => {
-    if ((gameStatus === 'get-ready' || gameStatus === 'playing') && teams.length > 0) {
+    if ((gameStatus === 'get-ready' || gameStatus === 'playing') && teams.length > 0 && teams[currentTeamIndex]) {
       const currentTeamColor = teams[currentTeamIndex].color;
       const lightness = theme === 'dark' ? 15 : 95;
       return { backgroundColor: `hsl(${hexToHsl(currentTeamColor, lightness)})` };

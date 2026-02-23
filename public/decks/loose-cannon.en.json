@@ -1,0 +1,183 @@
+{
+    "id": "loose-cannon.en",
+    "name": "Loose Cannon",
+    "language": "en",
+    "difficulty": "medium",
+    "words": [
+        {
+            "term": "Labyrinth",
+            "hint": "A giant maze where it is very easy to lose your way",
+            "difficulty": 2
+        },
+        {
+            "term": "Graveyard",
+            "hint": "The silent lot where markers stand over where people rest",
+            "difficulty": 1
+        },
+        {
+            "term": "Talisman",
+            "hint": "A lucky charm supposed to bring good fortune or protection",
+            "difficulty": 2
+        },
+        {
+            "term": "Bat",
+            "hint": "The only mammal that can actually fly and lives in caves",
+            "difficulty": 1
+        },
+        {
+            "term": "Ferry",
+            "hint": "A massive boat that carries cars and people across rivers",
+            "difficulty": 1
+        },
+        {
+            "term": "Seasickness",
+            "hint": "That queasy, nauseous feeling when the boat is rocking too much",
+            "difficulty": 1
+        },
+        {
+            "term": "Coffin",
+            "hint": "The narrow box used for placing a body in the ground",
+            "difficulty": 1
+        },
+        {
+            "term": "Halloween",
+            "hint": "The October holiday where kids dress up as ghouls for candy",
+            "difficulty": 2
+        },
+        {
+            "term": "Pregnant",
+            "hint": "The biological state of carrying a child in the womb",
+            "difficulty": 1
+        },
+        {
+            "term": "Teleferic",
+            "hint": "A cable car moving on a wire high above the mountains",
+            "difficulty": 1
+        },
+        {
+            "term": "Kiss",
+            "hint": "Touching your lips to someone else's as a sign of love",
+            "difficulty": 1
+        },
+        {
+            "term": "Ozone Layer",
+            "hint": "The thin shield in the atmosphere that blocks harmful sun beams",
+            "difficulty": 2
+        },
+        {
+            "term": "Republic",
+            "hint": "A government style where power is held by the people and their elected leads",
+            "difficulty": 1
+        },
+        {
+            "term": "French Kiss",
+            "hint": "An intimate act involving more than just the outer part of the mouth",
+            "difficulty": 3
+        },
+        {
+            "term": "Ice Cream",
+            "hint": "A frozen dairy treat often served in a cone with sprinkles",
+            "difficulty": 1
+        },
+        {
+            "term": "Kite",
+            "hint": "A light frame covered in paper flown on a string in the wind",
+            "difficulty": 1
+        },
+        {
+            "term": "Garlic",
+            "hint": "The smelly bulb that supposedly keeps blood-sucking counts away",
+            "difficulty": 1
+        },
+        {
+            "term": "Backgammon",
+            "hint": "An ancient board game played with dice and round checkers",
+            "difficulty": 1
+        },
+        {
+            "term": "Parachute",
+            "hint": "A large silk canopy used to slow down a jump from a plane",
+            "difficulty": 1
+        },
+        {
+            "term": "Pajamas",
+            "hint": "The comfortable set of clothes you put on for sleep",
+            "difficulty": 1
+        },
+        {
+            "term": "Magnet",
+            "hint": "An object that pulls metal items toward itself",
+            "difficulty": 1
+        },
+        {
+            "term": "Sunglasses",
+            "hint": "Dark spectacles worn to protect against bright daylight",
+            "difficulty": 1
+        },
+        {
+            "term": "Brake",
+            "hint": "The pedal or lever used to make a moving vehicle stop",
+            "difficulty": 1
+        },
+        {
+            "term": "Wallet",
+            "hint": "A small folding case for holding cash and credit cards",
+            "difficulty": 1
+        },
+        {
+            "term": "Umbrella",
+            "hint": "The folding device used to stay dry when it is pouring out",
+            "difficulty": 1
+        },
+        {
+            "term": "Astronaut",
+            "hint": "A professional who travels in a rocket to explore space",
+            "difficulty": 1
+        },
+        {
+            "term": "Piano",
+            "hint": "A large musical instrument with 88 black and white keys",
+            "difficulty": 1
+        },
+        {
+            "term": "Telescope",
+            "hint": "A long tube of lenses used for looking at distant planets",
+            "difficulty": 2
+        },
+        {
+            "term": "Bazinga",
+            "hint": "The catchphrase used by a famous TV scientist after a joke",
+            "difficulty": 2
+        },
+        {
+            "term": "Philosophy",
+            "hint": "The study of the fundamental nature of knowledge and life",
+            "difficulty": 3
+        },
+        {
+            "term": "Mythology",
+            "hint": "A collection of old stories about gods and magical beings",
+            "difficulty": 2
+        },
+        {
+            "term": "Vape",
+            "hint": "Inhaling vapor from a battery-powered device",
+            "difficulty": 1
+        },
+        {
+            "term": "Clickbait",
+            "hint": "Sensational headlines designed to make you select a link",
+            "difficulty": 2
+        },
+        {
+            "term": "Troll",
+            "hint": "Someone who posts mean things online just to get a reaction",
+            "difficulty": 1
+        },
+        {
+            "term": "Hashtag",
+            "hint": "The symbol used on social media to group similar posts",
+            "difficulty": 1
+        }
+    ]
+}

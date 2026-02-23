@@ -71,7 +71,7 @@
     "flowTitle": "Oyun Akışı",
     "flowDescription": "Takımlar ve takım oyuncuları <b>sırayla anlatıcı olur</b>. Bir oyuncunun anlatım süresi bittiğinde, sıra diğer takımın anlatıcısına geçer. Her tur, destedeki tüm kelimeler doğru tahmin edilene kadar oynanır. Bir tur tamamlandığında, aynı kelime destesiyle bir sonraki tura geçilir. Bu nedenle rakip takımın anlattığı kelimeleri de <b>iyi dinle ve kopya verme!</b> Daha sonra puan olarak senin karşına çıkabilir.",
     "round1Title": "1. Tur: Serbest Anlatım",
-    "round1Description": "Kelimeyi istediğiniz kelimeleri, sesleri veya jestleri kullanarak anlatın. Önemli: Karttaki kelimeyi, bir parçasını, onunla kafiyeli kelimeleri veya başka dildeki çevirisini söyleyemezsiniz. Anlatmakta zorlanırsan, kartın altındaki açıklama metnini doğrudan okuyabilirsin.",
+    "round1Description": "Kelimeyi istediğiniz kelimeleri, sesleri veya jestleri kullanarak anlatın. Önemli: Karttaki kelimeyi, bir parçasını, onunla kafiyeli kelimeleri veya başka dildeki çevirisini söyleyemezsiniz. Anlatmakta zorlanırsan, kartın altındaki açıklama metnini doğrudan okuyabilirsin. Tüm oyuncuların kelimeyi doğru anlaması için doğru olarak işaretlerken kelimeyi de tekrar etmeyi unutma. Örneğin: At arabası, doğru.",
     "round2Title": "2. Tur: Sadece Tek Kelime",
     "round2Description": "Bu sefer ipucu olarak sadece tek bir kelime kullanabilirsin. Jest, mimik veya vücut dili kullanamazsınız. Kelimeni akıllıca seç; çünkü 1. turdaki tüm kelimeler tekrar oyundadır.",
     "round3Title": "3. Tur: Sessiz Sinema",

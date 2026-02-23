@@ -31,6 +31,9 @@ export const TurnSummaryScreen: React.FC = () => {
   const [initialTeam] = useState(teams[currentTeamIndex]);
   const [initialBonusTime] = useState(bonusTime);
   const [initialRound] = useState(round);
+
+  if (!initialTeam) return null;
+
   const sortedTeams = [...teams].sort((a, b) => b.score - a.score);
   return (
     <m.div

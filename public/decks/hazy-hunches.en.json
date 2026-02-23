@@ -1,0 +1,183 @@
+{
+    "id": "hazy-hunches.en",
+    "name": "Hazy Hunches",
+    "language": "en",
+    "difficulty": "medium",
+    "words": [
+        {
+            "term": "Nirvana",
+            "hint": "The ultimate state of peace and enlightenment in Buddhism",
+            "difficulty": 3
+        },
+        {
+            "term": "Stockholm Syndrome",
+            "hint": "When victims start to develop feelings for their captors",
+            "difficulty": 3
+        },
+        {
+            "term": "Dark Humor",
+            "hint": "A style of comedy that makes light of serious or morbid topics",
+            "difficulty": 2
+        },
+        {
+            "term": "Stethoscope",
+            "hint": "The medical tool doctors use to listen to your heartbeat",
+            "difficulty": 2
+        },
+        {
+            "term": "Parallel Universe",
+            "hint": "The idea that another dimension exists alongside our own",
+            "difficulty": 2
+        },
+        {
+            "term": "Trojan Horse",
+            "hint": "A deceptive device used to infiltrate a secured location",
+            "difficulty": 2
+        },
+        {
+            "term": "Mona Lisa",
+            "hint": "The famous Da Vinci painting with the ambiguous smile",
+            "difficulty": 2
+        },
+        {
+            "term": "Frankenstein",
+            "hint": "The story of a scientist who gives life to a stitched-together man",
+            "difficulty": 2
+        },
+        {
+            "term": "Dead End",
+            "hint": "A street or path that has no way out except to turn back",
+            "difficulty": 1
+        },
+        {
+            "term": "Midnight",
+            "hint": "The exact middle of the night when one day ends and another starts",
+            "difficulty": 1
+        },
+        {
+            "term": "Detective",
+            "hint": "A professional who hunts for clues to solve a mysterious crime",
+            "difficulty": 1
+        },
+        {
+            "term": "Lucky Charm",
+            "hint": "An object believed to bring good fortune to its owner",
+            "difficulty": 1
+        },
+        {
+            "term": "Wedding Cake",
+            "hint": "The massive, tiered dessert cut by a newly married pair",
+            "difficulty": 1
+        },
+        {
+            "term": "Cockroach",
+            "hint": "The resilient brown bug known for surviving almost anything",
+            "difficulty": 1
+        },
+        {
+            "term": "Pinocchio",
+            "hint": "The puppet whose nose grew longer every time he lied",
+            "difficulty": 1
+        },
+        {
+            "term": "Remote Control",
+            "hint": "The hand-held device used to change channels from the sofa",
+            "difficulty": 1
+        },
+        {
+            "term": "Snow White",
+            "hint": "The princess who lived with dwarves and ate a poisoned fruit",
+            "difficulty": 1
+        },
+        {
+            "term": "Scarecrow",
+            "hint": "A straw figure in a field used to frighten away birds",
+            "difficulty": 1
+        },
+        {
+            "term": "Magic Wand",
+            "hint": "The stick used by wizards or faeries to perform spells",
+            "difficulty": 1
+        },
+        {
+            "term": "Fortune Teller",
+            "hint": "Someone who claims they can see what happens in your future",
+            "difficulty": 1
+        },
+        {
+            "term": "Tear Gas",
+            "hint": "A chemical used by authorities that results in stinging eyes",
+            "difficulty": 1
+        },
+        {
+            "term": "Graduation",
+            "hint": "The ceremony where students throw their caps in the air",
+            "difficulty": 1
+        },
+        {
+            "term": "Bird's Eye View",
+            "hint": "Looking at a location from directly above",
+            "difficulty": 1
+        },
+        {
+            "term": "Aha Moment",
+            "hint": "The sudden instant of realization or discovery",
+            "difficulty": 2
+        },
+        {
+            "term": "Brainwash",
+            "hint": "Using force to change what someone believes or thinks",
+            "difficulty": 2
+        },
+        {
+            "term": "Catch-22",
+            "hint": "A situation where you can't win because of conflicting rules",
+            "difficulty": 3
+        },
+        {
+            "term": "Cold Feet",
+            "hint": "Suddenly getting nervous and wanting to back out of a plan",
+            "difficulty": 2
+        },
+        {
+            "term": "Double Standard",
+            "hint": "When different rules apply to different groups unfairly",
+            "difficulty": 3
+        },
+        {
+            "term": "Elephant in the Room",
+            "hint": "A massive obvious problem that everyone is ignoring",
+            "difficulty": 2
+        },
+        {
+            "term": "Fifth Wheel",
+            "hint": "An extra person who feels like they don't belong in a group",
+            "difficulty": 2
+        },
+        {
+            "term": "Gallows Humor",
+            "hint": "Joking about very grim or life-threatening situations",
+            "difficulty": 3
+        },
+        {
+            "term": "Glass Half Full",
+            "hint": "A way to describe someone who sees the bright side of things",
+            "difficulty": 2
+        },
+        {
+            "term": "Silver Lining",
+            "hint": "A positive aspect found within a bad or dark situation",
+            "difficulty": 2
+        },
+        {
+            "term": "Thinking Outside the Box",
+            "hint": "Solving problems in a creative and non-traditional way",
+            "difficulty": 2
+        },
+        {
+            "term": "Tip of the Iceberg",
+            "hint": "Only a tiny visible part of a much larger hidden problem",
+            "difficulty": 2
+        }
+    ]
+}

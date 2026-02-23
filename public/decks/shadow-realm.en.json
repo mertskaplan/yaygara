@@ -1,0 +1,183 @@
+{
+    "id": "shadow-realm.en",
+    "name": "Shadow Realm",
+    "language": "en",
+    "difficulty": "hard",
+    "words": [
+        {
+            "term": "Lord Voldemort",
+            "hint": "The dark wizard from the magic school books who must not be named",
+            "difficulty": 3
+        },
+        {
+            "term": "Skull and Crossbones",
+            "hint": "A symbol showing a head bone over two others, used for poison or pirates",
+            "difficulty": 1
+        },
+        {
+            "term": "Guy Fawkes",
+            "hint": "The man who tried to blow up the British parliament in 1605",
+            "difficulty": 2
+        },
+        {
+            "term": "Jack the Ripper",
+            "hint": "The unidentified Victorian serial killer who haunted London",
+            "difficulty": 3
+        },
+        {
+            "term": "Freddy Krueger",
+            "hint": "The villain with metal claws who hunts teenagers in their sleep",
+            "difficulty": 2
+        },
+        {
+            "term": "Medusa",
+            "hint": "The mythical woman with snakes for hair whose gaze turns men to rock",
+            "difficulty": 2
+        },
+        {
+            "term": "Icarus",
+            "hint": "The boy who flew too close to the sun with wax wings and fell",
+            "difficulty": 3
+        },
+        {
+            "term": "Sword of Damocles",
+            "hint": "A legend about a blade hanging by a single hair over a king's head",
+            "difficulty": 3
+        },
+        {
+            "term": "Fascism",
+            "hint": "A far-right governmental system with total control by a dictator",
+            "difficulty": 3
+        },
+        {
+            "term": "Film Noir",
+            "hint": "A style of cinema featuring cynical heroes and dark, rainy city streets",
+            "difficulty": 2
+        },
+        {
+            "term": "Great Depression",
+            "hint": "The severe global economic collapse that started in 1929",
+            "difficulty": 2
+        },
+        {
+            "term": "Open-Air Prison",
+            "hint": "A term used for a place where movement is heavily restricted and monitored",
+            "difficulty": 3
+        },
+        {
+            "term": "Passive-Aggressive",
+            "hint": "Indirectly showing anger instead of being open about it",
+            "difficulty": 2
+        },
+        {
+            "term": "The Joker",
+            "hint": "The arch-enemy of the Batman, known for his chaotic laugh",
+            "difficulty": 1
+        },
+        {
+            "term": "Utopia",
+            "hint": "An imagined place or state of things in which everything is perfect",
+            "difficulty": 3
+        },
+        {
+            "term": "Don Quixote",
+            "hint": "The knight who famously fought windmills thinking they were giants",
+            "difficulty": 2
+        },
+        {
+            "term": "Dante's Inferno",
+            "hint": "A classic poem describing a journey through the circles of hell",
+            "difficulty": 3
+        },
+        {
+            "term": "Pulp Fiction",
+            "hint": "The legendary 90s crime movie known for its non-linear story",
+            "difficulty": 2
+        },
+        {
+            "term": "Enemy of my Enemy",
+            "hint": "A proverb suggesting that common foes make for natural allies",
+            "difficulty": 3
+        },
+        {
+            "term": "Hannibal Lecter",
+            "hint": "The cultured doctor who famously tells Clarice about eating liver",
+            "difficulty": 3
+        },
+        {
+            "term": "Darth Vader",
+            "hint": "The dark lord who wears a black mask and breathing suit in space",
+            "difficulty": 1
+        },
+        {
+            "term": "Salem Witch Trials",
+            "hint": "A dark period in 1690s America where many were accused of magic",
+            "difficulty": 3
+        },
+        {
+            "term": "Bermuda Triangle",
+            "hint": "An area in the ocean where planes and ships supposedly vanish",
+            "difficulty": 2
+        },
+        {
+            "term": "Bloody Mary",
+            "hint": "The spirit you supposedly summon by saying her name in a mirror",
+            "difficulty": 2
+        },
+        {
+            "term": "Trojan Horse",
+            "hint": "A gift that hides a secret group of invaders inside it",
+            "difficulty": 2
+        },
+        {
+            "term": "Big Brother",
+            "hint": "The all-seeing figure of authority from the novel Nineteen Eighty-Four",
+            "difficulty": 2
+        },
+        {
+            "term": "Cold War",
+            "hint": "The decades-long tension between the USA and the Soviet Union",
+            "difficulty": 2
+        },
+        {
+            "term": "Dark Web",
+            "hint": "The hidden part of the internet often used for shady activities",
+            "difficulty": 3
+        },
+        {
+            "term": "Silent Hill",
+            "hint": "A horror game and movie about a town permanentely covered in fog",
+            "difficulty": 2
+        },
+        {
+            "term": "Loch Ness Monster",
+            "hint": "A legendary creature said to live in a deep lake in Scotland",
+            "difficulty": 1
+        },
+        {
+            "term": "Rasputin",
+            "hint": "The mysterious mystic who advised the last Russian Tsar family",
+            "difficulty": 3
+        },
+        {
+            "term": "Exorcist",
+            "hint": "Someone whose job is to cast out spirits from a possessed person",
+            "difficulty": 2
+        },
+        {
+            "term": "Morgue",
+            "hint": "The building or room where bodies are kept before burial",
+            "difficulty": 1
+        },
+        {
+            "term": "Black Widow",
+            "hint": "A dangerous spider or a woman who kills her partners",
+            "difficulty": 2
+        },
+        {
+            "term": "Final Destination",
+            "hint": "A movie series where survivors can't escape their scheduled end",
+            "difficulty": 2
+        }
+    ]
+}

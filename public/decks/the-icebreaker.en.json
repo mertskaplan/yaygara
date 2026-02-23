@@ -1,0 +1,208 @@
+{
+    "id": "the-icebreaker.en",
+    "name": "The Icebreaker",
+    "language": "en",
+    "difficulty": "easy",
+    "words": [
+        {
+            "term": "Avatar",
+            "hint": "A digital icon representing a person in virtual spaces",
+            "difficulty": 2
+        },
+        {
+            "term": "Swiss Army Knife",
+            "hint": "A multi-tool folding gadget with many blades and gadgets",
+            "difficulty": 1
+        },
+        {
+            "term": "Pandora's Box",
+            "hint": "A mythical container that released all the world's evils",
+            "difficulty": 2
+        },
+        {
+            "term": "Deja Vu",
+            "hint": "The eerie feeling that you've lived through this exact moment before",
+            "difficulty": 2
+        },
+        {
+            "term": "Butterfly Effect",
+            "hint": "The idea that a tiny flap of wings can cause a hurricane elsewhere",
+            "difficulty": 3
+        },
+        {
+            "term": "Toxic Relationship",
+            "hint": "A bond between people that is emotionally harmful and unhealthy",
+            "difficulty": 2
+        },
+        {
+            "term": "Tide",
+            "hint": "The rising and falling of the ocean caused by the moon's pull",
+            "difficulty": 2
+        },
+        {
+            "term": "Black Plague",
+            "hint": "The deadly disease that wiped out millions in the Middle Ages",
+            "difficulty": 2
+        },
+        {
+            "term": "Schrödinger's Cat",
+            "hint": "A thought experiment where an animal is both alive and dead",
+            "difficulty": 3
+        },
+        {
+            "term": "Memory Palace",
+            "hint": "A mental technique for remembering things by visualizing a room",
+            "difficulty": 3
+        },
+        {
+            "term": "Black Hole",
+            "hint": "A cosmic object with gravity so strong even light can't escape",
+            "difficulty": 3
+        },
+        {
+            "term": "Alchemy",
+            "hint": "The ancient practice of trying to turn lead into gold",
+            "difficulty": 3
+        },
+        {
+            "term": "Dystopia",
+            "hint": "A fictional world where society is oppressed and everything is ruined",
+            "difficulty": 2
+        },
+        {
+            "term": "Grim Reaper",
+            "hint": "The hooded figure carrying a scythe who represents the end",
+            "difficulty": 2
+        },
+        {
+            "term": "Time Traveler",
+            "hint": "Someone who visits the past or the future",
+            "difficulty": 2
+        },
+        {
+            "term": "Quarantine",
+            "hint": "Being isolated to prevent the spread of a contagious illness",
+            "difficulty": 2
+        },
+        {
+            "term": "Boomerang",
+            "hint": "A curved wooden tool that comes back when you throw it",
+            "difficulty": 2
+        },
+        {
+            "term": "Flask",
+            "hint": "A portable container for carrying water or spirits",
+            "difficulty": 1
+        },
+        {
+            "term": "Social Media",
+            "hint": "Websites where people share photos and chase likes",
+            "difficulty": 1
+        },
+        {
+            "term": "Gluten-Free",
+            "hint": "A diet that avoids wheat products",
+            "difficulty": 1
+        },
+        {
+            "term": "Reality TV",
+            "hint": "Shows that follow people's supposedly real lives",
+            "difficulty": 1
+        },
+        {
+            "term": "Influencer",
+            "hint": "Someone who gets paid to promote stuff on their phone",
+            "difficulty": 2
+        },
+        {
+            "term": "Binge-Watch",
+            "hint": "Sitting down to view an entire season of a show in one go",
+            "difficulty": 2
+        },
+        {
+            "term": "Cyber Monday",
+            "hint": "The big online shopping day after Thanksgiving",
+            "difficulty": 2
+        },
+        {
+            "term": "Artificial Intelligence",
+            "hint": "Computers capable of tasks that usually require a human brain",
+            "difficulty": 2
+        },
+        {
+            "term": "Bucket List",
+            "hint": "A tally of things you want to do before you pass away",
+            "difficulty": 2
+        },
+        {
+            "term": "Ghosting",
+            "hint": "Ending a relationship by suddenly disappearing and not replying",
+            "difficulty": 2
+        },
+        {
+            "term": "Side Hustle",
+            "hint": "A small secondary job to earn extra cash",
+            "difficulty": 2
+        },
+        {
+            "term": "Spoiler Alert",
+            "hint": "A warning that you're about to reveal the ending of a story",
+            "difficulty": 1
+        },
+        {
+            "term": "Escape Room",
+            "hint": "A game where you solve puzzles to get out of a locked area",
+            "difficulty": 2
+        },
+        {
+            "term": "FOMO",
+            "hint": "The anxiety that others are having fun without you",
+            "difficulty": 3
+        },
+        {
+            "term": "Fast Food",
+            "hint": "Quick meals served through a window or over a counter",
+            "difficulty": 1
+        },
+        {
+            "term": "Smartphone",
+            "hint": "A pocket device used for calling, texting, and the internet",
+            "difficulty": 1
+        },
+        {
+            "term": "Selfie",
+            "hint": "A photograph you take of your own face",
+            "difficulty": 1
+        },
+        {
+            "term": "Yoga",
+            "hint": "An exercise focus on stretching and meditation",
+            "difficulty": 1
+        },
+        {
+            "term": "Vegan",
+            "hint": "A person who does not consume any animal products",
+            "difficulty": 1
+        },
+        {
+            "term": "Bitcoin",
+            "hint": "The most famous digital currency in the world",
+            "difficulty": 2
+        },
+        {
+            "term": "Podcast",
+            "hint": "An audio series you listen to on your device",
+            "difficulty": 1
+        },
+        {
+            "term": "Playlist",
+            "hint": "A custom list of songs put together for a specific mood",
+            "difficulty": 1
+        },
+        {
+            "term": "Wanderlust",
+            "hint": "A very strong desire to travel and see the world",
+            "difficulty": 3
+        }
+    ]
+}
