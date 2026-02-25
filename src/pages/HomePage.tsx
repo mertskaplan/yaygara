@@ -85,9 +85,9 @@ export function HomePage() {
           animate={{ y: 0, opacity: 1 }}
           transition={{
             type: 'spring',
-            stiffness: 100,
-            damping: 15,
-            delay: 0.2
+            stiffness: 120,
+            damping: 12,
+            delay: 0.1
           }}
           className="w-full"
         >
@@ -96,7 +96,7 @@ export function HomePage() {
         <m.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.3, delay: 0.25 }}
           className="space-y-4"
         >
           <h1 className="text-xl font-medium text-slate-600 dark:text-slate-400 tracking-tight text-balance">
@@ -107,7 +107,7 @@ export function HomePage() {
         <m.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
+          transition={{ duration: 0.3, delay: 0.4 }}
           className="w-full space-y-6"
         >
           <LanguageSelector />

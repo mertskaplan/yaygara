@@ -94,7 +94,7 @@ const PlayingScreen = () => {
       handleCorrect();
     }
     setIsActionLocked(true);
-    setTimeout(() => setIsActionLocked(false), 1000);
+    setTimeout(() => setIsActionLocked(false), 1200);
   };
   const teams = useGameStore(useShallow((state) => state.teams));
   const currentTeamIndex = useGameStore(useShallow((state) => state.currentTeamIndex));
@@ -183,7 +183,7 @@ export function GamePage() {
   }, [gameStatus, teams, currentTeamIndex, theme]);
   return (
     <div
-      className="flex flex-col items-center justify-center h-screen-dvh bg-transparent p-6 transition-colors duration-500 overflow-hidden"
+      className="flex flex-col items-center justify-center h-screen-dvh bg-transparent p-6 transition-colors duration-300 overflow-hidden"
       style={dynamicBgStyle}
     >
       <AnimatePresence mode="wait">
