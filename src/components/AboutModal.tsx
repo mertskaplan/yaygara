@@ -35,7 +35,7 @@ const InfoSection = ({ icon: Icon, title, description, children, centered }: { i
 
 export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
     const { t, translations } = useTranslations();
-    const version = "1.2.6"; // Matching service-worker.js
+    const version = "1.2.7"; // Matching service-worker.js
     const licensePoints = (translations?.about?.licensePoints as string[]) || [];
 
     return (

@@ -32,4 +32,6 @@ The application will be available at `http://localhost:8622`.
 3.  **Scoring:** Teams earn points based on the difficulty of the words they guess correctly.
 4.  **Winning:** The team with the highest total score after three rounds is crowned the champion!
 ## 📄 License
+Yaygara is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.
+
 Built with ❤️ for social gatherings and family fun.

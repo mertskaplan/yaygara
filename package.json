@@ -2,6 +2,7 @@
   "name": "vocab-rush-gb-po-g5ki_0d6oejexw1",
   "private": true,
   "version": "0.0.0",
+  "license": "CC-BY-NC-SA-4.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port ${PORT:-3000}",
