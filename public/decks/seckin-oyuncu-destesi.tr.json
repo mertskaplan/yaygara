@@ -1,0 +1,198 @@
+{
+  "id": "seckin-oyuncu-destesi.tr",
+  "name": "Seçkin oyuncu destesi",
+  "language": "tr",
+  "difficulty": "hard",
+  "words": [
+    {
+      "term": "Balmumu",
+      "hint": "Arıların peteklerini yapmak için salgıladığı yumuşak madde.",
+      "difficulty": 1
+    },
+    {
+      "term": "Tırtıl",
+      "hint": "Kelebeğin önceki çok ayaklı larva hali.",
+      "difficulty": 1
+    },
+    {
+      "term": "Baskül",
+      "hint": "Ağırlık ölçmek için üzerine çıkılan ev aleti.",
+      "difficulty": 1
+    },
+    {
+      "term": "Balayı",
+      "hint": "Yeni evlenen çiftlerin çıktığı ilk tatil.",
+      "difficulty": 1
+    },
+    {
+      "term": "Eskimo",
+      "hint": "Kuzey kutup bölgesinde yaşayan yerli halk.",
+      "difficulty": 1
+    },
+    {
+      "term": "Ürperti",
+      "hint": "Korku veya soğuktan dolayı vücutta oluşan ani titreme hissi.",
+      "difficulty": 3
+    },
+    {
+      "term": "İşporta",
+      "hint": "Sokaklarda tezgahsız veya seyyar yapılan satış türü.",
+      "difficulty": 3
+    },
+    {
+      "term": "Evlilik teklifi",
+      "hint": "Bir ömrü beraber geçirmek için yapılan resmi olmayan çağrı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Seher Yıldızı",
+      "hint": "Güneş doğmadan hemen önce gökyüzünde parlayan Venüs.",
+      "difficulty": 2
+    },
+    {
+      "term": "Suflör",
+      "hint": "Tiyatroda oyunculara unuttukları sözleri fısıldayan görevli.",
+      "difficulty": 2
+    },
+    {
+      "term": "Meksika dalgası",
+      "hint": "Stadyumlarda seyircilerin sırayla ayağa kalkıp kollarını kaldırması.",
+      "difficulty": 2
+    },
+    {
+      "term": "Sinkaf",
+      "hint": "Küfürlü konuşmanın eski dildeki karşılığı.",
+      "difficulty": 3
+    },
+    {
+      "term": "AMATEM",
+      "hint": "Bağımlılık yapan maddelerden kurtulmak için gidilen tedavi merkezi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Konteyner",
+      "hint": "Gemi ve tırlarda yük taşımaya yarayan büyük metal sandık.",
+      "difficulty": 1
+    },
+    {
+      "term": "Ampute",
+      "hint": "Bir uzvun cerrahi yöntemle vücuttan ayrılmış hali.",
+      "difficulty": 2
+    },
+    {
+      "term": "Çiçek olmak",
+      "hint": "Okul sıralarında uslu durmak anlamında kullanılan bir deyim.",
+      "difficulty": 2
+    },
+    {
+      "term": "Flanör",
+      "hint": "Şehirde amaçsızca gezinen, gözlem yapan aylak tip.",
+      "difficulty": 3
+    },
+    {
+      "term": "At arabası",
+      "hint": "Motorlu taşıtlardan önce kullanılan, hayvan gücüyle giden araç.",
+      "difficulty": 1
+    },
+    {
+      "term": "Maganda",
+      "hint": "Kaba saba davranan, toplum kurallarına uymayan görgüsüz tip.",
+      "difficulty": 1
+    },
+    {
+      "term": "Arjantin bardak",
+      "hint": "Birayı servis etmek için kullanılan geniş ve saplı cam kadeh.",
+      "difficulty": 2
+    },
+    {
+      "term": "Fay hattı",
+      "hint": "Yerkabuğundaki kırılmaların olduğu deprem bölgesi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Uçan daire",
+      "hint": "Dünya dışı varlıkların kullandığına inanılan hava aracı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Gökkuşağı",
+      "hint": "Yağmur sonrası havada oluşan yedi renkli kavis.",
+      "difficulty": 1
+    },
+    {
+      "term": "Nargile",
+      "hint": "Dumanın suyun içinden geçerek solunduğu tütün aracı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Paraşüt",
+      "hint": "Hava boşluğu yaratarak yüksekten yavaşça inmeyi sağlayan kumaş.",
+      "difficulty": 1
+    },
+    {
+      "term": "Yel değirmeni",
+      "hint": "Rüzgar gücüyle tahıl öğüten kanatlı yapı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kulaklık",
+      "hint": "Sesi sadece dinleyenin duymasını sağlayan cihaz.",
+      "difficulty": 1
+    },
+    {
+      "term": "Bisiklet",
+      "hint": "Pedal çevrilerek ilerletilen iki tekerlekli taşıt.",
+      "difficulty": 1
+    },
+    {
+      "term": "Piyano",
+      "hint": "Tuşlarına basılarak çalınan büyük ve telli çalgı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Klon",
+      "hint": "Bir canlının genetik olarak tıpatıp aynısının üretilmesi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Vegan",
+      "hint": "Hayvansal hiçbir ürünü tüketmeyi kabul etmeyen kişi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Retro",
+      "hint": "Geçmişin modasına ve tarzına duyulan özlem veya o tarz.",
+      "difficulty": 3
+    },
+    {
+      "term": "Derya kuzusu",
+      "hint": "Balıkçıların taze balıklar için kullandığı tabir.",
+      "difficulty": 2
+    },
+    {
+      "term": "Elalem",
+      "hint": "Başkaları ne der korkusunun öznesi olan topluluk.",
+      "difficulty": 2
+    },
+    {
+      "term": "Zehir zemberek",
+      "hint": "Çok ağır ve kırıcı konuşmalar için kullanılan benzetme.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kırmızı kart",
+      "hint": "Sporda bir oyuncunun oyundan atıldığını belirten nesne.",
+      "difficulty": 1
+    },
+    {
+      "term": "Karaborsa",
+      "hint": "Malların yasa dışı yollarla fahiş fiyata satılması.",
+      "difficulty": 2
+    },
+    {
+      "term": "Narsisizm",
+      "hint": "Kişinin kendisine duyduğu aşırı hayranlık hali.",
+      "difficulty": 3
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "id": "refleks-kazandirir.tr.json",
+  "name": "Refleks kazandırır",
+  "language": "tr",
+  "difficulty": "hard",
+  "words": [
+    {
+      "term": "Kursak",
+      "hint": "Kuşlarda yiyeceklerin biriktiği torba şeklindeki organ.",
+      "difficulty": 3
+    },
+    {
+      "term": "Nilüfer",
+      "hint": "Durgun sularda yetişen, geniş yapraklı ve büyük çiçekli bitki.",
+      "difficulty": 2
+    },
+    {
+      "term": "Peluş",
+      "hint": "Oyuncak ayıların yapımında kullanılan yumuşak ve tüylü kumaş.",
+      "difficulty": 1
+    },
+    {
+      "term": "Pet bardak",
+      "hint": "Genellikle pikniklerde kullanılan tek kullanımlık plastik kap.",
+      "difficulty": 1
+    },
+    {
+      "term": "Serum",
+      "hint": "Hastanelerde damar yoluyla vücuda verilen sıvı ilaç.",
+      "difficulty": 1
+    },
+    {
+      "term": "Besteleyici",
+      "hint": "Eski telefonlarda özel kodlamalar ile monofonik müzik yapma aracı.",
+      "difficulty": 3
+    },
+    {
+      "term": "Haşema",
+      "hint": "Muhafazakar kesimin denize girerken tercih ettiği tesettür mayosu.",
+      "difficulty": 2
+    },
+    {
+      "term": "Yıldırım nikahı",
+      "hint": "Çok kısa sürede, aceleyle yapılan evlilik töreni.",
+      "difficulty": 1
+    },
+    {
+      "term": "Gelin çiçeği",
+      "hint": "Düğün sonunda bekar kızlara fırlatılan bitki demeti.",
+      "difficulty": 1
+    },
+    {
+      "term": "Güneş saati",
+      "hint": "Milin gölgesinin düştüğü yere göre zamanı gösteren kadim düzenek.",
+      "difficulty": 2
+    },
+    {
+      "term": "Bira",
+      "hint": "Arpa ve şerbetçiotu ile mayalanan alkollü içecek.",
+      "difficulty": 1
+    },
+    {
+      "term": "Döner bıçağı",
+      "hint": "Dikey olarak pişirilen geleneksel yemeği kesmek için kullanılan alet.",
+      "difficulty": 2
+    },
+    {
+      "term": "Pembe dizi",
+      "hint": "Entrika ve aşk dolu, genellikle gündüz kuşağında yayımlanan yapım.",
+      "difficulty": 2
+    },
+    {
+      "term": "Elektrik direği",
+      "hint": "enerji akışını sağlamak için sokaklarda telleri havada tutan uzun beton veya demir sütun.",
+      "difficulty": 1
+    },
+    {
+      "term": "Vardiya",
+      "hint": "İşçilerin belirli saatlerde değiştiği çalışma düzeni.",
+      "difficulty": 2
+    },
+    {
+      "term": "Yorgan",
+      "hint": "İçi pamuk veya yünle doldurulmuş, kışın üstümüze örttüğümüz ağır örtü.",
+      "difficulty": 1
+    },
+    {
+      "term": "Civciv",
+      "hint": "Yumurtadan yeni çıkmış, sarı tüylü tavuk yavrusu.",
+      "difficulty": 1
+    },
+    {
+      "term": "Pankart",
+      "hint": "Mitinglerde veya maçlarda üzerine yazı yazılan büyük karton veya bez.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kıtmir",
+      "hint": "Yedi Uyurlar'ın kapısında bekleyen sadık köpek.",
+      "difficulty": 3
+    },
+    {
+      "term": "Kumpir",
+      "hint": "İçine tereyağı, kaşar ve çeşitli garnitürler eklenen fırınlanmış patates.",
+      "difficulty": 1
+    },
+    {
+      "term": "Cem Karaca",
+      "hint": "Anadolu Rock müziğinin 'Resimdeki Gözyaşları' ile bilinen efsane ismi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Selfie çubuğu",
+      "hint": "Kendi fotoğrafımızı uzaktan çekmek için kullanılan aparat.",
+      "difficulty": 1
+    },
+    {
+      "term": "Piknik",
+      "hint": "Açık havada, örtü üzerinde yemek yeme etkinliği.",
+      "difficulty": 1
+    },
+    {
+      "term": "Lunapark",
+      "hint": "Dönme dolap ve çarpışan arabaların bulunduğu eğlence alanı.",
+      "difficulty": 1
+    },
+    {
+      "term": "İtfaiye",
+      "hint": "Yangınları söndürmekle görevli olan resmi teşkilat.",
+      "difficulty": 1
+    },
+    {
+      "term": "Heykel",
+      "hint": "Taş, mermer veya kilden yapılan sanat eseri.",
+      "difficulty": 1
+    },
+    {
+      "term": "Pandomim",
+      "hint": "Hiç konuşmadan, sadece hareketlerle hikaye anlatma sanatı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Halı saha",
+      "hint": "Amatörlerin futbol oynamak için kiraladığı sentetik zeminli mekan.",
+      "difficulty": 1
+    },
+    {
+      "term": "Anket",
+      "hint": "Bilgi toplamak için insanlara yöneltilen soru listesi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Vurgun",
+      "hint": "Deniz altında basınç farkından dolayı yaşanan tehlikeli durum.",
+      "difficulty": 3
+    },
+    {
+      "term": "Psikanaliz",
+      "hint": "Bilinçaltındaki süreçleri inceleyen ruh bilimi yöntemi.",
+      "difficulty": 3
+    },
+    {
+      "term": "Sabotaj",
+      "hint": "Bir işi engellemek için planlı olarak zarar verme eylemi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kravat",
+      "hint": "Gömlek yakasına bağlanan uzun kumaş aksesuar.",
+      "difficulty": 1
+    },
+    {
+      "term": "Katalog",
+      "hint": "Ürünlerin listelendiği tanıtım kitapçığı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Fobi",
+      "hint": "Bir şeye karşı duyulan kontrolsüz ve aşırı korku.",
+      "difficulty": 1
+    },
+    {
+      "term": "Dalgıç",
+      "hint": "Özel ekipmanlarla suyun altında uzun süre kalan kişi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Fosfor",
+      "hint": "Karanlıkta parlayan kimyasal element.",
+      "difficulty": 2
+    },
+    {
+      "term": "Dilek ağacı",
+      "hint": "Üzerine bez bağlanarak murat beklenen bitki.",
+      "difficulty": 2
+    },
+    {
+      "term": "Sirk",
+      "hint": "Akrobatların ve eğitimli hayvanların gösteri yaptığı çadır.",
+      "difficulty": 1
+    },
+    {
+      "term": "Borsa",
+      "hint": "Hisselerin alınıp satıldığı finansal piyasa.",
+      "difficulty": 2
+    },
+    {
+      "term": "Vira bismillah",
+      "hint": "Bir işe başlarken kullanılan denizci kökenli ifade.",
+      "difficulty": 2
+    },
+    {
+      "term": "Dekolte",
+      "hint": "Giysilerde göğüs veya sırt kısmındaki açıklık.",
+      "difficulty": 2
+    }
+  ]
+}
