@@ -51,6 +51,11 @@
       "description": "Mevcut oyunu bitirmek istediğinizden emin misiniz? Tüm ilerleme kaybolacak.",
       "cancel": "Vazgeç",
       "confirm": "Bitir"
+    },
+    "visibilityPause": {
+      "title": "Süre Duraklatıldı",
+      "description": "Uygulamadan ayrıldığınız için süre otomatik olarak duraklatıldı. Devam edilsin mi?",
+      "continue": "Devam Et"
     }
   },
   "scoreboard": {
@@ -420,7 +425,6 @@
       "Hurdacılar",
       "İşsizler",
       "Kabadayılar",
-      "Kafaçılar",
       "Kafadarlar",
       "Kafasızlar",
       "Kahinler",

@@ -51,6 +51,11 @@
       "description": "Are you sure you want to end the current game? All progress will be lost.",
       "cancel": "Cancel",
       "confirm": "End"
+    },
+    "visibilityPause": {
+      "title": "Timer Paused",
+      "description": "The timer was automatically paused because you left the application. Do you want to continue?",
+      "continue": "Continue"
     }
   },
   "scoreboard": {

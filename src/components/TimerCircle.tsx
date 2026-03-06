@@ -1,15 +1,28 @@
-import React from 'react';
+import { m } from 'framer-motion';
+
 interface TimerCircleProps {
   timeLeft: number;
   duration: number;
   color: string;
   className?: string;
+  isPaused?: boolean;
 }
-export const TimerCircle: React.FC<TimerCircleProps> = ({ timeLeft, duration, color, className }) => {
+
+export const TimerCircle: React.FC<TimerCircleProps> = ({
+  timeLeft,
+  duration,
+  color,
+  className,
+  isPaused = false
+}) => {
   const radius = 50;
   const circumference = 2 * Math.PI * radius;
-  const progress = timeLeft / duration;
-  const strokeDashoffset = circumference * (1 - progress);
+
+  // Calculate the target progress. 
+  // When active, we animate towards (timeLeft - 1) so that the animation 
+  // completes exactly when the next tick occurs 1 second later.
+  const targetProgress = isPaused ? timeLeft / duration : Math.max(0, timeLeft - 1) / duration;
+  const strokeDashoffset = circumference * (1 - targetProgress);
   const isUrgent = timeLeft <= 10;
 
   return (
@@ -24,12 +37,13 @@ export const TimerCircle: React.FC<TimerCircleProps> = ({ timeLeft, duration, co
           cx="60"
           cy="60"
         />
-        <circle
-          className="transition-[stroke-dashoffset] duration-1000 ease-linear"
+        <m.circle
+          initial={{ strokeDashoffset: circumference * (1 - timeLeft / duration) }}
+          animate={{ strokeDashoffset }}
+          transition={{ duration: isPaused ? 0.3 : 1, ease: "linear" }}
           style={{ color: isUrgent ? '#ef4444' : color }}
           strokeWidth="10"
           strokeDasharray={circumference}
-          strokeDashoffset={strokeDashoffset}
           strokeLinecap="round"
           stroke="currentColor"
           fill="transparent"

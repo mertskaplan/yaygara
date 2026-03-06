@@ -1,9 +1,7 @@
 version: '3.8'
 services:
   yaygara:
-    build:
-      context: https://github.com/mertskaplan/yaygara.git
-      dockerfile: Dockerfile
+    image: mertskaplan/yaygara:latest
     container_name: yaygara
     ports:
       - "8727:80"

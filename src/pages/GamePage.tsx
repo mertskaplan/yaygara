@@ -10,6 +10,7 @@ import { TimerCircle } from '@/components/TimerCircle';
 import { useTranslations } from '@/hooks/useTranslations';
 import { TurnSummaryScreen } from '@/components/TurnSummaryScreen';
 import { EndGameModal } from '@/components/EndGameModal';
+import { VisibilityPauseModal } from '@/components/VisibilityPauseModal';
 import { hexToHsl } from '@/lib/utils';
 const GetReadyScreen = () => {
   const teams = useGameStore(useShallow((state) => state.teams));
@@ -60,13 +61,15 @@ const PlayingScreen = () => {
   const turnDuration = useGameStore(useShallow((state) => state.turnDuration));
   const gameStatus = useGameStore(useShallow((state) => state.gameStatus));
   const unseenWords = useGameStore(useShallow((state) => state.unseenWords));
+  const isPaused = useGameStore(useShallow((state) => state.isPaused));
+  const setIsPaused = useGameStore(useShallow((state) => state.setIsPaused));
   const { t } = useTranslations();
   const navigate = useNavigate();
   const [isEndGameModalOpen, setIsEndGameModalOpen] = useState(false);
   const [isActionLocked, setIsActionLocked] = useState(false);
   useEffect(() => {
     let timer: ReturnType<typeof setInterval>;
-    if (gameStatus === 'playing') {
+    if (gameStatus === 'playing' && !isEndGameModalOpen && !isPaused) {
       timer = setInterval(() => {
         tick();
       }, 1000);
@@ -74,7 +77,29 @@ const PlayingScreen = () => {
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [tick, gameStatus]);
+  }, [tick, gameStatus, isEndGameModalOpen, isPaused]);
+
+  useEffect(() => {
+    const handlePause = () => {
+      if (gameStatus === 'playing' && !isEndGameModalOpen) {
+        setIsPaused(true);
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        handlePause();
+      }
+    };
+
+    window.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('blur', handlePause);
+
+    return () => {
+      window.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('blur', handlePause);
+    };
+  }, [gameStatus, isEndGameModalOpen, setIsPaused]);
   useEffect(() => {
     if (timeLeft <= 0 && gameStatus === 'playing') {
       endTurn();
@@ -113,7 +138,13 @@ const PlayingScreen = () => {
       >
         <LogOut className="w-6 h-6" />
       </Button>
-      <TimerCircle timeLeft={timeLeft} duration={turnDuration} color={currentTeam.color} className="w-32 h-32" />
+      <TimerCircle
+        timeLeft={timeLeft}
+        duration={turnDuration}
+        color={currentTeam.color}
+        className="w-32 h-32"
+        isPaused={isEndGameModalOpen || isPaused}
+      />
       <div className="flex-grow flex items-center justify-center w-full my-6">
         <AnimatePresence mode="wait">
           {currentWord ? (
@@ -129,7 +160,7 @@ const PlayingScreen = () => {
       <div className="relative grid grid-cols-2 gap-4 w-full">
         <Button
           onClick={() => handleActionClick('pass')}
-          disabled={!currentWord || isActionLocked || unseenWords.length === 0}
+          disabled={!currentWord || isActionLocked || unseenWords.length === 0 || isEndGameModalOpen || isPaused}
           className="h-24 bg-rose-500 hover:bg-rose-600 text-white rounded-3xl shadow-lg text-3xl font-bold"
         >
           <X className="w-12 h-12" />
@@ -137,7 +168,7 @@ const PlayingScreen = () => {
         <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
           <Button
             onClick={undoLastAction}
-            disabled={!lastGuessedWord && !lastPassedWord}
+            disabled={(!lastGuessedWord && !lastPassedWord) || isEndGameModalOpen || isPaused}
             variant="outline"
             className="h-14 w-14 rounded-full bg-white dark:bg-slate-700 border-0 disabled:hidden z-20 pointer-events-auto shadow-md"
             aria-label="Undo last action"
@@ -147,7 +178,7 @@ const PlayingScreen = () => {
         </div>
         <Button
           onClick={() => handleActionClick('correct')}
-          disabled={!currentWord || isActionLocked}
+          disabled={!currentWord || isActionLocked || isEndGameModalOpen || isPaused}
           className="h-24 bg-green-500 hover:bg-green-600 text-white rounded-3xl shadow-lg text-3xl font-bold"
         >
           <Check className="w-12 h-12" />
@@ -157,6 +188,10 @@ const PlayingScreen = () => {
         isOpen={isEndGameModalOpen}
         onClose={() => setIsEndGameModalOpen(false)}
         onConfirm={handleConfirmEndGame}
+      />
+      <VisibilityPauseModal
+        isOpen={isPaused}
+        onContinue={() => setIsPaused(false)}
       />
     </div>
   );

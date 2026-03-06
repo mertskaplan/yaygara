@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 import type { Deck, Team, Word } from '@/types';
+import { soundManager } from '@/lib/sound';
 export type Language = 'en' | 'tr';
 export type GameStatus = 'setup' | 'get-ready' | 'playing' | 'turn-summary' | 'game-over';
 export type SetupStep = 'teams' | 'customize' | 'deck' | 'word-count';
@@ -37,6 +38,7 @@ interface GameState {
   turnEndReason: TurnEndReason;
   bonusTime: number | null;
   theme: 'light' | 'dark';
+  isPaused: boolean;
   setLanguage: (lang: Language) => void;
   setTheme: (theme: 'light' | 'dark') => void;
   setTeamCount: (count: number, nameParts: { adjectives: string[], nouns: string[] }) => void;
@@ -55,6 +57,7 @@ interface GameState {
   handlePass: () => void;
   undoLastAction: () => void;
   tick: () => void;
+  setIsPaused: (paused: boolean) => void;
   resetSetup: () => void;
   resetGame: () => void;
 }
@@ -82,6 +85,7 @@ export const useGameStore = create<GameState>()(
       turnEndReason: null,
       bonusTime: null,
       theme: typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+      isPaused: false,
       setLanguage: (lang) => set({ language: lang, setupStep: 'teams', teams: [], selectedDeck: null, customDeck: null, selectedWordCount: null }),
       setTheme: (theme) => set({ theme }),
       setTeamCount: (count, nameParts) => {
@@ -133,6 +137,7 @@ export const useGameStore = create<GameState>()(
             } while (usedNames.has(newName) && attempts < 50);
             teamToUpdate.name = newName;
             teamToUpdate.isNameCustomized = true;
+            soundManager.playPop();
           }
         });
       },
@@ -158,6 +163,7 @@ export const useGameStore = create<GameState>()(
           state.teams.forEach(t => t.score = 0);
           state.lastGuessedWord = null;
           state.lastPassedWord = null;
+          state.isPaused = false;
         });
       },
       startTurn: () => {
@@ -174,6 +180,7 @@ export const useGameStore = create<GameState>()(
           } else {
             state.currentWord = null;
           }
+          state.isPaused = false;
         });
       },
       endTurn: () => {
@@ -188,6 +195,7 @@ export const useGameStore = create<GameState>()(
           state.turnEndReason = 'time-up';
           state.lastGuessedWord = null;
           state.lastPassedWord = null;
+          soundManager.playTimeUp();
         });
       },
       proceedToNextTurn: () => {
@@ -199,6 +207,7 @@ export const useGameStore = create<GameState>()(
           if (unseenWords.length === 0) {
             if (round === 3) {
               state.gameStatus = 'game-over';
+              soundManager.playGameOver();
               return;
             }
             // If it's a bonus turn, we stay with the same team
@@ -213,6 +222,7 @@ export const useGameStore = create<GameState>()(
             state.currentTeamIndex = nextTeamIndex;
             state.gameStatus = 'get-ready';
           }
+          state.isPaused = false;
         });
       },
       handleCorrect: () => {
@@ -224,6 +234,7 @@ export const useGameStore = create<GameState>()(
             state.guessedWordsThisRound.push(state.currentWord);
             state.lastGuessedWord = state.currentWord;
             state.lastPassedWord = null;
+            soundManager.playCorrect();
           }
           if (state.unseenWords.length > 0) {
             state.currentWord = state.unseenWords.pop()!;
@@ -235,9 +246,11 @@ export const useGameStore = create<GameState>()(
               state.bonusTime = state.timeLeft;
               state.gameStatus = 'turn-summary';
               state.turnEndReason = 'words-exhausted';
+              soundManager.playTimeUp();
             } else {
               state.gameStatus = 'turn-summary';
               state.turnEndReason = 'words-exhausted';
+              soundManager.playTimeUp();
             }
           }
         });
@@ -251,6 +264,7 @@ export const useGameStore = create<GameState>()(
             state.currentWord = state.unseenWords.pop()!;
             const insertIndex = Math.floor(Math.random() * Math.ceil(state.unseenWords.length / 2));
             state.unseenWords.splice(insertIndex, 0, passedWord);
+            soundManager.playPass();
           }
         });
       },
@@ -280,15 +294,20 @@ export const useGameStore = create<GameState>()(
             state.currentWord = wordToRestoreAsCurrent;
             state.lastPassedWord = null;
           }
+          soundManager.playUndo();
         });
       },
       tick: () => {
         set((state) => {
-          if (state.gameStatus === 'playing') {
+          if (state.gameStatus === 'playing' && !state.isPaused) {
             state.timeLeft -= 1;
+            if (state.timeLeft <= 5 && state.timeLeft > 0) {
+              soundManager.playTick();
+            }
           }
         });
       },
+      setIsPaused: (paused) => set({ isPaused: paused }),
       resetSetup: () => {
         set({
           teams: [],
