@@ -39,8 +39,14 @@ const preloadAssets = () => {
 
         // 2. Refresh Translations and then Preload Decks
         try {
-          // Force a background refresh of translation files from the network
+          // Force a background refresh of translation files from the network for immediate UI update
           await refreshTranslations().catch(() => { });
+
+          // 3. Trigger Service Worker to refresh its entire cache from network
+          if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+            console.log('Requesting background cache refresh from SW...');
+            navigator.serviceWorker.controller.postMessage({ type: 'REFRESH_CACHE' });
+          }
 
           const filenames = await fetchDecksManifest();
           // Preload decks sequentially to avoid network congestion

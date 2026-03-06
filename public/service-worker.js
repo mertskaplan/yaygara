@@ -142,3 +142,48 @@ self.addEventListener('fetch', (event) => {
         })
     );
 });
+
+// Listener for manual cache refresh from the main thread
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'REFRESH_CACHE') {
+        console.log('[SW] Background cache refresh triggered');
+        event.waitUntil(
+            caches.open(CACHE_NAME).then(async (cache) => {
+                // 1. Refresh Core Assets & Locales
+                // CORE_ASSETS already includes /locales/tr.json, /locales/en.json, etc.
+                await Promise.all(CORE_ASSETS.map(url => {
+                    return fetch(url, { cache: 'reload' }) // Force network fetch
+                        .then(res => {
+                            if (res.ok) {
+                                console.log(`[SW] Refreshed and cached: ${url}`);
+                                return cache.put(url, res);
+                            }
+                        })
+                        .catch(err => console.warn(`[SW] Failed to refresh ${url}:`, err));
+                }));
+
+                // 2. Refresh Decks
+                try {
+                    const decksRes = await fetch('/decks-manifest.json', { cache: 'reload' });
+                    if (decksRes.ok) {
+                        const decks = await decksRes.json();
+                        const deckUrls = decks.map(filename => `/decks/${filename}`);
+                        await Promise.all(deckUrls.map(url => {
+                            return fetch(url, { cache: 'reload' })
+                                .then(res => {
+                                    if (res.ok) {
+                                        console.log(`[SW] Refreshed and cached deck: ${url}`);
+                                        return cache.put(url, res);
+                                    }
+                                })
+                                .catch(err => console.warn(`[SW] Failed to refresh deck ${url}:`, err));
+                        }));
+                    }
+                } catch (err) {
+                    console.error('[SW] Failed to refresh decks during background update:', err);
+                }
+                console.log('[SW] Background cache refresh complete');
+            })
+        );
+    }
+});
