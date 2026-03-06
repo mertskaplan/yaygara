@@ -1,6 +1,7 @@
 export const translationsCache: Record<string, any> = {};
 const SUPPORTED_LANGUAGES = ['en', 'tr'];
 const pendingFetches: Record<string, Promise<any>> = {};
+
 export const fetchTranslations = async (lang: string) => {
   if (translationsCache[lang]) {
     return translationsCache[lang];
@@ -30,11 +31,30 @@ export const fetchTranslations = async (lang: string) => {
   pendingFetches[lang] = fetchPromise;
   return fetchPromise;
 };
+
 let preloadPromise: Promise<any[]> | null = null;
 export const preloadTranslations = () => {
   if (!preloadPromise) {
     console.log('Preloading all translations...');
     preloadPromise = Promise.all(SUPPORTED_LANGUAGES.map(lang => fetchTranslations(lang)));
   }
+  return preloadPromise;
+};
+
+/**
+ * Forcefully refreshes all translations from the network.
+ * Used during app initialization to ensure the latest versions are loaded in the background.
+ */
+export const refreshTranslations = async () => {
+  console.log('Refreshing all translations in the background...');
+  // Clear the in-memory cache to force a fresh fetch
+  SUPPORTED_LANGUAGES.forEach(lang => {
+    delete translationsCache[lang];
+    delete pendingFetches[lang];
+  });
+
+  // Create a new preloadPromise to allow future calls to preloadTranslations 
+  // to return the new, fresh data.
+  preloadPromise = Promise.all(SUPPORTED_LANGUAGES.map(lang => fetchTranslations(lang)));
   return preloadPromise;
 };

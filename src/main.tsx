@@ -12,7 +12,7 @@ import '@/index.css'
 import { LanguageWrapper } from '@/components/LanguageWrapper';
 import { RootRedirector } from '@/components/RootRedirector';
 import { ThemeManager } from '@/components/ThemeManager';
-import { preloadTranslations } from '@/lib/i18n';
+import { preloadTranslations, refreshTranslations } from '@/lib/i18n';
 import { Suspense, lazy } from 'react';
 
 // Preload all language files on app startup for instant language switching
@@ -32,22 +32,25 @@ const preloadAssets = () => {
     window.addEventListener('load', () => {
       // Small delay to ensure initial load is completely finished
       setTimeout(async () => {
-        // 1. Preload JS Pages
+        // 1. Preload JS Pages (non-blocking)
         import('@/pages/SetupPage');
         setTimeout(() => import('@/pages/GamePage'), 1000);
         setTimeout(() => import('@/pages/ScoreboardPage'), 2000);
 
-        // 2. Preload Decks
+        // 2. Refresh Translations and then Preload Decks
         try {
+          // Force a background refresh of translation files from the network
+          await refreshTranslations().catch(() => { });
+
           const filenames = await fetchDecksManifest();
           // Preload decks sequentially to avoid network congestion
           filenames.forEach((filename: string, index: number) => {
             setTimeout(() => {
               fetchFullDeck(filename).catch(() => { });
-            }, 3000 + (index * 500));
+            }, 1000 + (index * 500));
           });
         } catch (e) {
-          console.error("Failed to preload decks", e);
+          console.error("Failed to refresh translations or preload decks", e);
         }
       }, 2000);
     });
