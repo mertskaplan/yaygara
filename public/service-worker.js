@@ -126,7 +126,7 @@ self.addEventListener('fetch', (event) => {
     // Critical metadata and locales should be updated if possible
     const isCriticalUpdate = url.pathname.endsWith('manifest.json') || url.pathname.includes('/locales/');
     if (isCriticalUpdate) {
-        event.respondWith(networkFirst(event.request));
+        event.respondWith(staleWhileRevalidate(event.request));
         return;
     }
 

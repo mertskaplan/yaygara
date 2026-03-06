@@ -1,3 +1,5 @@
+import { useGameStore } from '@/stores/useGameStore';
+
 export const translationsCache: Record<string, any> = {};
 const SUPPORTED_LANGUAGES = ['en', 'tr'];
 const pendingFetches: Record<string, Promise<any>> = {};
@@ -16,6 +18,13 @@ export const fetchTranslations = async (lang: string) => {
       }
       const data = await response.json();
       translationsCache[lang] = data;
+
+      // Update global store if this is the currently active language
+      const currentLanguage = useGameStore.getState().language;
+      if (lang === currentLanguage) {
+        useGameStore.getState().setTranslations(data);
+      }
+
       delete pendingFetches[lang];
       return data;
     })

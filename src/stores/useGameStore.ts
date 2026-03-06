@@ -39,8 +39,10 @@ interface GameState {
   bonusTime: number | null;
   theme: 'light' | 'dark';
   isPaused: boolean;
+  translations: Record<string, any> | null;
   setLanguage: (lang: Language) => void;
   setTheme: (theme: 'light' | 'dark') => void;
+  setTranslations: (translations: Record<string, any>) => void;
   setTeamCount: (count: number, nameParts: { adjectives: string[], nouns: string[] }) => void;
   updateTeam: (id: number, name: string, color: string) => void;
   regenerateTeamName: (teamId: number, nameParts: { adjectives: string[], nouns: string[] }) => void;
@@ -86,8 +88,10 @@ export const useGameStore = create<GameState>()(
       bonusTime: null,
       theme: typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
       isPaused: false,
+      translations: null,
       setLanguage: (lang) => set({ language: lang, setupStep: 'teams', teams: [], selectedDeck: null, customDeck: null, selectedWordCount: null }),
       setTheme: (theme) => set({ theme }),
+      setTranslations: (translations) => set({ translations }),
       setTeamCount: (count, nameParts) => {
         set((state) => {
           const usedNames = new Set<string>();
@@ -346,6 +350,10 @@ export const useGameStore = create<GameState>()(
     {
       name: 'yaygara-storage',
       storage: createJSONStorage(() => localStorage),
+      partialize: (state) => {
+        const { translations, ...rest } = state;
+        return rest;
+      },
     }
   )
 );

@@ -6,18 +6,27 @@ import { translationsCache, fetchTranslations } from '@/lib/i18n';
 const get = (obj: any, path: string): string | undefined =>
   path.split('.').reduce((acc, part) => acc && acc[part], obj);
 export const useTranslations = () => {
-  const { language } = useGameStore(useShallow(state => ({ language: state.language })));
-  const [translations, setTranslations] = useState<Record<string, any> | null>(translationsCache[language] || null);
+  const { language, translations, setTranslations } = useGameStore(
+    useShallow(state => ({
+      language: state.language,
+      translations: state.translations,
+      setTranslations: state.setTranslations
+    }))
+  );
   const [isLoading, setIsLoading] = useState(!translations);
+
   useEffect(() => {
     const loadTranslations = async () => {
-      setIsLoading(true);
+      // If we already have translations in the store for this language, don't show loading
+      if (!translations) {
+        setIsLoading(true);
+      }
       const data = await fetchTranslations(language);
       setTranslations(data);
       setIsLoading(false);
     };
     loadTranslations();
-  }, [language]);
+  }, [language, translations === null]); // Only re-run if language changes or translations are cleared
   const t = useCallback((key: string, replacements?: Record<string, string | number>): string => {
     if (isLoading || !translations) {
       // Return the key itself as a fallback to prevent blank UI elements
