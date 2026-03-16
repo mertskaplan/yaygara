@@ -134,6 +134,6 @@ This project is licensed under the **Creative Commons Attribution-NonCommercial-
 
 ## ☕ Support
 
-My open-source projects like Yaygara have infrastructure and sustainability costs. To help me create more and keep my projects ad-free and open to everyone, you can support me on **[Kreosus](https://kreosus.com/mertskaplan)**.
+Free software projects like Yaygara have infrastructure and sustainability costs. To ensure similar projects can be developed ad-free and available to everyone, you can provide support via **[Kreosus](https://kreosus.com/mertskaplan)**.
 
 Built with ❤️ by [Mert S. Kaplan](https://mertskaplan.com).
