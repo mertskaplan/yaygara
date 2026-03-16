@@ -90,9 +90,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                             icon={Coffee}
                         >
                             <div className="space-y-3">
-                                <p className="text-slate-600 dark:text-slate-400 text-sm">
-                                    Yaygara gibi ürettiğim özgür yazılımlarım altyapı ve sürdürülebilirlik maliyetleri var. Daha fazlasını üretmem ve projelerimin reklamsız ve herkese açık kalması için <a href="https://kreosus.com/mertskaplan" target="_blank" rel="noopener noreferrer" className="font-bold text-sky-600 dark:text-sky-400 hover:underline">Kreosus</a> üzerinden bana destek olabilirsin.
-                                </p>
+                                <p className="text-slate-600 dark:text-slate-400 text-sm" dangerouslySetInnerHTML={{ __html: t('about.support') }} />
                             </div>
                         </InfoSection>
 

@@ -105,6 +105,7 @@
     "toolsTitle": "Geliştirme Araçları",
     "toolsDescription": "Yaygara’yı ilk olarak Cloudflare Vibe SDK ile geliştirmeye başladım, sonrasında Antigravitiy ile devam ettim. Yazılım sürecinde manuel kodlamanın yanı sıra Gemini, Grok ve ChatGPT gibi büyük dil modellerinden planlama, kodlama ve hata ayıklama aşamalarında yoğun şekilde destek aldım.",
     "outro": "Biraz insan zekâsı, biraz yapay zekâ, bolca kod ve ortaya çıkan: Yaygara! Herkese afiyet olsun.",
+    "support": "Yaygara gibi ürettiğim özgür yazılımlarım altyapı ve sürdürülebilirlik maliyetleri var. Daha fazlasını üretmem ve projelerimin reklamsız ve herkese açık kalması için <a href=\"https://kreosus.com/mertskaplan\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline font-bold\">Kreosus</a> üzerinden bana destek olabilirsin.",
     "closeButton": "Kapat"
   },
   "teamNameGeneration": {
