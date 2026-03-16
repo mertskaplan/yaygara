@@ -91,7 +91,7 @@ docker-compose up -d
 - `public/decks/`: JSON files containing the word decks.
 - `prompts/`: Specialized prompts for AI deck generation.
 
-## File Tree
+## 🌲 File Tree
 
 ```bash
 ├── 📁 prompts
