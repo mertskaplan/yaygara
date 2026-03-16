@@ -27,7 +27,7 @@ const InfoSection = ({ icon: Icon, title, description, children, centered }: { i
         )}
         <div className="flex-1">
             {title && <h4 className="text-lg font-bold text-slate-800 dark:text-slate-200">{title}</h4>}
-            {description && <p className={cn("text-slate-600 dark:text-slate-400 text-sm leading-relaxed", centered && "text-balance")} dangerouslySetInnerHTML={{ __html: description }} />}
+            {description && <p className={cn("text-center text-slate-600 dark:text-slate-400 text-base pt-2", centered && "text-balance")} dangerouslySetInnerHTML={{ __html: description }} />}
             {children}
         </div>
     </div>
@@ -54,27 +54,30 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                 </DialogHeader>
 
                 <ScrollArea className="flex-1 w-full pr-4 overflow-y-auto">
-                    <div className="space-y-8 py-4">
+                    <div className="space-y-6 py-4">
                         <InfoSection description={t('about.intro')} centered />
 
                         <InfoSection description={t('about.purpose')} centered />
 
                         <InfoSection
                             icon={Mail}
-                            description={t('about.contact')}
-                        />
+                        >
+                            <div className="space-y-3">
+                                <p className="text-slate-600 dark:text-slate-400 text-base" dangerouslySetInnerHTML={{ __html: t('about.contact') }} />
+                            </div>
+                        </InfoSection>
 
                         <InfoSection
                             icon={ShieldCheck}
                         >
-                            <div className="mt-2 space-y-2">
-                                <p className="text-slate-600 dark:text-slate-400 text-sm" dangerouslySetInnerHTML={{ __html: t('about.licenseSummary') }} />
-                                <ul className="list-disc list-inside text-slate-600 dark:text-slate-400 text-sm space-y-1 ml-2">
+                            <div>
+                                <p className="text-slate-600 dark:text-slate-400 text-base" dangerouslySetInnerHTML={{ __html: t('about.licenseSummary') }} />
+                                <ul className="list-disc list-inside text-slate-600 dark:text-slate-400 text-base space-y-1 ml-2">
                                     {licensePoints.map((point, i) => (
                                         <li key={i} dangerouslySetInnerHTML={{ __html: point }} />
                                     ))}
                                 </ul>
-                                <p className="text-slate-600 dark:text-slate-400 text-sm">{t('about.licenseSuffix')}</p>
+                                <p className="text-slate-600 dark:text-slate-400 text-base">{t('about.licenseSuffix')}</p>
                             </div>
                         </InfoSection>
 
@@ -82,7 +85,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                             icon={Github}
                         >
                             <div className="space-y-3">
-                                <p className="text-slate-600 dark:text-slate-400 text-sm" dangerouslySetInnerHTML={{ __html: t('about.sourceCode') }} />
+                                <p className="text-slate-600 dark:text-slate-400 text-base" dangerouslySetInnerHTML={{ __html: t('about.sourceCode') }} />
                             </div>
                         </InfoSection>
 
@@ -90,19 +93,26 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                             icon={Coffee}
                         >
                             <div className="space-y-3">
-                                <p className="text-slate-600 dark:text-slate-400 text-sm" dangerouslySetInnerHTML={{ __html: t('about.support') }} />
+                                <p className="text-slate-600 dark:text-slate-400 text-base" dangerouslySetInnerHTML={{ __html: t('about.support') }} />
                             </div>
                         </InfoSection>
 
                         <InfoSection
                             icon={Code2}
-                            description={t('about.toolsDescription')}
-                        />
+                        >
+                            <div className="space-y-3">
+                                <p className="text-slate-600 dark:text-slate-400 text-base" dangerouslySetInnerHTML={{ __html: t('about.toolsDescription') }} />
+                            </div>
+                        </InfoSection>
 
                         <InfoSection
                             icon={Heart}
-                            description={t('about.outro')}
-                        />
+                        >
+                            <div className="space-y-3">
+                                <p className="text-slate-600 dark:text-slate-400 text-base" dangerouslySetInnerHTML={{ __html: t('about.outro') }} />
+                            </div>
+                        </InfoSection>
+
                     </div>
                 </ScrollArea>
 
