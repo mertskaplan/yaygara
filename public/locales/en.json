@@ -101,9 +101,9 @@
       "and do not use for commercial purposes"
     ],
     "licenseSuffix": "you can develop and distribute it as you wish.",
-    "sourceCode": "I've shared the game's source code on <a href=\"https://github.com/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GitHub</a>. If you notice a bug, you can report it, or even contribute directly if you wish. Open source is the way! ❤️",
+    "sourceCode": "You can access the game's source code on <a href=\"https://github.com/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GitHub</a>. If you notice a bug, you can report it, or even contribute directly if you wish. Open source is the way! ❤️",
     "toolsTitle": "Development Tools",
-    "toolsDescription": "I first started developing Yaygara with the Cloudflare Vibe SDK, then continued with Antigravity. In the software process, in addition to manual coding, I received intensive support from large language models such as Gemini, Grok, and ChatGPT in the planning, coding and debugging phases.",
+    "toolsDescription": "Yaygara was initially developed using the Cloudflare Vibe SDK, and later continued with Antigravity. During the software development process, in addition to manual coding, extensive support was received from large language models like Gemini, Grok, and ChatGPT in the planning, coding and debugging phases.",
     "outro": "A little human intelligence, a little artificial intelligence, lots of code and the result: Yaygara! Enjoy, everyone.",
     "support": "Free software projects like Yaygara have infrastructure and sustainability costs. To ensure similar projects can be developed ad-free and available to everyone, you can provide support via <a href=\"https://kreosus.com/mertskaplan\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline font-bold\">Kreosus</a>.",
     "closeButton": "Close"
