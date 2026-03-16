@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Info, Heart, Code2, Mail, ShieldCheck, Github } from 'lucide-react';
+import { Info, Heart, Code2, Mail, ShieldCheck, Github, Coffee } from 'lucide-react';
 import { useTranslations } from '@/hooks/useTranslations';
 import { cn } from '@/lib/utils';
 
@@ -35,7 +35,7 @@ const InfoSection = ({ icon: Icon, title, description, children, centered }: { i
 
 export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
     const { t, translations } = useTranslations();
-    const version = "1.3.0"; // Matching service-worker.js
+    const version = "1.3.1"; // Matching service-worker.js
     const licensePoints = (translations?.about?.licensePoints as string[]) || [];
 
     return (
@@ -83,6 +83,16 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                         >
                             <div className="space-y-3">
                                 <p className="text-slate-600 dark:text-slate-400 text-sm" dangerouslySetInnerHTML={{ __html: t('about.sourceCode') }} />
+                            </div>
+                        </InfoSection>
+
+                        <InfoSection
+                            icon={Coffee}
+                        >
+                            <div className="space-y-3">
+                                <p className="text-slate-600 dark:text-slate-400 text-sm">
+                                    Yaygara gibi ürettiğim özgür yazılımlarım altyapı ve sürdürülebilirlik maliyetleri var. Daha fazlasını üretmem ve projelerimin reklamsız ve herkese açık kalması için <a href="https://kreosus.com/mertskaplan" target="_blank" rel="noopener noreferrer" className="font-bold text-sky-600 dark:text-sky-400 hover:underline">Kreosus</a> üzerinden bana destek olabilirsin.
+                                </p>
                             </div>
                         </InfoSection>
 

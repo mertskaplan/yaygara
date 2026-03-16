@@ -132,4 +132,8 @@ To add a new word deck to the game:
 
 This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
 
+## ☕ Support
+
+My open-source projects like Yaygara have infrastructure and sustainability costs. To help me create more and keep my projects ad-free and open to everyone, you can support me on **[Kreosus](https://kreosus.com/mertskaplan)**.
+
 Built with ❤️ by [Mert S. Kaplan](https://mertskaplan.com).
