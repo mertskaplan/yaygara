@@ -38,8 +38,9 @@ interface GameState {
   turnEndReason: TurnEndReason;
   bonusTime: number | null;
   theme: 'light' | 'dark';
-  isPaused: boolean;
+  isPaused: false | 'visibility' | 'manual';
   translations: Record<string, any> | null;
+  playedDeckProgress: Record<string, 1 | 2 | 3 | 4>;
   setLanguage: (lang: Language) => void;
   setTheme: (theme: 'light' | 'dark') => void;
   setTranslations: (translations: Record<string, any>) => void;
@@ -59,7 +60,7 @@ interface GameState {
   handlePass: () => void;
   undoLastAction: () => void;
   tick: () => void;
-  setIsPaused: (paused: boolean) => void;
+  setIsPaused: (paused: false | 'visibility' | 'manual') => void;
   resetSetup: () => void;
   resetGame: () => void;
 }
@@ -89,6 +90,7 @@ export const useGameStore = create<GameState>()(
       theme: typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
       isPaused: false,
       translations: null,
+      playedDeckProgress: {},
       setLanguage: (lang) => set({ language: lang, setupStep: 'teams', teams: [], selectedDeck: null, customDeck: null, selectedWordCount: null }),
       setTheme: (theme) => set({ theme }),
       setTranslations: (translations) => set({ translations }),
@@ -168,6 +170,10 @@ export const useGameStore = create<GameState>()(
           state.lastGuessedWord = null;
           state.lastPassedWord = null;
           state.isPaused = false;
+          if (state.selectedDeck) {
+            const currentProgress = state.playedDeckProgress[state.selectedDeck.id];
+            state.playedDeckProgress[state.selectedDeck.id] = Math.max(currentProgress || 0, 1) as 1 | 2 | 3 | 4;
+          }
         });
       },
       startTurn: () => {
@@ -211,6 +217,9 @@ export const useGameStore = create<GameState>()(
           if (unseenWords.length === 0) {
             if (round === 3) {
               state.gameStatus = 'game-over';
+              if (state.selectedDeck) {
+                state.playedDeckProgress[state.selectedDeck.id] = 4;
+              }
               soundManager.playGameOver();
               return;
             }
@@ -219,6 +228,10 @@ export const useGameStore = create<GameState>()(
               state.currentTeamIndex = nextTeamIndex;
             }
             state.round += 1;
+            if (state.selectedDeck) {
+              const currentProgress = state.playedDeckProgress[state.selectedDeck.id];
+              state.playedDeckProgress[state.selectedDeck.id] = Math.max(currentProgress || 0, state.round) as 1 | 2 | 3 | 4;
+            }
             state.guessedWordsThisRound = [];
             state.unseenWords = [...words].sort(() => Math.random() - 0.5);
             state.gameStatus = 'get-ready';

@@ -55,6 +55,7 @@
     "visibilityPause": {
       "title": "Timer Paused",
       "description": "The timer was automatically paused because you left the application. Do you want to continue?",
+      "manualDescription": "Game time was paused and the word was automatically passed. Do you want to continue with the next word?",
       "continue": "Continue"
     }
   },

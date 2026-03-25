@@ -6,6 +6,7 @@ interface TimerCircleProps {
   color: string;
   className?: string;
   isPaused?: boolean;
+  onClick?: () => void;
 }
 
 export const TimerCircle: React.FC<TimerCircleProps> = ({
@@ -13,7 +14,8 @@ export const TimerCircle: React.FC<TimerCircleProps> = ({
   duration,
   color,
   className,
-  isPaused = false
+  isPaused = false,
+  onClick
 }) => {
   const radius = 50;
   const circumference = 2 * Math.PI * radius;
@@ -26,7 +28,10 @@ export const TimerCircle: React.FC<TimerCircleProps> = ({
   const isUrgent = timeLeft <= 10;
 
   return (
-    <div className={`relative flex items-center justify-center ${className}`}>
+    <div 
+      className={`relative flex items-center justify-center ${className} ${onClick ? 'cursor-pointer transition-transform hover:scale-105 active:scale-95' : ''}`}
+      onClick={onClick}
+    >
       <svg className="absolute w-full h-full" viewBox="0 0 120 120">
         <circle
           className="text-slate-200 dark:text-slate-700/50"

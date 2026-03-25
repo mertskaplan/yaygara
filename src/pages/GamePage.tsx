@@ -63,6 +63,7 @@ const PlayingScreen = () => {
   const unseenWords = useGameStore(useShallow((state) => state.unseenWords));
   const isPaused = useGameStore(useShallow((state) => state.isPaused));
   const setIsPaused = useGameStore(useShallow((state) => state.setIsPaused));
+  const theme = useGameStore(useShallow((state) => state.theme));
   const { t } = useTranslations();
   const navigate = useNavigate();
   const [isEndGameModalOpen, setIsEndGameModalOpen] = useState(false);
@@ -82,7 +83,7 @@ const PlayingScreen = () => {
   useEffect(() => {
     const handlePause = () => {
       if (gameStatus === 'playing' && !isEndGameModalOpen) {
-        setIsPaused(true);
+        setIsPaused('visibility');
       }
     };
 
@@ -121,9 +122,27 @@ const PlayingScreen = () => {
     setIsActionLocked(true);
     setTimeout(() => setIsActionLocked(false), 1200);
   };
+
+  const handleTimerClick = () => {
+    if (isActionLocked || isEndGameModalOpen || isPaused || !currentWord || unseenWords.length === 0) return;
+    
+    // Skip current word
+    handleActionClick('pass');
+    
+    // Pause the game (this opens the modal)
+    setIsPaused('manual');
+  };
   const teams = useGameStore(useShallow((state) => state.teams));
   const currentTeamIndex = useGameStore(useShallow((state) => state.currentTeamIndex));
   const currentTeam = teams[currentTeamIndex];
+
+  const undoBgStyle = useMemo(() => {
+    if (currentTeam) {
+      const lightness = theme === 'dark' ? 15 : 95;
+      return { backgroundColor: `hsl(${hexToHsl(currentTeam.color, lightness)})` };
+    }
+    return {};
+  }, [currentTeam, theme]);
 
   if (!currentTeam) return null;
 
@@ -143,7 +162,8 @@ const PlayingScreen = () => {
         duration={turnDuration}
         color={currentTeam.color}
         className="w-32 h-32"
-        isPaused={isEndGameModalOpen || isPaused}
+        isPaused={isEndGameModalOpen || !!isPaused}
+        onClick={handleTimerClick}
       />
       <div className="flex-grow flex items-center justify-center w-full my-6">
         <AnimatePresence mode="wait">
@@ -160,7 +180,7 @@ const PlayingScreen = () => {
       <div className="relative grid grid-cols-2 gap-4 w-full">
         <Button
           onClick={() => handleActionClick('pass')}
-          disabled={!currentWord || isActionLocked || unseenWords.length === 0 || isEndGameModalOpen || isPaused}
+          disabled={!currentWord || isActionLocked || unseenWords.length === 0 || isEndGameModalOpen || !!isPaused}
           className="h-24 bg-rose-500 hover:bg-rose-600 text-white rounded-3xl shadow-lg text-3xl font-bold"
         >
           <X className="w-12 h-12" />
@@ -168,9 +188,10 @@ const PlayingScreen = () => {
         <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
           <Button
             onClick={undoLastAction}
-            disabled={(!lastGuessedWord && !lastPassedWord) || isEndGameModalOpen || isPaused}
+            disabled={(!lastGuessedWord && !lastPassedWord) || isEndGameModalOpen || !!isPaused}
             variant="outline"
-            className="h-14 w-14 rounded-full bg-white dark:bg-slate-700 border-0 disabled:hidden z-20 pointer-events-auto shadow-md"
+            className="h-14 w-14 rounded-full border-0 disabled:hidden z-20 pointer-events-auto shadow-md"
+            style={undoBgStyle}
             aria-label="Undo last action"
           >
             <Undo2 className="w-6 h-6" />
@@ -178,7 +199,7 @@ const PlayingScreen = () => {
         </div>
         <Button
           onClick={() => handleActionClick('correct')}
-          disabled={!currentWord || isActionLocked || isEndGameModalOpen || isPaused}
+          disabled={!currentWord || isActionLocked || isEndGameModalOpen || !!isPaused}
           className="h-24 bg-green-500 hover:bg-green-600 text-white rounded-3xl shadow-lg text-3xl font-bold"
         >
           <Check className="w-12 h-12" />
@@ -190,7 +211,8 @@ const PlayingScreen = () => {
         onConfirm={handleConfirmEndGame}
       />
       <VisibilityPauseModal
-        isOpen={isPaused}
+        isOpen={!!isPaused}
+        pauseReason={isPaused}
         onContinue={() => setIsPaused(false)}
       />
     </div>

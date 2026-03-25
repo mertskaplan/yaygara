@@ -158,6 +158,7 @@ const DeckSelection = () => {
   const language = useGameStore((state) => state.language);
   const selectDeck = useGameStore((state) => state.selectDeck);
   const selectedDeck = useGameStore((state) => state.selectedDeck);
+  const playedDeckProgress = useGameStore((state) => state.playedDeckProgress);
   const setSetupStep = useGameStore((state) => state.setSetupStep);
   const customDeck = useGameStore((state) => state.customDeck);
   const setCustomDeck = useGameStore((state) => state.setCustomDeck);
@@ -258,6 +259,7 @@ const DeckSelection = () => {
   const DeckButton = ({ deck, icon: Icon }: { deck: Deck, icon: React.ElementType }) => {
     const wordCount = deck.words?.length || 0;
     const isSelected = selectedDeck?.id === deck.id;
+    const progress = playedDeckProgress?.[deck.id] || 0;
     const difficultyFactor = {
       easy: 4,
       medium: 3,
@@ -268,12 +270,17 @@ const DeckSelection = () => {
       <Button
         onClick={() => selectDeck(deck)}
         variant="outline"
-        className={`w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 whitespace-normal transition-colors duration-200 shadow-none ${isSelected ? 'bg-sky-500 text-white border-sky-500' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 dark:hover:border-sky-700'}`}
+        className={`relative overflow-hidden w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 whitespace-normal transition-colors duration-200 shadow-none ${isSelected ? 'bg-sky-500 text-white border-sky-500' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 dark:hover:border-sky-700'} ${progress === 4 && !isSelected ? 'opacity-90' : ''}`}
       >
-        <div className={cn("p-2 rounded-xl", isSelected ? "bg-white/20" : "bg-sky-50 dark:bg-sky-900/40 text-sky-500 dark:text-sky-400")}>
+        <div className={cn("relative p-2 rounded-xl", isSelected ? "bg-white/20" : "bg-sky-50 dark:bg-sky-900/40 text-sky-500 dark:text-sky-400")}>
           <Icon className="w-8 h-8 flex-shrink-0" />
+          {progress === 4 && (
+            <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full flex items-center justify-center w-4 h-4">
+              <Check className="w-2 h-2 text-white p-1" />
+            </div>
+          )}
         </div>
-        <div className="flex-grow">
+        <div className="flex-grow pb-1">
           <p className="text-lg text-balance">{deck.name}</p>
           <div className={`flex items-center gap-2 text-sm ${isSelected ? 'text-white/80' : 'text-muted-foreground'}`}>
             <span>{t('setup.deckWords', { count: wordCount })}</span>
@@ -283,6 +290,14 @@ const DeckSelection = () => {
             <span>{t('setup.estimatedTime', { time: estimatedTime })}</span>
           </div>
         </div>
+        {/* Progress Bar Container */}
+        {progress > 0 && (
+          <div className="absolute bottom-1 left-0 right-0 h-1 flex px-4">
+            <div className={`h-full rounded-l-full flex-1 mx-[1px] ${progress >= 1 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-slate-700')}`} />
+            <div className={`h-full flex-1 mx-[1px] ${progress >= 2 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-slate-700')}`} />
+            <div className={`h-full rounded-r-full flex-1 mx-[1px] ${progress >= 3 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-slate-700')}`} />
+          </div>
+        )}
       </Button>
     );
   };

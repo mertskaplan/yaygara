@@ -55,6 +55,7 @@
     "visibilityPause": {
       "title": "Süre Duraklatıldı",
       "description": "Uygulamadan ayrıldığınız için süre otomatik olarak duraklatıldı. Devam edilsin mi?",
+      "manualDescription": "Oyun süresi duraklatıldı ve kelime otomatik olarak pas geçildi. Oyuna sıradaki kelime ile devam edilsin mi?",
       "continue": "Devam Et"
     }
   },
@@ -171,7 +172,7 @@
       "Gıcık",
       "Gizemli",
       "Göbekli",
-      "Gölg esiz",
+      "Gölgesiz",
       "Görgüsüz",
       "Gözüpek",
       "Güçlü",

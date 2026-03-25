@@ -12,10 +12,11 @@ import { useTranslations } from '@/hooks/useTranslations';
 
 interface VisibilityPauseModalProps {
     isOpen: boolean;
+    pauseReason?: false | 'visibility' | 'manual';
     onContinue: () => void;
 }
 
-export const VisibilityPauseModal: React.FC<VisibilityPauseModalProps> = ({ isOpen, onContinue }) => {
+export const VisibilityPauseModal: React.FC<VisibilityPauseModalProps> = ({ isOpen, pauseReason, onContinue }) => {
     const { t } = useTranslations();
 
     return (
@@ -26,7 +27,9 @@ export const VisibilityPauseModal: React.FC<VisibilityPauseModalProps> = ({ isOp
                         {t('game.visibilityPause.title')}
                     </AlertDialogTitle>
                     <AlertDialogDescription className="text-center text-slate-600 dark:text-slate-400 text-base pt-2">
-                        {t('game.visibilityPause.description')}
+                        {pauseReason === 'manual' 
+                          ? t('game.visibilityPause.manualDescription') 
+                          : t('game.visibilityPause.description')}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter className="flex justify-center pt-4">
