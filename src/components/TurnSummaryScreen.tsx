@@ -40,7 +40,7 @@ export const TurnSummaryScreen: React.FC = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
-      className="flex flex-col items-center justify-center text-center p-6 bg-white dark:bg-slate-800 rounded-3xl shadow-xl w-full max-w-md"
+      className="flex flex-col items-center justify-center text-center p-6 bg-white dark:bg-card rounded-3xl shadow-xl w-full max-w-md"
     >
       <h1 className="text-4xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-balance">
         {initialBonusTime ? t('game.bonusTurnTitle') : (

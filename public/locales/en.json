@@ -85,7 +85,7 @@
     "passingTitle": "Unlimited Passes",
     "passingDescription": "Couldn't describe a word? No problem! <b>You can pass as many times as you like.</b> Passed words will reappear later in the round. If you accidentally pass or mark a word as correct, you can use the button that appears in the middle to undo the action.",
     "bonusTimeTitle": "Bonus Time",
-    "bonusTimeDescription": "If your team guesses all the words in a round with more than 3 seconds left, you start the next round immediately with that remaining time! Fast players get the advantage.",
+    "bonusTimeDescription": "If your team guesses all the words in a round with more than 3 seconds left, you start the next round immediately with that remaining time! Fast players get the advantage. If a player falls down laughing, you can tap the timer to pause the game without killing the vibe. But don't use this feature to manipulate the game, as the word will change when the timer is paused.",
     "closeButton": "Got It!"
   },
   "about": {

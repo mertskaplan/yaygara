@@ -35,12 +35,12 @@ const InfoSection = ({ icon: Icon, title, description, children, centered }: { i
 
 export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
     const { t, translations } = useTranslations();
-    const version = "1.3.2"; // Matching service-worker.js
+    const version = "1.3.3"; // Matching service-worker.js
     const licensePoints = (translations?.about?.licensePoints as string[]) || [];
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent hideClose className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl">
+            <DialogContent hideClose className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-background rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl">
                 <DialogHeader className="flex-shrink-0">
                     <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center flex items-baseline justify-center gap-2">
                         {t('about.title')}

@@ -17,7 +17,7 @@ export const PWAInstallPrompt: React.FC = () => {
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           className="fixed bottom-4 -translate-x-1/2 w-[calc(100%-2rem)] max-w-md z-50"
         >
-          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg rounded-2xl shadow-lg p-4 flex items-center gap-4 border border-slate-200 dark:border-slate-800">
+          <div className="bg-white/80 dark:bg-background/80 backdrop-blur-lg rounded-2xl shadow-lg p-4 flex items-center gap-4 border border-slate-200 dark:border-border">
             <div className="p-3 bg-sky-100 dark:bg-sky-900/40 rounded-full">
               <DownloadCloud className="w-6 h-6 text-sky-600 dark:text-sky-400" />
             </div>

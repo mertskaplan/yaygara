@@ -87,7 +87,7 @@ const TeamCustomization = () => {
         {teams.map((team) => {
           const otherTeamsColors = usedColors.filter(c => c !== team.color);
           return (
-            <div key={team.id} className="flex flex-col gap-3 p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700">
+            <div key={team.id} className="flex flex-col gap-3 p-4 bg-white dark:bg-card rounded-2xl shadow-md border border-slate-100 dark:border-border">
               <div className="relative w-full">
                 <Input
                   type="text"
@@ -270,7 +270,7 @@ const DeckSelection = () => {
       <Button
         onClick={() => selectDeck(deck)}
         variant="outline"
-        className={`relative overflow-hidden w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 whitespace-normal transition-colors duration-200 shadow-none ${isSelected ? 'bg-sky-500 text-white border-sky-500' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-sky-300 dark:hover:border-sky-700'} ${progress === 4 && !isSelected ? 'opacity-90' : ''}`}
+        className={`relative overflow-hidden w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 whitespace-normal transition-colors duration-200 shadow-none ${isSelected ? 'bg-sky-500 text-white border-sky-500' : 'bg-white dark:bg-card border-slate-200 dark:border-border hover:border-sky-300 dark:hover:border-sky-700'} ${progress === 4 && !isSelected ? 'opacity-90' : ''}`}
       >
         <div className={cn("relative p-2 rounded-xl", isSelected ? "bg-white/20" : "bg-sky-50 dark:bg-sky-900/40 text-sky-500 dark:text-sky-400")}>
           <Icon className="w-8 h-8 flex-shrink-0" />
@@ -293,9 +293,9 @@ const DeckSelection = () => {
         {/* Progress Bar Container */}
         {progress > 0 && (
           <div className="absolute bottom-1 left-0 right-0 h-1 flex px-4">
-            <div className={`h-full rounded-l-full flex-1 mx-[1px] ${progress >= 1 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-slate-700')}`} />
-            <div className={`h-full flex-1 mx-[1px] ${progress >= 2 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-slate-700')}`} />
-            <div className={`h-full rounded-r-full flex-1 mx-[1px] ${progress >= 3 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-slate-700')}`} />
+            <div className={`h-full rounded-l-full flex-1 mx-[1px] ${progress >= 1 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-border')}`} />
+            <div className={`h-full flex-1 mx-[1px] ${progress >= 2 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-border')}`} />
+            <div className={`h-full rounded-r-full flex-1 mx-[1px] ${progress >= 3 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-border')}`} />
           </div>
         )}
       </Button>
@@ -316,7 +316,7 @@ const DeckSelection = () => {
           </>
         )}
         <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".json" className="hidden" />
-        <Button onClick={handleFileUploadClick} variant="outline" className="w-full h-16 text-lg justify-start font-semibold rounded-2xl bg-white/80 dark:bg-slate-800/80 border-dashed border-2 border-slate-300 dark:border-slate-600 hover:border-sky-400 hover:bg-sky-50 dark:hover:bg-sky-900/20">
+        <Button onClick={handleFileUploadClick} variant="outline" className="w-full h-16 text-lg justify-start font-semibold rounded-2xl bg-white/80 dark:bg-card/80 border-dashed border-2 border-slate-300 dark:border-border hover:border-sky-400 hover:bg-sky-50 dark:hover:bg-sky-900/20">
           <Upload className="mr-4 text-sky-500" /> {t('setup.uploadDeck')}
         </Button>
         {/* AI Deck Constructor Link */}
@@ -369,7 +369,7 @@ const WordCountSelection = () => {
       <div className="h-setup-content space-y-4 p-1">
         <div className="space-y-4">
           <p className="text-slate-500 dark:text-slate-400 text-center px-4 text-balance">{t('setup.wordCountDescription')}</p>
-          <div className="bg-white dark:bg-slate-800 p-4 rounded-3xl shadow-md space-y-3 border border-slate-100 dark:border-slate-700">
+          <div className="bg-white dark:bg-card p-4 rounded-3xl shadow-md space-y-3 border border-slate-100 dark:border-border">
             <div className="text-center">
               <span className="text-5xl font-black text-sky-500 dark:text-sky-400 font-display drop-shadow-sm">{count}</span>
               <p className="text-slate-400 dark:text-slate-500 tracking-widest text-xs">{t('setup.deckWords', { count: '' }).trim()}</p>
@@ -385,7 +385,7 @@ const WordCountSelection = () => {
         </div>
         <div className="space-y-3">
           <p className="text-slate-500 dark:text-slate-400 text-center px-4 text-balance">{t('setup.turnDurationDescription')}</p>
-          <div className="bg-white dark:bg-slate-800 p-4 rounded-3xl shadow-md space-y-3 border border-slate-100 dark:border-slate-700">
+          <div className="bg-white dark:bg-card p-4 rounded-3xl shadow-md space-y-3 border border-slate-100 dark:border-border">
             <div className="text-center">
               <span className="text-5xl font-black text-sky-500 dark:text-sky-400 font-display drop-shadow-sm">{turnDuration}</span>
               <p className="text-slate-400 dark:text-slate-500 tracking-widest text-xs">{t('setup.seconds')}</p>
@@ -398,6 +398,10 @@ const WordCountSelection = () => {
               step={5}
             />
           </div>
+        </div>
+        <div className="flex items-center justify-center gap-2 pt-2 text-slate-500 dark:text-slate-400">
+          <Clock className="w-5 h-5 text-sky-500" />
+          <span className="font-semibold">{t('setup.estimatedTime', { time: Math.round((count * 3) / ({ easy: 4, medium: 3, hard: 2 }[selectedDeck?.difficulty || 'medium'] || 3)) })}</span>
         </div>
       </div>
       <div className="mt-6">
@@ -448,7 +452,7 @@ export function SetupPage() {
               const isActive = index === currentStepIndex;
               const isCompleted = index < currentStepIndex;
               return (
-                <div key={key} className={`p-3 rounded-full transition-all duration-300 ${isActive ? 'bg-sky-500 text-white scale-110 shadow-lg' : isCompleted ? 'bg-green-400 text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600'}`}>
+                <div key={key} className={`p-3 rounded-full transition-all duration-300 ${isActive ? 'bg-sky-500 text-white scale-110 shadow-lg' : isCompleted ? 'bg-green-400 text-white' : 'bg-slate-200 dark:bg-card text-slate-400 dark:text-slate-600'}`}>
                   <Icon className="h-5 w-5" />
                 </div>
               );

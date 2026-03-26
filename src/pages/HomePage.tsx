@@ -74,7 +74,7 @@ export function HomePage() {
       <ThemeToggle className="!fixed !top-4 !right-4 z-50 shadow-lg" />
       <button
         onClick={() => setIsAboutOpen(true)}
-        className="!fixed !top-[4.5rem] !right-4 z-50 p-3 rounded-2xl bg-white shadow-md transition-all duration-300 hover:scale-110 active:scale-95 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+        className="!fixed !top-[4.5rem] !right-4 z-50 p-3 rounded-2xl bg-white shadow-md transition-all duration-300 hover:scale-110 active:scale-95 dark:bg-card text-slate-500 dark:text-slate-400"
         aria-label={t('home.about')}
       >
         <Info className="w-6 h-6" />

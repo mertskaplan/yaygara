@@ -85,7 +85,7 @@
     "passingTitle": "Sınırsız Pas Hakkı",
     "passingDescription": "Bir kelimeyi anlatamadın mı? Sorun değil! <b>İstediğin kadar pas geçebilirsin.</b> Pas geçilen kelimeler tur içinde daha sonra tekrar karşına çıkacak. Eğer yanlışlıkla pas der ya da kelimeyi doğru olarak işaretlersen ortada çıkan buton ile hatalı işlemi geri alabilirsin.",
     "bonusTimeTitle": "Bonus Süre",
-    "bonusTimeDescription": "Takımınız bir turdaki tüm kelimeleri 3 saniyeden fazla süre kala tahmin ederse, bir sonraki tura o kalan süreyle hemen başlarsınız! Hızlı olan avantajı kapar.",
+    "bonusTimeDescription": "Takımınız bir turdaki tüm kelimeleri 3 saniyeden fazla süre kala tahmin ederse, bir sonraki tura o kalan süreyle hemen başlarsınız! Hızlı olan avantajı kapar. Eğer bir oyuncu gülmekten yere düşerse oyunu soğutmadan süreyi duraklatmak için zaman sayacına dokunabilirsin. Ama bu özelliği manipülasyon amaçlı kullanma çünkü süre duraklatıldığında kelime değişecek.",
     "closeButton": "Anladım!"
   },
   "about": {

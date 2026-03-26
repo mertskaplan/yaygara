@@ -17,7 +17,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word }) => {
       initial="hidden"
       animate="visible"
       exit="hidden"
-      className="w-full max-w-md bg-white dark:bg-slate-800 rounded-3xl shadow-lg p-8 text-center"
+      className="w-full max-w-md bg-white dark:bg-card rounded-3xl shadow-lg p-8 text-center"
     >
       <h2 className="text-4xl font-extrabold text-slate-800 dark:text-slate-100 font-display tracking-tight text-balance">
         {word.term}

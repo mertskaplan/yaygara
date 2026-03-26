@@ -36,7 +36,7 @@ export const AIDeckConstructorModal: React.FC<AIDeckConstructorModalProps> = ({ 
             <DialogContent
                 hideClose
                 onOpenAutoFocus={(e) => e.preventDefault()}
-                className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl"
+                className="sm:max-w-md w-full h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white dark:bg-background rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 flex flex-col overflow-hidden border-0 dark:border-0 shadow-2xl"
             >
                 <DialogHeader className="flex-shrink-0">
                     <DialogTitle className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 font-display text-center text-balance">
@@ -49,7 +49,7 @@ export const AIDeckConstructorModal: React.FC<AIDeckConstructorModalProps> = ({ 
                     </DialogDescription>
                     <div className="space-y-4 p-1 mt-3">
                         <textarea
-                            className="w-full min-h-64 p-4 text-sm font-sans bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none resize-none transition-all text-slate-700 dark:text-slate-300"
+                            className="w-full min-h-64 p-4 text-sm font-sans bg-white/50 dark:bg-muted/50 border border-slate-200 dark:border-border rounded-xl focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none resize-none transition-all text-slate-700 dark:text-slate-300"
                             value={prompt}
                             onChange={(e) => setPrompt(e.target.value)}
                         />

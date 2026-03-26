@@ -29,7 +29,7 @@ export const EndGameModal: React.FC<EndGameModalProps> = ({ isOpen, onClose, onC
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter className="flex flex-col-reverse sm:flex-row sm:justify-end gap-2 pt-4">
-          <AlertDialogCancel className="h-14 text-lg font-bold rounded-2xl bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200">
+          <AlertDialogCancel className="h-14 text-lg font-bold rounded-2xl bg-white dark:bg-card border-2 border-slate-200 dark:border-border hover:bg-slate-100 dark:hover:bg-accent text-slate-700 dark:text-slate-200">
             {t('game.endGameConfirmation.cancel')}
           </AlertDialogCancel>
           <AlertDialogAction

@@ -33,28 +33,28 @@
   }
 
   .dark {
-    --background: 240 10% 4%;
-    /* Deep Neutral Grey */
+    --background: 240 10% 20%;
+    /* Saturated #333-like gray */
     --foreground: 210 40% 98%;
     /* Soft white */
     --primary: 201 99% 41%;
     --primary-foreground: 210 40% 98%;
-    --muted: 240 5% 15%;
-    --muted-foreground: 215 10% 65%;
-    --border: 240 5% 15%;
+    --muted: 240 10% 28%;
+    --muted-foreground: 215 15% 75%;
+    --border: 240 10% 32%;
     --ring: 201 99% 41%;
-    --card: 240 10% 6%;
+    --card: 240 10% 23%;
     /* Slightly lighter than background */
     --card-foreground: 210 40% 98%;
-    --popover: 240 10% 6%;
+    --popover: 240 10% 23%;
     --popover-foreground: 210 40% 98%;
-    --secondary: 240 5% 15%;
+    --secondary: 240 10% 28%;
     --secondary-foreground: 210 40% 98%;
     --accent: 42 97% 53%;
     --accent-foreground: 210 40% 98%;
     --destructive: 338 100% 40%;
     --destructive-foreground: 210 40% 98%;
-    --input: 240 5% 15%;
+    --input: 240 10% 28%;
   }
 
   * {
@@ -92,11 +92,11 @@
   .dark body {
     background-color: hsl(var(--background));
     background-image:
-      radial-gradient(at 0% 0%, hsla(240, 10%, 10%, 1) 0px, transparent 50%),
-      radial-gradient(at 50% 0%, hsla(240, 10%, 8%, 1) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(240, 10%, 10%, 1) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(240, 10%, 8%, 1) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsla(240, 10%, 10%, 1) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, hsla(240, 10% , 22%, 1) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, hsla(240, 10%, 20%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(240, 10%, 22%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(240, 10%, 20%, 1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(240, 10%, 22%, 1) 0px, transparent 50%);
     background-attachment: fixed;
   }
 }
