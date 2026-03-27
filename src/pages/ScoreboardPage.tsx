@@ -1,12 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { m } from 'framer-motion';
-import { Trophy, ArrowRight, Home } from 'lucide-react';
+import { Trophy, ArrowRight, Home, Send } from 'lucide-react';
 import { useGameStore } from '@/stores/useGameStore';
 import { useShallow } from 'zustand/react/shallow';
 import { Button } from '@/components/ui/button';
 import { useTranslations } from '@/hooks/useTranslations';
+import { TelemetryModal } from '@/components/TelemetryModal';
+import { isTelemetryEnabled } from '@/lib/env';
+
 export function ScoreboardPage() {
+  const [isTelemetryModalOpen, setIsTelemetryModalOpen] = React.useState(false);
   const teams = useGameStore(useShallow((state) => state.teams));
   const gameStatus = useGameStore(useShallow((state) => state.gameStatus));
   const resetGame = useGameStore(useShallow((state) => state.resetGame));
@@ -60,16 +64,34 @@ export function ScoreboardPage() {
             </m.div>
           ))}
         </m.div>
-        <div className="space-y-4">
+        <div className="space-y-4 pt-4 flex flex-col w-full">
           <Button
             variant="ghost"
             onClick={handleBackToHome}
-            className="text-slate-400 hover:text-slate-600 font-bold"
+            className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 font-bold"
           >
             {t('scoreboard.backToHome')}
           </Button>
+
+          {isTelemetryEnabled() && (
+            <Button
+              variant="ghost"
+              onClick={() => setIsTelemetryModalOpen(true)}
+              className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 font-bold"
+            >
+              <Send className="w-4 h-4 mr-2" />
+              {t('scoreboard.sendGameData')}
+            </Button>
+          )}
         </div>
       </main>
+
+      {isTelemetryEnabled() && (
+        <TelemetryModal
+          isOpen={isTelemetryModalOpen}
+          onClose={() => setIsTelemetryModalOpen(false)}
+        />
+      )}
     </div>
   );
 }

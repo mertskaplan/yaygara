@@ -1,3 +1,10 @@
+/*
+    Name: Yaygara
+    Author: Mert S. Kaplan, mail@mertskaplan.com
+    Licence: GNU GPLv3
+    Source: https://github.com/mertskaplan/yaygara
+*/
+
 import { enableMapSet } from "immer";
 enableMapSet();
 import { StrictMode } from 'react'
@@ -64,6 +71,11 @@ const preloadAssets = () => {
 };
 
 preloadAssets();
+
+import { isTelemetryEnabled, getTelemetryUrl } from '@/lib/env';
+if (isTelemetryEnabled()) {
+  console.log(`%c📡 Telemetry: ENABLED\n🔗 Target: ${getTelemetryUrl()}`, 'color: #0ea5e9; font-weight: bold; font-size: 12px;');
+}
 
 const LoadingPage = () => (
   <div className="flex items-center justify-center h-screen-dvh bg-transparent">

@@ -65,7 +65,8 @@
     "winnerTitle": "{teamName} won!",
     "nextTurn": "Next Round",
     "playAgain": "Play Again",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "sendGameData": "Send game data"
   },
   "howToPlay": {
     "title": "How to Play Yaygara?",
@@ -95,13 +96,12 @@
     "purpose": "The goal of the game is not only to entertain but also to help people improve their self-expression skills, strengthen social bonds, and learn new words along the way.<br/>In other words, both brain exercise and fun! 🧠✨",
     "contact": "If you have any suggestions or questions about the game, feel free to <a href=\"https://mertskaplan.com/en/contact\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">get in touch</a>. We can make Yaygara even better together.",
     "licenseTitle": "License & Source Code",
-    "licenseSummary": "Yaygara is published under the <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">CC BY-NC-SA 4.0 license</a>. In summary:",
+    "licenseSummary": "Yaygara is free software; the source code is under the <a href=\"https://github.com/mertskaplan/yaygara/blob/main/LICENSE\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GNU GPLv3</a>, while game content and media are under the <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">CC BY-SA 4.0</a> license. In summary:",
     "licensePoints": [
-      "Attribute the creator <a href=\"https://mertskaplan.com/en\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Mert S. Kaplan</a> and the game name <a href=\"https://yaygara.mertskaplan.com/en\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Yaygara</a> by providing a link,",
-      "keep the same license,",
-      "and do not use for commercial purposes"
+      "Attributing the creator <a href=\"https://mertskaplan.com/en\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Mert S. Kaplan</a> and the game name <a href=\"https://yaygara.mertskaplan.com/en\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Yaygara</a> by providing a link,",
+      "and keeping the same license"
     ],
-    "licenseSuffix": "you can develop and distribute it as you wish.",
+    "licenseSuffix": "under these conditions, you can develop and redistribute it as you wish.",
     "sourceCode": "You can access the game's source code on <a href=\"https://github.com/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GitHub</a>. If you notice a bug, you can report it, or even contribute directly if you wish. Open source is the way! ❤️",
     "toolsTitle": "Development Tools",
     "toolsDescription": "Yaygara was initially developed using the Cloudflare Vibe SDK, and later continued with Antigravity. During the software development process, in addition to manual coding, extensive support was received from large language models like Gemini, Grok, and ChatGPT in the planning, coding and debugging phases.",

@@ -27,7 +27,20 @@ RUN echo 'server { \
         try_files $uri $uri/ /index.html; \
     } \
 }' > /etc/nginx/conf.d/default.conf
+# Create an entrypoint script to inject runtime environment variables into a static file
+RUN echo '#!/bin/sh' > /docker-entrypoint.sh && \
+    echo 'echo "window.__APP_ENV__ = {" > /usr/share/nginx/html/env.js' >> /docker-entrypoint.sh && \
+    echo 'echo "  TELEMETRY_ENABLED: \"$TELEMETRY_ENABLED\"," >> /usr/share/nginx/html/env.js' >> /docker-entrypoint.sh && \
+    echo 'echo "  TELEMETRY_URL: \"$TELEMETRY_URL\"" >> /usr/share/nginx/html/env.js' >> /docker-entrypoint.sh && \
+    echo 'echo "};" >> /usr/share/nginx/html/env.js' >> /docker-entrypoint.sh && \
+    echo 'exec nginx -g "daemon off;"' >> /docker-entrypoint.sh && \
+    chmod +x /docker-entrypoint.sh
+
+# Define default environment variables
+ENV TELEMETRY_ENABLED=false
+ENV TELEMETRY_URL=""
+
 # Expose port 80 to the outside world
 EXPOSE 80
-# Start Nginx when the container launches
-CMD ["nginx", "-g", "daemon off;"]
+# Start the entrypoint script
+CMD ["/docker-entrypoint.sh"]

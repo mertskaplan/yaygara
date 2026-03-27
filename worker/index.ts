@@ -1,3 +1,10 @@
+/*
+    Name: Yaygara
+    Author: Mert S. Kaplan, mail@mertskaplan.com
+    Licence: GNU GPLv3
+    Source: https://github.com/mertskaplan/yaygara
+*/
+
 // Making changes to this file is **STRICTLY** forbidden. Please add your routes in `userRoutes.ts` file.
 
 import { Hono } from 'hono';
@@ -43,7 +50,7 @@ app.use('*', logger());
 
 app.use('/api/*', cors({ origin: '*', allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], allowHeaders: ['Content-Type', 'Authorization'] }));
 
-app.get('/api/health', (c) => c.json({ success: true, data: { status: 'healthy', timestamp: new Date().toISOString() }}));
+app.get('/api/health', (c) => c.json({ success: true, data: { status: 'healthy', timestamp: new Date().toISOString() } }));
 
 app.post('/api/client-errors', async (c) => {
   try {

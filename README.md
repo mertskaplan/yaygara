@@ -1,8 +1,12 @@
 # Yaygara
 
+![Static Badge](https://img.shields.io/badge/Open_Source-%E2%99%A5-turquoise) [![GitHub License](https://img.shields.io/github/license/mertskaplan/yaygara)](https://github.com/mertskaplan/yaygara/blob/main/LICENSE) [![Docker](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/mertskaplan/yaygara/) [![GitHub release](https://img.shields.io/github/release/mertskaplan/yaygara.svg)](https://github.com/mertskaplan/yaygara/releases/) [![GitHub latest commit](https://badgen.net/github/last-commit/mertskaplan/yaygara)](https://GitHub.com/mertskaplan/yaygara/commit/) [![Website shields.io](https://img.shields.io/website-up-down-brightgreen-red/http/yaygara.mertskaplan.com.svg)](https://yaygara.mertskaplan.com/) [![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://hub.docker.com/r/mertskaplan/yaygara) ![Docker Image Size](https://img.shields.io/docker/image-size/mertskaplan/yaygara)
+
+[![Maintainability](https://qlty.sh/gh/mertskaplan/projects/yaygara/maintainability.svg)](https://qlty.sh/gh/mertskaplan/projects/yaygara) [![CodeFactor](https://www.codefactor.io/repository/github/mertskaplan/yaygara/badge)](https://www.codefactor.io/repository/github/mertskaplan/yaygara) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mertskaplan/yaygara/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mertskaplan/yaygara/?branch=master) 
+
 Yaygara is a vibrant, mobile-first, and offline-ready party game based on narration and guessing. It brings people together for fast-paced fun, blending the best elements of classic games like Taboo and Charades.
 
-**Live Demo:** [https://yaygara.mertskaplan.com](https://yaygara.mertskaplan.com)
+**Live:** [yaygara.mertskaplan.com](https://yaygara.mertskaplan.com)
 
 ## 📱 Screenshots
 
@@ -130,7 +134,7 @@ To add a new word deck to the game:
 
 ## 📄 License
 
-This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
+Yaygara is free software, and its source code is licensed under the **[GNU General Public License v3.0 (GPLv3)](https://github.com/mertskaplan/yaygara/blob/main/LICENSE)**, while its game content and assets are licensed under **[Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)**.
 
 Built with ❤️ by [Mert S. Kaplan](https://mertskaplan.com).
 

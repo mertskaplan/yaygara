@@ -41,6 +41,10 @@ interface GameState {
   isPaused: false | 'visibility' | 'manual';
   translations: Record<string, any> | null;
   playedDeckProgress: Record<string, 1 | 2 | 3 | 4>;
+  gameId: string | null;
+  gameStartTime: number | null;
+  gameEndTime: number | null;
+  activePlaySeconds: number;
   setLanguage: (lang: Language) => void;
   setTheme: (theme: 'light' | 'dark') => void;
   setTranslations: (translations: Record<string, any>) => void;
@@ -91,6 +95,10 @@ export const useGameStore = create<GameState>()(
       isPaused: false,
       translations: null,
       playedDeckProgress: {},
+      gameId: null,
+      gameStartTime: null,
+      gameEndTime: null,
+      activePlaySeconds: 0,
       setLanguage: (lang) => set({ language: lang, setupStep: 'teams', teams: [], selectedDeck: null, customDeck: null, selectedWordCount: null }),
       setTheme: (theme) => set({ theme }),
       setTranslations: (translations) => set({ translations }),
@@ -170,6 +178,10 @@ export const useGameStore = create<GameState>()(
           state.lastGuessedWord = null;
           state.lastPassedWord = null;
           state.isPaused = false;
+          state.gameId = `ygr-${crypto.randomUUID()}`;
+          state.gameStartTime = Date.now();
+          state.gameEndTime = null;
+          state.activePlaySeconds = 0;
           if (state.selectedDeck) {
             const currentProgress = state.playedDeckProgress[state.selectedDeck.id];
             state.playedDeckProgress[state.selectedDeck.id] = Math.max(currentProgress || 0, 1) as 1 | 2 | 3 | 4;
@@ -217,6 +229,7 @@ export const useGameStore = create<GameState>()(
           if (unseenWords.length === 0) {
             if (round === 3) {
               state.gameStatus = 'game-over';
+              state.gameEndTime = Date.now();
               if (state.selectedDeck) {
                 state.playedDeckProgress[state.selectedDeck.id] = 4;
               }
@@ -317,6 +330,7 @@ export const useGameStore = create<GameState>()(
       tick: () => {
         set((state) => {
           if (state.gameStatus === 'playing' && !state.isPaused) {
+            state.activePlaySeconds += 1;
             state.timeLeft -= 1;
             if (state.timeLeft <= 5 && state.timeLeft > 0) {
               soundManager.playTick();
@@ -334,6 +348,10 @@ export const useGameStore = create<GameState>()(
           setupStep: 'teams',
           selectedWordCount: null,
           turnDuration: DEFAULT_TURN_DURATION,
+          gameId: null,
+          gameStartTime: null,
+          gameEndTime: null,
+          activePlaySeconds: 0,
         });
       },
       resetGame: () => {
@@ -357,6 +375,10 @@ export const useGameStore = create<GameState>()(
           bonusTime: null,
           selectedWordCount: null,
           turnDuration: DEFAULT_TURN_DURATION,
+          gameId: null,
+          gameStartTime: null,
+          gameEndTime: null,
+          activePlaySeconds: 0,
         });
       },
     })),

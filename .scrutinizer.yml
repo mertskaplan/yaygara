@@ -1,0 +1,47 @@
+# .scrutinizer.yml configuration for Yaygara (React + TypeScript)
+build:
+  environment:
+    node: 20
+  nodes:
+    analysis:
+      tests:
+        override:
+          - js-inspect
+          - js-analysis
+
+filter:
+  excluded_paths:
+    - 'node_modules/*'
+    - 'dist/*'
+    - 'public/*'
+    - 'prompts/*'
+    - '.github/*'
+    - 'worker/*'
+    - 'postcss.config.js'
+    - 'tailwind.config.js'
+    - 'eslint.config.js'
+    - 'vite.config.ts'
+    - 'tsconfig*.json'
+    - 'bun.lock'
+    - 'Dockerfile'
+    - 'docker-compose.yml'
+    - 'wrangler.jsonc'
+    - '.dockerignore'
+    - '.gitignore'
+    - 'LICENSE'
+    - 'README.md'
+
+checks:
+  javascript:
+    use_eslint: true
+    code_rating: true
+    duplicate_code_checks: true
+    complexity_checks: true
+    jsdoc_checks: true
+    # Bug detection
+    no_undef: true
+    no_unused_vars: true
+    no_unreachable: true
+    # Best practices
+    eqeqeq: true
+    curly: true
