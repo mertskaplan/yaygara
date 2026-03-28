@@ -45,6 +45,8 @@ interface GameState {
   gameStartTime: number | null;
   gameEndTime: number | null;
   activePlaySeconds: number;
+  totalPasses: number;
+  totalUndos: number;
   setLanguage: (lang: Language) => void;
   setTheme: (theme: 'light' | 'dark') => void;
   setTranslations: (translations: Record<string, any>) => void;
@@ -99,6 +101,8 @@ export const useGameStore = create<GameState>()(
       gameStartTime: null,
       gameEndTime: null,
       activePlaySeconds: 0,
+      totalPasses: 0,
+      totalUndos: 0,
       setLanguage: (lang) => set({ language: lang, setupStep: 'teams', teams: [], selectedDeck: null, customDeck: null, selectedWordCount: null }),
       setTheme: (theme) => set({ theme }),
       setTranslations: (translations) => set({ translations }),
@@ -182,6 +186,8 @@ export const useGameStore = create<GameState>()(
           state.gameStartTime = Date.now();
           state.gameEndTime = null;
           state.activePlaySeconds = 0;
+          state.totalPasses = 0;
+          state.totalUndos = 0;
           if (state.selectedDeck) {
             const currentProgress = state.playedDeckProgress[state.selectedDeck.id];
             state.playedDeckProgress[state.selectedDeck.id] = Math.max(currentProgress || 0, 1) as 1 | 2 | 3 | 4;
@@ -294,6 +300,7 @@ export const useGameStore = create<GameState>()(
             state.currentWord = state.unseenWords.pop()!;
             const insertIndex = Math.floor(Math.random() * Math.ceil(state.unseenWords.length / 2));
             state.unseenWords.splice(insertIndex, 0, passedWord);
+            state.totalPasses += 1;
             soundManager.playPass();
           }
         });
@@ -324,6 +331,7 @@ export const useGameStore = create<GameState>()(
             state.currentWord = wordToRestoreAsCurrent;
             state.lastPassedWord = null;
           }
+          state.totalUndos += 1;
           soundManager.playUndo();
         });
       },
@@ -352,6 +360,8 @@ export const useGameStore = create<GameState>()(
           gameStartTime: null,
           gameEndTime: null,
           activePlaySeconds: 0,
+          totalPasses: 0,
+          totalUndos: 0,
         });
       },
       resetGame: () => {
@@ -379,6 +389,8 @@ export const useGameStore = create<GameState>()(
           gameStartTime: null,
           gameEndTime: null,
           activePlaySeconds: 0,
+          totalPasses: 0,
+          totalUndos: 0,
         });
       },
     })),

@@ -33,7 +33,9 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
     gameEndTime,
     activePlaySeconds,
     teams,
-    gameId
+    gameId,
+    totalPasses,
+    totalUndos
   } = useGameStore(useShallow((state) => ({
     language: state.language,
     selectedDeck: state.selectedDeck,
@@ -42,7 +44,9 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
     gameEndTime: state.gameEndTime,
     activePlaySeconds: state.activePlaySeconds,
     teams: state.teams,
-    gameId: state.gameId
+    gameId: state.gameId,
+    totalPasses: state.totalPasses,
+    totalUndos: state.totalUndos
   })));
 
   const handleSubmit = async () => {
@@ -60,7 +64,12 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
       timestamp: new Date().toISOString(),
       interface_language: language,
       deck_id: selectedDeck.id,
+      deck_difficulty: selectedDeck.difficulty,
+      deck_total_words: selectedDeck.words?.length || 0,
+      liked: liked,
       total_words_played: words.length,
+      total_passes: totalPasses,
+      total_undos: totalUndos,
       estimated_duration_min: estimatedTimeMin,
       duration_total_min: Math.max(1, Math.round((gameEndTime - gameStartTime) / 60000)),
       duration_active_min: Math.max(0, Math.round(activePlaySeconds / 60)),
@@ -68,7 +77,6 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
         team_id: index + 1,
         score: team.score
       })),
-      liked: liked,
       verification_code: gameId?.split('-').pop()?.toUpperCase() || 'UNKNOWN'
     };
 
@@ -152,8 +160,8 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
               <button
                 onClick={() => setLiked(true)}
                 className={`flex flex-col items-center justify-center p-4 rounded-2xl border-2 transition-all ${liked === true
-                    ? 'border-sky-500 bg-sky-50 dark:bg-sky-900/20 text-sky-600 dark:text-sky-400'
-                    : 'border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700'
+                  ? 'border-sky-500 bg-sky-50 dark:bg-sky-900/20 text-sky-600 dark:text-sky-400'
+                  : 'border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700'
                   }`}
               >
                 <ThumbsUp className={`w-6 h-6 mb-2 ${liked === true ? 'fill-sky-500' : ''}`} />
@@ -162,8 +170,8 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
               <button
                 onClick={() => setLiked(false)}
                 className={`flex flex-col items-center justify-center p-4 rounded-2xl border-2 transition-all ${liked === false
-                    ? 'border-rose-500 bg-rose-50 dark:bg-rose-900/20 text-rose-600 dark:text-rose-400'
-                    : 'border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700'
+                  ? 'border-rose-500 bg-rose-50 dark:bg-rose-900/20 text-rose-600 dark:text-rose-400'
+                  : 'border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700'
                   }`}
               >
                 <ThumbsDown className={`w-6 h-6 mb-2 ${liked === false ? 'fill-rose-500' : ''}`} />
