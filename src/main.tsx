@@ -51,7 +51,12 @@ const preloadAssets = () => {
 
           // 3. Trigger Service Worker to refresh its entire cache from network
           if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-            console.log('Requesting background cache refresh from SW...');
+            console.log('Configuring SW and requesting background cache refresh...');
+            const telemetryUrl = getTelemetryUrl();
+            navigator.serviceWorker.controller.postMessage({ 
+              type: 'SET_CONFIG', 
+              telemetryUrl: telemetryUrl 
+            });
             navigator.serviceWorker.controller.postMessage({ type: 'REFRESH_CACHE' });
           }
 
@@ -159,6 +164,28 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js').then(registration => {
       console.log('SW registered: ', registration);
+      
+      // Ensure the newly registered SW also gets the config
+      const sendConfig = () => {
+        const sw = registration.active || registration.waiting || registration.installing;
+        if (sw) {
+          sw.postMessage({ 
+            type: 'SET_CONFIG', 
+            telemetryUrl: getTelemetryUrl() 
+          });
+        }
+      };
+
+      if (registration.active) {
+        sendConfig();
+      } else {
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          newWorker?.addEventListener('statechange', () => {
+            if (newWorker.state === 'activated') sendConfig();
+          });
+        });
+      }
     }).catch(registrationError => {
       console.log('SW registration failed: ', registrationError);
     });

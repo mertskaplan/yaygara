@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yaygara-v1.3.4';
+const CACHE_NAME = 'yaygara-v1.3.6';
 const CORE_ASSETS = [
     '/',
     '/index.html',
@@ -13,6 +13,8 @@ const CORE_ASSETS = [
     '/icons/icon-512x512.png',
     '/yaygara.svg'
 ];
+
+let telemetryUrl = '';
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
@@ -63,9 +65,12 @@ async function staleWhileRevalidate(request) {
             cache.put(request, networkResponse.clone());
         }
         return networkResponse;
-    }).catch(() => { });
+    });
 
-    return cachedResponse || networkPromise;
+    // Ensure we always return a valid Response to avoid SW crashes
+    return cachedResponse || networkPromise.catch(() => {
+        return new Response('Network error occurred', { status: 408, headers: { 'Content-Type': 'text/plain' } });
+    });
 }
 
 async function networkFirst(request) {
@@ -95,12 +100,21 @@ async function cacheFirst(request) {
         }
         return networkResponse;
     } catch (err) {
-        return null;
+        return new Response('Resource not available offline', { status: 503, headers: { 'Content-Type': 'text/plain' } });
     }
 }
 
 self.addEventListener('fetch', (event) => {
     const url = new URL(event.request.url);
+
+    // Skip telemetry requests (explicit exception)
+    if (telemetryUrl && event.request.url.startsWith(telemetryUrl)) return;
+
+    // Skip non-GET requests (like telemetry POST)
+    if (event.request.method !== 'GET') return;
+
+    // Skip external API requests (like telemetry domain)
+    if (url.origin !== self.location.origin) return;
 
     if (event.request.mode === 'navigate') {
         event.respondWith(
@@ -151,7 +165,16 @@ self.addEventListener('fetch', (event) => {
 
 // Listener for manual cache refresh from the main thread
 self.addEventListener('message', (event) => {
-    if (event.data && event.data.type === 'REFRESH_CACHE') {
+    if (!event.data) return;
+
+    if (event.data.type === 'SET_CONFIG') {
+        if (event.data.telemetryUrl) {
+            telemetryUrl = event.data.telemetryUrl;
+            console.log('[SW] Telemetry URL configured:', telemetryUrl);
+        }
+    }
+
+    if (event.data.type === 'REFRESH_CACHE') {
         console.log('[SW] Background cache refresh triggered');
         event.waitUntil(
             caches.open(CACHE_NAME).then(async (cache) => {
