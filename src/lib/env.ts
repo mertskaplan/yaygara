@@ -22,5 +22,9 @@ export const isTelemetryEnabled = (): boolean => {
 };
 
 export const getTelemetryUrl = (): string => {
-  return getEnv('TELEMETRY_URL') || '';
+  const url = getEnv('TELEMETRY_URL') || '';
+  if (url.startsWith('http://')) {
+    return url.replace('http://', 'https://');
+  }
+  return url;
 };
