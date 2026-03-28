@@ -578,5 +578,17 @@
     "description": "Yaygara, 4–16 kişiyle oynanan, anlatma ve tahmine dayalı eğlenceli bir kelime ve parti oyunu.",
     "ogTitle": "Yaygara: Anlatma ve tahmine dayalı eğlenceli parti oyunu",
     "schemaDescription": "Yaygara, 4 ila 16 kişi arasında oynanabilen; tabu ve sessiz sinema karışımı eğlenceli bir parti oyunudur. Oyun, yüz yüze oynanır ve tek bir cihazın elden ele dolaşmasıyla ilerler"
+  },
+  "telemetry": {
+    "thanks": "Teşekkürler",
+    "thanksDescription": "Yaygara'yı daha iyi hale getirmek için oyun verilerinizi ilettiğiniz için teşekkürler",
+    "backToHome": "Ana sayfaya dön",
+    "modalTitle": "Telemetri Onayı",
+    "modalDescription": "Oyunun ve kelime destesinin daha iyi hale getirilebilmesi için oynanılan deste, oyun süresi ve takım puanları gibi oyuna dair veriler anonim olarak oyun yapımcısına iletebilirsiniz.",
+    "question": "Bu oyundaki kelime destesini beğendiniz mi?",
+    "yes": "Evet",
+    "no": "Hayır",
+    "cancel": "İptal",
+    "submit": "Oyun Verilerini Gönder"
   }
 }

@@ -115,16 +115,16 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
             <CheckCircle2 className="w-12 h-12 text-green-500" />
           </div>
           <DialogTitle className="text-2xl font-extrabold text-slate-800 dark:text-slate-100 mb-2">
-            Teşekkürler
+            {t('telemetry.thanks')}
           </DialogTitle>
           <DialogDescription className="text-slate-600 dark:text-slate-400 text-lg mb-8">
-            Yaygara'yı daha iyi hale getirmek için oyun verilerinizi ilettiğiniz için teşekkürler
+            {t('telemetry.thanksDescription')}
           </DialogDescription>
           <Button
             onClick={handleReturnHome}
             className="w-full h-14 bg-sky-500 hover:bg-sky-600 text-white text-lg font-bold rounded-2xl shadow-lg transition-all"
           >
-            Ana sayfaya dön
+            {t('telemetry.backToHome')}
           </Button>
         </DialogContent>
       </Dialog>
@@ -136,17 +136,17 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
       <DialogContent hideClose className="sm:max-w-md w-full bg-white dark:bg-background rounded-3xl p-8 flex flex-col border-0 shadow-2xl">
         <DialogHeader className="mb-6">
           <DialogTitle className="text-xl font-extrabold text-slate-800 dark:text-slate-100 font-display">
-            Telemetri Onayı
+            {t('telemetry.modalTitle')}
           </DialogTitle>
           <DialogDescription className="text-slate-600 dark:text-slate-400 text-sm pt-2">
-            Oyunun ve kelime destesinin daha iyi hale getirilebilmesi için oynanılan deste, oyun süresi ve takım puanları gibi oyuna dair veriler anonim olarak oyun yapımcısına iletebilirsiniz.
+            {t('telemetry.modalDescription')}
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6 flex-1 py-2">
           <div className="space-y-4">
             <p className="font-bold text-sm text-slate-700 dark:text-slate-200">
-              Bu oyundaki kelime destesini beğendiniz mi?
+              {t('telemetry.question')}
             </p>
             <div className="grid grid-cols-2 gap-4">
               <button
@@ -157,7 +157,7 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
                   }`}
               >
                 <ThumbsUp className={`w-6 h-6 mb-2 ${liked === true ? 'fill-sky-500' : ''}`} />
-                <span className="font-bold">Evet</span>
+                <span className="font-bold">{t('telemetry.yes')}</span>
               </button>
               <button
                 onClick={() => setLiked(false)}
@@ -167,7 +167,7 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
                   }`}
               >
                 <ThumbsDown className={`w-6 h-6 mb-2 ${liked === false ? 'fill-rose-500' : ''}`} />
-                <span className="font-bold">Hayır</span>
+                <span className="font-bold">{t('telemetry.no')}</span>
               </button>
             </div>
           </div>
@@ -179,7 +179,7 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
             onClick={onClose}
             className="flex-1 h-14 text-slate-500 font-bold"
           >
-            İptal
+            {t('telemetry.cancel')}
           </Button>
           <Button
             disabled={liked === null || isSubmitting}
@@ -190,8 +190,7 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
               <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
             ) : (
               <div className="flex items-center gap-2">
-                <Send className="w-4 h-4" />
-                Oyun verilerini ilet
+                {t('telemetry.submit')}
               </div>
             )}
           </Button>

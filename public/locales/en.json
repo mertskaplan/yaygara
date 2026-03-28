@@ -530,5 +530,17 @@
     "description": "Fun party game based on narration and guessing",
     "ogTitle": "Yaygara: Fun party game based on narration and guessing",
     "schemaDescription": "A fun party game based on narration and guessing, played by passing a single device from hand to hand among players."
+  },
+  "telemetry": {
+    "thanks": "Thank You",
+    "thanksDescription": "Thank you for submitting game data to help us improve Yaygara",
+    "backToHome": "Back to Home",
+    "modalTitle": "Telemetry Approval",
+    "modalDescription": "To improve the game and word decks, you can anonymously share game data such as played deck, game duration, and team scores with the developer.",
+    "question": "Did you like the word deck in this game?",
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "submit": "Send Game Data"
   }
 }
