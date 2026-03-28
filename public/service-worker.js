@@ -130,6 +130,12 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
+    // env.js should ALWAYS be fresh from the network as it contains runtime variables
+    if (url.pathname.endsWith('/env.js')) {
+        event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
+        return;
+    }
+
     const isUpdateTrigger = url.pathname.endsWith('.json');
     if (isUpdateTrigger) {
         event.respondWith(staleWhileRevalidate(event.request));
