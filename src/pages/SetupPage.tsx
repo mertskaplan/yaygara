@@ -368,13 +368,15 @@ const WordCountSelection = () => {
   return (
     <m.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
       <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6 text-balance">{t('setup.wordCountTitle')}</h2>
-      <div className="h-setup-content space-y-4 p-1">
-        <div className="space-y-4">
-          <p className="text-slate-500 dark:text-slate-400 text-center px-4 text-balance">{t('setup.wordCountDescription')}</p>
+      <div className="h-setup-content space-y-2">
+        <div className="space-y-2">
+          <p className="text-slate-500 dark:text-slate-400 text-center text-balance">{t('setup.wordCountDescription')}</p>
           <div className="bg-white dark:bg-card p-4 rounded-3xl shadow-md space-y-3 border border-slate-100 dark:border-border">
-            <div className="text-center">
-              <span className="text-5xl font-black text-sky-500 dark:text-sky-400 font-display drop-shadow-sm">{count}</span>
-              <p className="text-slate-400 dark:text-slate-500 tracking-widest text-xs">{t('setup.deckWords', { count: '' }).trim()}</p>
+            <div className="flex items-center justify-center">
+              <div className="relative flex items-center justify-center">
+                <span className="text-5xl font-black text-sky-500 dark:text-sky-400 font-display drop-shadow-sm">{count}</span>
+                <p className="absolute left-full ml-2 text-slate-600 dark:text-slate-300 tracking-widest text-xs whitespace-nowrap">{t('setup.deckWords', { count: '' }).trim()}</p>
+              </div>
             </div>
             <Slider
               value={[count]}
@@ -385,12 +387,14 @@ const WordCountSelection = () => {
             />
           </div>
         </div>
-        <div className="space-y-3">
-          <p className="text-slate-500 dark:text-slate-400 text-center px-4 text-balance">{t('setup.turnDurationDescription')}</p>
+        <div className="space-y-2">
+          <p className="text-slate-500 dark:text-slate-400 text-center text-balance">{t('setup.turnDurationDescription')}</p>
           <div className="bg-white dark:bg-card p-4 rounded-3xl shadow-md space-y-3 border border-slate-100 dark:border-border">
-            <div className="text-center">
-              <span className="text-5xl font-black text-sky-500 dark:text-sky-400 font-display drop-shadow-sm">{turnDuration}</span>
-              <p className="text-slate-400 dark:text-slate-500 tracking-widest text-xs">{t('setup.seconds')}</p>
+            <div className="flex items-center justify-center">
+              <div className="relative flex items-center justify-center">
+                <span className="text-5xl font-black text-sky-500 dark:text-sky-400 font-display drop-shadow-sm">{turnDuration}</span>
+                <p className="absolute left-full ml-2 text-slate-600 dark:text-slate-300 tracking-widest text-xs whitespace-nowrap">{t('setup.seconds')}</p>
+              </div>
             </div>
             <Slider
               value={[turnDuration]}
