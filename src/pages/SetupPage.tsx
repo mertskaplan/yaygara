@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, m, Variants } from 'framer-motion';
-import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2, RefreshCw, Clock } from 'lucide-react';
+import { ArrowLeft, Users, Palette, BookOpen, Upload, Check, Loader2, RefreshCw, Clock, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
@@ -345,6 +345,8 @@ const WordCountSelection = () => {
   const startGame = useGameStore((state) => state.startGame);
   const turnDuration = useGameStore((state) => state.turnDuration);
   const setTurnDuration = useGameStore((state) => state.setTurnDuration);
+  const playedDeckProgress = useGameStore((state) => state.playedDeckProgress);
+  const setDeckPlayedStatus = useGameStore((state) => state.setDeckPlayedStatus);
   const navigate = useNavigate();
   const { t, getLocalizedPath } = useTranslations();
   const maxWords = selectedDeck?.words?.length || 5;
@@ -399,9 +401,35 @@ const WordCountSelection = () => {
             />
           </div>
         </div>
-        <div className="flex items-center justify-center gap-2 pt-2 text-slate-500 dark:text-slate-400">
-          <Clock className="w-5 h-5 text-sky-500" />
-          <span className="font-semibold">{t('setup.estimatedTime', { time: Math.round((count * 3) / ({ easy: 4, medium: 3, hard: 2 }[selectedDeck?.difficulty || 'medium'] || 3)) })}</span>
+        <div className="flex flex-col items-center gap-2 pt-2">
+          <div className="flex items-center justify-center gap-2 text-slate-500 dark:text-slate-400">
+            <Clock className="w-5 h-5 text-sky-500" />
+            <span className="font-semibold">{t('setup.estimatedTime', { time: Math.round((count * 3) / ({ easy: 4, medium: 3, hard: 2 }[selectedDeck?.difficulty || 'medium'] || 3)) })}</span>
+          </div>
+
+          <div className="w-full pt-1">
+            {playedDeckProgress[selectedDeck.id] === 4 ? (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full text-slate-500 dark:text-slate-400 hover:text-sky-500 dark:hover:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-900/20 rounded-xl flex items-center gap-2 transition-all"
+                onClick={() => setDeckPlayedStatus(selectedDeck.id, false)}
+              >
+                <RotateCcw className="w-4 h-4" />
+                {t('setup.markAsUnplayed')}
+              </Button>
+            ) : (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="w-full text-slate-500 dark:text-slate-400 hover:text-green-500 dark:hover:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 rounded-xl flex items-center gap-2 transition-all"
+                onClick={() => setDeckPlayedStatus(selectedDeck.id, true)}
+              >
+                <Check className="w-4 h-4" />
+                {t('setup.markAsPlayed')}
+              </Button>
+            )}
+          </div>
         </div>
       </div>
       <div className="mt-6">

@@ -69,6 +69,7 @@ interface GameState {
   setIsPaused: (paused: false | 'visibility' | 'manual') => void;
   resetSetup: () => void;
   resetGame: () => void;
+  setDeckPlayedStatus: (deckId: string, played: boolean) => void;
 }
 export const useGameStore = create<GameState>()(
   persist(
@@ -391,6 +392,15 @@ export const useGameStore = create<GameState>()(
           activePlaySeconds: 0,
           totalPasses: 0,
           totalUndos: 0,
+        });
+      },
+      setDeckPlayedStatus: (deckId, played) => {
+        set((state) => {
+          if (played) {
+            state.playedDeckProgress[deckId] = 4;
+          } else {
+            delete state.playedDeckProgress[deckId];
+          }
         });
       },
     })),

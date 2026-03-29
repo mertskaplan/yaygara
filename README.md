@@ -85,6 +85,34 @@ docker-compose up -d
    bun run dev
    ```
 
+## 📊 Telemetry
+
+Yaygara includes an optional telemetry system to help improve game balance and deck quality.
+
+- **Disabled by Default:** Telemetry is completely inactive unless explicitly enabled.
+- **User Consent:** When enabled, game data is only submitted at the end of the game if the user explicitly chooses to share it.
+- **Anonymous Data:** Only game-related data (such as played deck, game duration, and team scores) is collected.
+
+To use telemetry, you must also set up the [Yaygara Telemetry](https://github.com/mertskaplan/yaygara-telemetry) software.
+
+### Docker Configuration
+Add these environment variables to your `docker-compose.yml` file:
+
+```yaml
+    environment:
+      - TELEMETRY_ENABLED=true
+      - TELEMETRY_URL=https://lab.mertskaplan.com/yaygara-telemetry/api
+```
+
+### Local Development
+Run the project with the environment variables:
+
+```bash
+VITE_TELEMETRY_ENABLED=true VITE_TELEMETRY_URL=https://lab.mertskaplan.com/yaygara-telemetry/api bun run dev
+```
+
+> You can visit *[lab.mertskaplan.com/yaygara-telemetry/](https://lab.mertskaplan.com/yaygara-telemetry/)* (or *[test mode](https://lab.mertskaplan.com/yaygara-telemetry?test)*) to see the telemetry data for the main Yaygara repository. The API address will not accept data from your server. Therefore, you need to set up your own telemetry service and configure the address accordingly.
+
 ## 📂 Project Structure
 
 - `src/components/`: Reusable UI components and modals.

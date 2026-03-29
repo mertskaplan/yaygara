@@ -9,7 +9,8 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Info, Heart, Code2, Mail, ShieldCheck, Github, Coffee } from 'lucide-react';
+import { Info, Heart, Code2, Mail, ShieldCheck, Github, Coffee, Satellite } from 'lucide-react';
+import { isTelemetryEnabled } from '@/lib/env.ts';
 import { useTranslations } from '@/hooks/useTranslations';
 import { cn } from '@/lib/utils';
 
@@ -35,7 +36,7 @@ const InfoSection = ({ icon: Icon, title, description, children, centered }: { i
 
 export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
     const { t, translations } = useTranslations();
-    const version = "1.3.6"; // Matching service-worker.js
+    const version = "1.4.0"; // Matching service-worker.js
     const licensePoints = (translations?.about?.licensePoints as string[]) || [];
 
     return (
@@ -66,6 +67,16 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                                 <p className="text-slate-600 dark:text-slate-400 text-base" dangerouslySetInnerHTML={{ __html: t('about.contact') }} />
                             </div>
                         </InfoSection>
+
+                        {isTelemetryEnabled() && (
+                            <InfoSection
+                                icon={Satellite}
+                            >
+                                <div className="space-y-3">
+                                    <p className="text-slate-600 dark:text-slate-400 text-base" dangerouslySetInnerHTML={{ __html: t('about.telemetryInfo') }} />
+                                </div>
+                            </InfoSection>
+                        )}
 
                         <InfoSection
                             icon={ShieldCheck}
