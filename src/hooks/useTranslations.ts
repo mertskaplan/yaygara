@@ -15,10 +15,12 @@ export const useTranslations = () => {
   );
   const [isLoading, setIsLoading] = useState(!translations);
 
+  const isTranslationsNull = translations === null;
+
   useEffect(() => {
     const loadTranslations = async () => {
       // If we already have translations in the store for this language, don't show loading
-      if (!translations) {
+      if (isTranslationsNull) {
         setIsLoading(true);
       }
       const data = await fetchTranslations(language);
@@ -26,7 +28,7 @@ export const useTranslations = () => {
       setIsLoading(false);
     };
     loadTranslations();
-  }, [language, translations === null]); // Only re-run if language changes or translations are cleared
+  }, [language, isTranslationsNull, setTranslations]); // Only re-run if language changes or translations are cleared
   const t = useCallback((key: string, replacements?: Record<string, string | number>): string => {
     if (isLoading || !translations) {
       // Return the key itself as a fallback to prevent blank UI elements

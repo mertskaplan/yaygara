@@ -1,0 +1,183 @@
+{
+    "id": "vibe-check.en",
+    "name": "Vibe Check",
+    "language": "en",
+    "difficulty": "medium",
+    "words": [
+        {
+            "term": "Narcissist",
+            "hint": "Someone who is completely obsessed with their own beauty and self",
+            "difficulty": 3
+        },
+        {
+            "term": "Compass",
+            "hint": "The tool travelers used for centuries to find magnetic north",
+            "difficulty": 1
+        },
+        {
+            "term": "Blind Spot",
+            "hint": "An area where a driver or person simply cannot see what is happening",
+            "difficulty": 2
+        },
+        {
+            "term": "Silent Scream",
+            "hint": "A metaphorical cry of agony that no one else can hear",
+            "difficulty": 2
+        },
+        {
+            "term": "Black Box",
+            "hint": "The flight data recorder experts look for after a plane incident",
+            "difficulty": 2
+        },
+        {
+            "term": "Bermuda Triangle",
+            "hint": "The mysterious ocean zone where vessels supposedly disappear",
+            "difficulty": 2
+        },
+        {
+            "term": "Forbidden Fruit",
+            "hint": "Something tempting that you are strictly not allowed to have",
+            "difficulty": 2
+        },
+        {
+            "term": "Devil's Advocate",
+            "hint": "Arguing against an idea for the sake of exploring every side",
+            "difficulty": 2
+        },
+        {
+            "term": "Titanic",
+            "hint": "The unsinkable ship that struck an iceberg on its first voyage",
+            "difficulty": 2
+        },
+        {
+            "term": "The Matrix",
+            "hint": "A movie about choosing between a red pill and a simulated reality",
+            "difficulty": 2
+        },
+        {
+            "term": "Pollyanna",
+            "hint": "Someone who is unrealistically positive in every situation",
+            "difficulty": 2
+        },
+        {
+            "term": "White Lie",
+            "hint": "A small, harmless untruth told to spare someone's feelings",
+            "difficulty": 2
+        },
+        {
+            "term": "Selfie",
+            "hint": "Holding your phone out to snap a picture of your own face",
+            "difficulty": 1
+        },
+        {
+            "term": "Alarm Clock",
+            "hint": "The annoying device that forces you to wake up for work",
+            "difficulty": 1
+        },
+        {
+            "term": "Mummy",
+            "hint": "A preserved body from old Egypt wrapped in linen strips",
+            "difficulty": 1
+        },
+        {
+            "term": "Snowman",
+            "hint": "A winter figure made of three frozen spheres with a carrot nose",
+            "difficulty": 1
+        },
+        {
+            "term": "Traffic Light",
+            "hint": "The street signal that tells you when it is safe to go or stop",
+            "difficulty": 1
+        },
+        {
+            "term": "Popcorn",
+            "hint": "The classic snack you buy in a large tub at the cinema",
+            "difficulty": 1
+        },
+        {
+            "term": "Lemonade",
+            "hint": "A refreshing yellow drink made with citrus juice and sugar",
+            "difficulty": 1
+        },
+        {
+            "term": "Soap",
+            "hint": "The slippery bar you use with water to get clean in the tub",
+            "difficulty": 1
+        },
+        {
+            "term": "Bucket List",
+            "hint": "All the things you want to achieve before you finally expire",
+            "difficulty": 2
+        },
+        {
+            "term": "Catfishing",
+            "hint": "Pretending to be a different person on a dating app",
+            "difficulty": 2
+        },
+        {
+            "term": "Flex",
+            "hint": "Showing off your wealth or success to make others jealous",
+            "difficulty": 2
+        },
+        {
+            "term": "Lowkey",
+            "hint": "Doing something quietly or secretly without drawing attention",
+            "difficulty": 2
+        },
+        {
+            "term": "Salty",
+            "hint": "Feeling upset or bitter about a minor loss or situation",
+            "difficulty": 2
+        },
+        {
+            "term": "Sus",
+            "hint": "Slang for something that seems very shady or suspicious",
+            "difficulty": 1
+        },
+        {
+            "term": "Woke",
+            "hint": "Being highly aware of social justice issues and inequalities",
+            "difficulty": 2
+        },
+        {
+            "term": "No Cap",
+            "hint": "Slang used to insist that you are telling the absolute truth",
+            "difficulty": 2
+        },
+        {
+            "term": "Main Character Energy",
+            "hint": "Acting as if the entire world revolves around your life",
+            "difficulty": 2
+        },
+        {
+            "term": "Side Eye",
+            "hint": "A look of judgment or disbelief given to someone nearby",
+            "difficulty": 1
+        },
+        {
+            "term": "Tea",
+            "hint": "The slang word for hot gossip being shared among friends",
+            "difficulty": 1
+        },
+        {
+            "term": "Simp",
+            "hint": "Doing way too much for someone you have a crush on",
+            "difficulty": 2
+        },
+        {
+            "term": "Ghosting",
+            "hint": "Cutting off all communication without any explanation",
+            "difficulty": 2
+        },
+        {
+            "term": "Clout",
+            "hint": "Having power, influence, or fame within social circles",
+            "difficulty": 2
+        },
+        {
+            "term": "Rent Free",
+            "hint": "When you can't stop thinking about someone who annoyed you",
+            "difficulty": 2
+        }
+    ]
+}

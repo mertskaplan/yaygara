@@ -11,6 +11,7 @@ import type { Deck } from '@/types';
 import { useTranslations } from '@/hooks/useTranslations';
 import { cn } from '@/lib/utils';
 import { AIDeckConstructorModal } from '@/components/AIDeckConstructorModal';
+import { DeckButton } from '@/components/DeckButton';
 import { fetchDecksManifest, fetchFullDeck } from '@/lib/decks';
 const containerVariants: Variants = {
   hidden: { opacity: 0, x: 100 },
@@ -256,51 +257,7 @@ const DeckSelection = () => {
 
     setSetupStep('word-count');
   };
-  const DeckButton = ({ deck, icon: Icon }: { deck: Deck, icon: React.ElementType }) => {
-    const wordCount = deck.words?.length || 0;
-    const isSelected = selectedDeck?.id === deck.id;
-    const progress = playedDeckProgress?.[deck.id] || 0;
-    const difficultyFactor = {
-      easy: 4,
-      medium: 3,
-      hard: 2,
-    }[deck.difficulty] || 3;
-    const estimatedTime = Math.round((wordCount * 3) / difficultyFactor);
-    return (
-      <Button
-        onClick={() => selectDeck(deck)}
-        variant="outline"
-        className={`relative overflow-hidden w-full h-auto text-left font-semibold rounded-2xl p-3 flex items-center gap-3 whitespace-normal transition-colors duration-200 shadow-none ${isSelected ? 'bg-sky-500 text-white border-sky-500' : 'bg-white dark:bg-card border-slate-200 dark:border-border hover:border-sky-300 dark:hover:border-sky-700'} ${progress === 4 && !isSelected ? 'opacity-90' : ''}`}
-      >
-        <div className={cn("relative p-2 rounded-xl", isSelected ? "bg-white/20" : "bg-sky-50 dark:bg-sky-900/40 text-sky-500 dark:text-sky-400")}>
-          <Icon className="w-8 h-8 flex-shrink-0" />
-          {progress === 4 && (
-            <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full flex items-center justify-center w-4 h-4">
-              <Check className="w-2 h-2 text-white p-1" />
-            </div>
-          )}
-        </div>
-        <div className="flex-grow pb-1">
-          <p className="text-lg text-balance">{deck.name}</p>
-          <div className={`flex items-center gap-2 text-sm ${isSelected ? 'text-white/80' : 'text-muted-foreground'}`}>
-            <span>{t('setup.deckWords', { count: wordCount })}</span>
-            <span>&bull;</span>
-            <span>{t(`deckDifficulty.${deck.difficulty}`)}</span>
-            <span>&bull;</span>
-            <span>{t('setup.estimatedTime', { time: estimatedTime })}</span>
-          </div>
-        </div>
-        {/* Progress Bar Container */}
-        {progress > 0 && (
-          <div className="absolute bottom-1 left-0 right-0 h-1 flex px-4">
-            <div className={`h-full rounded-l-full flex-1 mx-[1px] ${progress >= 1 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-border')}`} />
-            <div className={`h-full flex-1 mx-[1px] ${progress >= 2 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-border')}`} />
-            <div className={`h-full rounded-r-full flex-1 mx-[1px] ${progress >= 3 ? (isSelected ? 'bg-white' : 'bg-sky-400') : (isSelected ? 'bg-black/10' : 'bg-slate-100 dark:bg-border')}`} />
-          </div>
-        )}
-      </Button>
-    );
-  };
+
   return (
     <m.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" className="w-full h-full flex flex-col">
       <h2 className="text-3xl font-bold text-center text-slate-700 dark:text-slate-200 font-display mb-6 text-balance">{t('setup.deckTitle')}</h2>
@@ -311,8 +268,26 @@ const DeckSelection = () => {
           </div>
         ) : (
           <>
-            {decks.map((deck) => <DeckButton key={deck.id} deck={deck} icon={BookOpen} />)}
-            {customDeck && <DeckButton key={customDeck.id} deck={customDeck} icon={Upload} />}
+            {decks.map((deck) => (
+              <DeckButton 
+                key={deck.id} 
+                deck={deck} 
+                icon={BookOpen} 
+                isSelected={selectedDeck?.id === deck.id}
+                progress={playedDeckProgress?.[deck.id] || 0}
+                onSelect={selectDeck}
+              />
+            ))}
+            {customDeck && (
+              <DeckButton 
+                key={customDeck.id} 
+                deck={customDeck} 
+                icon={Upload} 
+                isSelected={selectedDeck?.id === customDeck.id}
+                progress={playedDeckProgress?.[customDeck.id] || 0}
+                onSelect={selectDeck}
+              />
+            )}
           </>
         )}
         <input type="file" ref={fileInputRef} onChange={handleFileChange} accept=".json" className="hidden" />
@@ -351,12 +326,7 @@ const WordCountSelection = () => {
   const { t, getLocalizedPath } = useTranslations();
   const maxWords = selectedDeck?.words?.length || 5;
   const minWords = Math.min(5, maxWords);
-  const [count, setCount] = useState(maxWords);
-  useEffect(() => {
-    if (selectedDeck) {
-      setCount(selectedDeck.words?.length || 5);
-    }
-  }, [selectedDeck]);
+  const [count, setCount] = useState(() => selectedDeck?.words?.length || 5);
   if (!selectedDeck || !selectedDeck.words) {
     return null;
   }

@@ -3,6 +3,7 @@
     "title": "Yaygara | Anlatma ve tahmine dayalı eğlenceli parti oyunu",
     "slogan": "Anlatma ve tahmine dayalı eğlenceli parti oyunu",
     "howToPlay": "Nasıl Oynanır?",
+    "about": "Hakkında",
     "startGame": "Oyunu Kur",
     "footer": " "
   },
@@ -21,7 +22,9 @@
     "teamDefaultName": "Takım",
     "deckWords": "{count} kelime",
     "estimatedTime": "~{time} dk.",
-    "createWithAI": "YZ ile Kendi Desteni Oluştur"
+    "createWithAI": "YZ ile Kendi Desteni Oluştur",
+    "markAsPlayed": "Desteyi oynanmış olarak işaretle",
+    "markAsUnplayed": "Desteyi oynanmamış olarak işaretle"
   },
   "game": {
     "getReadyTitle": "{teamName} takımının sırası",
@@ -50,6 +53,12 @@
       "description": "Mevcut oyunu bitirmek istediğinizden emin misiniz? Tüm ilerleme kaybolacak.",
       "cancel": "Vazgeç",
       "confirm": "Bitir"
+    },
+    "visibilityPause": {
+      "title": "Süre Duraklatıldı",
+      "description": "Uygulamadan ayrıldığınız için süre otomatik olarak duraklatıldı. Devam edilsin mi?",
+      "manualDescription": "Oyun süresi duraklatıldı ve kelime otomatik olarak pas geçildi. Oyuna sıradaki kelime ile devam edilsin mi?",
+      "continue": "Devam Et"
     }
   },
   "scoreboard": {
@@ -58,7 +67,8 @@
     "winnerTitle": "{teamName} kazandı!",
     "nextTurn": "Sıradaki Tur",
     "playAgain": "Tekrar Oyna",
-    "backToHome": "Ana Sayfaya Dön"
+    "backToHome": "Ana Sayfaya Dön",
+    "sendGameData": "Oyun Verilerini Gönder"
   },
   "howToPlay": {
     "title": "Yaygara Nasıl Oynanır?",
@@ -70,7 +80,7 @@
     "flowTitle": "Oyun Akışı",
     "flowDescription": "Takımlar ve takım oyuncuları <b>sırayla anlatıcı olur</b>. Bir oyuncunun anlatım süresi bittiğinde, sıra diğer takımın anlatıcısına geçer. Her tur, destedeki tüm kelimeler doğru tahmin edilene kadar oynanır. Bir tur tamamlandığında, aynı kelime destesiyle bir sonraki tura geçilir. Bu nedenle rakip takımın anlattığı kelimeleri de <b>iyi dinle ve kopya verme!</b> Daha sonra puan olarak senin karşına çıkabilir.",
     "round1Title": "1. Tur: Serbest Anlatım",
-    "round1Description": "Kelimeyi istediğiniz kelimeleri, sesleri veya jestleri kullanarak anlatın. Önemli: Karttaki kelimeyi, bir parçasını, onunla kafiyeli kelimeleri veya başka dildeki çevirisini söyleyemezsiniz. Anlatmakta zorlanırsan, kartın altındaki açıklama metnini doğrudan okuyabilirsin.",
+    "round1Description": "Kelimeyi istediğiniz kelimeleri, sesleri veya jestleri kullanarak anlatın. Önemli: Karttaki kelimeyi, bir parçasını, onunla kafiyeli kelimeleri veya başka dildeki çevirisini söyleyemezsiniz. Anlatmakta zorlanırsan, kartın altındaki açıklama metnini doğrudan okuyabilirsin. Tüm oyuncuların kelimeyi doğru anlaması için doğru olarak işaretlerken kelimeyi de tekrar etmeyi unutma. Örneğin: At arabası, doğru.",
     "round2Title": "2. Tur: Sadece Tek Kelime",
     "round2Description": "Bu sefer ipucu olarak sadece tek bir kelime kullanabilirsin. Jest, mimik veya vücut dili kullanamazsınız. Kelimeni akıllıca seç; çünkü 1. turdaki tüm kelimeler tekrar oyundadır.",
     "round3Title": "3. Tur: Sessiz Sinema",
@@ -78,8 +88,80 @@
     "passingTitle": "Sınırsız Pas Hakkı",
     "passingDescription": "Bir kelimeyi anlatamadın mı? Sorun değil! <b>İstediğin kadar pas geçebilirsin.</b> Pas geçilen kelimeler tur içinde daha sonra tekrar karşına çıkacak. Eğer yanlışlıkla pas der ya da kelimeyi doğru olarak işaretlersen ortada çıkan buton ile hatalı işlemi geri alabilirsin.",
     "bonusTimeTitle": "Bonus Süre",
-    "bonusTimeDescription": "Takımınız bir turdaki tüm kelimeleri 3 saniyeden fazla süre kala tahmin ederse, bir sonraki tura o kalan süreyle hemen başlarsınız! Hızlı olan avantajı kapar.",
+    "bonusTimeDescription": "Takımınız bir turdaki tüm kelimeleri 3 saniyeden fazla süre kala tahmin ederse, bir sonraki tura o kalan süreyle hemen başlarsınız! Hızlı olan avantajı kapar. Eğer bir oyuncu gülmekten yere düşerse oyunu soğutmadan süreyi duraklatmak için zaman sayacına dokunabilirsin. Ama bu özelliği manipülasyon amaçlı kullanma çünkü süre duraklatıldığında kelime değişecek.",
     "closeButton": "Anladım!"
+  },
+  "about": {
+    "title": "Yaygara",
+    "version": "v{version}",
+    "intro": "<b>Yaygara</b>, Mert S. Kaplan tarafından <i>Tabu, Sessiz Sinema ve Makara</i> gibi klasik oyunlardan ilham alınarak geliştirildi. Ücretsiz ve reklamsızdır. İnternet bağlantınız olmasa da çalışır. Üstelik YZ desteği ile kendi kelime destelerini oluşturarak hiç sıkılmadan oynayabilirsin.",
+    "purpose": "Oyunun amacı, sadece eğlendirmek değil; aynı zamanda insanların kendini ifade etme becerilerini geliştirmesine, sosyal bağlarını güçlendirmesine ve arada yeni kelimeler öğrenmesine katkı sağlamak.<br/>Yani hem beyin jimnastiği hem de eğlence! 🧠✨",
+    "contact": "Oyunla ilgili öneri ya da soruların olursa <a href=\"https://mertskaplan.com/tr/iletisim\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">iletişime geçmekten</a> çekinme. Yaygara’yı birlikte daha da güzelleştirebiliriz.",
+    "licenseTitle": "Lisans & Kaynak Kod",
+    "licenseSummary": "Yaygara, özgür bir yazılımdır ve kaynak kodu <a href=\"https://github.com/mertskaplan/yaygara/blob/main/LICENSE\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GNU GPLv3</a>, oyun içeriği ve medyaları ise <a href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.tr\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">CC BY-SA 4.0</a> lisansı altındadır. Özetle:",
+    "licensePoints": [
+      "Oyunun yapımcısı <a href=\"https://mertskaplan.com/tr\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Mert S. Kaplan</a> ve oyun adı olan <a href=\"https://yaygara.mertskaplan.com/tr\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Yaygara</a>'ya bağlantı vererek atıf yapmak,",
+      "ve aynı lisansı devam ettirmek"
+    ],
+    "licenseSuffix": "şartıyla dilediğin gibi geliştirebilir ve yeniden dağıtılabilirsin. Unutma, kullanıcılar yazılımlara değil, yazılımlar kullanıcılara hizmet etmelidir.",
+    "sourceCode": "Oyunun kaynak kodlarına <a href=\"https://github.com/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GitHub</a> üzerinden erişebilirsin. Bir hata fark edersen bildirebilir, hatta istersen doğrudan katkıda da bulunabilirsin. Açık kaynak candır. ❤️",
+    "toolsTitle": "Geliştirme Araçları",
+    "toolsDescription": "Yaygara, ilk olarak Cloudflare Vibe SDK ile geliştirilmeye başlandı, sonrasında Antigravitiy ile devam edildi. Yazılım sürecinde manuel kodlamanın yanı sıra Gemini, Grok ve ChatGPT gibi büyük dil modellerinden planlama, kodlama ve hata ayıklama aşamalarında yoğun şekilde destek alındı.",
+    "outro": "Biraz insan zekâsı, biraz yapay zekâ, bolca kod ve ortaya çıkan: Yaygara! Herkese afiyet olsun.",
+    "support": "Yaygara gibi özgür yazılımların altyapı ve sürdürülebilirlik maliyetleri var. Daha fazlasının üretilmesi ve bu tarz projelerin reklamsız ve herkese açık kalması için <a href=\"https://kreosus.com/mertskaplan\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline font-bold\">Kreosus</a> üzerinden destek olabilirsin.",
+    "telemetryInfo": "Yaygara'nın bu sürümü oyunu daha eğlenceli ve dengeli bir hale getirmek için oyunla ilgili bazı verileri (oyun süresi, oynanan deste, pas geçme sayısı, takım puanları gibi) oyun geliştiricisi ile paylaşmana olanak sağlar. Tamamen isteğine bağlı ve anonim olarak paylaşabileceğin bu veriler, hangi destelerin daha çok sevildiğini veya hangi kural ve destelerin iyileştirilmesi gerektiğini anlamamıza yardımcı oluyor. Topluluk tarafından paylaşılan tüm verilerin nasıl işlendiğini ve oluşan istatistikleri <a href=\"https://lab.mertskaplan.com/yaygara-telemetry/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Yaygara Telemetri</a> ekranından şeffaf bir şekilde takip edebilirsin.",
+    "closeButton": "Kapat"
+  },
+  "deckDifficulty": {
+    "easy": "Kolay",
+    "medium": "Orta",
+    "hard": "Zor"
+  },
+  "pwa": {
+    "installTitle": "Ana Ekrana Ekle",
+    "installDescription": "Mobil uygulama olarak kullan.",
+    "installButton": "Yükle"
+  },
+  "aiModal": {
+    "title": "Kendi Desteni Oluştur",
+    "description": "Yaygara için kendi kelime desteni yapay zeka yardımıyla saniyeler içinde hazırlayabilirsin. Aşağıdaki prompt şablonunu dilediğin gibi düzenle (ilk 5 satır yeterli) ve bir LLM seçerek desteni oluştur. Oluşan JSON çıktısını kaydedip uygulamaya yükleyebilirsin.",
+    "back": "Geri Dön",
+    "copyPrompt": "Prompt’u Kopyala",
+    "defaultPrompt": "Üretilecek kelime/söz öbeği: 48\nDeste dili: Türkçe\nZorluk düzeyi: Orta\nDeste adı: \nMutlaka yer alması gereken kelimeler: \n\nYaygara, tabu ve sessiz sinema karışımı bir kelime oyunudur. Bu oyun için kelime destesi hazırla. Deste için yukarıdaki bilgileri ve aşağıdaki yönergeleri esas al.\nDestede yer alan ifadeler tek kelime ya da söz öbeği olabilir. Kelimeler ağırlıkta olmalı. (Örneğin: öpücük, astronot, mücevher, kadraj, fay hattı, kelebek etkisi.) Yukarıda belirtilen “Mutlaka yer alması gereken kelimeler” destede yer almalı ve bu kelimeler/söz öbekleri üretilecek diğer kelimelerin/söz öbeklerinin yaklaşık yüzde 15’ine referans olmalı.\nHer kelime için zorluk (difficulty) değeri belirlenmeli ve 1, 2 ve 3 şeklinde sayılarla ifade edilmeli.\n1 (Kolay): Günlük yaşamda sıkça karşılaşılan, jest ve mimiklerle kolayca anlatılabilecek ifadeler.\n2 (Orta): Kültürel bilgi gerektiren, dolaylı anlatım isteyen ifadeler.\n3 (Zor): Karmaşık, kültürel, entelektüel, ironik veya derin çağrışımlar yapan, zor kelimeler.\nKelimeler/söz öbeği dışında bir de destenin geneli için bir zorluk düzeyi olmalı. Destenin zorluk düzeyi İngilizce karşılıkları olan easy, medium ve hard kelimeleri ile ifade edilmeli. Zorluk düzeyi orta olan desteler için kelimelerin/söz öbeklerinin zorluk seviyesi dağılımı yaklaşık olarak şöyle olmalı: Kolay %50, orta %40, zor %10. Kolay desteler için yaklaşık olarak kolay %60, orta %55, zor %5 ve zor desteler için yaklaşık olarak kolay %30, orta %50, zor %20 olmalı.\nHer kelime için tek cümlelik kısa ama açıklayıcı ipucu (hint) olmalı. İpucu kelimenin kendisini, aynı kökten gelen sözcükleri içermemeli (Örnek: \"Gözlük\" için \"Göz\" diyemezsin); oyuncuların doğru cevaba ulaşmasını kolaylaştıracak kısa ve net bir tanım içermeli. (Örnek: \"Mercimek Köftesi\" söz öbeğinin ipucunda \"Yeşil mercimek ve bulgurla yapılan etsiz köfte\" ifadesini kullanamazsın. Çünkü içinde mercimek ve köfte kelimeleri var. Bunun yerine “Haşlanmış bakliyata elle şekil verilerek yapılan bir tür yemek” diyebilirsin.)\nKelimeler şu gibi konu başlıklarından olabilir: Popüler kültür, mitoloji, teknoloji, deyim, argo, bilim, tarih, siyaset, sanat, edebiyat, sinema, felsefe, coğrafya, bitki, cinsellik, askeriye, hukuk, astroloji, spor, hobi, kurgusal karakterler, 90'lar, bilgisayar oyunları, yabancı diziler vb.\n\nEğer deste adı belirlenmemişse üretilen kelimelerin genel temasına uygun özgün, kısa ve akılda kalıcı bir deste adı (name) belirle. Deste adı ayrıştırıcı bir isim olmalı. Deste adı üzerinden de ID oluştur. ID küçük harflerden oluşmalı ve Türkçe karakterleri İngilizceye dönüştürülmelisin. Boşluk yerine tire işareti (-) kullan ve sonuna nokta koyarak iki karakterlik dil kodunu ve json uzantısını ekle (örnek: karmasik-zihinler.tr.json, karanlik-seruven.tr.json ya da asksiz-olmaz.tr.json).\nÇıktı yalnızca geçerli JSON formatında olmalı. Kelime destesini oluşturduktan sonra kullanıcıya düzenleme yapmak isteyip istemediğini sor. Yanıtın altında JSON dosyasını indirilebilir olarak ekle.\n\nJSON formatı ve örnek:\n{\n  \"id\": \"asksiz-olmaz.tr\",\n  \"name\": \"Aşksız olmaz\",\n  \"language\": \"tr\",\n  \"difficulty\": \"medium\",\n  \"words\": [\n    {\n      \"term\": \"Platonik\",\n      \"hint\": \"Karşılık bulmadan iç dünyada yaşanan duygusal bağ.\",\n      \"difficulty\": 1\n    }\n  ]\n}",
+    "llms": {
+      "chatgpt": "ChatGPT",
+      "gemini": "Kopyala ve Gemini'yi aç",
+      "claude": "Claude",
+      "grok": "Grok",
+      "meta": "Meta AI",
+      "perplexity": "Perplexity",
+      "mistral": "Mistral",
+      "copilot": "Kopyala ve Copilot'ı aç",
+      "deepseek": "Kopyala ve DeepSeek'i aç"
+    }
+  },
+  "slugs": {
+    "setup": "kurulum",
+    "play": "oyun",
+    "score": "skor"
+  },
+  "seo": {
+    "title": "Yaygara | Anlatma ve tahmine dayalı eğlenceli parti oyunu",
+    "description": "Yaygara, 4–16 kişiyle oynanan, anlatma ve tahmine dayalı eğlenceli bir kelime ve parti oyunu.",
+    "ogTitle": "Yaygara: Anlatma ve tahmine dayalı eğlenceli parti oyunu",
+    "schemaDescription": "Yaygara, 4 ila 16 kişi arasında oynanabilen; tabu ve sessiz sinema karışımı eğlenceli bir parti oyunudur. Oyun, yüz yüze oynanır ve tek bir cihazın elden ele dolaşmasıyla ilerler"
+  },
+  "telemetry": {
+    "thanks": "Teşekkürler",
+    "thanksDescription": "Yaygara'yı daha iyi hale getirmek için oyun verilerinizi ilettiğiniz için teşekkürler",
+    "backToHome": "Ana sayfaya dön",
+    "modalTitle": "Telemetri Onayı",
+    "modalDescription": "Oyunun ve kelime destesinin daha iyi hale getirilebilmesi için oynanılan deste, oyun süresi ve takım puanları gibi oyuna dair veriler anonim olarak oyun yapımcısına iletebilirsiniz.",
+    "question": "Bu oyundaki kelime destesini beğendiniz mi?",
+    "yes": "Evet",
+    "no": "Hayır",
+    "cancel": "İptal",
+    "submit": "Oyun Verilerini Gönder"
   },
   "teamNameGeneration": {
     "adjectives": [
@@ -144,7 +226,7 @@
       "Gıcık",
       "Gizemli",
       "Göbekli",
-      "Gölg esiz",
+      "Gölgesiz",
       "Görgüsüz",
       "Gözüpek",
       "Güçlü",
@@ -399,7 +481,6 @@
       "Hurdacılar",
       "İşsizler",
       "Kabadayılar",
-      "Kafaçılar",
       "Kafadarlar",
       "Kafasızlar",
       "Kahinler",
@@ -512,44 +593,5 @@
       "Zincirler",
       "Zıpırlar"
     ]
-  },
-  "deckDifficulty": {
-    "easy": "Kolay",
-    "medium": "Orta",
-    "hard": "Zor"
-  },
-  "pwa": {
-    "installTitle": "Ana Ekrana Ekle",
-    "installDescription": "Mobil uygulama olarak kullan.",
-    "installButton": "Yükle"
-  },
-  "aiModal": {
-    "title": "Kendi Desteni Oluştur",
-    "description": "Yaygara için kendi kelime desteni yapay zeka yardımıyla saniyeler içinde hazırlayabilirsin. Aşağıdaki prompt şablonunu dilediğin gibi düzenle (ilk 5 satır yeterli) ve bir LLM seçerek desteni oluştur. Oluşan JSON çıktısını kaydedip uygulamaya yükleyebilirsin.",
-    "back": "Geri Dön",
-    "copyPrompt": "Prompt’u Kopyala",
-    "defaultPrompt": "Üretilecek kelime/söz öbeği: 48\nDeste dili: Türkçe\nZorluk düzeyi: Orta\nDeste adı: \nMutlaka yer alması gereken kelimeler: \n\nYaygara, tabu ve sessiz sinema karışımı bir kelime oyunudur. Bu oyun için kelime destesi hazırla. Deste için yukarıdaki bilgileri ve aşağıdaki yönergeleri esas al.\nDestede yer alan ifadeler tek kelime ya da söz öbeği olabilir. Kelimeler ağırlıkta olmalı. (Örneğin: öpücük, astronot, mücevher, kadraj, fay hattı, kelebek etkisi.) Yukarıda belirtilen “Mutlaka yer alması gereken kelimeler” destede yer almalı ve bu kelimeler/söz öbekleri üretilecek diğer kelimelerin/söz öbeklerinin yaklaşık yüzde 15’ine referans olmalı.\nHer kelime için zorluk (difficulty) değeri belirlenmeli ve 1, 2 ve 3 şeklinde sayılarla ifade edilmeli.\n1 (Kolay): Günlük yaşamda sıkça karşılaşılan, jest ve mimiklerle kolayca anlatılabilecek ifadeler.\n2 (Orta): Kültürel bilgi gerektiren, dolaylı anlatım isteyen ifadeler.\n3 (Zor): Karmaşık, kültürel, entelektüel, ironik veya derin çağrışımlar yapan, zor kelimeler.\nKelimeler/söz öbeği dışında bir de destenin geneli için bir zorluk düzeyi olmalı. Destenin zorluk düzeyi İngilizce karşılıkları olan easy, medium ve hard kelimeleri ile ifade edilmeli. Zorluk düzeyi orta olan desteler için kelimelerin/söz öbeklerinin zorluk seviyesi dağılımı yaklaşık olarak şöyle olmalı: Kolay %50, orta %40, zor %10. Kolay desteler için yaklaşık olarak kolay %60, orta %55, zor %5 ve zor desteler için yaklaşık olarak kolay %30, orta %50, zor %20 olmalı.\nHer kelime için tek cümlelik kısa ama açıklayıcı ipucu (hint) olmalı. İpucu kelimenin kendisini, aynı kökten gelen sözcükleri içermemeli (Örnek: \"Gözlük\" için \"Göz\" diyemezsin); oyuncuların doğru cevaba ulaşmasını kolaylaştıracak kısa ve net bir tanım içermeli. (Örnek: \"Mercimek Köftesi\" söz öbeğinin ipucunda \"Yeşil mercimek ve bulgurla yapılan etsiz köfte\" ifadesini kullanamazsın. Çünkü içinde mercimek ve köfte kelimeleri var. Bunun yerine “Haşlanmış bakliyata elle şekil verilerek yapılan bir tür yemek” diyebilirsin.)\nKelimeler şu gibi konu başlıklarından olabilir: Popüler kültür, mitoloji, teknoloji, deyim, argo, bilim, tarih, siyaset, sanat, edebiyat, sinema, felsefe, coğrafya, bitki, cinsellik, askeriye, hukuk, astroloji, spor, hobi, kurgusal karakterler, 90'lar, bilgisayar oyunları, yabancı diziler vb.\n\nEğer deste adı belirlenmemişse üretilen kelimelerin genel temasına uygun özgün, kısa ve akılda kalıcı bir deste adı (name) belirle. Deste adı ayrıştırıcı bir isim olmalı. Deste adı üzerinden de ID oluştur. ID küçük harflerden oluşmalı ve Türkçe karakterleri İngilizceye dönüştürülmelisin. Boşluk yerine tire işareti (-) kullan ve sonuna nokta koyarak iki karakterlik dil kodunu ve json uzantısını ekle (örnek: karmasik-zihinler.tr.json, karanlik-seruven.tr.json ya da asksiz-olmaz.tr.json).\nÇıktı yalnızca geçerli JSON formatında olmalı. Kelime destesini oluşturduktan sonra kullanıcıya düzenleme yapmak isteyip istemediğini sor. Yanıtın altında JSON dosyasını indirilebilir olarak ekle.\n\nJSON formatı ve örnek:\n{\n  \"id\": \"asksiz-olmaz.tr\",\n  \"name\": \"Aşksız olmaz\",\n  \"language\": \"tr\",\n  \"difficulty\": \"medium\",\n  \"words\": [\n    {\n      \"term\": \"Platonik\",\n      \"hint\": \"Karşılık bulmadan iç dünyada yaşanan duygusal bağ.\",\n      \"difficulty\": 1\n    }\n  ]\n}",
-    "llms": {
-      "chatgpt": "ChatGPT",
-      "gemini": "Kopyala ve Gemini'yi aç",
-      "claude": "Claude",
-      "grok": "Grok",
-      "meta": "Meta AI",
-      "perplexity": "Perplexity",
-      "mistral": "Mistral",
-      "copilot": "Kopyala ve Copilot'ı aç",
-      "deepseek": "Kopyala ve DeepSeek'i aç"
-    }
-  },
-  "slugs": {
-    "setup": "kurulum",
-    "play": "oyun",
-    "score": "skor"
-  },
-  "seo": {
-    "title": "Yaygara | Anlatma ve tahmine dayalı eğlenceli parti oyunu",
-    "description": "Yaygara, 4–16 kişiyle oynanan, anlatma ve tahmine dayalı eğlenceli bir kelime ve parti oyunu.",
-    "ogTitle": "Yaygara: Anlatma ve tahmine dayalı eğlenceli parti oyunu",
-    "schemaDescription": "Yaygara, 4 ila 16 kişi arasında oynanabilen; tabu ve sessiz sinema karışımı eğlenceli bir parti oyunudur. Oyun, yüz yüze oynanır ve tek bir cihazın elden ele dolaşmasıyla ilerler"
   }
 }

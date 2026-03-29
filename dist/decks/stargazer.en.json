@@ -1,0 +1,183 @@
+{
+    "id": "stargazer.en",
+    "name": "Stargazer",
+    "language": "en",
+    "difficulty": "hard",
+    "words": [
+        {
+            "term": "Michael Jackson",
+            "hint": "The King of Pop famous for the moonwalk and white glove",
+            "difficulty": 1
+        },
+        {
+            "term": "Harry Potter",
+            "hint": "The boy with the lightning scar who goes to wizard school",
+            "difficulty": 1
+        },
+        {
+            "term": "Metamorphosis",
+            "hint": "The total biological change from a caterpillar into a winged bug",
+            "difficulty": 3
+        },
+        {
+            "term": "Mirage",
+            "hint": "An optical illusion in the desert that looks like water",
+            "difficulty": 2
+        },
+        {
+            "term": "Illusion",
+            "hint": "A trick of the eye that makes you see something that isn't real",
+            "difficulty": 2
+        },
+        {
+            "term": "Inheritance",
+            "hint": "Assets or belongings left to someone after a relative passes",
+            "difficulty": 2
+        },
+        {
+            "term": "Rebellion",
+            "hint": "An act of rising up against those who are in power",
+            "difficulty": 2
+        },
+        {
+            "term": "Passion",
+            "hint": "An intense, driving feeling or conviction for a person or hobby",
+            "difficulty": 2
+        },
+        {
+            "term": "Satire",
+            "hint": "Using humor or irony to mock political leaders or society",
+            "difficulty": 3
+        },
+        {
+            "term": "Whisper",
+            "hint": "Speaking in a very low, quiet voice so others can't overhear",
+            "difficulty": 1
+        },
+        {
+            "term": "Destiny",
+            "hint": "The path or fate that is meant to happen in your life",
+            "difficulty": 2
+        },
+        {
+            "term": "Chaos",
+            "hint": "Complete and total disorder or confusion without any rules",
+            "difficulty": 3
+        },
+        {
+            "term": "Migration",
+            "hint": "When large groups of birds or people move to a new region",
+            "difficulty": 1
+        },
+        {
+            "term": "Vow",
+            "hint": "A solemn and serious promise made to do something",
+            "difficulty": 3
+        },
+        {
+            "term": "Melancholy",
+            "hint": "A quiet, thoughtful sadness that seems to have no cause",
+            "difficulty": 2
+        },
+        {
+            "term": "Shadow",
+            "hint": "The dark area that follows you around in the sunlight",
+            "difficulty": 1
+        },
+        {
+            "term": "Obsession",
+            "hint": "Being totally consumed by a single idea or person nearby",
+            "difficulty": 2
+        },
+        {
+            "term": "Memory",
+            "hint": "The brain's ability to store and recall past experiences",
+            "difficulty": 2
+        },
+        {
+            "term": "Sabotage",
+            "hint": "Deliberately destroying something to prevent it from working",
+            "difficulty": 3
+        },
+        {
+            "term": "Snoring",
+            "hint": "The loud rattling sound someone makes when they sleep",
+            "difficulty": 2
+        },
+        {
+            "term": "Taylor Swift",
+            "hint": "The pop star with a massive following called Swifties",
+            "difficulty": 1
+        },
+        {
+            "term": "Elvis Presley",
+            "hint": "The King of Rock and Roll with famous swinging hips",
+            "difficulty": 1
+        },
+        {
+            "term": "Marilyn Monroe",
+            "hint": "The blonde icon whose white dress flew up on a subway grate",
+            "difficulty": 1
+        },
+        {
+            "term": "Freddie Mercury",
+            "hint": "The Queen lead singer who sang about bohemian rhapsodies",
+            "difficulty": 1
+        },
+        {
+            "term": "Beyoncé",
+            "hint": "The Queen B who tells all the single ladies to put a ring on it",
+            "difficulty": 1
+        },
+        {
+            "term": "Tom Cruise",
+            "hint": "The actor who does his own stunts and flies jets in Top Gun",
+            "difficulty": 1
+        },
+        {
+            "term": "Angelina Jolie",
+            "hint": "The actress who played Lara Croft and has many children",
+            "difficulty": 1
+        },
+        {
+            "term": "Leonardo DiCaprio",
+            "hint": "The actor who finally won for fighting a bear in the woods",
+            "difficulty": 1
+        },
+        {
+            "term": "Brad Pitt",
+            "hint": "The star of Fight Club who was once married to Rachel from Friends",
+            "difficulty": 1
+        },
+        {
+            "term": "Rihanna",
+            "hint": "The singer who warned us to stay under her umbrella",
+            "difficulty": 1
+        },
+        {
+            "term": "Kim Kardashian",
+            "hint": "The reality star famous for her family and social presence",
+            "difficulty": 1
+        },
+        {
+            "term": "Kanye West",
+            "hint": "The rapper who once interrupted Taylor on the awards stage",
+            "difficulty": 1
+        },
+        {
+            "term": "Cristiano Ronaldo",
+            "hint": "The Portuguese soccer legend with the highest goal tally",
+            "difficulty": 1
+        },
+        {
+            "term": "Lionel Messi",
+            "hint": "The flea from Argentina who won the World Cup in 2022",
+            "difficulty": 1
+        },
+        {
+            "term": "Serena Williams",
+            "hint": "The greatest female athlete to ever play on the grass courts",
+            "difficulty": 1
+        }
+    ]
+}

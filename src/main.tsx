@@ -7,8 +7,8 @@
 
 import { enableMapSet } from "immer";
 enableMapSet();
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode, Suspense, lazy } from 'react';
+import { createRoot } from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -20,7 +20,7 @@ import { LanguageWrapper } from '@/components/LanguageWrapper';
 import { RootRedirector } from '@/components/RootRedirector';
 import { ThemeManager } from '@/components/ThemeManager';
 import { preloadTranslations, refreshTranslations } from '@/lib/i18n';
-import { Suspense, lazy } from 'react';
+import { SuspenseLayout } from '@/components/SuspenseLayout';
 
 // Preload all language files on app startup for instant language switching
 preloadTranslations();
@@ -82,18 +82,6 @@ if (isTelemetryEnabled()) {
   console.log(`%c📡 Telemetry: ENABLED\n🔗 Target: ${getTelemetryUrl()}`, 'color: #0ea5e9; font-weight: bold; font-size: 12px;');
 }
 
-const LoadingPage = () => (
-  <div className="flex items-center justify-center h-screen-dvh bg-transparent">
-    <div className="w-12 h-12 border-4 border-sky-500 border-t-transparent rounded-full animate-spin" />
-  </div>
-);
-
-const SuspenseLayout = ({ children }: { children: React.ReactNode }) => (
-  <Suspense fallback={<LoadingPage />}>
-    {children}
-  </Suspense>
-);
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -151,9 +139,6 @@ createRoot(document.getElementById('root')!).render(
         <LazyMotion features={domAnimation}>
           <RouterProvider
             router={router}
-            future={{
-              v7_startTransition: true,
-            }}
           />
         </LazyMotion>
       </ThemeManager>

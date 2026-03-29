@@ -1,0 +1,183 @@
+{
+    "id": "brain-benders.en",
+    "name": "Brain Benders",
+    "language": "en",
+    "difficulty": "medium",
+    "words": [
+        {
+            "term": "Crocodile Tears",
+            "hint": "A fake display of sadness meant to deceive others",
+            "difficulty": 2
+        },
+        {
+            "term": "Portal",
+            "hint": "A magical gateway to another dimension or location",
+            "difficulty": 1
+        },
+        {
+            "term": "Tabula Rasa",
+            "hint": "The theory that newborns come into the world with a blank slate",
+            "difficulty": 3
+        },
+        {
+            "term": "Golem",
+            "hint": "A clay figure brought to life through mystical rituals",
+            "difficulty": 3
+        },
+        {
+            "term": "Turing Test",
+            "hint": "A way to see if a machine can pass for a human in conversation",
+            "difficulty": 3
+        },
+        {
+            "term": "Umbilical Cord",
+            "hint": "The tube connecting a baby to its mother for nutrients",
+            "difficulty": 1
+        },
+        {
+            "term": "Holy Trinity",
+            "hint": "The Christian concept of Father, Son, and Holy Spirit",
+            "difficulty": 3
+        },
+        {
+            "term": "Doomsday",
+            "hint": "The final day of the world according to various legends",
+            "difficulty": 2
+        },
+        {
+            "term": "Primeval Forest",
+            "hint": "An ancient woodland that has never been touched by an axe",
+            "difficulty": 2
+        },
+        {
+            "term": "Soulmate",
+            "hint": "The one person who is destined to be your perfect match",
+            "difficulty": 1
+        },
+        {
+            "term": "Assassin",
+            "hint": "A professional hired to take out a high-profile target",
+            "difficulty": 2
+        },
+        {
+            "term": "Scapegoat",
+            "hint": "Someone who is blamed for the mistakes of others",
+            "difficulty": 2
+        },
+        {
+            "term": "Rhetoric",
+            "hint": "The art of using words effectively to persuade an audience",
+            "difficulty": 3
+        },
+        {
+            "term": "Natural Selection",
+            "hint": "Survival of the fittest in the wild over generations",
+            "difficulty": 3
+        },
+        {
+            "term": "Cryptocurrency",
+            "hint": "Digital money that operates on a decentralized ledger",
+            "difficulty": 2
+        },
+        {
+            "term": "Resident Evil",
+            "hint": "A film series about a viral outbreak turning people into monsters",
+            "difficulty": 2
+        },
+        {
+            "term": "Monopoly",
+            "hint": "When a single company controls the entire market for a service",
+            "difficulty": 3
+        },
+        {
+            "term": "Mutation",
+            "hint": "A random change in the genetic sequence of an organism",
+            "difficulty": 3
+        },
+        {
+            "term": "Placebo Effect",
+            "hint": "When you feel better simply because you believe you took medicine",
+            "difficulty": 3
+        },
+        {
+            "term": "Murphy's Law",
+            "hint": "The saying that if something can go wrong, it will",
+            "difficulty": 2
+        },
+        {
+            "term": "Occam's Razor",
+            "hint": "The principle that the simplest explanation is usually the right one",
+            "difficulty": 3
+        },
+        {
+            "term": "Double-Edged Sword",
+            "hint": "Something that has both positive and negative consequences",
+            "difficulty": 2
+        },
+        {
+            "term": "Paradox",
+            "hint": "A statement that seems to contradict itself but might be true",
+            "difficulty": 3
+        },
+        {
+            "term": "Stockholm Syndrome",
+            "hint": "When a captive starts to feel sympathy for their captor",
+            "difficulty": 3
+        },
+        {
+            "term": "Glass Ceiling",
+            "hint": "An invisible barrier preventing people from rising to top positions",
+            "difficulty": 3
+        },
+        {
+            "term": "Echo Chamber",
+            "hint": "A space where you only encounter ideas that match your own",
+            "difficulty": 2
+        },
+        {
+            "term": "Gaslighting",
+            "hint": "Making someone doubt their own sanity by manipulating the truth",
+            "difficulty": 3
+        },
+        {
+            "term": "Algorithm",
+            "hint": "A set of rules for a computer to follow to solve a problem",
+            "difficulty": 2
+        },
+        {
+            "term": "Grandfather Paradox",
+            "hint": "The classic time-travel problem involving going back to kill an ancestor",
+            "difficulty": 3
+        },
+        {
+            "term": "Mindfulness",
+            "hint": "The state of being fully aware and present in the moment",
+            "difficulty": 2
+        },
+        {
+            "term": "Cognitive Dissonance",
+            "hint": "The mental stress of holding two conflicting beliefs at once",
+            "difficulty": 3
+        },
+        {
+            "term": "Butterfly Effect",
+            "hint": "How small actions can lead to massive global changes later",
+            "difficulty": 3
+        },
+        {
+            "term": "Subliminal Message",
+            "hint": "A signal designed to pass below the limit of conscious perception",
+            "difficulty": 3
+        },
+        {
+            "term": "Pareto Principle",
+            "hint": "The rule that 80 percent of results come from 20 percent of efforts",
+            "difficulty": 3
+        },
+        {
+            "term": "Status Quo",
+            "hint": "The current state of affairs, often one people resist changing",
+            "difficulty": 2
+        }
+    ]
+}

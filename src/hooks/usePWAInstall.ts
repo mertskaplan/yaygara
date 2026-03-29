@@ -9,7 +9,13 @@ interface BeforeInstallPromptEvent extends Event {
 }
 export const usePWAInstall = () => {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
-  const [isInstalled, setIsInstalled] = useState(false);
+  const [isInstalled, setIsInstalled] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches;
+    }
+    return false;
+  });
+
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
@@ -21,10 +27,7 @@ export const usePWAInstall = () => {
       setIsInstalled(true);
     };
     window.addEventListener('appinstalled', handleAppInstalled);
-    // Check if the app is already installed (for standalone/fullscreen mode)
-    if (window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: fullscreen)').matches) {
-      setIsInstalled(true);
-    }
+    // Check if the app is already installed is now handled by useState initializer
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
       window.removeEventListener('appinstalled', handleAppInstalled);

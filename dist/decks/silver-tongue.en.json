@@ -1,0 +1,183 @@
+{
+    "id": "silver-tongue.en",
+    "name": "Silver Tongue",
+    "language": "en",
+    "difficulty": "medium",
+    "words": [
+        {
+            "term": "Crossword",
+            "hint": "A word game played in a grid with black and white squares",
+            "difficulty": 1
+        },
+        {
+            "term": "Superhero",
+            "hint": "A fictional person with powers who fights for justice",
+            "difficulty": 1
+        },
+        {
+            "term": "Ambulance",
+            "hint": "The emergency van with sirens that rushes people to the clinic",
+            "difficulty": 1
+        },
+        {
+            "term": "Pirate",
+            "hint": "A lawless sailor who steals gold and has a pet parrot",
+            "difficulty": 1
+        },
+        {
+            "term": "Sculpture",
+            "hint": "A piece of art carved from stone or cast in metal",
+            "difficulty": 1
+        },
+        {
+            "term": "Firefighter",
+            "hint": "The brave person who puts out blazes with a huge hose",
+            "difficulty": 1
+        },
+        {
+            "term": "Tent",
+            "hint": "The temporary shelter you set up when sleeping outdoors",
+            "difficulty": 1
+        },
+        {
+            "term": "Ballerina",
+            "hint": "A female dancer who wears a tutu and moves on her toes",
+            "difficulty": 1
+        },
+        {
+            "term": "Wig",
+            "hint": "Fake hair you wear on your head to change your look",
+            "difficulty": 1
+        },
+        {
+            "term": "Rodeo",
+            "hint": "A contest where cowboys try to stay on a bucking animal",
+            "difficulty": 1
+        },
+        {
+            "term": "Medal",
+            "hint": "The gold, silver, or bronze award given for winning a race",
+            "difficulty": 1
+        },
+        {
+            "term": "Hammock",
+            "hint": "A swinging net bed tied between two sturdy trees",
+            "difficulty": 1
+        },
+        {
+            "term": "Count Dracula",
+            "hint": "The aristocratic blood-sucker who lives in a Transylvanian castle",
+            "difficulty": 2
+        },
+        {
+            "term": "Astronaut",
+            "hint": "Someone who gets in a rocket to leave the atmosphere",
+            "difficulty": 2
+        },
+        {
+            "term": "Caricature",
+            "hint": "A funny drawing that makes someone's features look huge",
+            "difficulty": 2
+        },
+        {
+            "term": "Origami",
+            "hint": "The Japanese craft of folding paper into animals or shapes",
+            "difficulty": 2
+        },
+        {
+            "term": "Mime",
+            "hint": "A silent performer who acts as if they are stuck in a box",
+            "difficulty": 2
+        },
+        {
+            "term": "Boomerang",
+            "hint": "The Australian tool that arcs back to you after a toss",
+            "difficulty": 2
+        },
+        {
+            "term": "Chameleon",
+            "hint": "A lizard that changes its skin hide into surrounding colors",
+            "difficulty": 2
+        },
+        {
+            "term": "Mexican Standoff",
+            "hint": "A tense situation where no one can move without getting hurt",
+            "difficulty": 3
+        },
+        {
+            "term": "Dinosaur",
+            "hint": "A massive ancient lizard that ruled the earth long ago",
+            "difficulty": 1
+        },
+        {
+            "term": "Candle",
+            "hint": "A wax stick with a wick you light to get a small flame",
+            "difficulty": 1
+        },
+        {
+            "term": "Scissors",
+            "hint": "A tool with two sharp metal blades used for clipping",
+            "difficulty": 1
+        },
+        {
+            "term": "Elephant",
+            "hint": "The largest land beast with a trunk and giant grey ears",
+            "difficulty": 1
+        },
+        {
+            "term": "Polar Bear",
+            "hint": "The massive white mammal that lives on the Arctic ice",
+            "difficulty": 2
+        },
+        {
+            "term": "Black Box",
+            "hint": "The device in airplanes that records what went wrong in a crash",
+            "difficulty": 1
+        },
+        {
+            "term": "Appetite",
+            "hint": "How hungry you feel and how much you want to eat",
+            "difficulty": 1
+        },
+        {
+            "term": "Money",
+            "hint": "The paper and coins used to buy groceries and pay rent",
+            "difficulty": 1
+        },
+        {
+            "term": "Lightning",
+            "hint": "The bright electrical flash that strikes during a storm",
+            "difficulty": 1
+        },
+        {
+            "term": "Barking Up the Wrong Tree",
+            "hint": "Accusing the wrong person or following the wrong path",
+            "difficulty": 3
+        },
+        {
+            "term": "Piece of Cake",
+            "hint": "Used to describe a task that is incredibly easy to do",
+            "difficulty": 2
+        },
+        {
+            "term": "Under the Weather",
+            "hint": "Feeling a bit ill or not quite like your usual self",
+            "difficulty": 2
+        },
+        {
+            "term": "Break a Leg",
+            "hint": "What you say to a performer for good luck before a show",
+            "difficulty": 2
+        },
+        {
+            "term": "Bite the Bullet",
+            "hint": "Deciding to get something over with even if it's painful",
+            "difficulty": 3
+        },
+        {
+            "term": "Cost an Arm and a Leg",
+            "hint": "Something that is extremely expensive and overpriced",
+            "difficulty": 2
+        }
+    ]
+}

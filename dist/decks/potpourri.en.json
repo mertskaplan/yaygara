@@ -1,0 +1,183 @@
+{
+    "id": "potpourri.en",
+    "name": "Potpourri",
+    "language": "en",
+    "difficulty": "medium",
+    "words": [
+        {
+            "term": "Megabyte",
+            "hint": "A unit of digital info used to measure file size",
+            "difficulty": 1
+        },
+        {
+            "term": "Foot Massage",
+            "hint": "Applying pressure to the bottom of the legs for relaxation",
+            "difficulty": 1
+        },
+        {
+            "term": "Cape",
+            "hint": "The long garment worn by Batman or Superman on their shoulders",
+            "difficulty": 1
+        },
+        {
+            "term": "Paper Towel",
+            "hint": "The absorbent rull you keep in the kitchen for messes",
+            "difficulty": 1
+        },
+        {
+            "term": "Social Contract",
+            "hint": "The philosophical idea that people agree to live by shared rules",
+            "difficulty": 3
+        },
+        {
+            "term": "Cookie Monster",
+            "hint": "The blue Sesame Street character who loves baked treats",
+            "difficulty": 1
+        },
+        {
+            "term": "Minesweeper",
+            "hint": "The classic PC logic game about avoiding hidden bombs",
+            "difficulty": 1
+        },
+        {
+            "term": "Condom",
+            "hint": "A latex barrier used for protection during intimate acts",
+            "difficulty": 1
+        },
+        {
+            "term": "Olive Branch",
+            "hint": "A symbol handed out as an offer of peace to a foe",
+            "difficulty": 1
+        },
+        {
+            "term": "Invoice",
+            "hint": "A list of goods or services sent with the total cost due",
+            "difficulty": 1
+        },
+        {
+            "term": "Elevator",
+            "hint": "A small room that moves vertically to different floors",
+            "difficulty": 1
+        },
+        {
+            "term": "Ping Pong",
+            "hint": "A sport played on a green table with small white balls",
+            "difficulty": 1
+        },
+        {
+            "term": "Toothbrush",
+            "hint": "The plastic tool with bristles used to clean your enamel",
+            "difficulty": 1
+        },
+        {
+            "term": "Metropolis",
+            "hint": "A very large, busy city with millions of inhabitants",
+            "difficulty": 2
+        },
+        {
+            "term": "Urban Decay",
+            "hint": "When parts of a city fall into ruin and abandonment",
+            "difficulty": 3
+        },
+        {
+            "term": "Nostalgia",
+            "hint": "A sentimental longing or affection for the distant past",
+            "difficulty": 2
+        },
+        {
+            "term": "Melancholy",
+            "hint": "A feeling of deep, pensive, and often unjustified sadness",
+            "difficulty": 2
+        },
+        {
+            "term": "Hierarchy",
+            "hint": "A system where people are ranked one above the other",
+            "difficulty": 3
+        },
+        {
+            "term": "Inflation",
+            "hint": "When the general price of stuff keeps going up over time",
+            "difficulty": 2
+        },
+        {
+            "term": "Protocol",
+            "hint": "The official procedure or system of rules for behavior",
+            "difficulty": 2
+        },
+        {
+            "term": "Censorship",
+            "hint": "The suppression or prohibition of any part of books or films",
+            "difficulty": 2
+        },
+        {
+            "term": "Curriculum",
+            "hint": "The subjects comprising a course of study in a school",
+            "difficulty": 2
+        },
+        {
+            "term": "Red Card",
+            "hint": "What a referee shows when a player is kicked out of a match",
+            "difficulty": 1
+        },
+        {
+            "term": "Black Market",
+            "hint": "An illegal trade in rare or forbidden goods",
+            "difficulty": 2
+        },
+        {
+            "term": "Bureaucracy",
+            "hint": "Complicated government processes that involve too much paperwork",
+            "difficulty": 3
+        },
+        {
+            "term": "Referendum",
+            "hint": "A direct vote by the whole public on a specific proposal",
+            "difficulty": 2
+        },
+        {
+            "term": "Inception",
+            "hint": "A movie about entering dreams within dreams to steal ideas",
+            "difficulty": 2
+        },
+        {
+            "term": "Fight Club",
+            "hint": "The first rule is that you do not talk about it",
+            "difficulty": 2
+        },
+        {
+            "term": "Interstellar",
+            "hint": "A film about visiting distant galaxies to save humanity",
+            "difficulty": 2
+        },
+        {
+            "term": "Pulp Fiction",
+            "hint": "Tarantino's masterpiece featuring burgers and briefcases",
+            "difficulty": 2
+        },
+        {
+            "term": "Elon Musk",
+            "hint": "The billionaire who owns X and builds electric vehicles",
+            "difficulty": 1
+        },
+        {
+            "term": "Steve Jobs",
+            "hint": "The man who wore black turtlenecks and founded the Apple brand",
+            "difficulty": 1
+        },
+        {
+            "term": "Barbie",
+            "hint": "The world's most famous doll who lives in a pink dreamhouse",
+            "difficulty": 1
+        },
+        {
+            "term": "Oppenheimer",
+            "hint": "The scientist who became death, the destroyer of worlds",
+            "difficulty": 2
+        },
+        {
+            "term": "Lady Gaga",
+            "hint": "The pop star known for her meat dress and a shallow song",
+            "difficulty": 1
+        }
+    ]
+}

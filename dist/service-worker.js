@@ -1,157 +1,218 @@
-const CACHE_NAME = 'yaygara-v1.2.2';
+const CACHE_NAME = 'yaygara-v1.4.0';
 const CORE_ASSETS = [
-  '/',
-  '/index.html',
-  '/tr/',
-  '/en/',
-  '/manifest.json',
-  '/decks-manifest.json',
-  '/locales/tr.json',
-  '/locales/en.json',
-  '/icons/favicon.svg',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png',
-  '/yaygara.svg'
+    '/',
+    '/index.html',
+    '/tr/',
+    '/en/',
+    '/manifest.json',
+    '/decks-manifest.json',
+    '/locales/tr.json',
+    '/locales/en.json',
+    '/icons/favicon.svg',
+    '/icons/icon-192x192.png',
+    '/icons/icon-512x512.png',
+    '/yaygara.svg'
 ];
 
-// Install: Cache core assets and dynamically discovered assets (production)
+let telemetryUrl = '';
+
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(async (cache) => {
-      console.log('[SW] Pre-caching assets');
+    event.waitUntil(
+        caches.open(CACHE_NAME).then(async (cache) => {
+            console.log('[SW] Pre-caching assets');
+            await Promise.all(CORE_ASSETS.map(url => {
+                return cache.add(url).catch(err => console.warn(`[SW] Failed to cache ${url}:`, err))
+            }));
 
-      // 1. Cache Core Assets
-      await Promise.all(
-        CORE_ASSETS.map(url => {
-          return cache.add(url).catch(err => console.warn(`[SW] Failed to cache ${url}:`, err));
+            try {
+                const decksRes = await fetch('/decks-manifest.json');
+                if (decksRes.ok) {
+                    const decks = await decksRes.json();
+                    const deckUrls = decks.map(filename => `/decks/${filename}`);
+                    await Promise.all(deckUrls.map(url => cache.add(url).catch(err => console.warn(`[SW] Failed to cache deck ${url}:`, err))))
+                }
+            } catch (err) {
+                console.error('[SW] Failed to fetch decks manifest during install:', err)
+            }
         })
-      );
-
-      // 2. Fetch Decks Manifest and Cache all Decks
-      try {
-        const decksRes = await fetch('/decks-manifest.json');
-        if (decksRes.ok) {
-          const decks = await decksRes.json();
-          const deckUrls = decks.map(filename => `/decks/${filename}`);
-          await Promise.all(
-            deckUrls.map(url => cache.add(url).catch(err => console.warn(`[SW] Failed to cache deck ${url}:`, err)))
-          );
-        }
-      } catch (err) {
-        console.error('[SW] Failed to fetch decks manifest during install:', err);
-      }
-
-      // 3. Fetch Production Assets Manifest (if in production)
-      try {
-        const assetsRes = await fetch('/assets-manifest.json');
-        if (assetsRes.ok) {
-          const assets = await assetsRes.json();
-          await Promise.all(
-            assets.map(url => cache.add(url).catch(err => console.warn(`[SW] Failed to cache production asset ${url}:`, err)))
-          );
-        }
-      } catch (err) {
-        // This is expected in dev mode
-        console.log('[SW] No assets-manifest.json found (likely dev mode)');
-      }
-    })
-  );
-  self.skipWaiting();
-});
-
-// Activate: Clean up old caches
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('[SW] Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-  return self.clients.claim();
-});
-
-// Helper: Stale-While-Revalidate Strategy
-// Returns cached response immediately if available, while updating cache in background
-async function staleWhileRevalidate(request) {
-  const cache = await caches.open(CACHE_NAME);
-  const cachedResponse = await cache.match(request);
-
-  const networkPromise = fetch(request).then((networkResponse) => {
-    if (networkResponse && networkResponse.status === 200) {
-      cache.put(request, networkResponse.clone());
-    }
-    return networkResponse;
-  }).catch(() => {
-    // Fail silently if network fails
-  });
-
-  return cachedResponse || networkPromise;
-}
-
-// Helper: Cache-First Strategy (for hashed assets/images)
-async function cacheFirst(request) {
-  const cache = await caches.open(CACHE_NAME);
-  const cachedResponse = await cache.match(request);
-  if (cachedResponse) return cachedResponse;
-
-  try {
-    const networkResponse = await fetch(request);
-    if (networkResponse && networkResponse.status === 200) {
-      cache.put(request, networkResponse.clone());
-    }
-    return networkResponse;
-  } catch (err) {
-    return null;
-  }
-}
-
-// Fetch handler
-self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
-
-  // 1. Navigation requests (HTML)
-  // Use Stale-While-Revalidate for fast opening and background updates
-  if (event.request.mode === 'navigate') {
-    event.respondWith(
-      staleWhileRevalidate(event.request).then(response => {
-        // Fallback to /index.html if we get nothing (truly offline and not in cache)
-        return response || caches.match('/index.html') || caches.match('/') || caches.match('/tr/') || caches.match('/en/');
-      })
     );
-    return;
-  }
+    self.skipWaiting();
+});
 
-  // 2. Static Assets (JS, CSS, Images)
-  // Hashed assets (/assets/) or images/icons use Cache-First because their names change if content changes
-  const isHashedAsset = url.pathname.includes('/assets/');
-  const isStaticFile = url.pathname.includes('/icons/') ||
-    url.pathname.includes('/decks/') ||
-    url.pathname.endsWith('.png') ||
-    url.pathname.endsWith('.svg') ||
-    url.pathname.endsWith('.ico');
+self.addEventListener('activate', (event) => {
+    event.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cacheName) => {
+                    if (cacheName !== CACHE_NAME) {
+                        console.log('[SW] Deleting old cache:', cacheName);
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
+    );
+    return self.clients.claim();
+});
 
-  if (isHashedAsset || isStaticFile) {
-    event.respondWith(cacheFirst(event.request));
-    return;
-  }
+async function staleWhileRevalidate(request) {
+    const cache = await caches.open(CACHE_NAME);
+    const cachedResponse = await cache.match(request);
+    const isCacheableScheme = request.url.startsWith('http:') || request.url.startsWith('https:');
 
-  // 3. Manifests and Locales - Use Stale-While-Revalidate to discover updates
-  const isUpdateTrigger = url.pathname.endsWith('.json');
-  if (isUpdateTrigger) {
-    event.respondWith(staleWhileRevalidate(event.request));
-    return;
-  }
+    const networkPromise = fetch(request).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200 && isCacheableScheme) {
+            cache.put(request, networkResponse.clone());
+        }
+        return networkResponse;
+    });
 
-  // 4. Default: Stale-While-Revalidate for other app-related files
-  event.respondWith(
-    staleWhileRevalidate(event.request).catch(() => {
-      return caches.match(event.request);
-    })
-  );
+    // Ensure we always return a valid Response to avoid SW crashes
+    return cachedResponse || networkPromise.catch(() => {
+        return new Response('Network error occurred', { status: 408, headers: { 'Content-Type': 'text/plain' } });
+    });
+}
+
+async function networkFirst(request) {
+    const cache = await caches.open(CACHE_NAME);
+    try {
+        const networkResponse = await fetch(request);
+        if (networkResponse && networkResponse.status === 200) {
+            cache.put(request, networkResponse.clone());
+            return networkResponse;
+        }
+    } catch (err) {
+        // Fallback to cache if network fails
+    }
+    return cache.match(request);
+}
+
+async function cacheFirst(request) {
+    const cache = await caches.open(CACHE_NAME);
+    const cachedResponse = await cache.match(request);
+    if (cachedResponse) return cachedResponse;
+
+    try {
+        const networkResponse = await fetch(request);
+        const isCacheableScheme = request.url.startsWith('http:') || request.url.startsWith('https:');
+        if (networkResponse && networkResponse.status === 200 && isCacheableScheme) {
+            cache.put(request, networkResponse.clone());
+        }
+        return networkResponse;
+    } catch (err) {
+        return new Response('Resource not available offline', { status: 503, headers: { 'Content-Type': 'text/plain' } });
+    }
+}
+
+self.addEventListener('fetch', (event) => {
+    const url = new URL(event.request.url);
+
+    // Skip telemetry requests (explicit exception)
+    if (telemetryUrl && event.request.url.startsWith(telemetryUrl)) return;
+
+    // Skip non-GET requests (like telemetry POST)
+    if (event.request.method !== 'GET') return;
+
+    // Skip external API requests (like telemetry domain)
+    if (url.origin !== self.location.origin) return;
+
+    if (event.request.mode === 'navigate') {
+        event.respondWith(
+            staleWhileRevalidate(event.request).then(response => {
+                return response || caches.match('/index.html') || caches.match('/') || caches.match('/tr/') || caches.match('/en/')
+            })
+        );
+        return;
+    }
+
+    const isHashedAsset = url.pathname.includes('/assets/');
+    const isStaticFile = url.pathname.includes('/icons/') ||
+        url.pathname.includes('/decks/') ||
+        url.pathname.endsWith('.png') ||
+        url.pathname.endsWith('.svg') ||
+        url.pathname.endsWith('.ico');
+
+    if (isHashedAsset || isStaticFile) {
+        event.respondWith(cacheFirst(event.request));
+        return;
+    }
+
+    // Critical metadata and locales should be updated if possible
+    const isCriticalUpdate = url.pathname.endsWith('manifest.json') || url.pathname.includes('/locales/');
+    if (isCriticalUpdate) {
+        event.respondWith(staleWhileRevalidate(event.request));
+        return;
+    }
+
+    // env.js should ALWAYS be fresh from the network as it contains runtime variables
+    if (url.pathname.endsWith('/env.js')) {
+        event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
+        return;
+    }
+
+    const isUpdateTrigger = url.pathname.endsWith('.json');
+    if (isUpdateTrigger) {
+        event.respondWith(staleWhileRevalidate(event.request));
+        return;
+    }
+
+    event.respondWith(
+        staleWhileRevalidate(event.request).catch(() => {
+            return caches.match(event.request);
+        })
+    );
+});
+
+// Listener for manual cache refresh from the main thread
+self.addEventListener('message', (event) => {
+    if (!event.data) return;
+
+    if (event.data.type === 'SET_CONFIG') {
+        if (event.data.telemetryUrl) {
+            telemetryUrl = event.data.telemetryUrl;
+            console.log('[SW] Telemetry URL configured:', telemetryUrl);
+        }
+    }
+
+    if (event.data.type === 'REFRESH_CACHE') {
+        console.log('[SW] Background cache refresh triggered');
+        event.waitUntil(
+            caches.open(CACHE_NAME).then(async (cache) => {
+                // 1. Refresh Core Assets & Locales
+                // CORE_ASSETS already includes /locales/tr.json, /locales/en.json, etc.
+                await Promise.all(CORE_ASSETS.map(url => {
+                    return fetch(url, { cache: 'reload' }) // Force network fetch
+                        .then(res => {
+                            if (res.ok) {
+                                console.log(`[SW] Refreshed and cached: ${url}`);
+                                return cache.put(url, res);
+                            }
+                        })
+                        .catch(err => console.warn(`[SW] Failed to refresh ${url}:`, err));
+                }));
+
+                // 2. Refresh Decks
+                try {
+                    const decksRes = await fetch('/decks-manifest.json', { cache: 'reload' });
+                    if (decksRes.ok) {
+                        const decks = await decksRes.json();
+                        const deckUrls = decks.map(filename => `/decks/${filename}`);
+                        await Promise.all(deckUrls.map(url => {
+                            return fetch(url, { cache: 'reload' })
+                                .then(res => {
+                                    if (res.ok) {
+                                        console.log(`[SW] Refreshed and cached deck: ${url}`);
+                                        return cache.put(url, res);
+                                    }
+                                })
+                                .catch(err => console.warn(`[SW] Failed to refresh deck ${url}:`, err));
+                        }));
+                    }
+                } catch (err) {
+                    console.error('[SW] Failed to refresh decks during background update:', err);
+                }
+                console.log('[SW] Background cache refresh complete');
+            })
+        );
+    }
 });
