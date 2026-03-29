@@ -2,9 +2,11 @@
 FROM node:18-alpine AS build
 WORKDIR /app
 # Install bun
-RUN npm install -g bun
+RUN npm install -g bun@1.1.20
+
 # Copy package manifests
 COPY package.json bun.lock ./
+
 # Install dependencies
 RUN bun install --frozen-lockfile
 # Copy the rest of the application source code
@@ -28,13 +30,15 @@ RUN echo 'server { \
     } \
 }' > /etc/nginx/conf.d/default.conf
 # Create an entrypoint script to inject runtime environment variables into a static file
-RUN echo '#!/bin/sh' > /docker-entrypoint.sh && \
-    echo 'echo "window.__APP_ENV__ = {" > /usr/share/nginx/html/env.js' >> /docker-entrypoint.sh && \
-    echo 'echo "  TELEMETRY_ENABLED: \"$TELEMETRY_ENABLED\"," >> /usr/share/nginx/html/env.js' >> /docker-entrypoint.sh && \
-    echo 'echo "  TELEMETRY_URL: \"$TELEMETRY_URL\"" >> /usr/share/nginx/html/env.js' >> /docker-entrypoint.sh && \
-    echo 'echo "};" >> /usr/share/nginx/html/env.js' >> /docker-entrypoint.sh && \
-    echo 'exec nginx -g "daemon off;"' >> /docker-entrypoint.sh && \
-    chmod +x /docker-entrypoint.sh
+RUN cat <<EOF > /docker-entrypoint.sh
+#!/bin/sh
+echo "window.__APP_ENV__ = {" > /usr/share/nginx/html/env.js
+echo "  TELEMETRY_ENABLED: \"\${TELEMETRY_ENABLED}\"," >> /usr/share/nginx/html/env.js
+echo "  TELEMETRY_URL: \"\${TELEMETRY_URL}\"" >> /usr/share/nginx/html/env.js
+echo "};" >> /usr/share/nginx/html/env.js
+exec nginx -g "daemon off;"
+EOF
+RUN chmod +x /docker-entrypoint.sh
 
 # Define default environment variables
 ENV TELEMETRY_ENABLED=false

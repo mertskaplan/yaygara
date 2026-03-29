@@ -48,22 +48,32 @@ const GetReadyScreen = () => {
   );
 };
 const PlayingScreen = () => {
-  const currentWord = useGameStore(useShallow((state) => state.currentWord));
-  const timeLeft = useGameStore(useShallow((state) => state.timeLeft));
-  const handleCorrect = useGameStore(useShallow((state) => state.handleCorrect));
-  const handlePass = useGameStore(useShallow((state) => state.handlePass));
-  const tick = useGameStore(useShallow((state) => state.tick));
-  const lastGuessedWord = useGameStore(useShallow((state) => state.lastGuessedWord));
-  const lastPassedWord = useGameStore(useShallow((state) => state.lastPassedWord));
-  const undoLastAction = useGameStore(useShallow((state) => state.undoLastAction));
-  const endTurn = useGameStore(useShallow((state) => state.endTurn));
-  const resetGame = useGameStore(useShallow((state) => state.resetGame));
-  const turnDuration = useGameStore(useShallow((state) => state.turnDuration));
-  const gameStatus = useGameStore(useShallow((state) => state.gameStatus));
-  const unseenWords = useGameStore(useShallow((state) => state.unseenWords));
-  const isPaused = useGameStore(useShallow((state) => state.isPaused));
-  const setIsPaused = useGameStore(useShallow((state) => state.setIsPaused));
-  const theme = useGameStore(useShallow((state) => state.theme));
+  const {
+    currentWord, timeLeft, handleCorrect, handlePass, tick,
+    lastGuessedWord, lastPassedWord, undoLastAction, endTurn,
+    resetGame, turnDuration, gameStatus, unseenWords,
+    isPaused, setIsPaused, theme, teams, currentTeamIndex
+  } = useGameStore(useShallow((state) => ({
+    currentWord: state.currentWord,
+    timeLeft: state.timeLeft,
+    handleCorrect: state.handleCorrect,
+    handlePass: state.handlePass,
+    tick: state.tick,
+    lastGuessedWord: state.lastGuessedWord,
+    lastPassedWord: state.lastPassedWord,
+    undoLastAction: state.undoLastAction,
+    endTurn: state.endTurn,
+    resetGame: state.resetGame,
+    turnDuration: state.turnDuration,
+    gameStatus: state.gameStatus,
+    unseenWords: state.unseenWords,
+    isPaused: state.isPaused,
+    setIsPaused: state.setIsPaused,
+    theme: state.theme,
+    teams: state.teams,
+    currentTeamIndex: state.currentTeamIndex,
+  })));
+
   const { t } = useTranslations();
   const navigate = useNavigate();
   const [isEndGameModalOpen, setIsEndGameModalOpen] = useState(false);
@@ -112,36 +122,37 @@ const PlayingScreen = () => {
     resetGame();
     navigate(`/${language}`);
   };
+
   const handleActionClick = (action: 'pass' | 'correct') => {
-    if (isActionLocked) return;
-    if (action === 'pass') {
-      handlePass();
-    } else {
-      handleCorrect();
+    if (!isActionLocked) {
+      if (action === 'pass') {
+        handlePass();
+      } else {
+        handleCorrect();
+      }
+      setIsActionLocked(true);
+      setTimeout(() => setIsActionLocked(false), 1200);
     }
-    setIsActionLocked(true);
-    setTimeout(() => setIsActionLocked(false), 1200);
   };
 
   const handleTimerClick = () => {
-    if (isActionLocked || isEndGameModalOpen || isPaused || !currentWord || unseenWords.length === 0) return;
-    
-    // Skip current word
-    handleActionClick('pass');
-    
-    // Pause the game (this opens the modal)
-    setIsPaused('manual');
+    if (!isActionLocked && !isEndGameModalOpen && !isPaused && currentWord && unseenWords.length > 0) {
+      // Skip current word
+      handleActionClick('pass');
+      // Pause the game (this opens the modal)
+      setIsPaused('manual');
+    }
   };
-  const teams = useGameStore(useShallow((state) => state.teams));
-  const currentTeamIndex = useGameStore(useShallow((state) => state.currentTeamIndex));
+
   const currentTeam = teams[currentTeamIndex];
 
   const undoBgStyle = useMemo(() => {
+    const style: React.CSSProperties = {};
     if (currentTeam) {
       const lightness = theme === 'dark' ? 15 : 95;
-      return { backgroundColor: `hsl(${hexToHsl(currentTeam.color, lightness)})` };
+      style.backgroundColor = `hsl(${hexToHsl(currentTeam.color, lightness)})`;
     }
-    return {};
+    return style;
   }, [currentTeam, theme]);
 
   if (!currentTeam) return null;

@@ -185,38 +185,39 @@ function generateDecksManifestPlugin() {
   const decksDir = path.resolve(__dirname, 'public/decks');
   const manifestPath = path.resolve(__dirname, 'public/decks-manifest.json');
 
+  const getExistingManifest = (): any[] => {
+    if (!fs.existsSync(manifestPath)) return [];
+    try {
+      const content = fs.readFileSync(manifestPath, 'utf-8');
+      const parsed = JSON.parse(content);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  };
+
+  const getManifestItemFilename = (item: any): string => {
+    return typeof item === 'string' ? item : item?.filename || '';
+  };
+
   const generateManifest = () => {
     if (!fs.existsSync(decksDir)) return;
 
-    let existingManifest: any[] = [];
-    if (fs.existsSync(manifestPath)) {
-      try {
-        const content = fs.readFileSync(manifestPath, 'utf-8');
-        const parsed = JSON.parse(content);
-        // Handle both old object format and new string array format
-        existingManifest = Array.isArray(parsed) ? parsed : [];
-      } catch (e) {
-        console.error('Failed to parse existing manifest:', e);
+    const existingManifest = getExistingManifest();
+    let filesOnDisk = fs.readdirSync(decksDir).filter(f => f.endsWith('.json'));
+
+    const updatedManifest: string[] = [];
+    
+    for (const item of existingManifest) {
+      const filename = getManifestItemFilename(item);
+      const index = filesOnDisk.indexOf(filename);
+      
+      if (index > -1) {
+        filesOnDisk.splice(index, 1);
+        updatedManifest.push(filename);
       }
     }
 
-    const filesOnDisk = fs.readdirSync(decksDir).filter(f => f.endsWith('.json'));
-
-    // 1. Process existing items from manifest (preserving order)
-    const updatedManifest = existingManifest.map(item => {
-      // item might be a string (new format) or an object (old format)
-      const filename = typeof item === 'string' ? item : item.filename;
-
-      if (filesOnDisk.includes(filename)) {
-        // Remove from filesOnDisk list so we know what's left
-        const index = filesOnDisk.indexOf(filename);
-        if (index > -1) filesOnDisk.splice(index, 1);
-        return filename;
-      }
-      return null; // File no longer exists
-    }).filter(Boolean);
-
-    // 2. Add new files found on disk
     const finalManifest = [...updatedManifest, ...filesOnDisk];
     fs.writeFileSync(manifestPath, JSON.stringify(finalManifest, null, 2));
     console.log('✅ Updated simplified decks-manifest.json (preserved order)');
