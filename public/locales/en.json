@@ -104,7 +104,7 @@
       "and keeping the same license"
     ],
     "licenseSuffix": "under these conditions, you can develop and redistribute it as you wish. Remember, software should serve users, not the other way around.",
-    "sourceCode": "You can access the game's source code on <a href=\"https://github.com/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GitHub</a>. If you notice a bug, you can report it, or even contribute directly if you wish. Open source is the way! ❤️",
+    "sourceCode": "You can access the game's source code on <a href=\"https://github.com/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GitHub</a> or <a href=\"https://codeberg.org/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Codeberg</a>. If you notice a bug, you can report it, or even contribute directly if you wish. Open source is the way! ❤️",
     "toolsTitle": "Development Tools",
     "toolsDescription": "Yaygara was initially developed using the Cloudflare Vibe SDK, and later continued with Antigravity. During the software development process, in addition to manual coding, extensive support was received from large language models like Gemini, Grok, and ChatGPT in the planning, coding and debugging phases.",
     "outro": "A little human intelligence, a little artificial intelligence, lots of code and the result: Yaygara! Enjoy, everyone.",

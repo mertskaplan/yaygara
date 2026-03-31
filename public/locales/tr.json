@@ -104,7 +104,7 @@
       "ve aynı lisansı devam ettirmek"
     ],
     "licenseSuffix": "şartıyla dilediğin gibi geliştirebilir ve yeniden dağıtılabilirsin. Unutma, kullanıcılar yazılımlara değil, yazılımlar kullanıcılara hizmet etmelidir.",
-    "sourceCode": "Oyunun kaynak kodlarına <a href=\"https://github.com/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GitHub</a> üzerinden erişebilirsin. Bir hata fark edersen bildirebilir, hatta istersen doğrudan katkıda da bulunabilirsin. Açık kaynak candır. ❤️",
+    "sourceCode": "Oyunun kaynak kodlarına <a href=\"https://github.com/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">GitHub</a> veya <a href=\"https://codeberg.org/mertskaplan/yaygara\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-sky-500 hover:underline\">Codeberg</a> üzerinden erişebilirsin. Bir hata fark edersen bildirebilir, hatta istersen doğrudan katkıda da bulunabilirsin. Açık kaynak candır. ❤️",
     "toolsTitle": "Geliştirme Araçları",
     "toolsDescription": "Yaygara, ilk olarak Cloudflare Vibe SDK ile geliştirilmeye başlandı, sonrasında Antigravitiy ile devam edildi. Yazılım sürecinde manuel kodlamanın yanı sıra Gemini, Grok ve ChatGPT gibi büyük dil modellerinden planlama, kodlama ve hata ayıklama aşamalarında yoğun şekilde destek alındı.",
     "outro": "Biraz insan zekâsı, biraz yapay zekâ, bolca kod ve ortaya çıkan: Yaygara! Herkese afiyet olsun.",
