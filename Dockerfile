@@ -1,8 +1,7 @@
 # Stage 1: Build the React application
-FROM node:18-alpine AS build
+FROM oven/bun:1.1.20-alpine AS build
 WORKDIR /app
-# Install bun
-RUN npm install -g bun@1.1.20
+
 
 # Copy package manifests
 COPY package.json bun.lock ./
