@@ -116,6 +116,9 @@ self.addEventListener('fetch', (event) => {
     // Skip external API requests (like telemetry domain)
     if (url.origin !== self.location.origin) return;
 
+    // Skip Cloudflare cdn-cgi paths (like Zaraz and Web Analytics)
+    if (url.pathname.startsWith('/cdn-cgi/')) return;
+
     if (event.request.mode === 'navigate') {
         event.respondWith(
             staleWhileRevalidate(event.request).then(response => {
