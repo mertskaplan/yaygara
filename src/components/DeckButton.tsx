@@ -18,10 +18,10 @@ export const DeckButton: React.FC<DeckButtonProps> = ({ deck, icon: Icon, isSele
   const wordCount = deck.words?.length || 0;
   
   const difficultyFactor = {
-    easy: 4,
-    medium: 3,
-    hard: 2,
-  }[deck.difficulty] || 3;
+    easy: 6,
+    medium: 5,
+    hard: 4,
+  }[deck.difficulty] || 5;
   
   const estimatedTime = Math.round((wordCount * 3) / difficultyFactor);
   

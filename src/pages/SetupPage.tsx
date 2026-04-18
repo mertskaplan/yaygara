@@ -269,20 +269,20 @@ const DeckSelection = () => {
         ) : (
           <>
             {decks.map((deck) => (
-              <DeckButton 
-                key={deck.id} 
-                deck={deck} 
-                icon={BookOpen} 
+              <DeckButton
+                key={deck.id}
+                deck={deck}
+                icon={BookOpen}
                 isSelected={selectedDeck?.id === deck.id}
                 progress={playedDeckProgress?.[deck.id] || 0}
                 onSelect={selectDeck}
               />
             ))}
             {customDeck && (
-              <DeckButton 
-                key={customDeck.id} 
-                deck={customDeck} 
-                icon={Upload} 
+              <DeckButton
+                key={customDeck.id}
+                deck={customDeck}
+                icon={Upload}
                 isSelected={selectedDeck?.id === customDeck.id}
                 progress={playedDeckProgress?.[customDeck.id] || 0}
                 onSelect={selectDeck}
@@ -378,7 +378,7 @@ const WordCountSelection = () => {
         <div className="flex flex-col items-center gap-2 pt-2">
           <div className="flex items-center justify-center gap-2 text-slate-500 dark:text-slate-400">
             <Clock className="w-5 h-5 text-sky-500" />
-            <span className="font-semibold">{t('setup.estimatedTime', { time: Math.round((count * 3) / ({ easy: 4, medium: 3, hard: 2 }[selectedDeck?.difficulty || 'medium'] || 3)) })}</span>
+            <span className="font-semibold">{t('setup.estimatedTime', { time: Math.round((count * 3) / ({ easy: 6, medium: 5, hard: 4 }[selectedDeck?.difficulty || 'medium'] || 5)) })}</span>
           </div>
 
           <div className="w-full pt-1">

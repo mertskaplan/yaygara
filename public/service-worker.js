@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yaygara-v1.4.1';
+const CACHE_NAME = 'yaygara-v1.4.2';
 const CORE_ASSETS = [
     '/',
     '/index.html',

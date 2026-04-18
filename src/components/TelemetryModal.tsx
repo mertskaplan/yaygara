@@ -55,7 +55,7 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
     setIsSubmitting(true);
 
     // Calculate estimated time (same logic as SetupPage)
-    const difficultyFactor = selectedDeck.difficulty === 'hard' ? 2 : selectedDeck.difficulty === 'medium' ? 3 : 4;
+    const difficultyFactor = { easy: 6, medium: 5, hard: 4 }[selectedDeck.difficulty] || 5;
     const estimatedTimeMin = Math.round((words.length * 3) / difficultyFactor);
 
     // Build the specific JSON structure requested by the server
