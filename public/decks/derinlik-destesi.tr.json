@@ -4,53 +4,245 @@
   "language": "tr",
   "difficulty": "hard",
   "words": [
-    { "term": "Dost ateşi", "hint": "Savaşta yanlışlıkla kendi tarafındaki birini vurma durumu.", "difficulty": 2 },
-    { "term": "Tekerlek", "hint": "Ulaşım araçlarının dönerek ilerlemesini sağlayan dairesel parça.", "difficulty": 1 },
-    { "term": "Dom dom kurşunu", "hint": "Vücuda girdiğinde genişleyerek ağır hasar veren bir mermi türü.", "difficulty": 2 },
-    { "term": "Bacaksız", "hint": "Boyu kısa olan kişiler veya yaramaz çocuklar için kullanılan lakap.", "difficulty": 1 },
-    { "term": "Domates", "hint": "Salçanın ve menemenin ana maddesi olan kırmızı sebze.", "difficulty": 1 },
-    { "term": "Çıkmaz", "hint": "Sonu olmayan yol veya çözümsüz kalan durum.", "difficulty": 1 },
-    { "term": "Yedi Uyurlar", "hint": "Bir mağarada yüzyıllarca uyuduklarına inanılan dini ve mitolojik figürler.", "difficulty": 3 },
-    { "term": "Tütün", "hint": "Kurutulmuş yaprakları yakılarak dumanı içilen bitki.", "difficulty": 1 },
-    { "term": "Esir", "hint": "Özgürlüğü elinden alınmış, tutsak kişi.", "difficulty": 1 },
-    { "term": "Sarılmak", "hint": "Kolları birinin vücuduna dolayarak sevgi göstermek.", "difficulty": 1 },
-    { "term": "Panjur", "hint": "Pencereleri dışarıdan gelen ışık ve havaya karşı koruyan kanatlı düzenek.", "difficulty": 1 },
-    { "term": "Öklid", "hint": "Geometrinin babası olarak bilinen antik çağ matematikçisi.", "difficulty": 3 },
-    { "term": "Külüstür", "hint": "Eskimiş, yıpranmış ve bakımsız kalmış eşya veya araç.", "difficulty": 2 },
-    { "term": "Filiz", "hint": "Tohumdan yeni çıkmış, taze ve küçük bitki dalı.", "difficulty": 1 },
-    { "term": "Çamur", "hint": "Toprağın suyla karışarak aldığı vıcık vıcık hal.", "difficulty": 1 },
-    { "term": "Kambur", "hint": "Sırtta oluşan kavisli çıkıntı.", "difficulty": 1 },
-    { "term": "Emme basma tulumba", "hint": "Kolu yukarı aşağı hareket ettirilerek su çıkaran düzenek.", "difficulty": 2 },
-    { "term": "Şamdan", "hint": "Üzerine aydınlatma gereçlerinin dikildiği süslü tutacak.", "difficulty": 1 },
-    { "term": "Karabina", "hint": "Dağcılıkta kullanılan, emniyet kilidi olan metal halka.", "difficulty": 3 },
-    { "term": "Yufka ekmek", "hint": "Sac üzerinde pişirilen çok ince hamur işi.", "difficulty": 1 },
-    { "term": "Havan", "hint": "Mutfakta sarımsak veya baharat ezmeye yarayan kap.", "difficulty": 1 },
-    { "term": "Gürbüz tam bir canavar", "hint": "90'lı yılların meşhur bir kek reklamının şarkı sözü.", "difficulty": 2 },
-    { "term": "Ana baba", "hint": "Ebeveynleri ifade eden ikileme.", "difficulty": 1 },
-    { "term": "Suç", "hint": "Yasaların yasakladığı ve cezai karşılığı olan eylem.", "difficulty": 1 },
-    { "term": "Zurna dürüm", "hint": "Oldukça uzun lavaşın içine sarılan sokak lezzeti.", "difficulty": 1 },
-    { "term": "Fare kapanı", "hint": "Küçük kemirgenleri yakalamak için kurulan mekanik düzenek.", "difficulty": 1 },
-    { "term": "Sessiz gemi", "hint": "Yahya Kemal'in ölümü bir yolculuğa benzettiği meşhur şiiri.", "difficulty": 2 },
-    { "term": "Korna çalmak", "hint": "Sürücülerin diğerlerini uyarmak için sesli ikaz vermesi.", "difficulty": 1 },
-    { "term": "Zarf atmak", "hint": "Birinin ağzını aramak veya niyetini anlamak için yapılan kurgu.", "difficulty": 2 },
-    { "term": "Telsiz", "hint": "Kablolu bağlantı olmadan radyo dalgalarıyla haberleşen cihaz.", "difficulty": 1 },
-    { "term": "Nargile", "hint": "Dumanın sudan geçerek soğumasını sağlayan geleneksel içim aracı.", "difficulty": 2 },
-    { "term": "Piyon", "hint": "Satrançta en çok bulunan ve en düşük değerli taş.", "difficulty": 1 },
-    { "term": "Radar", "hint": "Cisimlerin mesafesini ve hızını dalgalar yardımıyla tespit eden sistem.", "difficulty": 2 },
-    { "term": "Kuluçka", "hint": "Kuşların yumurta üzerine yatarak yavru çıkarması süreci.", "difficulty": 2 },
-    { "term": "Müfreze", "hint": "Belirli bir görevi yerine getirmek için ayrılmış askeri birlik.", "difficulty": 3 },
-    { "term": "Sirk", "hint": "Akrobatların ve eğitimli hayvanların gösteri yaptığı topluluk.", "difficulty": 1 },
-    { "term": "Zeytin dalı", "hint": "Barışı simgeleyen bitki parçası.", "difficulty": 2 },
-    { "term": "Kelebek camı", "hint": "Eski otomobillerin ön kapılarında bulunan küçük üçgen pencere.", "difficulty": 2 },
-    { "term": "Turşu kurmak", "hint": "Sebzeleri tuzlu ve sirkeli suda bekletip saklama işlemi.", "difficulty": 1 },
-    { "term": "Astronot", "hint": "Uzay araştırmaları için atmosfer dışına çıkan kişi.", "difficulty": 1 },
-    { "term": "Kül tablası", "hint": "Tütün ürünlerinin atıklarının biriktirildiği küçük kap.", "difficulty": 1 },
-    { "term": "Körebe", "hint": "Gözleri bağlı bir oyuncunun diğerlerini yakalamaya çalıştığı oyun.", "difficulty": 1 },
-    { "term": "Paraşüt", "hint": "Havadayken inişi yavaşlatmak için açılan büyük bez mekanizma.", "difficulty": 1 },
-    { "term": "Argo", "hint": "Belli bir kesimin kendi aralarında kullandığı özel dil veya sözcükler.", "difficulty": 2 },
-    { "term": "Simülasyon", "hint": "Gerçek bir olayın bilgisayar ortamında canlandırılması.", "difficulty": 3 },
-    { "term": "Dalyan", "hint": "Deniz kıyısında balık tutmak için kurulan sabit ağ düzeneği.", "difficulty": 3 },
-    { "term": "Gondol", "hint": "Venedik kanallarında kullanılan geleneksel ince uzun tekne.", "difficulty": 2 },
-    { "term": "Cirit", "hint": "At üzerindeyken değneğin birbirine fırlatıldığı ata sporu.", "difficulty": 2 }
+    {
+      "term": "Dost ateşi",
+      "hint": "Savaşta yanlışlıkla kendi tarafındaki birini vurma durumu.",
+      "difficulty": 2
+    },
+    {
+      "term": "Tekerlek",
+      "hint": "Ulaşım araçlarının dönerek ilerlemesini sağlayan dairesel parça.",
+      "difficulty": 1
+    },
+    {
+      "term": "Dom dom kurşunu",
+      "hint": "Vücuda girdiğinde genişleyerek ağır hasar veren bir mermi türü.",
+      "difficulty": 2
+    },
+    {
+      "term": "Bacaksız",
+      "hint": "Boyu kısa olan kişiler veya yaramaz çocuklar için kullanılan lakap.",
+      "difficulty": 1
+    },
+    {
+      "term": "Domates",
+      "hint": "Salçanın ve menemenin ana maddesi olan kırmızı sebze.",
+      "difficulty": 1
+    },
+    {
+      "term": "Çıkmaz sokak",
+      "hint": "Bir girişi olan ve başka bir yola bağlanmayan yol.",
+      "difficulty": 1
+    },
+    {
+      "term": "Yedi Uyurlar",
+      "hint": "Bir mağarada yüzyıllarca uyuduklarına inanılan dini ve mitolojik figürler.",
+      "difficulty": 3
+    },
+    {
+      "term": "Tütün",
+      "hint": "Kurutulmuş yaprakları yakılarak dumanı içilen bitki.",
+      "difficulty": 1
+    },
+    {
+      "term": "Esir",
+      "hint": "Özgürlüğü elinden alınmış, tutsak kişi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Sarılmak",
+      "hint": "Kolları birinin vücuduna dolayarak sevgi göstermek.",
+      "difficulty": 1
+    },
+    {
+      "term": "Panjur",
+      "hint": "Pencereleri dışarıdan gelen ışık ve havaya karşı koruyan kanatlı düzenek.",
+      "difficulty": 1
+    },
+    {
+      "term": "Öklid",
+      "hint": "Geometrinin babası olarak bilinen antik çağ matematikçisi.",
+      "difficulty": 3
+    },
+    {
+      "term": "Külüstür",
+      "hint": "Eskimiş, yıpranmış ve bakımsız kalmış eşya veya araç.",
+      "difficulty": 2
+    },
+    {
+      "term": "Filiz",
+      "hint": "Tohumdan yeni çıkmış, taze ve küçük bitki dalı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Çamur",
+      "hint": "Toprağın suyla karışarak aldığı vıcık vıcık hal.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kambur",
+      "hint": "Sırtta oluşan kavisli çıkıntı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Emme basma tulumba",
+      "hint": "Kolu yukarı aşağı hareket ettirilerek su çıkaran düzenek.",
+      "difficulty": 2
+    },
+    {
+      "term": "Şamdan",
+      "hint": "Üzerine aydınlatma gereçlerinin dikildiği süslü tutacak.",
+      "difficulty": 1
+    },
+    {
+      "term": "Karabina",
+      "hint": "Dağcılıkta kullanılan, emniyet kilidi olan metal halka.",
+      "difficulty": 3
+    },
+    {
+      "term": "Yufka ekmek",
+      "hint": "Sac üzerinde pişirilen çok ince hamur işi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Havan",
+      "hint": "Mutfakta sarımsak veya baharat ezmeye yarayan kap.",
+      "difficulty": 1
+    },
+    {
+      "term": "Gürbüz tam bir canavar",
+      "hint": "90'lı yılların meşhur bir kek reklamının şarkı sözü.",
+      "difficulty": 2
+    },
+    {
+      "term": "Ana baba günü",
+      "hint": "Çok kalabalık ve telaşlı ortam.",
+      "difficulty": 1
+    },
+    {
+      "term": "Suç ortağı",
+      "hint": "Yasadışı faaliyete birlikte karışan kişi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Zurna dürüm",
+      "hint": "Oldukça uzun lavaşın içine sarılan sokak lezzeti.",
+      "difficulty": 1
+    },
+    {
+      "term": "Fare kapanı",
+      "hint": "Küçük kemirgenleri yakalamak için kurulan mekanik düzenek.",
+      "difficulty": 1
+    },
+    {
+      "term": "Sessiz gemi",
+      "hint": "Yahya Kemal'in ölümü bir yolculuğa benzettiği meşhur şiiri.",
+      "difficulty": 2
+    },
+    {
+      "term": "Korna çalmak",
+      "hint": "Sürücülerin diğerlerini uyarmak için sesli ikaz vermesi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Zarf atmak",
+      "hint": "Birinin ağzını aramak veya niyetini anlamak için yapılan kurgu.",
+      "difficulty": 2
+    },
+    {
+      "term": "Telsiz",
+      "hint": "Kablolu bağlantı olmadan radyo dalgalarıyla haberleşen cihaz.",
+      "difficulty": 1
+    },
+    {
+      "term": "Nargile",
+      "hint": "Dumanın sudan geçerek soğumasını sağlayan geleneksel içim aracı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Piyon",
+      "hint": "Satrançta en çok bulunan ve en düşük değerli taş.",
+      "difficulty": 1
+    },
+    {
+      "term": "Radar",
+      "hint": "Cisimlerin mesafesini ve hızını dalgalar yardımıyla tespit eden sistem.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kuluçka",
+      "hint": "Kuşların yumurta üzerine yatarak yavru çıkarması süreci.",
+      "difficulty": 2
+    },
+    {
+      "term": "Müfreze",
+      "hint": "Belirli bir görevi yerine getirmek için ayrılmış askeri birlik.",
+      "difficulty": 3
+    },
+    {
+      "term": "Sirk",
+      "hint": "Akrobatların ve eğitimli hayvanların gösteri yaptığı topluluk.",
+      "difficulty": 1
+    },
+    {
+      "term": "Zeytin dalı",
+      "hint": "Barışı simgeleyen bitki parçası.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kelebek camı",
+      "hint": "Eski otomobillerin ön kapılarında bulunan küçük üçgen pencere.",
+      "difficulty": 2
+    },
+    {
+      "term": "Turşu kurmak",
+      "hint": "Sebzeleri tuzlu ve sirkeli suda bekletip saklama işlemi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Astronot",
+      "hint": "Uzay araştırmaları için atmosfer dışına çıkan kişi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kül tablası",
+      "hint": "Tütün ürünlerinin atıklarının biriktirildiği küçük kap.",
+      "difficulty": 1
+    },
+    {
+      "term": "Körebe",
+      "hint": "Gözleri bağlı bir oyuncunun diğerlerini yakalamaya çalıştığı oyun.",
+      "difficulty": 1
+    },
+    {
+      "term": "Paraşüt",
+      "hint": "Havadayken inişi yavaşlatmak için açılan büyük bez mekanizma.",
+      "difficulty": 1
+    },
+    {
+      "term": "Argo",
+      "hint": "Belli bir kesimin kendi aralarında kullandığı özel dil veya sözcükler.",
+      "difficulty": 2
+    },
+    {
+      "term": "Simülasyon",
+      "hint": "Gerçek bir olayın bilgisayar ortamında canlandırılması.",
+      "difficulty": 3
+    },
+    {
+      "term": "Dalyan",
+      "hint": "Deniz kıyısında balık tutmak için kurulan sabit ağ düzeneği.",
+      "difficulty": 3
+    },
+    {
+      "term": "Gondol",
+      "hint": "Venedik kanallarında kullanılan geleneksel ince uzun tekne.",
+      "difficulty": 2
+    },
+    {
+      "term": "Cirit",
+      "hint": "At üzerindeyken değneğin birbirine fırlatıldığı ata sporu.",
+      "difficulty": 2
+    }
   ]
 }
