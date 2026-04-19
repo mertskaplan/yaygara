@@ -1,8 +1,12 @@
-# Yaygara
+<div align="center">
+![Yaygara](https://raw.githubusercontent.com/mertskaplan/yaygara/refs/heads/main/public/yaygara.svg)
 
 ![Static Badge](https://img.shields.io/badge/Open_Source-%E2%99%A5-turquoise) [![GitHub License](https://img.shields.io/github/license/mertskaplan/yaygara)](https://github.com/mertskaplan/yaygara/blob/main/LICENSE) [![Docker](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/mertskaplan/yaygara/) [![GitHub release](https://img.shields.io/github/release/mertskaplan/yaygara.svg)](https://github.com/mertskaplan/yaygara/releases/) [![GitHub latest commit](https://badgen.net/github/last-commit/mertskaplan/yaygara)](https://GitHub.com/mertskaplan/yaygara/commit/) [![Website shields.io](https://img.shields.io/website-up-down-brightgreen-red/http/yaygara.mertskaplan.com.svg)](https://yaygara.mertskaplan.com/) [![Docker](https://badgen.net/badge/icon/codeberg?icon=codeberg&label)](https://codeberg.org/mertskaplan/yaygara) [![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://hub.docker.com/r/mertskaplan/yaygara) ![Docker Image Size](https://img.shields.io/docker/image-size/mertskaplan/yaygara)
 
 [![Maintainability](https://qlty.sh/gh/mertskaplan/projects/yaygara/maintainability.svg)](https://qlty.sh/gh/mertskaplan/projects/yaygara) [![CodeFactor](https://www.codefactor.io/repository/github/mertskaplan/yaygara/badge)](https://www.codefactor.io/repository/github/mertskaplan/yaygara)
+</div>
+  
+# Yaygara - Fun party game based on narration and guessing
 
 Yaygara is a vibrant, mobile-first, and offline-ready party game based on narration and guessing. It brings people together for fast-paced fun, blending the best elements of classic games like Taboo and Charades.
 
