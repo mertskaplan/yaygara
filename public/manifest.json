@@ -7,8 +7,8 @@
     "games",
     "party"
   ],
-  "scope": "https://yaygara.mertskaplan.com/",
-  "start_url": "https://yaygara.mertskaplan.com/",
+  "scope": "/",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
