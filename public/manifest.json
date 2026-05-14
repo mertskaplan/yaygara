@@ -1,4 +1,6 @@
 {
+  "dir": "ltr",
+  "lang": "en",
   "id": "/",
   "name": "Yaygara",
   "short_name": "Yaygara",
@@ -63,6 +65,7 @@
       "sizes": "1200x1200",
       "type": "image/png",
       "form_factor": "wide",
+      "platform": "wide",
       "label": "Yaygara"
     },
     {
@@ -70,6 +73,7 @@
       "sizes": "1200x1200",
       "type": "image/png",
       "form_factor": "wide",
+      "platform": "wide",
       "label": "Yaygara"
     }
   ]
