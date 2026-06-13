@@ -12,7 +12,7 @@ import { CheckCircle2, Send, ThumbsUp, ThumbsDown } from 'lucide-react';
 import { useTranslations } from '@/hooks/useTranslations';
 import { useGameStore } from '@/stores/useGameStore';
 import { useShallow } from 'zustand/react/shallow';
-import { getTelemetryUrl } from '@/lib/env';
+import { getTelemetryUrl, APP_VERSION } from '@/lib/env';
 
 interface TelemetryModalProps {
   isOpen: boolean;
@@ -62,6 +62,7 @@ export const TelemetryModal: React.FC<TelemetryModalProps> = ({ isOpen, onClose 
     const payload = {
       session_id: gameId || 'ygr-unknown',
       timestamp: new Date().toISOString(),
+      app_version: APP_VERSION,
       interface_language: language,
       deck_id: selectedDeck.id,
       deck_difficulty: selectedDeck.difficulty,

@@ -1,0 +1,178 @@
+{
+    "id": "dilde-dugum.tr.json",
+    "name": "Dilde düğüm destesi",
+    "language": "tr",
+    "difficulty": "hard",
+    "words": [
+        {
+            "term": "Adalet kupası",
+            "hint": "Fazla doldurulduğunda altındaki delikten tüm sıvıyı boşaltan antik düzenek.",
+            "difficulty": 3
+        },
+        {
+            "term": "Üç robot yasası",
+            "hint": "Yapay zekanın insanlığa zarar vermesini engellemek için yazılmış ünlü bilimkurgu kuralları.",
+            "difficulty": 3
+        },
+        {
+            "term": "Varis",
+            "hint": "Bir kimseden geriye kalan mülk veya makamın yasal sahibi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Yağdanlık",
+            "hint": "Mutfaklarda yemeklere lezzet katmak için kullanılan sıvı malzemeyi, ince bir ağızdan damlatarak servis etmeye yarayan kap.",
+            "difficulty": 2
+        },
+        {
+            "term": "Maymun iştahlı",
+            "hint": "Hevesi çabuk geçen, bir işten diğerine sürekli atlayan istikrarsız kişi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Götte yaprak elde mızrak",
+            "hint": "Hiçbir hazırlığı ve imkanı olmadan, çırılçıplak bir halde zor bir işe girişmeyi anlatan argo ifade.",
+            "difficulty": 3
+        },
+        {
+            "term": "Ağlanacak omuz",
+            "hint": "Zor zamanlarda dert ortağı olan, teselli veren güvenilir dost.",
+            "difficulty": 2
+        },
+        {
+            "term": "Sufle",
+            "hint": "Sahnedeki oyuncunun rolünü veya repliğini unutması durumunda, kulis arkasındaki görevlinin metni fısıldaması.",
+            "difficulty": 2
+        },
+        {
+            "term": "Sarı kola",
+            "hint": "Halk arasında asitli portakallı gazlı içeceklere verilen genel ad.",
+            "difficulty": 1
+        },
+        {
+            "term": "Çıplak",
+            "hint": "Üzerinde hiçbir giysi bulunmayan insan vücudu.",
+            "difficulty": 1
+        },
+        {
+            "term": "Otomasyon",
+            "hint": "Endüstride insan gücü yerine makinelerin ve sistemlerin kendi kendine çalışması.",
+            "difficulty": 2
+        },
+        {
+            "term": "Miras",
+            "hint": "Ölen kişiden yakınlarına kalan maddi varlıkların tümü.",
+            "difficulty": 1
+        },
+        {
+            "term": "Yalaka",
+            "hint": "Sürekli başkalarını överek menfaat devşirmeye çalışan yılışık kimse.",
+            "difficulty": 1
+        },
+        {
+            "term": "Maymun",
+            "hint": "İnsanlara benzer hareketler yapan, muz seven primat türü.",
+            "difficulty": 1
+        },
+        {
+            "term": "Fırın",
+            "hint": "Yemekleri yüksek ısıda pişirmek için kullanılan mutfak aleti.",
+            "difficulty": 1
+        },
+        {
+            "term": "Terazi",
+            "hint": "Hukukta eşitliği ve hakkı simgeleyen, iki kefeli ölçüm aracı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Vasiyet",
+            "hint": "Bir kimsenin ölümünden sonra mallarının nasıl paylaşılacağını yazılı beyan ettiği belge.",
+            "difficulty": 2
+        },
+        {
+            "term": "Akışkan",
+            "hint": "Katı olmayan, bulunduğu kabın şeklini kolayca alan maddelerin kıvamı.",
+            "difficulty": 2
+        },
+        {
+            "term": "Portakal",
+            "hint": "C vitamini deposu olan, turuncu renkli narenciye meyvesi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kibrit",
+            "hint": "Ucu yanıcı maddeyle kaplı, sürtünmeyle ateş çıkaran küçük tahta çöp.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kukla",
+            "hint": "İplerle yukarıdan oynatılan veya ele takılarak hareket ettirilen cansız figür.",
+            "difficulty": 1
+        },
+        {
+            "term": "Girdap",
+            "hint": "Suyun veya havanın dönerek oluşturduğu tehlikeli çukur.",
+            "difficulty": 2
+        },
+        {
+            "term": "Hiyeroglif",
+            "hint": "Antik Mısırlıların resimlerle oluşturduğu eski yazı sistemi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Kamuflaj",
+            "hint": "Çevreye uyum sağlayarak gizlenme veya görünmez olma yöntemi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Klip",
+            "hint": "Bir şarkı için çekilen kısa, konulu müzik videosu.",
+            "difficulty": 1
+        },
+        {
+            "term": "Otomat",
+            "hint": "Para atıldığında yiyecek veya içecek veren, kendi kendine çalışan mekanik dolap.",
+            "difficulty": 1
+        },
+        {
+            "term": "Günübirlik",
+            "hint": "Kalma amacı gütmeden ve yirmi dört saatten kısa sürede yapılan gezi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Karanfil",
+            "hint": "Güzel kokulu, renkli çiçekleri olan veya kurutulmuş tomurcuğu baharat olarak kullanılan bitki.",
+            "difficulty": 1
+        },
+        {
+            "term": "Görgü tanığı",
+            "hint": "Bir olayı veya suçu gerçekleştiğine şahit olan kimse.",
+            "difficulty": 2
+        },
+        {
+            "term": "Müze",
+            "hint": "Tarihi, sanatsal veya bilimsel eserlerin korunup halka sergilendiği yer.",
+            "difficulty": 2
+        },
+        {
+            "term": "Gözleme",
+            "hint": "Sac üzerinde pişirilen, içi genellikle peynirli veya patatesli hamur işi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Trafik lambası",
+            "hint": "Yollarda araç geçişlerini düzenleyen üç renkli sinyal sistemi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Berber",
+            "hint": "Erkeklerin saç ve sakal kesimini yapan zanaat kolu.",
+            "difficulty": 1
+        },
+        {
+            "term": "Geyşa",
+            "hint": "Japon kültüründe geleneksel sanatlarla konukları eğlendiren kadın sanatçı.",
+            "difficulty": 2
+        }
+    ]
+}

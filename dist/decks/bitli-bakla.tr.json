@@ -1,0 +1,208 @@
+{
+  "id": "bitli-bakla.tr",
+  "name": "Bitli bakla destesi",
+  "language": "tr",
+  "difficulty": "hard",
+  "words": [
+    {
+      "term": "Saksı",
+      "hint": "Bitkilerin yaşam alanı olan toprak dolu kap.",
+      "difficulty": 1
+    },
+    {
+      "term": "Tavşan atlet",
+      "hint": "Koşu yarışlarında tempoyu artıran ve genellikle yarışı bitirmeyen öncü koşucu",
+      "difficulty": 2
+    },
+    {
+      "term": "Kamuflaj",
+      "hint": "Gizlenme amacıyla kullanılan, çevreye uyum sağlayan desenli giysi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Yara bandı",
+      "hint": "Ten üzerindeki küçük çizikleri kapatmaya yarayan yapışkanlı tıbbi malzeme.",
+      "difficulty": 1
+    },
+    {
+      "term": "Maydonoz",
+      "hint": "Salatalara katılan, her konuya dahil olanlar için de kullanılan yeşil yapraklı bitki.",
+      "difficulty": 1
+    },
+    {
+      "term": "Velet",
+      "hint": "Küçük ve haylaz çocuklar için kullanılan argo ifade.",
+      "difficulty": 1
+    },
+    {
+      "term": "Çivi çiviyi söker",
+      "hint": "Bir derdin ancak o kuvvette bir başka durumla alt edilebileceğini belirten ifade.",
+      "difficulty": 3
+    },
+    {
+      "term": "Labrador",
+      "hint": "Bir av köpeği cinsi ya da Kuzey Buz Denizi'nden güneye akan soğuk su akıntısı",
+      "difficulty": 2
+    },
+    {
+      "term": "Batan geminin malları",
+      "hint": "Çok ucuza, neredeyse bedavaya verilen eşyalar için söylenen kalıplaşmış söz.",
+      "difficulty": 2
+    },
+    {
+      "term": "Galata Kulesi",
+      "hint": "İstanbul'un tepeden izlendiği, üzerinde uçuş denemesi yapılmış tarihi dikit.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kuru pasta",
+      "hint": "Misafirlikte çayın yanına konulan unlu, küçük atıştırmalıklar.",
+      "difficulty": 1
+    },
+    {
+      "term": "Tavuk kümesi",
+      "hint": "Kanatlıların yumurtladığı ve geceyi geçirdiği tahta barınak.",
+      "difficulty": 1
+    },
+    {
+      "term": "Selfie",
+      "hint": "Kişinin kendi görüntüsünü mobil cihazla ölümsüzleştirmesi.",
+      "difficulty": 1
+    },
+    {
+      "term": "Akıllı telefon",
+      "hint": "İnternet erişimi olan ve çok sayıda işlevi bulunan avuç içi bilgisayar.",
+      "difficulty": 1
+    },
+    {
+      "term": "Akbil",
+      "hint": "Eskiden İstanbul'da otobüs ve vapurlarda kullanılan metal uçlu elektronik ödeme aleti.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kısır",
+      "hint": "İnce bulgur ve salçayla yapılan, çay saatlerinin meşhur soğuk yemeği.",
+      "difficulty": 2
+    },
+    {
+      "term": "Çeyrek altın",
+      "hint": "Hediye olarak sunulan en küçük değerli maden parçası.",
+      "difficulty": 2
+    },
+    {
+      "term": "Gecekondu",
+      "hint": "Şehir kenarlarında bir gecede ortaya çıkan plansız yerleşim yeri.",
+      "difficulty": 2
+    },
+    {
+      "term": "Stalklamak",
+      "hint": "Birinin dijital dünyadaki hareketlerini çaktırmadan izlemek.",
+      "difficulty": 2
+    },
+    {
+      "term": "Sosyal mesafe",
+      "hint": "Bulaşıcı durumlarda bireylerin arasına koyduğu zorunlu boşluk.",
+      "difficulty": 2
+    },
+    {
+      "term": "Linç kültürü",
+      "hint": "Bir hata yapanın kalabalıklar tarafından acımasızca yargılanıp dışlanması.",
+      "difficulty": 2
+    },
+    {
+      "term": "Çay bardağı",
+      "hint": "Beli ince olmasıyla meşhur olan şeffaf içecek kabı.",
+      "difficulty": 1
+    },
+    {
+      "term": "Kumbara",
+      "hint": "Bozuk paraların küçük bir delikten içeri atılarak biriktirildiği yer.",
+      "difficulty": 1
+    },
+    {
+      "term": "Çöp kutusu",
+      "hint": "Atıkların biriktirilip uzağa taşınmadan önce bekletildiği hazne.",
+      "difficulty": 1
+    },
+    {
+      "term": "Pijama",
+      "hint": "Yatakta giyilmek üzere tasarlanmış rahat tekstil ürünü.",
+      "difficulty": 1
+    },
+    {
+      "term": "Sandalet",
+      "hint": "Sıcak havalarda giyilen, ayağın hava almasını sağlayan açık pabuç.",
+      "difficulty": 1
+    },
+    {
+      "term": "Nazar boncuğu",
+      "hint": "Kötü bakışların etkisini kırdığına inanılan mavi cam obje.",
+      "difficulty": 2
+    },
+    {
+      "term": "İkinci el",
+      "hint": "Daha önce başka bir sahibi olmuş eşyanın satış durumu.",
+      "difficulty": 2
+    },
+    {
+      "term": "Gece kuşu",
+      "hint": "Karanlık çöktüğünde canlanan ve geç saatlere kadar uyumayan tip.",
+      "difficulty": 2
+    },
+    {
+      "term": "Karadelik",
+      "hint": "Uzayda her şeyi içine çeken, kaçışı olmayan yoğun kütleli bölge.",
+      "difficulty": 2
+    },
+    {
+      "term": "Minimalizm",
+      "hint": "Azla yetinmeyi ve hayatı basitleştirmeyi amaçlayan felsefe.",
+      "difficulty": 2
+    },
+    {
+      "term": "Spoiler",
+      "hint": "Bir hikayenin sonunu bilerek veya bilmeyerek başkasına anlatma.",
+      "difficulty": 2
+    },
+    {
+      "term": "Podcast",
+      "hint": "Parça olarak yayımlanan sesli program serisi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Kaçak çay",
+      "hint": "Sınır ötesinden gelen, oldukça kuvvetli ve koyu renkli içecek.",
+      "difficulty": 2
+    },
+    {
+      "term": "Hamam",
+      "hint": "Mermer zeminli, sıcak ve buharlı geleneksel yıkanma mekanı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Falcı",
+      "hint": "Fincandaki şekillerden manalar çıkararak gelecekten bahseden kişi.",
+      "difficulty": 2
+    },
+    {
+      "term": "Arabesk",
+      "hint": "Dert ve keder temalı, doğu ezgileri taşıyan müzik tarzı.",
+      "difficulty": 2
+    },
+    {
+      "term": "Altın vuruş",
+      "hint": "Bir süreci kesin ve bitirici bir hamleyle tamamlamak.",
+      "difficulty": 3
+    },
+    {
+      "term": "Ayak izi",
+      "hint": "Yumuşak zeminlerde yürürken geride kalan şekil.",
+      "difficulty": 3
+    },
+    {
+      "term": "Plasebo etkisi",
+      "hint": "Sahte bir tedaviye olan inancın iyileşme sağlaması.",
+      "difficulty": 3
+    }
+  ]
+}

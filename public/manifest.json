@@ -1,10 +1,11 @@
 {
   "dir": "ltr",
   "lang": "en",
-  "id": "/",
+  "id": "yaygara",
   "name": "Yaygara",
   "short_name": "Yaygara",
   "description": "Fun party game based on narration and guessing.",
+  "version": "__APP_VERSION__",
   "categories": [
     "games",
     "party"
@@ -12,9 +13,17 @@
   "scope": "/",
   "start_url": "/",
   "display": "standalone",
+  "display_override": [
+    "standalone",
+    "fullscreen",
+    "minimal-ui",
+    "window-controls-overlay",
+    "browser"
+  ],
   "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
@@ -29,7 +38,7 @@
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/icons/icon-512x512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"

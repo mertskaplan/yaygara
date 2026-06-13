@@ -1,0 +1,163 @@
+{
+    "id": "yaygara-koparan.tr.json",
+    "name": "Yaygara koparan deste",
+    "language": "tr",
+    "difficulty": "hard",
+    "words": [
+        {
+            "term": "Zoru severim imkansız zaman alır",
+            "hint": "Elde edilmesi güç hedeflere ulaşabileceğini, sadece biraz daha fazla vakit gerektiğini belirten iddialı ve kararlı ifade.",
+            "difficulty": 3
+        },
+        {
+            "term": "Hafize Ana",
+            "hint": "Hababam Sınıfı filminde elinde zille koridorlarda koşturan, öğrencilere şefkat gösteren tatlı dilli karakter.",
+            "difficulty": 2
+        },
+        {
+            "term": "Beş çayı",
+            "hint": "Öğleden sonra atıştırmalıklarla birlikte sıcak bir içecek eşliğinde yapılan geleneksel sohbet buluşması.",
+            "difficulty": 1
+        },
+        {
+            "term": "Zımba",
+            "hint": "Sayfaları metal bir telle birbirine tutturmaya yarayan ofis gereci.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kuru sıkı tabanca",
+            "hint": "Gerçek mermi atmayan, sadece yüksek ses çıkararak korkutma amacı taşıyan ateşli silah.",
+            "difficulty": 2
+        },
+        {
+            "term": "Gümrük",
+            "hint": "Ülkeye giren veya çıkan malların denetlendiği ve vergisinin alındığı devlet dairesi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Hadım",
+            "hint": "Üreme yeteneği cerrahi müdahale ile elinden alınmış kişi.",
+            "difficulty": 3
+        },
+        {
+            "term": "Pürmüz",
+            "hint": "Yüksek ısıda alev püskürterek metalleri lehimlemek veya mutfakta tatlıların üzerini yakmak için kullanılan alet.",
+            "difficulty": 3
+        },
+        {
+            "term": "Okul zili",
+            "hint": "Eğitim kurumlarında derse giriş ve çıkış vakitlerini haber veren sesli uyarıcı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Hizmetli",
+            "hint": "Kurumlarda temizlik, çay ve düzen gibi yardımcı işlerden sorumlu çalışan.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kısır",
+            "hint": "İnce bulgur, salça ve yeşilliklerle yapılan ekşili soğuk lezzet.",
+            "difficulty": 1
+        },
+        {
+            "term": "Dedikodu",
+            "hint": "Başkalarının arkasından yapılan söylenti odaklı sohbet.",
+            "difficulty": 1
+        },
+        {
+            "term": "Evrak",
+            "hint": "Resmi kurumlarda işlem gören yazılı belgelere verilen genel ad.",
+            "difficulty": 1
+        },
+        {
+            "term": "Namlu",
+            "hint": "Ateşli silahlarda merminin içinden geçerek fırladığı metal boru.",
+            "difficulty": 2
+        },
+        {
+            "term": "Kaçakçı",
+            "hint": "Kanun dışı yollarla ülkeye gizlice mal sokan veya çıkaran kişi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Kaynak",
+            "hint": "İki metali yüksek ısı yoluyla birbirine birleştirme işlemi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Harem",
+            "hint": "Padişahların ve ailelerinin sarayda yaşadıkları ve dışarıya kapalı olan özel bölüm.",
+            "difficulty": 2
+        },
+        {
+            "term": "Ameliyathane",
+            "hint": "Hastanelerde cerrahi müdahalelerin yapıldığı son derece steril oda.",
+            "difficulty": 2
+        },
+        {
+            "term": "Barista",
+            "hint": "Kahve dükkanlarında espresso bazlı içecekleri hazırlayıp sunan uzman.",
+            "difficulty": 2
+        },
+        {
+            "term": "Radyasyon",
+            "hint": "Gözle görülmeyen, elektromanyetik dalgalar veya parçacıklar halinde yayılan enerji türü.",
+            "difficulty": 2
+        },
+        {
+            "term": "Fosil",
+            "hint": "Geçmiş jeolojik dönemlerde yaşamış canlıların taşlaşmış kalıntıları.",
+            "difficulty": 2
+        },
+        {
+            "term": "Hortum",
+            "hint": "Kendi etrafında hızla dönerek yıkıcı etki yaratan dikey hava akımı sütunu.",
+            "difficulty": 2
+        },
+        {
+            "term": "Jeneratör",
+            "hint": "Elektrik kesintilerinde yakıt tüketerek devreye giren ve alternatif enerji sağlayan makine.",
+            "difficulty": 2
+        },
+        {
+            "term": "Otostop",
+            "hint": "Yol kenarında el işareti yapıp geçen araçlara binerek ücretsiz seyahat etme eylemi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Buzdolabı",
+            "hint": "Yiyecek ve içecekleri soğuk tutarak bozulmalarını engelleyen büyük beyaz eşya.",
+            "difficulty": 1
+        },
+        {
+            "term": "Bilet",
+            "hint": "Sinema, konser veya ulaşım araçlarına giriş hakkı veren basılı veya dijital belge.",
+            "difficulty": 1
+        },
+        {
+            "term": "Yastık",
+            "hint": "Uyurken başın altına konulan, içi elyaf veya tüy dolu yumuşak eşya.",
+            "difficulty": 1
+        },
+        {
+            "term": "Sabun",
+            "hint": "Suyla köpürerek elleri ve vücudu kirlerden arındırmaya yarayan katı veya sıvı madde.",
+            "difficulty": 1
+        },
+        {
+            "term": "Çadır",
+            "hint": "Kampta veya doğada konaklamak için kurulan, sökülebilir bez veya naylon barınak.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kumbara",
+            "hint": "Bozuk paraları biriktirmek için içine atılan ve genellikle kırılmadan açılmayan küçük kutu.",
+            "difficulty": 1
+        },
+        {
+            "term": "Turşu suyu",
+            "hint": "Lahana veya salatalık gibi sebzelerin tuz ve sirke içinde fermente edilmesiyle elde edilen ekşi sıvı.",
+            "difficulty": 1
+        }
+    ]
+}

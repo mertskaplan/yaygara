@@ -1,0 +1,168 @@
+{
+    "id": "hayalbaz-cocuklar.tr.json",
+    "name": "Hayalbaz çocuklar (7-15 yaş arası)",
+    "language": "tr",
+    "difficulty": "easy",
+    "words": [
+        {
+            "term": "Gökkuşağı",
+            "hint": "Yağmur sonrası havada beliren yedi renkli kemer.",
+            "difficulty": 1
+        },
+        {
+            "term": "Astronot",
+            "hint": "Uzay gemisiyle dünya dışına yolculuk yapan kişi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Oyuncak ayı",
+            "hint": "Çocukların uyurken sarıldığı tüylü ve yumuşak oyuncak.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kardan adam",
+            "hint": "Kışın bahçelerde yapılan, burnu havuçtan olan figür.",
+            "difficulty": 1
+        },
+        {
+            "term": "Tebeşir tozu",
+            "hint": "Eski okul tahtalarına yazı yazarken etrafa saçılan beyaz kalıntı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Dondurma külahı",
+            "hint": "Soğuk tatlıyı içine koyup çıtır çıtır yediğimiz kap.",
+            "difficulty": 1
+        },
+        {
+            "term": "Korsan gemisi",
+            "hint": "Deniz hırsızlarının üzerinde siyah bayrakla gezdiği taşıt.",
+            "difficulty": 1
+        },
+        {
+            "term": "Sihirbaz",
+            "hint": "Şapkadan tavşan çıkaran, illüzyon yapan gösteri sanatçısı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Lunapark",
+            "hint": "Dönme dolap ve çarpışan arabaların olduğu eğlence alanı.",
+            "difficulty": 1
+        },
+        {
+            "term": "İtfaiye",
+            "hint": "Yangınları söndürmek için özel araçlarıyla gelen kişiler.",
+            "difficulty": 1
+        },
+        {
+            "term": "Örümcek adam",
+            "hint": "Duvarlara tırmanan ve ağ fırlatan kurgusal kahraman.",
+            "difficulty": 1
+        },
+        {
+            "term": "Diş fırçası",
+            "hint": "Sabah ve akşam ağız temizliği için kullanılan plastik araç.",
+            "difficulty": 1
+        },
+        {
+            "term": "Pamuk şeker",
+            "hint": "Çubuk etrafına sarılan, buluta benzeyen pembe tatlı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Teleskop",
+            "hint": "Yıldızları ve gezegenleri yakından görmeye yarayan mercekli alet.",
+            "difficulty": 1
+        },
+        {
+            "term": "Kamp ateşi",
+            "hint": "Geceleri çadır kurulan yerde ısınmak için yakılan odunlar.",
+            "difficulty": 1
+        },
+        {
+            "term": "Salyangoz",
+            "hint": "Evini sırtında taşıyan ve çok yavaş ilerleyen canlı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Okul servisi",
+            "hint": "Öğrencileri sabah evinden alıp kuruma götüren araç.",
+            "difficulty": 1
+        },
+        {
+            "term": "Futbol topu",
+            "hint": "Siyah-beyaz desenli, sahada kaleye sokulmaya çalışılan oyuncak.",
+            "difficulty": 1
+        },
+        {
+            "term": "Öpücük",
+            "hint": "Sevgi göstergesi olarak dudakla yapılan temas.",
+            "difficulty": 1
+        },
+        {
+            "term": "Ressam",
+            "hint": "Fırça ile tablolara çizim ve boyama yapan kişi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Uçurtma",
+            "hint": "Rüzgarlı havada iple gökyüzünde süzülen oyuncak.",
+            "difficulty": 1
+        },
+        {
+            "term": "Mıknatıs",
+            "hint": "Metali kendine çeken, iki kutbu olan nesne.",
+            "difficulty": 1
+        },
+        {
+            "term": "Güneş gözlüğü",
+            "hint": "Parlak havalarda etrafı daha rahat görmek için takılan aksesuar.",
+            "difficulty": 1
+        },
+        {
+            "term": "Robot",
+            "hint": "Metal gövdeli programlanabilir makine.",
+            "difficulty": 1
+        },
+        {
+            "term": "Fay hattı",
+            "hint": "Depremlere neden olan yerkabuğundaki kırık bölge.",
+            "difficulty": 2
+        },
+        {
+            "term": "Zaman makinesi",
+            "hint": "Geleceğe veya geçmişe gitmeyi sağlayan hayali icat.",
+            "difficulty": 2
+        },
+        {
+            "term": "Kutup yıldızı",
+            "hint": "Geceleri her zaman kuzeyi gösteren en parlak cisim.",
+            "difficulty": 2
+        },
+        {
+            "term": "Saman yolu",
+            "hint": "Dünyamızın da içinde bulunduğu devasa yıldız sistemi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Yanardağ patlaması",
+            "hint": "Yerin altındaki lavların dışarı püskürmesi olayı.",
+            "difficulty": 2
+        },
+        {
+            "term": "Mona Lisa",
+            "hint": "Da Vinci'nin yaptığı, gizemli gülümsemesiyle ünlü tablo.",
+            "difficulty": 2
+        },
+        {
+            "term": "Yer çekimi",
+            "hint": "Newton'un elma sayesinde keşfettiği, bizi zeminde tutan kuvvet.",
+            "difficulty": 3
+        },
+        {
+            "term": "Truva atı",
+            "hint": "Savaş kazanmak için içine asker gizlenen tahta heykel.",
+            "difficulty": 3
+        }
+    ]
+}

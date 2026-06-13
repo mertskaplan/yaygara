@@ -1,0 +1,208 @@
+{
+    "id": "beynim-bu-dunyadan-degil.tr.json",
+    "name": "Beynim bu dünyadan değil",
+    "language": "tr",
+    "difficulty": "hard",
+    "words": [
+        {
+            "term": "Arapsaçı",
+            "hint": "İşlerin içinden çıkılmaz derecede karışık ve karmaşık hale gelmesi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Sargı bezi",
+            "hint": "Yaralanan bölgeyi korumak veya pansumanı sabitlemek için kullanılan şerit kumaş.",
+            "difficulty": 1
+        },
+        {
+            "term": "Sallama çay",
+            "hint": "Küçük kağıt poşetler içinde sunulan, sıcak suda demlenen pratik içecek.",
+            "difficulty": 1
+        },
+        {
+            "term": "Oligark",
+            "hint": "Siyasal gücü elinde bulunduran, servetiyle ülke yönetimine etki eden zengin kişi.",
+            "difficulty": 3
+        },
+        {
+            "term": "Maşrapa",
+            "hint": "Genellikle metal veya plastikten yapılan, saplı, küçük su kabı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Tel toka",
+            "hint": "Kadınların saçlarını tutturmak için kullandığı ince, siyah metal aksesuar.",
+            "difficulty": 1
+        },
+        {
+            "term": "Uçurum",
+            "hint": "Yüksek bir yerden aşağıya doğru olan dik ve derin boşluk.",
+            "difficulty": 1
+        },
+        {
+            "term": "Altar'ın oğlu Tarkan",
+            "hint": "Türk sinemasında kurgusal bir Hun savaşçısının kendisini tanıtırken kurduğu meşhur cümle.",
+            "difficulty": 2
+        },
+        {
+            "term": "Mandala",
+            "hint": "Genellikle daire şeklinde olan, desenlerle bezeli, meditasyon amaçlı boyanan geometrik şekil.",
+            "difficulty": 2
+        },
+        {
+            "term": "Çin Seddi",
+            "hint": "Türk yağmalarınından korunmak amaçlı yapılmış devasa ve tarihi duvar.",
+            "difficulty": 1
+        },
+        {
+            "term": "Karne",
+            "hint": "Eğitim dönemleri sonunda öğrencilere verilen başarı belgesi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Yörünge",
+            "hint": "Bir gök cisminin başka bir cisim etrafında izlediği yol.",
+            "difficulty": 2
+        },
+        {
+            "term": "Ergen",
+            "hint": "Çocukluktan yetişkinliğe geçiş evresinde olan, asi tavırlarıyla bilinen genç.",
+            "difficulty": 1
+        },
+        {
+            "term": "Karakalem",
+            "hint": "Sadece kurşun çizim aracı kullanarak yapılan gölgelendirmeli resim tekniği.",
+            "difficulty": 1
+        },
+        {
+            "term": "Nostalji",
+            "hint": "Geçmişte kalan güzel günlere duyulan özlem duygusu.",
+            "difficulty": 2
+        },
+        {
+            "term": "Lobi",
+            "hint": "Otellerin girişindeki geniş bekleme alanı veya bir çıkar grubunun yürüttüğü kulis faaliyeti.",
+            "difficulty": 2
+        },
+        {
+            "term": "Tetris",
+            "hint": "Blokları uygun şekilde dizerek satırları yok etmeye çalıştığınız klasik video oyunu.",
+            "difficulty": 1
+        },
+        {
+            "term": "Hipnoz",
+            "hint": "Yapay bir uyku hali oluşturarak telkin yoluyla zihne erişme yöntemi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Semaver",
+            "hint": "İçinde kömür veya elektrikle su kaynatılan büyük çay kazanı.",
+            "difficulty": 1
+        },
+        {
+            "term": "Fosfor",
+            "hint": "Karanlıkta parlayan, kimyasal bir element.",
+            "difficulty": 2
+        },
+        {
+            "term": "Kambur",
+            "hint": "Sırtın dışarıya doğru kavis yapmasıyla oluşan fiziksel durum.",
+            "difficulty": 1
+        },
+        {
+            "term": "İnternet kafe",
+            "hint": "Özellikle 2000'lerin başında bilgisayar oyunu oynamak için gidilen mekan.",
+            "difficulty": 1
+        },
+        {
+            "term": "Klozet",
+            "hint": "Tuvaletlerde üzerine oturulan porselen düzenek.",
+            "difficulty": 1
+        },
+        {
+            "term": "Termos",
+            "hint": "İçindeki sıvının ısısını uzun süre koruyan çift çeperli kap.",
+            "difficulty": 1
+        },
+        {
+            "term": "Vantilatör",
+            "hint": "Dönen kanatları yardımıyla hava akımı yaratarak serinleten cihaz.",
+            "difficulty": 1
+        },
+        {
+            "term": "Akordeon",
+            "hint": "Körükleri hava ile doldurularak çalınan, tuşlu bir müzik aleti.",
+            "difficulty": 2
+        },
+        {
+            "term": "Mona Lisa",
+            "hint": "Da Vinci'nin gizemli gülümsemesiyle ünlü dünya çapındaki tablosu.",
+            "difficulty": 1
+        },
+        {
+            "term": "Eskimo",
+            "hint": "Kutuplarda buzdan evlerde yaşayan yerli halklara verilen isim.",
+            "difficulty": 1
+        },
+        {
+            "term": "Piyango",
+            "hint": "Şans faktörüne dayalı, ikramiye kazanma umuduyla oynanan oyun.",
+            "difficulty": 1
+        },
+        {
+            "term": "Anket",
+            "hint": "Belirli bir konuda veri toplamak için insanlara sorulan soru listesi.",
+            "difficulty": 1
+        },
+        {
+            "term": "Karizma",
+            "hint": "Bir kişinin çevresindekileri etkileme gücü ve çekiciliği.",
+            "difficulty": 2
+        },
+        {
+            "term": "Sosyal medya",
+            "hint": "İnsanların dijital ortamda içerik paylaştığı ve etkileşim kurduğu platformlar.",
+            "difficulty": 1
+        },
+        {
+            "term": "Avatar",
+            "hint": "İnternet dünyasında bir kullanıcıyı temsil eden görsel simge.",
+            "difficulty": 2
+        },
+        {
+            "term": "Borsa",
+            "hint": "Hisse senetlerinin alınıp satıldığı finansal piyasa.",
+            "difficulty": 2
+        },
+        {
+            "term": "Hamak",
+            "hint": "İki ağaç arasına gerilen, sallanarak uyumaya yarayan file yatak.",
+            "difficulty": 1
+        },
+        {
+            "term": "Ayna",
+            "hint": "Işığı yansıtarak karşısındakinin görüntüsünü veren cam.",
+            "difficulty": 1
+        },
+        {
+            "term": "Dantel",
+            "hint": "Tığ veya iğne ile örülen, genellikle masa üstlerine serilen ince el işi.",
+            "difficulty": 2
+        },
+        {
+            "term": "Hologram",
+            "hint": "Lazer ışınlarıyla oluşturulan üç boyutlu görüntü.",
+            "difficulty": 3
+        },
+        {
+            "term": "Anatomi",
+            "hint": "Canlıların vücut yapısını ve organlarını inceleyen bilim dalı.",
+            "difficulty": 2
+        },
+        {
+            "term": "Veto",
+            "hint": "Bir kararın çıkmasını tek başına engelleme yetkisi.",
+            "difficulty": 2
+        }
+    ]
+}

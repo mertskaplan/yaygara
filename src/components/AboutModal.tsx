@@ -10,7 +10,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Info, Heart, Code2, Mail, ShieldCheck, Github, Coffee, Satellite } from 'lucide-react';
-import { isTelemetryEnabled } from '@/lib/env.ts';
+import { isTelemetryEnabled, APP_VERSION } from '@/lib/env.ts';
 import { useTranslations } from '@/hooks/useTranslations';
 import { cn } from '@/lib/utils';
 
@@ -36,7 +36,7 @@ const InfoSection = ({ icon: Icon, title, description, children, centered }: { i
 
 export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
     const { t, translations } = useTranslations();
-    const version = "1.4.3"; // Matching service-worker.js
+    const version = APP_VERSION; // Matching service-worker.js
     const licensePoints = (translations?.about?.licensePoints as string[]) || [];
 
     return (

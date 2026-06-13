@@ -283,11 +283,64 @@ function generateAssetsManifestPlugin() {
   };
 }
 
+function versionInjectorPlugin() {
+  return {
+    name: 'version-injector',
+    configureServer(server: any) {
+      const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'package.json'), 'utf-8'));
+      const version = pkg.version;
+
+      server.middlewares.use((req: any, res: any, next: any) => {
+        if (req.url === '/service-worker.js') {
+          const filePath = path.resolve(__dirname, 'public/service-worker.js');
+          if (fs.existsSync(filePath)) {
+            let content = fs.readFileSync(filePath, 'utf-8');
+            content = content.replace(/__APP_VERSION__/g, version);
+            res.setHeader('Content-Type', 'application/javascript');
+            res.end(content);
+            return;
+          }
+        }
+        if (req.url === '/manifest.json') {
+          const filePath = path.resolve(__dirname, 'public/manifest.json');
+          if (fs.existsSync(filePath)) {
+            let content = fs.readFileSync(filePath, 'utf-8');
+            content = content.replace(/__APP_VERSION__/g, version);
+            res.setHeader('Content-Type', 'application/json');
+            res.end(content);
+            return;
+          }
+        }
+        next();
+      });
+    },
+    async closeBundle() {
+      const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'package.json'), 'utf-8'));
+      const version = pkg.version;
+      const distPath = path.resolve(__dirname, 'dist');
+      const files = ['service-worker.js', 'manifest.json'];
+      
+      for (const file of files) {
+        const publicPath = path.resolve(__dirname, 'public', file);
+        const distFilePath = path.resolve(distPath, file);
+        
+        if (fs.existsSync(publicPath)) {
+          let content = fs.readFileSync(publicPath, 'utf-8');
+          content = content.replace(/__APP_VERSION__/g, version);
+          fs.writeFileSync(distFilePath, content, 'utf-8');
+          console.log(`✅ Version injected into dist/${file}: ${version}`);
+        }
+      }
+    }
+  };
+}
+
 // https://vite.dev/config/
 export default ({ mode }: { mode: string }) => {
   const env = loadEnv(mode, process.cwd());
+  const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'package.json'), 'utf-8'));
   return defineConfig({
-    plugins: [react(), watchDependenciesPlugin(), localizeHTMLPlugin(), generateDecksManifestPlugin(), generateAssetsManifestPlugin()],
+    plugins: [react(), watchDependenciesPlugin(), localizeHTMLPlugin(), generateDecksManifestPlugin(), generateAssetsManifestPlugin(), versionInjectorPlugin()],
     build: {
       minify: true,
       sourcemap: "inline", // Use inline source maps for better error reporting
@@ -333,6 +386,7 @@ export default ({ mode }: { mode: string }) => {
       force: true,
     },
     define: {
+      __APP_VERSION__: JSON.stringify(pkg.version),
       // Define Node.js globals for the agents package
       global: "globalThis",
     },

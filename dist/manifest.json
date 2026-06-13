@@ -1,18 +1,29 @@
 {
-  "id": "/",
+  "dir": "ltr",
+  "lang": "en",
+  "id": "yaygara",
   "name": "Yaygara",
   "short_name": "Yaygara",
   "description": "Fun party game based on narration and guessing.",
+  "version": "1.4.4",
   "categories": [
     "games",
     "party"
   ],
-  "scope": "https://yaygara.mertskaplan.com/",
-  "start_url": "https://yaygara.mertskaplan.com/",
+  "scope": "/",
+  "start_url": "/",
   "display": "standalone",
+  "display_override": [
+    "standalone",
+    "fullscreen",
+    "minimal-ui",
+    "window-controls-overlay",
+    "browser"
+  ],
   "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
@@ -27,7 +38,7 @@
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-512x512.png",
+      "src": "/icons/icon-512x512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
@@ -63,6 +74,7 @@
       "sizes": "1200x1200",
       "type": "image/png",
       "form_factor": "wide",
+      "platform": "wide",
       "label": "Yaygara"
     },
     {
@@ -70,6 +82,7 @@
       "sizes": "1200x1200",
       "type": "image/png",
       "form_factor": "wide",
+      "platform": "wide",
       "label": "Yaygara"
     }
   ]

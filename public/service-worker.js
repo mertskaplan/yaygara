@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yaygara-v1.4.3';
+const CACHE_NAME = 'yaygara-v__APP_VERSION__';
 const CORE_ASSETS = [
     '/',
     '/index.html',
