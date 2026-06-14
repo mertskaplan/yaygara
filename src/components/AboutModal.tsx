@@ -123,6 +123,14 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                                 <p className="text-slate-600 dark:text-slate-400 text-base" dangerouslySetInnerHTML={{ __html: t('about.outro') }} />
                             </div>
                         </InfoSection>
+                        <InfoSection>
+                            <div className="grid grid-cols-2 gap-1 justify-items-center">
+                                <a href="https://yaygara.mertskaplan.com/apk/yaygara-v1.4.4.apk"><img src="https://yaygara.mertskaplan.com/store/apk.png" width="180" alt="Android APK" /></a>
+                                <a href="https://github.com/mertskaplan/yaygara/releases"><img src="https://yaygara.mertskaplan.com/store/github.png" width="180" alt="GitHub" /></a>
+                                <a href="https://github-store.org/app/?repo=mertskaplan/yaygara"><img src="https://yaygara.mertskaplan.com/store/komi.png" width="180" alt="Komi Store" /></a>
+                                <a href="https://apps.obtainium.imranr.dev/redirect.html?r=obtainium://add/https://github.com/mertskaplan/yaygara"><img src="https://yaygara.mertskaplan.com/store/obtainium.png" width="180" alt="Obtainium" /></a>
+                            </div>
+                        </InfoSection>
 
                     </div>
                 </ScrollArea>
