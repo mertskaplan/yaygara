@@ -13,6 +13,9 @@ Yaygara is a vibrant, mobile-first, and offline-ready party game based on narrat
 
 **Live:** [yaygara.mertskaplan.com](https://yaygara.mertskaplan.com)
 
+<div align="center"><a href="https://yaygara.mertskaplan.com/apk/yaygara-v1.4.4.apk"><img src="https://yaygara.mertskaplan.com/store/apk.png" width="200" alt="Download Android APK"></a><a href="https://github.com/mertskaplan/yaygara/releases"><img src="https://yaygara.mertskaplan.com/store/github.png" width="200" alt="Get it on GitHub"></a><a href="https://github-store.org/app/?repo=mertskaplan/yaygara"><img src="https://yaygara.mertskaplan.com/store/komi.png" width="200" alt="Komi Store"></a><a href="https://apps.obtainium.imranr.dev/redirect.html?r=obtainium://add/https://github.com/mertskaplan/yaygara"><img src="https://yaygara.mertskaplan.com/store/obtainium.png" width="200" alt="Obtainium"></a>
+</div>
+
 ## 📱 Screenshots
 
 <div align="center">
