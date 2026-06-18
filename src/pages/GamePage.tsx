@@ -192,7 +192,7 @@ const PlayingScreen = () => {
         <Button
           onClick={() => handleActionClick('pass')}
           disabled={!currentWord || isActionLocked || unseenWords.length === 0 || isEndGameModalOpen || !!isPaused}
-          className="h-24 bg-rose-500 hover:bg-rose-600 text-white rounded-3xl shadow-lg text-3xl font-bold"
+          className="h-24 bg-yellow-500 hover:bg-yellow-600 text-white rounded-3xl shadow-lg text-3xl font-bold"
         >
           <X className="w-12 h-12" />
         </Button>

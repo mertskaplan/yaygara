@@ -74,6 +74,7 @@ export default {
 				},
 				yellow: {
 					'500': '#fbb712', // User Yellow
+					'600': '#e09d05', // Darker yellow for hover
 				},
 				orange: {
 					'500': '#f37021', // User Orange
